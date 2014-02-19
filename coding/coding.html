@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem Code Best Practices</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="../_assets/css/ui.css" rel="stylesheet" media="all">
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<header role="banner" class="masthead gradient">
+		<!-- ajax siteMainheader() -->
+	</header><!-- /header -->
+
+	<header id="header-b" class="record">
+
+		<div class="row">
+			<div class="h-content">
+
+				<h1 class="name">Style Guide</h1>
+
+			</div>
+			<!-- /h-content -->
+		</div>
+			<!-- menu -->
+			<!-- category content navigation -->
+			<div id="cat-nav" class="row cat-bar">
+
+				<div class="h-content">
+					<!-- details navigation -->
+					<div class="nav-b nav-primary">
+						<nav role="navigation" class="cat-sections">
+							<h1 class="toggleMenu">Menu</h1>
+
+							<ul class="nav-cat">
+								<li class="structure" data-section="structure">
+									<a href="../index.html">General</a>
+								</li>
+								<li class="structure active" data-section="structure">
+									<a href="coding.html">Coding Practices</a>
+								</li>
+								<li class="ui" data-section="ui">
+									<a href="../ui/ui.html">UI</a>
+								</li>
+								 <li class="base" data-section="base">
+									<a href="../ui/base.html">Base</a>
+								</li>
+								<li class="modules" data-section="modules">
+									<a href="../ui/modules.html">Modules</a>
+								</li>
+								<li class="svg-color" data-section="svg-color">
+									<a href="../ui/svg-color.html">SVG Color Chart</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!-- /details navigation -->
+				</div>
+
+			</div>
+
+	</header>
+
+	<!-- content -->
+	<div class="content">
+
+			<!-- complementary content -->
+			<aside role="complementary" class="">
+
+				<nav>
+					<ul class="side-nav">
+						<li class="heading">Coding Best Practices</li>
+						<li><a href="file.html#s-file-structure">File Structure</a></li>
+						<li><a href="#s-best-practices">Best Practices</a></li>
+						<li class="divider"></li>
+						<!-- <li class="heading">Structure</li> -->
+					</ul>
+				</nav>
+
+			</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+			<section id="s-best-practices" class="mod box">
+				<h2>Best Practices</h2>
+
+				<div class="row">
+				  <h3 class="subheader">Naming Conventions</h3>
+				  <p>CSS class names are all lower case names with hyphens</p>
+					<pre><code data-language="css">
+							.sections-heading {
+								border: none;
+								margin: 0;
+								padding: 0;
+							}
+					</code></pre>
+				</div>
+				<!-- /row -->
+
+
+				<div class="row">
+				  <h3 class="subheader">HTML Comments</h3>
+				  <p>HTML Comments will make it easier for other developers to read through the architecture. Comments will be dynamicaly removed during gzip process.</p>
+				  <p>at the begin the comment should reference the modules function. At the end, the comment uses the format forward slash and function. </p>
+					<pre><code data-language="html">
+						<!-- update this record form -->
+						<div id="updater" class="itemeditor updater">
+							<fieldset>
+								<legend><span>Update this Record</span></legend>
+								<p>
+									<label>Project Name</label>
+									Speed
+								</p>
+								<p>
+									<label for="i-list-description" class="req">Description</label>
+									<textarea id="i-list-description" rows="1" title="define this list"></textarea>
+								</p>
+							</fieldset>
+						</div>
+						<!-- /update this record form -->
+					</code></pre>
+				</div>
+				<!-- /row -->
+
+				<h3 class="subheader">Code style</h3>
+				<!--  -->
+				<h4>General Style Rules</h4>
+				<p>Omit the protocol from embedded resources.</p>
+				<p>Omit the protocol portion (http:, https:) from URLs pointing to images and other media files, style sheets, and scripts unless the respective files are not available over both protocols.</p>
+				<p>Omitting the protocol—which makes the URL relative—prevents mixed content issues and results in minor file size savings.</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+						<!-- Recommended -->
+						<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+					</code>
+				</pre>
+
+				<pre>
+					<code data-language="css">
+					/* Not recommended */
+.example {
+  background: url(http://www.google.com/images/example);
+}
+/* Recommended */
+.example {
+  background: url(//www.google.com/images/example);
+}
+					</code>
+				</pre>
+
+				<!--  -->
+				<h4>General Formatting</h4>
+				<h5>Tab Indents</h5>
+				<p>it's important to be consistent throughout the html code. We are using four spaces to indent the code. Use one tab to indent the start of the line, then one tab per indent level.</p>
+				<!--  -->
+				<h5>Advantages with Tabs</h5>
+				<ul class="blt">
+					<li>Allow mistakes to be more noticeable, it's annoying to micro manage to spaces.</li>
+					<li>are consistent throughout</li>
+					<li>are customizable, you can specify in the options of the editor how wide they are.</li>
+					<li>tend to work better in IDEs.</li>
+					<p><a href="http://nickgravgaard.com/elastictabstops/">Tabs work better</a></p>
+					<img src="../_assets/img/styleguide/columnblocks_coloured.gif" height="255" width="393">
+				</ul>
+				<h5>Capitalization</h5>
+				<p>All code has to be lowercase: This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<A HREF="/">Home</A>
+						<!-- Recommended -->
+						<img src="google.png" alt="Google">
+					</code>
+				</pre>
+				<pre>
+					<code data-language="css">
+						/* Not recommended */
+						color: #E5E5E5;
+						/* Recommended */
+						color: #e5e5e5;
+					</code>
+				</pre>
+				<h5>Trailing Whitespace</h5>
+				<p>Remove trailing white spaces.</p>
+				<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<p>What?_
+						<!-- Recommended -->
+						<p>Yes please.
+					</code>
+				</pre>
+
+				<!--  -->
+				<h4>General Meta Rules</h4>
+				<h5>Encoding</h5>
+				<p>Use UTF-8 (no BOM).</p>
+				<p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark.</p>
+				<p>Specify the encoding in HTML templates and documents via <meta charset="utf-8">. Do not specify the encoding of style sheets as these assume UTF-8.</p>
+				<p>(More on encodings and when and how to specify them can be found in Handling character encodings in HTML and CSS.)</p>
+
+				<h5>Comments</h5>
+				<p>Explain code as needed, where possible.</p>
+				<p>Use comments to explain code: What does it cover, what purpose does it serve, why is respective solution used or preferred?</p>
+				<p>(This item is optional as it is not deemed a realistic expectation to always demand fully documented code. Mileage may vary heavily for HTML and CSS code and depends on the project’s complexity.)</p>
+
+				<h5>Action Items</h5>
+				<p>Mark todos and action items with TODO.</p>
+				<p>Highlight todos by using the keyword TODO only, not other common formats like @@.</p>
+				<p>Append a contact (username or mailing list) in parentheses as with the format TODO(contact).</p>
+				<p>Append action items after a colon as in TODO: action item.</p>
+				<pre>
+					<code data-language="html">
+						{# TODO(john.doe): revisit centering #}
+						<center>Test</center>
+						<!-- TODO: remove optional tags -->
+						<ul>
+						  <li>Apples</li>
+						  <li>Oranges</li>
+						</ul>
+					</code>
+				</pre>
+
+				<!--  -->
+				<h4>HTML Style Rules</h4>
+				<h5>Doc Type</h5>
+				<p>Use HTML5.</p>
+				<p>Use valid HTML code unless that is not possible due to
+				otherwise unattainable performance goals regarding file size.
+				</p>
+				<p>
+				Use tools such as the <a href="http://validator.w3.org/nu/">W3C
+				HTML validator</a> to test.
+				</p>
+				<p>
+				Using valid HTML is a measurable baseline quality attribute
+				that contributes to learning about technical requirements
+				and constraints, and that ensures proper HTML usage.
+				</p>
+
+				<h5>HTML Validity</h5>
+				<p>Use valid HTML where possible.</p>
+				<p>Use valid HTML code unless that is not possible due to
+				otherwise unattainable performance goals regarding file size.
+				</p>
+				<p>Use tools such as the <a href="http://validator.w3.org/nu/">W3C
+				HTML validator</a> to test.
+				</p>
+				<p>Using valid HTML is a measurable baseline quality attribute
+				that contributes to learning about technical requirements
+				and constraints, and that ensures proper HTML usage.
+				</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<title>Test</title>
+						<article>This is only a test.
+
+						<!-- Recommended -->
+						<!DOCTYPE html>
+						<meta charset="utf-8">
+						<title>Test</title>
+						<article>This is only a test.</article>
+
+
+					</code>
+				</pre>
+
+				<h5>Semantics</h5>
+				<p>Use HTML according to its purpose.</p>
+				<p>Use elements (sometimes incorrectly called “tags”) for what
+				they have been created for. For example, use heading
+				elements for headings, <code>p</code> elements for
+				paragraphs, <code>a</code> elements for anchors, etc.
+				</p>
+				<p>Using HTML according to its purpose is important for
+				accessibility, reuse, and code efficiency reasons.
+				</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<div onclick="goToRecommendations();">All recommendations</div>
+
+						<!-- Recommended -->
+						<a href="recommendations/">All recommendations</a>
+
+
+					</code>
+				</pre>
+
+				<h5>Multimedia Fallback</h5>
+				<p>Provide alternative contents for multimedia.</p>
+				<p>
+				For multimedia, such as images, videos, animated objects via
+				<code>canvas</code>, make sure to offer alternative
+				access. For images that means use of meaningful alternative
+				text (<code>alt</code>) and for video and audio transcripts
+				and captions, if available.
+				</p>
+				<p>
+				Providing alternative contents is important for
+				accessibility reasons: A blind user has few cues to tell
+				what an image is about without <code>@alt</code>, and other
+				users may have no way of understanding what video or audio
+				contents are about either.
+				</p>
+				<p>
+				(For images whose <code>alt</code> attributes would
+				introduce redundancy, and for images whose purpose is purely
+				decorative which you cannot immediately use CSS for, use no
+				alternative text, as in <code>alt=""</code>.)
+				</p>
+				<pre>
+				<code data-language="html">
+					<!-- Not recommended -->
+					<img src="spreadsheet.png">
+
+					<!-- Recommended -->
+					<img src="spreadsheet.png" alt="Spreadsheet screenshot.">
+				</code>
+				</pre>
+
+				<h5>Seperation of Concerns</h5>
+				<p>Separate structure from presentation from behavior.</p>
+				<p>Strictly keep structure (markup), presentation (styling),
+				and behavior (scripting) apart, and try to keep the
+				interaction between the three to an absolute minimum.
+				</p>
+				<p>That is, make sure documents and templates contain only HTML
+				and HTML that is solely serving structural purposes. Move
+				everything presentational into style sheets, and everything
+				behavioral into scripts.
+				</p>
+				<p>In addition, keep the contact area as small as possible by
+				linking as few style sheets and scripts as possible from
+				documents and templates.
+				</p>
+				<p>Separating structure from presentation from behavior is
+				important for maintenance reasons. It is always more
+				expensive to change HTML documents and templates than it is
+				to update style sheets and scripts.
+				</p>
+				<pre>
+				<code data-language="html">
+					<!-- Not recommended -->
+					<!DOCTYPE html>
+					<title>HTML sucks</title>
+					<link rel="stylesheet" href="base.css" media="screen">
+					<link rel="stylesheet" href="grid.css" media="screen">
+					<link rel="stylesheet" href="print.css" media="print">
+					<h1 style="font-size: 1em;">HTML sucks</h1>
+					<p>I’ve read about this on a few sites but now I’m sure:
+					  <u>HTML is stupid!!1</u>
+					<center>I can’t believe there’s no way to control the styling of
+					  my website without doing everything all over again!</center>
+
+					<!-- Recommended -->
+					<!DOCTYPE html>
+					<title>My first CSS-only redesign</title>
+					<link rel="stylesheet" href="default.css">
+					<h1>My first CSS-only redesign</h1>
+					<p>I’ve read about this on a few sites but today I’m actually
+					  doing it: separating concerns and avoiding anything in the HTML of
+					  my website that is presentational.
+					<p>It’s awesome!
+				</code>
+				</pre>
+
+				<h5>Entity References</h5>
+				<p>Do not use entity references.</p>
+				<p>
+				There is no need to use entity references like
+				<code>&amp;mdash;</code>, <code>&amp;rdquo;</code>, or
+				<code>&amp;#x263a;</code>, assuming the same encoding
+				(UTF-8) is used for files and editors as well as among
+				teams.
+				</p>
+				<p>
+				The only exceptions apply to characters with special meaning
+				in HTML (like <code>&lt;</code> and <code>&amp;</code>) as
+				well as control or “invisible” characters (like no-break
+				spaces).
+				</p>
+				<pre>
+				<code data-language="html">
+					<!-- Not recommended -->
+					The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+					<!-- Recommended -->
+					The currency symbol for the Euro is “€”.
+				</code>
+				</pre>
+
+				<h5>Optional Tags</h5>
+				<p>Omit optional tags (optional).</p>
+				<p>
+				For file size optimization and scannability purposes,
+				consider omitting optional tags.
+				The <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission">HTML5
+				specification</a> defines what tags can be omitted.
+				</p>
+				<p>
+				(This approach may require a grace period to be established
+				as a wider guideline as it’s significantly different
+				from what web developers are typically taught. For
+				consistency and simplicity reasons it’s best served
+				omitting all optional tags, not just a selection.)
+				</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<!DOCTYPE html>
+							<html>
+								<head>
+									<title>Spending money, spending bytes</title>
+								</head>
+								<body>
+									<p>Sic.</p>
+								</body>
+							</html>
+
+						<!-- Recommended -->
+						<!DOCTYPE html>
+							<title>Saving money, saving bytes</title>
+							<p>Qed.
+					</code>
+				</pre>
+
+				<h5>Type Attributes</h5>
+				<p>Omit <code>type</code> attributes for style sheets and scripts.</p>
+				<p>
+				Do not use <code>type</code> attributes for style sheets
+				(unless not using CSS) and scripts (unless not using
+				JavaScript).
+				</p>
+				<p>
+				Specifying <code>type</code> attributes in these contexts is
+				not necessary as HTML5 implies
+				<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-style-type"><code>text/css</code></a>
+				and
+				<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting-1.html#attr-script-type"><code>text/javascript</code></a>
+				as defaults. This can be safely done even for older browsers.
+				</p>
+				<pre>
+					<code data-language="html">
+						<!-- Not recommended -->
+						<link rel="stylesheet" href="//www.google.com/css/maia.css" type="text/css">
+						<!-- Recommended -->
+						<link rel="stylesheet" href="//www.google.com/css/maia.css">
+
+						<!-- Not recommended -->
+						<script src="//www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script>
+						<!-- Recommended -->
+						<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+					</code>
+				</pre>
+
+				<!--  -->
+				<h4>HTML Formatting</h4>
+				<h5>General</h5>
+				<p> Use a new line for every block, list, or table element, and indent every such child element.</p>
+				<p>
+				Independent of the styling of an element (as CSS allows
+				elements to assume a different role per <code>display</code>
+				property), put every block, list, or table element on a new
+				line.
+				</p>
+				<p>Also, indent them if they are child elements of a block,
+				list, or table element.
+				</p>
+				<p> (If you run into issues around whitespace between list items it’s acceptable to put all <code>li</code> elements in one line. A linter is encouraged to throw a warning instead of an error.) </p>
+				<pre>
+				<code data-language="html">
+					<blockquote>
+						<p><em>Space</em>, the final frontier.</p>
+					</blockquote>
+					<ul>
+						<li>Moe
+						<li>Larry
+						<li>Curly
+					</ul>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Income</th>
+								<th scope="col">Taxes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>$ 5.00</td>
+								<td>$ 4.50</td>
+							</tr>
+						</tbody>
+					</table>
+				</code>
+				</pre>
+
+				<h5>HTML Quotation Marks</h5>
+				<p>When quoting attributes values, use double quotation marks.</p>
+				<p>Use double ("") rather than single quotation marks ('') around attribute values.</p>
+
+				<pre>
+				<code data-language="html">
+					<!-- Not recommended -->
+					<a class='maia-button maia-button-secondary'>Sign in</a>
+					<!-- Recommended -->
+					<a class="maia-button maia-button-secondary">Sign in</a>
+				</code>
+				</pre>
+
+				<!--  -->
+				<h4>CSS Style Rules</h4>
+
+				<h5>CSS Validity</h5>
+				<p> Use valid CSS where possible.</p>
+				<p>
+				Unless dealing with CSS validator bugs or requiring
+				proprietary syntax, use valid CSS code.
+				</p>
+				<p>
+				Use tools such as the <a href="http://jigsaw.w3.org/css-validator/">W3C
+				CSS validator</a> to test.
+				</p>
+				<p>
+				Using valid CSS is a measurable baseline quality attribute
+				that allows to spot CSS code that may not have any effect
+				and can be removed, and that ensures proper CSS usage.
+				</p>
+				<p>Check and clean up the CSS in online tools like <a href="http://www.cleancss.com/">CleanCSS</a></p>
+				<pre>
+				<code data-language="css">
+				</code>
+				</pre>
+
+				<h5>ID and Class Naming</h5>
+				<ul class="blt">
+					<li>Avoid IDs (they're better used for JS only)</li>
+					<li>Use readable class names</li>
+				</ul>
+				<p>Use meaningful or generic ID and class names.</p>
+				<p>
+				Instead of presentational or cryptic names, always use ID
+				and class names that reflect the purpose of the element in
+				question, or that are otherwise generic.
+				</p>
+				<p>
+				Names that are specific and reflect the purpose of the
+				element should be preferred as these are most understandable
+				and the least likely to change.
+				</p>
+				<p>
+				Generic names are simply a fallback for elements that have no
+				particular or no meaning different from their siblings. They are
+				typically needed as “helpers.”
+				</p>
+				<p>
+				Using functional or generic names reduces the probability of
+				unnecessary document or template changes.
+				</p>
+				<pre>
+				<code data-language="css">
+					/* Not recommended: meaningless */
+					#yee-1901 {}
+
+					/* Not recommended: presentational */
+					.button-green {}
+					.clear {}
+					/* Recommended: specific */
+					#gallery {}
+					#login {}
+					.video {}
+
+					/* Recommended: generic */
+					.aux {}
+					.alt {}
+				</code>
+				</pre>
+
+
+				<h5>ID and Class Name Style</h5>
+				<p>Use ID and class names that are as short as possible but as long as necessary.</p>
+				<p>
+				Try to convey what an ID or class is about while being as
+				brief as possible.
+				</p>
+				<p>
+				Using ID and class names this way contributes to acceptable
+				levels of understandability and code efficiency.
+				</p>
+				<pre>
+				<code data-language="css">
+					/* Not recommended */
+					#navigation {}
+					.atr {}
+					/* Recommended */
+					#nav {}
+					.author {}
+				</code>
+				</pre>
+
+				<h5>Type Selectors</h5>
+				<p>Avoid qualifying ID and class names with type selectors.</p>
+				<p>Unless necessary (for example with helper classes), do not
+				use element names in conjunction with IDs or classes.
+				</p>
+				<p>
+				Avoiding unnecessary ancestor selectors is useful for <a href="http://www.stevesouders.com/blog/2009/06/18/simplifying-css-selectors/">performance
+				reasons</a>.
+				</p>
+				<pre>
+				<code data-language="css">
+					/* Not recommended */
+					ul#example {}
+					div.error {}
+
+					/* Recommended */
+					#example {}
+					.error {}
+				</code>
+				</pre>
+
+				<h5>Shorthand Properties</h5>
+				<p>Use shorthand properties where possible.</p>
+				<p>
+				CSS offers a variety of <a href="http://www.w3.org/TR/CSS21/about.html#shorthand">shorthand</a>
+				properties (like <code>font</code>)
+				that should be used whenever possible, even in cases where
+				only one value is explicitly set.
+				</p>
+				<p>
+				Using shorthand properties is useful for code efficiency and
+				understandability.
+				</p>
+				<pre>
+				<code data-language="css">
+					/* Not recommended */
+					border-top-style: none;
+					font-family: palatino, georgia, serif;
+					font-size: 100%;
+					line-height: 1.6;
+					padding-bottom: 2em;
+					padding-left: 1em;
+					padding-right: 1em;
+					padding-top: 0;
+
+					/* Recommended */
+					border-top: 0;
+					font: 100%/1.6 palatino, georgia, serif;
+					padding: 0 1em 2em;
+				</code>
+				</pre>
+
+				<h5>0 and Units</h5>
+				<p>Omit unit specification after “0” values.</p>
+				<p>
+				Do not use units after <code>0</code> values unless they are
+				required.
+				</p>
+				<pre>
+				<code data-language="css">
+					margin: 0;
+					padding: 0;
+				</code>
+				</pre>
+
+				<h5>Leading 0s</h5>
+				<p>Omit leading “0”s in values.</p>
+				<p>
+				Do not put <code>0</code>s in front of values or lengths
+				between -1 and 1.
+				</p>
+				<pre>
+				<code data-language="css">
+					font-size: .8em;
+				</code>
+				</pre>
+
+
+				<h5>Hexidecimal Notation</h5>
+				<p>Use 3 character hexadecimal notation where possible.</p>
+				<p>For color values that permit it, 3 character hexadecimal
+				notation is shorter and more succinct.
+				</p>
+
+				<pre>
+				<code data-language="css">
+					 /* Not recommended */
+					color: #eebbcc;
+					/* Recommended */
+					color: #ebc;
+				</code>
+				</pre>
+
+				<h5>RGB Notation</h5>
+				<p>It's all a matter of preference and legibility - if you're maintaining a huge CSS file, being able to look at the colour value and know what colour it is, is a really good advantage. Even more advantageous is using a preprocessor like SCSS to add a kind of programmability to CSS</p>
+				<p>If you want to input an RGBA value, hex notation is not supported; i.e., you can't fake it with #FFFFFFff. As a matter of fact, the alpha value must be a number between 0.0 and 1.0, inclusive. (Check out this page for browser support -- as always, IE is leading the pack here. ;) )</p>
+
+				<p>HSL and HSLA color support -- which is very designer friendly -- is also provided with a similar syntax to the RGB() style. If you are using RGBA, then use decimal values over hex codes for consistency.</p>
+
+
+				<pre>
+				<code data-language="css">
+					color: rgb(255, 255, 255);
+				</code>
+				</pre>
+				<p>It's all a matter of preference and legibility - if you're maintaining a huge CSS file, being able to look at the colour value and know what colour it is, is a really good advantage. Even more advantageous is using a preprocessor like SCSS to add a kind of programmability to CSS</p>
+				<p>Maintaining the CSS becomes less of an issue.</p>
+				<pre>
+				<code data-language="css">
+					#title { color: #abcdef; }
+
+
+					@base-color: #abcdef;
+
+					#title { color: @base-color; }
+				</code>
+				</pre>
+
+				<h5>Prefixes</h5>
+				<p>Prefix selectors with an application-specific prefix (optional).</p>
+				<p>
+				In large projects as well as for code that gets embedded in
+				other projects or on external sites use prefixes (as
+				namespaces) for ID and class names. Use short, unique
+				identifiers followed by a dash.
+				</p>
+				 <p>
+				Using namespaces helps preventing naming conflicts and can
+				make maintenance easier, for example in search and replace
+				operations.
+				</p>
+
+				<pre>
+				<code data-language="css">
+					.adw-help {} /* AdWords */
+					#maia-note {} /* Maia */
+				</code>
+				</pre>
+
+				<h5>ID and Class Name Delimiters</h5>
+				<p>Separate words in ID and class names by a hyphen.</p>
+				<p>
+				Do not concatenate words and abbreviations in selectors by
+				any characters (including none at all) other than hyphens,
+				in order to improve understanding and scannability.
+				</p>
+
+				<pre>
+				<code data-language="css">
+					/* Not recommended: does not separate the words “demo” and “image” */
+					.demoimage {}
+
+					/* Not recommended: uses underscore instead of hyphen */
+					.error_status {}
+
+
+					/* Recommended */
+					#video-id {}
+					.ads-sample {}
+				</code>
+				</pre>
+
+				<h5>Hacks</h5>
+				<p>Avoid user agent detection as well as CSS “hacks”—try a different approach first</p>
+				<p>
+				It’s tempting to address styling differences over user
+				agent detection or special CSS filters, workarounds, and
+				hacks. Both approaches should be considered last resort in
+				order to achieve and maintain an efficient and manageable
+				code base. Put another way, giving detection and hacks a
+				free pass will hurt projects in the long run as projects
+				tend to take the way of least resistance. That is, allowing
+				and making it easy to use detection and hacks means using
+				detection and hacks more frequently—and more frequently
+				is too frequently.
+				</p>
+				<h5>Feature Detection</h5>
+				<p>We are using a full set of <a href="http://modernizr.com/docs/">Modernizer</a>.</p>
+				<p>Using feature detection is a more reliable mechanic to establish what you can and cannot do in the current browser, and avoid broser sniffing.</p>
+				<pre>
+				<code data-language="html">
+				</code>
+				</pre>
+
+				<!--  -->
+				<h4>CSS Formatting</h4>
+				<h5>Declaration Order</h5>
+				<p>Google suggests: Alphabetize declarations.</p>
+				<p>
+				Put declarations in alphabetical order in order to achieve
+				consistent code in a way that is easy to remember and
+				maintain.
+				</p>
+				<pre>
+				<code data-language="css">
+					background: fuchsia;
+					border: 1px solid;
+					-moz-border-radius: 4px;
+					-webkit-border-radius: 4px;
+					border-radius: 4px;
+					color: black;
+					text-align: center;
+					text-indent: 2em;
+				</code>
+				</pre>
+				<p>Our current standard is to use the same order as the CSS cascade.</p>
+				<ul>
+					<li>Structure/Positioning</li>
+					<li>Layout</li>
+					<li>Typography</li>
+					<li>Color</li>
+				</ul>
+				<pre>
+				<code data-language="css">
+					position: relative;
+					width: 100%;
+					margin: .2em;
+					padding: .2em .4em;
+					text-align: center;
+					text-indent: 2em;
+					color: black;
+					background: fuchsia;
+					border: 1px solid;
+					-moz-border-radius: 4px;
+					-webkit-border-radius: 4px;
+					border-radius: 4px;
+				</code>
+				</pre>
+				<p>
+				Ignore vendor-specific prefixes for sorting purposes. However,
+				multiple vendor-specific prefixes for a certain CSS property should
+				be kept sorted (e.g. -moz prefix comes before -webkit).
+				</p>
+				<h5>Block Content Indentation</h5>
+				<p>Indent all block content.</p>
+				<p>
+				Indent all <a href="http://www.w3.org/TR/CSS21/syndata.html#block">block
+				content</a>, that is rules within rules as well as declarations, so to
+				reflect hierarchy and improve understanding.
+				</p>
+				<pre>
+				<code data-language="css">
+					@media screen, projection {
+
+						html {
+							background: #fff;
+							color: #444;
+						}
+
+					}
+				</code>
+				</pre>
+				<h5>Declaration Stops</h5>
+				<p>Use a semicolon after every declaration.</p>
+				<p>
+		  End every declaration with a semicolon for consistency and
+		  extensibility reasons.
+		</p>
+
+				<pre>
+				<code data-language="css">
+					/* Not recommended */
+					.test {
+					display: block;
+					height: 100px
+					}
+					/* Recommended */
+					.test {
+					display: block;
+					height: 100px;
+					}
+				</code>
+				</pre>
+				<h5>Property Name stops</h5>
+				<p>Use a space after a property name’s colon.</p>
+				 <p>
+		  Always use a single space between property and value (but no
+		  space between property and colon) for consistency reasons.
+		</p>
+
+				<pre>
+				<code data-language="css">
+				/* Not recommended */
+				h3 {
+					font-weight:bold;
+				}
+				/* Recommended */
+				h3 {
+					font-weight: bold;
+				}
+				</code>
+				</pre>
+
+				<h5>Declaration Block Separation</h5>
+				<p>Use a space between the last selector and the declaration block.</p>
+				 <p>
+		  Always use a single space between the last selector and the opening
+		  brace that begins the <a href="http://www.w3.org/TR/CSS21/syndata.html#rule-sets">declaration
+		  block</a>.
+		</p>
+		<p>
+		  The opening brace should be on the same line as the last selector in a
+		  given rule.
+		</p>
+
+				<pre>
+				<code data-language="css">
+					#video{
+						margin-top: 1em;
+					}
+
+					/* Not recommended: unnecessary line break */
+					#video
+					{
+						margin-top: 1em;
+					}
+
+					/* Recommended */
+					#video {
+						margin-top: 1em;
+					}
+				</code>
+				</pre>
+				<h5>Selector and Declaration Separation</h5>
+				<p>Separate selectors and declarations by new lines.</p>
+				<p>
+				Always start a new line for each selector and declaration.
+				</p>
+				<pre>
+				<code data-language="css">
+				/* Not recommended */
+				a:focus, a:active {
+					position: relative; top: 1px;
+				}
+				/* Recommended */
+				h1,
+				h2,
+				h3 {
+					font-weight: normal;
+					line-height: 1.2;
+				}
+				</code>
+				</pre>
+				<h5>Rule Separation</h5>
+				<p>Separate rules by new lines.</p>
+				<p>
+				Always put a blank line (two line breaks) between rules.
+				</p>
+				<pre>
+				<code data-language="css">
+					html {
+						background: #fff;
+					}
+
+					body {
+						margin: auto;
+						width: 50%;
+					}
+				</code>
+				</pre>
+				<h5>CSS Quotation Marks</h5>
+				<p>Use single quotation marks for attribute selectors and property values.</p>
+				<p>
+				Use single (<code>''</code>) rather than double (<code>""</code>)
+				quotation marks for attribute selectors or property values. Do not
+				use quotation marks in URI values (<code>url()</code>).
+				</p>
+				<p>
+				Exception: If you do need to use the <code>@charset</code> rule,
+				use double quotation marks—<a href="http://www.w3.org/TR/CSS21/syndata.html#charset">single
+				quotation marks are not permitted</a>.
+				</p>
+
+				<pre>
+				<code data-language="html">
+					/* Not recommended */
+					@import url("//www.google.com/css/maia.css");
+
+					html {
+						font-family: "open sans", arial, sans-serif;
+					}
+
+					/* Recommended */
+					@import url(//www.google.com/css/maia.css);
+
+					html {
+						font-family: 'open sans', arial, sans-serif;
+					}
+				</code>
+				</pre>
+
+				<!--  -->
+				<h4>CSS Meta Rules</h4>
+				<h5>Section Comments</h5>
+				<p>Group sections by a section comment (optional).</p>
+				<p>
+					If possible, group style sheet sections together by using
+					comments. Separate sections with new lines.
+				</p>
+				<pre>
+					<code data-language="css">
+						/* Header */
+
+						#adw-header {}
+
+						/* Footer */
+
+						#adw-footer {}
+
+						/* Gallery */
+
+						.adw-gallery {}
+					</code>
+				</pre>
+
+				<!--  -->
+				<h4>Final Thoughts </h4>
+				<h5>Section Comments</h5>
+				<p>Be consistent.</p>
+
+				<p>If you’re editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.</p>
+
+				<p>The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you’re saying rather than on how you’re saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
+				</p>
+				<p><strong>"Do not repeat yourself"</strong> - if it comes to the point that you have 6 Modules with the exact same properties, you'd better combine them into one Block inside your CSS. e.g.</p>
+				<pre>
+					<code data-language="css">
+						.site-header,
+						.single-article,
+						.site-footer,
+						.sidebar {
+							background:#fff;
+							box-shaodw: 0 0 10px rgba(0,0,0,0.4);
+							border:1px solid #ccc;
+						}
+					</code>
+				</pre>
+				<p>This will be much more maintainable and with <a href="http://sass-lang.com/">SASS</a> you can even use the <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend">@extend</a> feature so you do not need to write those blocks by yourself.</p>
+
+				<!-- /row -->
+
+			</section>
+
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+			<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<!-- jQuery UI -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<!-- <script src="../_assets/js/loader.js"></script> -->
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+	<script src="../_assets/js/jquery.stickyFooter.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+
+	<!-- foundation specific -->
+	<script src="../_assets/js/foundation/foundation.min.js"></script>
+	<script src="../_assets/js/vendor/fastclick.js"></script>
+
+	<!-- code formatting for styleguide -->
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script type="text/javascript">
+		$("a[href^='#']").click(function(evt){
+			var j = $(evt.currentTarget);
+			var anchorTarget = j.attr("href");
+			$("body")
+				.scrollTo(anchorTarget, 500, {
+					onAfter:function() {
+						window.location.hash = anchorTarget.substr(1);
+						$(anchorTarget).attr("tabindex",-1).focus();
+					}
+				});
+
+			evt.preventDefault();
+		});
+	</script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+</body>
+</html>

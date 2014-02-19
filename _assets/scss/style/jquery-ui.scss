@@ -1,0 +1,1311 @@
+﻿// 5. jQuery UI
+// ----------------------------------------------------------
+//
+// jQuery UI CSS Framework 1.8.17
+//
+// Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+// Dual licensed under the MIT or GPL Version 2 licenses.
+// http://jquery.org/license
+//
+// http://docs.jquery.com/UI/Theming/API
+//
+
+// Layout helpers
+// ----------------------------------
+.ui-helper-hidden { display: none; }
+// modified to fix sticky footer
+// .ui-helper-hidden-accessible { position: absolute; left: -99999999px; top:0; display: none; }
+.ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+
+.ui-helper-clearfix:before, .ui-helper-clearfix:after { content: ""; display: table; }
+.ui-helper-clearfix:after { clear: both; }
+.ui-helper-clearfix { zoom: 1; }
+// .ui-helper-clearfix:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+// .ui-helper-clearfix { display: inline-block; }
+
+
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+// Component containers
+// ----------------------------------
+.ui-widget {
+	font-size: 1em;
+
+	.ui-widget { font-size: 1em; }
+
+	.ui-widget input,
+	.ui-widget select,
+	.ui-widget textarea,
+	.ui-widget button {font-size: 1em;}
+	.ui-widget-content {
+		border: 1px solid #999999;
+		color: #333;
+			 background: rgb(255, 255, 255);
+	   background-image: -moz-linear-gradient(top, rgb(255, 255, 255) 90%, #e5e5e5 99%);/* FF3.6 */
+	   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(90%, rgb(255, 255, 255)),color-stop(99%, #e5e5e5));/* Saf4+, Chrome */
+	   background-image: -webkit-linear-gradient( rgb(255, 255, 255), #e5e5e5);/* Chrome 10+, Saf6 */
+	   background-image: linear-gradient( rgb(255, 255, 255), #e5e5e5);
+	}
+
+}
+
+.ui-widget-content a {
+	outline:none;
+	color: rgb(0, 101, 137);
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: rgb(8, 61, 130);
+		text-decoration: underline;
+	}
+
+	&:active {color: rgb(44, 130, 252);}
+
+	aside .accord-menu & {
+		outline:none;
+		color: rgb(31, 43, 65);
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: rgb(129, 216, 247);
+			text-decoration: none;
+		}
+
+		&:active {
+			color: rgb(44, 130, 252);
+		}
+
+	}
+}
+
+.ui-widget-header {
+	position:relative;
+	border: 1px solid rgb(251,251,251);
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	   background-color: #eeeeee;
+	   background-image: -moz-linear-gradient(top, #eeeeee, #999999);/* FF3.6 */
+	   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #999));/* Saf4+, Chrome */
+	   background-image: -webkit-linear-gradient(#eeeeee, #999999);/* Chrome 10+, Saf6 */
+	   background-image: linear-gradient(#eeeeee, #999999);
+
+
+	.cal-date & {
+		position:relative;
+		border: 1px solid rgb(184, 182, 182);
+		color: rgb(255, 255, 255);
+		font-weight: bold;
+		background-color: rgb(238, 238, 238);
+		background-image: none;
+	}
+
+	a {color: rgb(255, 255, 255);}
+
+	.ui-tabs & {border: none;}
+}
+
+
+#mylists .ui-widget-header {
+	background-color: #eeeeee;
+	background-image: -moz-linear-gradient(top, #eeeeee, #b2b2b2); /* FF3.6 */
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #999),color-stop(1, #eeeeee)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#eeeeee, #b2b2b2);/* Chrome 10+, Saf6 */
+	background-image: linear-gradient(#eeeeee, #b2b2b2);
+}
+
+// Interaction Cues
+// ----------------------------------
+.ui-state-disabled { cursor: default !important; }
+
+
+// Interaction states
+// ----------------------------------
+.ui-state-default, .ui-widget-content .ui-state-default { /*border: 1px solid #d3d3d3;*/ border: 1px solid #bebebe; background: #f6f6f6; font-weight: normal; color: rgb(85, 85, 85); }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: rgb(85, 85, 85); text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus {
+	border: 1px solid #999999;
+	background-color: #dadada;
+	background-image: -moz-linear-gradient(top, #dadada 30%, #ababab 95%);
+	background-image: -webkit-gradient(linear,0 0, 0 100%, from(#dadada),color-stop(30%, #dadada),color-stop(95%, #ababab));
+	background-image: -webkit-linear-gradient(#dadada, #ababab);
+	background-image: linear-gradient(#dadada, #ababab);
+
+	font-weight: normal;
+	color: #000;
+}
+.ui-menu-item .ui-state-hover, .ui-menu-item .ui-widget-content .ui-state-hover, .ui-menu-item .ui-state-focus, .ui-menu-item .ui-widget-content .ui-state-focus {
+	border: none;
+}
+
+.ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:focus { color: #212121; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active {
+	border: 1px solid #aaaaaa;
+	background-color: rgb(255, 255, 255);
+	background-image: -moz-linear-gradient(top, #dadada 10%, rgb(255, 255, 255) 35%); /* FF3.6 */
+	background-image: -webkit-gradient(linear,0 0, 0 100%, from(#dadada),color-stop(40%, rgb(255, 255, 255))); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#dadada, rgb(255, 255, 255));/* Chrome 10+, Saf6 */
+	background-image: linear-gradient(#dadada, rgb(255, 255, 255));
+
+	font-weight: normal;
+	color: #212121;
+}
+
+// interaction specific  : tabs
+.ui-tabs .ui-state-active, .ui-widget-content .ui-tabs .ui-state-active { border-width:1px 1px 0;}
+
+// interaction specific datatables
+.dataTables_paginate .ui-state-active {
+	border: 1px solid #af6637;
+	background-color: rgb(255, 255, 255);
+	background-image: -moz-linear-gradient(top, #fce7c5 10%, #faa51a 45%); /* FF3.6 */
+	background-image: -webkit-gradient(linear,0 0, 0 100%, from(#fce7c5),color-stop(40%, #faa51a)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#fce7c5, #faa51a);/* Chrome 10+, Saf6 */
+	background-image: linear-gradient(#fce7c5, #faa51a);
+
+	font-weight: normal;
+	color: #212121;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+// interaction specific aside menu
+aside .accord-menu .ui-state-default,
+aside .accord-menu .ui-widget-content .ui-state-default {
+	font-weight: normal;
+	color: rgb(158, 158, 158);
+	background: rgb(71, 71, 71);
+	border-width: 1px 0;
+	border-top: 1px solid rgb(34, 71, 128);
+	border-bottom: 1px solid rgb(8, 17, 31);
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+// dialog titlebar close */
+.ui-dialog-titlebar-close .ui-state-hover,
+.ui-dialog-titlebar .ui-widget-header .ui-dialog-titlebar-close .ui-state-hover,
+.ui-widget-content .ui-dialog-titlebar-close .ui-state-hover {
+	border: none;
+	background: transparent;
+	background-image: none;
+			filter:  none; /* IE6,IE7 */
+		-ms-filter: none; /* IE8 */
+}
+
+// Interaction Cues
+// ----------------------------------
+.ui-state-highlight, .ui-widget-content .ui-state-highlight { color: #7B3E15;}
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #7B3E15; }
+.ui-state-error, .ui-widget-content .ui-state-error {color: #cd0a0a;}
+.ui-state-error a, .ui-widget-content .ui-state-error a { color: #cd0a0a; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text { color: #cd0a0a; }
+.ui-priority-primary, .ui-widget-content .ui-priority-primary { font-weight: 600; }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
+.ui-state-disabled, .ui-widget-content .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {border: 1px solid #f9dd34; background: #ffef8f; color: #363636; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
+.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #cd0a0a; color: rgb(255, 255, 255); }
+.ui-state-error a, .ui-widget-content .ui-state-error a { color: rgb(255, 255, 255); }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text { color: rgb(255, 255, 255); }
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+.ui-priority-primary, .ui-widget-content .ui-priority-primary { font-weight: 600; }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=7); font-weight: normal; }
+
+// Icons
+// ----------------------------------
+
+// states and images
+.ui-icon {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	@include fa-FontAwesome();
+}
+
+.ui-icon-help {
+	float: right;
+	margin-top: -0.4em;
+}
+
+.ui-icon, .ui-state-default .ui-icon {
+	@include fa-FontAwesome();
+	color: $icon-default-color;
+}
+.ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
+	@include fa-FontAwesome();
+	color: $icon-default-color;
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-hover-color;
+}
+.ui-state-active .ui-icon, .ui-state-highlight .ui-icon {
+	@include fa-FontAwesome();
+	color: $icon-hover-color;
+}
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-error-color;
+}
+
+// exceptions
+.record #tools .ui-state-default .ui-icon {
+	@include fa-FontAwesome();
+	color: $icon-lite-default-color;
+}
+
+// positioning
+.ui-icon-triangle-1-e:before {
+	content: "\f138";
+}
+
+.ui-icon-circle-triangle-e:before {
+	content: "\f138";
+}
+.ui-icon-circle-triangle-s:before{
+ 	content: "\f13a";
+}
+.ui-icon-circle-triangle-w:before {
+	content: "\f137";
+}
+.ui-icon-circle-triangle-n:before{
+	content: "\f139";
+}
+.ui-icon-circle-close:before {
+	content: "\f138";
+}
+.ui-icon-note {
+	content: "\f0f6";
+}
+.ui-icon-home {
+	content: "\f015";
+}
+.ui-icon-flag {
+	content: "\f024";
+}
+.ui-icon-calendar {
+	content: "\f073";
+}
+.ui-icon-close {
+	content: "\f00d";
+}
+.ui-icon-bullet {
+	content: "\f111";
+}
+.ui-icon-check {
+	content: "\f00c";
+}
+.ui-icon-plus {
+	content: "\f067";
+}
+.ui-icon-minus {
+	content: "\f068";
+}
+.ui-icon-circle-plus {
+	content: "\f055";
+}
+.ui-icon-circle-minus {
+	content: "\f056";
+}
+
+// Icon Specific DataTables
+// ----------------------------------
+// states and images
+
+.dataTables_wrapper .ui-icon {
+	@include fa-FontAwesome();
+	width: 16px;
+	height: 16px;
+	color: $link-inverse-color;
+}
+
+.dataTables_wrapper .ui-widget-content .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-inverse-color;
+}
+.dataTables_wrapper .ui-widget-header .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-inverse-color;
+}
+.dataTables_wrapper .ui-state-default .ui-icon {
+	@include fa-FontAwesome();
+	color: rgb(34, 34, 34);
+	// background-image: url("../img/tools-222222.png");
+}
+.dataTables_wrapper .ui-state-hover .ui-icon,
+.dataTables_wrapper .ui-state-focus .ui-icon {
+	@include fa-FontAwesome();
+	color: rgb(34, 34, 34);
+	// background-image: url("../img/icons/tools-hover.png");
+}
+
+.dataTables_wrapper .ui-state-active .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-hover-color;
+	// background-image: url("../img/icons/tools-hover.png");
+}
+.dataTables_wrapper .ui-state-highlight .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-active-color;
+	// background-image: url("../img/icons/tools-active.png");
+}
+
+.dataTables_wrapper .ui-state-error .ui-icon,
+.dataTables_wrapper .ui-state-error-text .ui-icon {
+	@include fa-FontAwesome();
+	color: $link-error-color;
+	// background-image: url("../img/icons/tools-error.png");
+}
+
+.dataTables_wrapper .ui-buttonset .ui-state-default .ui-icon {
+	@include fa-FontAwesome();
+	color: rgb(34, 34, 34);
+	// background-image: url("../img/tools-222222.png");
+}
+
+// Misc visuals
+// ----------------------------------
+
+// Corner radius
+.ui-corner-tl { border-top-left-radius: 4px; }
+.ui-corner-tr { border-top-right-radius: 4px; }
+.ui-corner-bl { border-bottom-left-radius: 4px; }
+.ui-corner-br { border-bottom-right-radius: 4px; }
+.ui-corner-top {  border-top-left-radius: 4px; border-top-right-radius: 4px; }
+.ui-corner-bottom { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+.ui-corner-right { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+.ui-corner-left { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.ui-corner-all { border-radius: 4px;}
+
+// Overlays
+.ui-widget-overlay {
+	position:fixed; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; z-index: 99999;
+	background: rgb(94,94,94); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVlNWU1ZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgb(94,94,94) 0%, rgb(0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(94,94,94)), color-stop(100%,rgb(0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgb(94,94,94) 0%,rgb(0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgb(94,94,94) 0%,rgb(0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgb(94,94,94) 0%,rgb(0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(top, rgb(94,94,94) 0%,rgb(0,0,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e5e5e', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+
+	opacity: .80;
+	filter:Alpha(Opacity=80);
+}
+
+.ui-widget-shadow {
+	margin: -5px 0 0 -5px;
+	padding: 5px;
+	background-color: #eee;
+	background-image: -moz-linear-gradient(top, #999, #666); /* FF3.6 */
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #999),color-stop(1, #666)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#999, #666);/* Chrome 10+, Saf6 */
+	background-image: linear-gradient(#999, #666);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#999999', endColorStr='#666666'); /* IE6-IE9 */
+
+	opacity: .30;
+	filter:Alpha(Opacity=30);
+
+	border-radius: 5px;
+}
+
+// Accordion
+// ---------------------------------
+.ui-accordion .ui-accordion-header { position: relative; margin-top: 1px; font-size: 1.15em; cursor: pointer; font-family: 'Open Sans', sans-serif; font-weight: 600; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em .7em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-content-active { display: block; }
+
+// Accordion Specific
+// ----------------------------------
+.ui-accordion-content ul {margin: 0;}
+.ui-accordion-content li {margin-bottom: .5em;}
+.ui-accordion h3.ui-state-default:last-child {
+	border-bottom: none;
+}
+.ui-accordion h3.ui-state-hover:last-child {
+	border-bottom: none;
+}
+
+
+// custom-lists
+.ui-accordion .ui-accordion-content { padding: 0 .7em 1em .7em; }
+
+// Accordion Specific Aside accordian menu
+// ----------------------------------
+aside .accord-menu .ui-accordion .ui-accordion-header {
+	position: relative;
+	margin-top: 1px;
+	font-size: 1.3em;
+	padding: .4em;
+}
+aside .accord-menu .ui-accordion .ui-accordion-header .ui-icon { width:0; height:0; background-image:none; }
+
+aside .accord-menu .ui-accordion h3.ui-state-active {
+	color:rgb(255, 255, 255);
+}
+
+aside .accord-menu .ui-widget-content {
+	border: 1px solid rgb(22, 80, 131);
+	color: rgb(248, 248, 248);
+	background: rgb(240, 240, 240);
+	max-width: 100%;
+	margin: 0;
+	padding: 1em;
+}
+
+aside .accord-menu .profile .ui-corner-all {
+	border-radius: 0;
+}
+
+// Autocomplete
+// ----------------------------------
+// autocomplete search using jquery.autocomplete.js
+
+.ui-autocomplete {
+	position: absolute;
+	cursor: default;
+	//max-height: 500px;
+	max-width:500px;
+	min-width:250px;
+	overflow-y: auto;
+	z-index: 3000;
+	font-weight: normal;
+
+		.ui-state-hover,
+		.ui-widget-content .ui-state-hover,
+		.ui-state-focus,
+		.ui-widget-content .ui-state-focus {
+			background-image: none; /* FF3.6 */
+					  filter: none; /* IE6,IE7 */
+				  -ms-filter: none; /* IE8 */
+
+			background-color: #e8e8e8;
+			font-weight: normal;
+			color: #000;
+		}
+
+		&.ui-corner-all,
+		.ui-corner-all {
+			border-radius: 0;
+		}
+
+}
+
+.ui-autocomplete.ui-widget-content {
+	z-index: 99999;
+	border: 1px solid #999999;
+	color: #333;
+	background: rgb(255, 255, 255);
+}
+
+.ui-autocomplete.ui-widget-content{
+	display: none;
+}
+
+.ui-autocomplete-loading { background: white url('../img/base/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+.ui-loading {
+	position: absolute;
+	top: 40%;
+	left: 46%;
+	background: url('../img/base/ui-anim-100x.gif') center 5px no-repeat;
+	z-index: 50000;
+}
+
+//
+.ui-autocomplete-category {
+	font-weight: 600;
+	padding: .2em .4em;
+	margin: .8em 0 .2em;
+	line-height: 1.5;
+
+		&:first-child {
+			margin: .3em 0 .2em;
+			width: 100%;
+		}
+}
+
+// overwrite for top-bar
+.ui-autocomplete-category,
+li.ui-autocomplete-category:hover,
+li.ui-autocomplete-category.active,
+li.ui-autocomplete-category:focus {
+	background-color: rgb(239, 239, 239);
+}
+
+.ui-autocomplete-link {
+		text-align: right;
+		line-height: 1.5;
+}
+
+//
+#loadingDiv { display: block; padding: 8em 2.5em 1em; text-transform: capitalize; font-size: 1em;}
+#loadingDiv span { display: block; padding: 2em; text-transform: capitalize; font-size: 1em; text-indent: -1000em;}
+
+//	autocomplete search using jquery.autocomplete.js
+// ----------------------------------------------------------
+.ac_results {
+	padding: 0;
+	overflow: hidden;
+	z-index: 99999;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.ac_loading {background: white url('indicator.gif') right center no-repeat;}
+
+.ac_odd {background-color: #eee;}
+
+.ac_over {background-color: #0A246A; color: white;}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+
+	// if width will be 100% horizontal scrollbar will appear
+	// when scroll mode will be used
+
+	// width: 100%;
+	font: menu;
+	font-size: 12px;
+
+	// it is very important, if line-height not setted or setted
+	// in relative units scroll will be broken in firefox
+
+	line-height: 16px;
+	overflow: hidden;
+}
+
+// workaround
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+// Menu
+// ----------------------------------
+
+.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+
+	.ui-menu {
+		margin-top: -3px;
+	}
+
+}
+
+.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	width: 100%;
+	clear: both;
+
+		a,
+		a:hover,
+		a:focus {
+			text-decoration: none;
+		}
+
+		.ui-corner-all {
+			border-radius: 0px;
+		}
+
+}
+
+
+.ui-menu-item.ui-state-hover,
+.ui-menu-item.ui-state-focus {
+	border: none;
+}
+
+
+.ui-menu-item.ui-widget-content .ui-state-hover,
+.ui-menu-item.ui-widget-content .ui-state-focus {
+	border: none;
+}
+
+.ui-widget-content .ui-menu-item a:hover,
+.ui-widget-content .ui-menu-item a:focus {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
+
+//
+.top-bar ul.ui-menu>li.ui-menu-item a {
+	text-decoration: none;
+	display: block;
+	padding: .2em .4em;
+	height: auto;
+	min-height: 43px;
+	line-height: 3;
+	border-bottom: 1px solid rgb(239, 239, 239);
+	color: rgb(0, 101, 137);
+	font-weight: normal;
+
+}
+//
+
+.mylists-combo .ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	min-height: 10px;
+	line-height:1.5;
+	border-bottom:1px solid #efefef;
+	background-color: red;
+}
+
+.ui-menu .ui-menu-item a span {
+	text-decoration:none;
+	display:block;
+	padding:.15em .4em;
+	line-height:1.5;
+}
+.ui-menu .ui-menu-item a span.highlight {
+	display: inline;
+	font-weight: 600;
+	padding: 0;
+}
+.ui-menu .ui-menu-item a span.desc {
+	white-space: normal;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	// margin: -1px;
+}
+
+.ui-menu .ui-menu-item .label {
+	line-height:1;
+	font-weight: bold;
+}
+.ui-menu .ui-menu-item .desc {
+	line-height:1;
+	font-size: .9em
+}
+// sitesearch using autocomplete
+#project-label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+// image icon
+.project-icon-container {
+	height: 45px;
+	width: 65px;
+	text-align: center;
+	float: left;
+}
+.project-icon {
+	// float: left;
+	// height: 32px;
+	// width: 32px;
+	// margin: 5px 5px 5px 0;
+
+	max-height: 45px;
+	max-width: 63px;
+	border-radius: 0px;
+
+		-moz-background-clip: padding; /* Firefox 3.6 */
+	 -webkit-background-clip: padding; /* Safari 4 Chrome 6 */
+			 background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+#project-description {
+	margin: 0;
+	padding: 0;
+}
+.suggest{
+	margin-left:70px;
+}
+
+// Datepicker
+// ----------------------------------
+.ui-datepicker { display: none; width: 17em; padding: .2em .2em 0; z-index: 9999; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+
+
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+	text-indent: -999999em;
+}
+.ui-datepicker .ui-datepicker-prev span:before,
+.ui-datepicker .ui-datepicker-next span:before {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+	text-indent: 0;
+}
+
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select {
+	font-size:1em;
+	margin:1px 0;
+	border-color:#8B8B07 #bbb #bbb #8B8B07;
+	border-style:solid;
+	border-width:1px;
+	background:#eee;
+	height: 24px;
+	line-height: 24px;
+}
+
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year { width: 49%; display: inline-block;}
+// .ui-datepicker select.ui-datepicker-month { margin-right:3px;}
+
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: 600; border: 0; }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+
+.ui-datepicker td a.ui-state-highlight {
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	overflow: auto;
+	zoom:1;
+	float:none;
+	margin:0;
+	padding: .2em;
+	width:auto;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+.ui-datepicker-trigger {float:left;}
+// with multiple calendars
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; }
+
+// RTL support
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+//
+.ui-datepicker-header:not('.ui-datepicker-prev'),
+.ui-datepicker-header:not('.ui-datepicker-next') {
+
+	.ui-state-hover,
+	.ui-state-focus {
+		border-bottom:none;
+		background: rgb(251,251,251);
+	}
+
+}
+
+.ui-datepicker-prev.ui-state-hover,
+.ui-datepicker-next.ui-state-hover,
+.ui-datepicker-header .ui-datepicker-prev.ui-state-hover,
+.ui-datepicker-header .ui-datepicker-next.ui-state-hover,
+.ui-widget-content .ui-datepicker-prev.ui-state-hover,
+.ui-widget-content .ui-datepicker-next.ui-state-hover,
+.ui-datepicker-prev.ui-state-focus,
+.ui-datepicker-next.ui-state-focus,
+.ui-datepicker-header .ui-datepicker-prev.ui-state-focus,
+.ui-datepicker-header .ui-datepicker-next.ui-state-focus,
+.ui-widget-content .ui-datepicker-prev.ui-state-focus,
+.ui-widget-content .ui-datepicker-next.ui-state-focus {
+		border:none;
+		background: transparent;
+		color: rgb(0, 0, 0);
+}
+
+
+// datepicker specific calendar
+.cal-date .ui-datepicker .ui-datepicker-prev,
+.cal-date .ui-datepicker .ui-datepicker-next { position:absolute; top: 5px; width: 1.8em; height: 1.8em; }
+
+.cal-date .ui-datepicker .ui-datepicker-prev-hover { left:2px; }
+.cal-date .ui-datepicker .ui-datepicker-next-hover { right:2px; }
+
+.cal-header {padding:0 0 10px;}
+.cal-header .left p {margin:10px 0 0;}
+.cal-header .cal-date .ui-corner-all {border:0;}
+.cal-header .cal-date .ui-widget-header {
+	background-color: transparent;
+	width: 300px;
+}
+
+.cal-header .ui-datepicker .ui-datepicker-title select {
+	border:1px solid #C8C8C8;
+	background: #fff;
+}
+
+.cal-date .ui-datepicker .ui-datepicker-title select { border-color:#8B8B07 #bbb #bbb #8B8B07; border-style:solid; border-width:1px; background:#eee; }
+
+.cal-date .ui-datepicker-header .ui-state-hover,
+.ui-datepicker-header .ui-state-focus { border-bottom:none; background: #ddd; }
+
+.cal-date .ui-datepicker-calendar .ui-state-default,
+.ui-datepicker-calendar .ui-widget-content .ui-state-default { border: 1px solid #c7c7c7; background: #eeedaf;background: #fcfcf6; color: rgb(136, 136, 136); font-weight: normal; outline: none; }
+
+
+.cal-date .ui-datepicker-calendar .ui-state-default a,
+.ui-datepicker-calendar .ui-state-default a:link,
+.ui-datepicker-calendar .ui-state-default a:visited { color: rgb(136, 136, 136); text-decoration: none; outline: none; }
+
+.cal-date .ui-datepicker-calendar .ui-state-hover,
+.ui-datepicker-calendar .ui-widget-content .ui-state-hover,
+.ui-datepicker-calendar .ui-state-focus,
+.ui-datepicker-calendar .ui-widget-content .ui-state-focus { border: 1px solid #2c2c2b; background: rgb(255, 255, 255); color: #2c2c2b; outline: none; }
+
+.cal-date .ui-datepicker-calendar .ui-state-hover a,
+.ui-datepicker-calendar .ui-state-hover a:hover { color: #2c2c2b; text-decoration: none; outline: none; }
+
+.cal-date .ui-datepicker-calendar .ui-state-active,
+.ui-datepicker-calendar .ui-widget-content .ui-state-active { border: 1px solid #92928E; background: rgb(255, 255, 255); font-weight: 600; color: #363636; outline: none; }
+
+.cal-date .ui-datepicker-calendar .ui-state-active a,
+.ui-datepicker-calendar .ui-state-active a:link,
+.ui-datepicker-calendar .ui-state-active a:visited { color: #363636; outline: none; text-decoration: none; }
+
+.cal-date .ui-datepicker-calendar .ui-state-highlight,
+.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {border: 1px solid #c7c7c7; background: rgb(255, 255, 255); color: rgb(136, 136, 136); }
+
+.cal-date .ui-datepicker-calendar .ui-state-highlight a,
+.ui-datepicker-calendar .ui-widget-content .ui-state-highlight a { color: #2c2c2b; }
+
+.cal-date .ui-datepicker-calendar { display: none;}
+
+.cal-date .ui-corner-all { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;}
+.cal-date .ui-widget-content { border: none; color: #333; background: transparent; background-image: none;}
+
+.cal-date .ui-datepicker-header .ui-state-hover,
+.cal-date .ui-datepicker-header .ui-state-focus { border:none; background: transparent; }
+
+#datepicker {width: 300px;}
+
+// Dialog
+// ---------------------------------
+.ui-dialog {
+	position: absolute;
+	padding: .2em; width: 300px;
+	z-index: 999999;
+	background-color:rgb(255, 255, 255);
+	border:2px solid #c7c7c7; color:#555;
+
+	.ui-dialog-titlebar { padding: .5em 1em .3em; position: relative; z-index: 999999;}
+
+	.ui-dialog-title { float: left; margin: .1em 16px .2em 0; font-family: 'Oswald', Helvetica, sans-serif; font-weight: 500; color: rgb(21, 46, 80);}
+
+	.ui-dialog-titlebar-close {
+		position: absolute;
+		right: -12px;
+		top: -18px;
+		width: 25px;
+		height:29px;
+		margin: 0;
+		padding: 0;
+		background: rgba(0,0,0,0);
+		z-index: 999999;
+		cursor: pointer;
+
+		span:first-child { display: block; margin: 1px; }
+
+		span.ui-button-text { text-indent: -99999em; display: none; z-index: -1; font-size: 1px; color: transparent;}
+
+		&:hover,
+		&:focus {margin: 0; padding: 0;}
+
+	}
+
+	// dialog specific form submit buttons
+	.actions { padding: 5px 20px 0 0}
+
+}
+
+
+.ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em .6em .3em .6em; line-height: 1.4em; width:auto; overflow:visible; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+
+
+// override
+.ui-dialog .ui-button.ui-state-default {border: none; background: none; }
+
+.ui-dialog .ui-widget-header .ui-icon {
+	@include fa-FontAwesome();
+	display: block;
+	background-image: none;
+	@include border-radius(16px);
+	background: rgb(0, 0, 0);
+	border: 3px solid rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+	width:26px;
+	height:26px;
+	text-indent:0;
+	text-align: center;
+}
+
+.ui-dialog .ui-widget-header .ui-icon:before {
+	@include fa-FontAwesome();
+	content: "\03a7";
+	position: relative;
+	display: block;
+	color: rgb(255, 255, 255);
+	width:16px;
+	height:16px;
+	margin:auto;
+	padding-right: 0px;
+	padding-left:0px;
+	padding-top: 2px;
+	text-indent: 0;
+	font-size: .8em;
+	font-weight: 600;
+}
+
+.ui-dialog .ui-widget-overlay {background-color:#000; cursor:wait;}
+.ui-dialog .ui-widget-content { background-color:rgb(255, 255, 255); }
+.ui-dialog .ui-widget-header { border: none; background: rgb(245,245,245); color:rgb(162, 142, 92); font-size:1.6em; line-height:1; font-weight: normal; }
+.ui-dialog h2 { padding: .3em; border: none; background: rgb(245,245,245); color:rgb(162, 142, 92); font-size:1.5em; line-height:1; font-weight: normal; }
+
+// Dialog specific:
+// -------------------------------------
+// dialog specific advanced search
+header.box_round .ui-dialog-titlebar-close { position: absolute; right:.3em; top:.3em; width: 50px; margin: -10px 0 0 0; padding: 1px; height: 16px; cursor:pointer; text-decoration: none;}
+header.box_round .ui-dialog-titlebar-close .ui-icon {vertical-align: middle; display: inline-block;}
+
+// dialog specific hint
+.ahint {
+	padding:0;
+	width:125px;
+	position:absolute;
+	z-index:9999;
+	box-shadow: 0 0 5px #aaa;
+}
+
+.ahint { border: none; }
+
+.hint {
+	padding:8px;
+	color: #333;
+	background: rgb(255, 255, 255);
+	background-image: none;
+}
+.hint .ui-dialog-titlebar-close {
+	position: absolute;
+	right:.3em;
+	top:.3em;
+	width: 54px;
+	margin:0;
+	padding: 1px;
+	height: 16px;
+	cursor:pointer;
+	text-decoration: none;
+	font-size:.85em;
+}
+
+.hint .ui-dialog-titlebar-close:before,
+.hint .ui-dialog-titlebar-close:after {
+	content: "";
+	display: table;
+}
+
+.hint .ui-dialog-titlebar-close:before,
+.hint .ui-dialog-titlebar-close:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+
+.hint .ui-dialog-titlebar-close:after { clear: both; }
+
+.hint .ui-dialog-titlebar-close .ui-icon {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+// dialog specific containing tinymce
+.modal-tinymce.ui-dialog {
+	width: 520px;
+
+	.ui-widget-header {
+		padding: .5em 1em .3em .3em;
+		background: rgb(255, 255, 255);
+	}
+
+	.ui-dialog-content {
+		position: relative; border: 0; padding: 0; background: none; overflow: auto; zoom: 1;
+
+		fieldset{
+			margin: 0; border:0;
+			width: 100%;
+
+			.actions {
+				border: none;
+			}
+		}
+	}
+
+}
+
+// dialog specific toolhint v3
+.hint3open .ui-dialog-titlebar-close { position: absolute; right:.3em; top:.3em; width: 50px; margin:0; padding: 1px; height: 16px; cursor:pointer; text-decoration: none;}
+.hint3open .ui-dialog-titlebar-close .ui-icon {vertical-align: middle; display: inline-block;}
+.ui-dialog .hint3open .ui-dialog-content { position: relative; border: 0; padding: .3em; background: none; overflow: auto; zoom: 1; }
+
+.ui-dialog .hint3open .ui-dialog-titlebar-close span {
+	margin: 1px;
+}
+
+.hint p {
+	margin-top: 1.4em;
+	margin-bottom: 0em;
+}
+.hint iframe {
+	margin-top: 1.4em;
+}
+
+
+// Dialog Specific
+// ---------------------------------
+.tooltarget {
+	height:auto;
+	left:25px;
+	margin:0;
+	overflow:auto;
+	padding:2em 1em;
+	position:absolute;
+	top:60px;
+	width:500px;
+	z-index:2500;
+	display:none;
+}
+.tooltarget.active {
+	display:block;
+}
+
+.tooltarget .titlebar-close {
+	cursor:pointer;
+	height:16px;
+	margin:0;
+	padding:1px;
+	position:absolute;
+	right:0;
+	top:0;
+	width:50px;
+	color:#AA5C23;
+	text-decoration:none;
+
+	&:hover {
+		text-decoration:none;
+	}
+
+	span,
+	span:hover {
+		vertical-align: middle;
+		text-decoration:none;
+		position: absolute;
+		right:2px;
+		top:2px;
+	}
+
+}
+//
+
+
+// Progressbar
+// ----------------------------------
+.ui-progressbar { height:2em; text-align: left; }
+.ui-progressbar .ui-progressbar-value { margin: -1px; height:100%; }
+
+// Resizable
+// ----------------------------------
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+// Slider
+// ----------------------------------
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.ui-slider-vertical .ui-slider-range-max { top: 0; }
+
+// Tabs
+// ----------------------------------
+// position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")
+.ui-tabs { position: relative; padding: 0 0 .2em; zoom: 1; }
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0;}
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; /*top: 1px;*/ margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { display: block; padding: .2em 1em; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+// first selector in group seems obsolete,
+// but required to overcome bug in Opera applying cursor: text overall
+// if defined elsewhere...
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }
+.ui-tabs .ui-tabs-panel { display: block; border: 0; padding: 1em .7em;  background: transparent; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+
+// Tabs Specific
+// ----------------------------------
+.tabwrap  {
+	display: block;
+	margin:0 0 2em;
+	padding:0;
+
+	header  {
+		display: block;
+		margin:0;
+		padding:0;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+
+.tabwrap > header.wtabs {
+	margin: 0;
+	padding:.3em 0 0;
+	width: auto;
+
+		h1 {
+			margin:0;
+			padding:0 0 0 .7em;
+			width: auto;
+		}
+
+}
+
+.tabwrap .ui-widget-content {
+	border: none;
+
+		-moz-background-clip: padding;     /* Firefox 3.6 */
+	 -webkit-background-clip: padding;  /* Safari 4 Chrome 6 */
+			 background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+.tabwrap .ui-tab-panel {
+	border: none;
+
+		-moz-background-clip: padding;     /* Firefox 3.6 */
+	 -webkit-background-clip: padding;  /* Safari 4 Chrome 6 */
+			 background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+.tabwrap .ui-tabs {
+	padding:0;
+}
+
+#content .tabwrap > header.gradient {
+	background: rgb(235,235,235); /* Old browsers */
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNkNGQ0ZDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI0MCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(212,212,212,1) 10%, rgba(238,238,238,1) 40%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,rgba(212,212,212,1)), color-stop(40%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(212,212,212,1) 10%,rgba(238,238,238,1) 40%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(212,212,212,1) 10%,rgba(238,238,238,1) 40%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(212,212,212,1) 10%,rgba(238,238,238,1) 40%); /* IE10+ */
+	background: linear-gradient(top, rgba(212,212,212,1) 10%,rgba(238,238,238,1) 40%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d4d4', endColorstr='#eeeeee',GradientType=0 ); /* IE6-8 */
+}
+
+.tabs .ui-tabs-panel {
+
+	h1 {
+		margin:0 0 .5em;
+	}
+
+	li {
+		padding-bottom:1.25em;
+	}
+
+	li h2 {
+		margin:0;
+	}
+
+	.section-edu li {
+		padding:.25em 0;
+	}
+
+}
+
+aside .tabs .ui-tabs-panel {
+
+	li {
+		padding-bottom: 0;
+	}
+
+}
+
+// end jquery-ui

@@ -1,0 +1,9 @@
+pre{background:#fdf6e3;background:#f8f8f8;word-wrap:break-word;margin:0;padding:0;padding:10px;color:#657b83;font-size:14px;margin-bottom:20px}pre,code{font-family:'Monaco',courier,monospace}
+pre .comment{color:#93a1a1}pre .constant{color:#657b83}pre .constant.language{color:#268bd2}pre .constant.regexp{color:#2aa198}pre .storage{color:#268bd2}
+pre .string,pre .comment.docstring{color:#2aa198}pre .support.tag.script,pre .support.tag.style{color:#2aa198}pre .string.regexp{color:#2aa198}pre .string.regexp.open,pre .string.regexp.close{color:#2aa198}
+pre .keyword,pre .selector{color:#859900}pre .inherited-class{font-style:italic}pre .entity{color:#b58900}pre .support,*[data-language="c"] .function.call{color:#859900}
+pre .support.method{color:#657b83}pre .support.property{color:#657b83}pre .variable.global,pre .variable.class,pre .variable.instance{color:#657b83}.rainbow{padding:0;font-size:.9em}
+.rainbow .rainbow-header{background-color:darken(rgb(34, 34, 34)82a,3%)}.rainbow-header .rainbow-language{text-align:right;padding:.5em}.rainbow-line:hover{background-color:darken(rgb(34, 34, 34)82a,5%)}
+.rainbow-line .rainbow-line-number{background-color:darken(rgb(34, 34, 34)82a,8%)}.rainbow-line-number{text-align:right;vertical-align:top;background-color:darken(rgb(34, 34, 34)82A,3%);padding-left:.4em;padding-right:.4em;&::before{content:attr(data-number)}
+}.rainbow-line-number{text-align:right;vertical-align:top;background-color:darken(rgb(34, 34, 34)82A,3%);padding-left:.4em;padding-right:.4em;&::before{content:attr(data-number)}
+}.rainbow-line-code{padding-left:1em;width:100%}}}

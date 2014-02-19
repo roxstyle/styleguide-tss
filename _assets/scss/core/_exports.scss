@@ -1,0 +1,26 @@
+// File: tss/partials/exports
+// Imported by: global/core
+//
+// Description:
+// 	Export TSS variables to the DOM
+//
+// Requires:
+// 	- Sass
+// 	- Compass
+
+@import "easings";
+
+// Global animation duration
+$global-animation-duration: 1s !default;
+
+// Global animation easing
+$global-animation-easing: $linear !default;
+
+// Global animation delay
+$global-animation-delay: ($global-animation-duration * 0.25) !default;
+
+#tss {
+	@include animation-duration($global-animation-duration);
+	@include animation-timing-function($global-animation-easing);
+	@include animation-delay($global-animation-delay);
+}

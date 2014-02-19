@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem UI Components Forms</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="../_assets/css/ui.css" rel="stylesheet" media="all">
+	<!--  -->
+	<style type="text/css">
+	#staticTable tbody td:first-child {width: 30%;}
+	#staticTable tbody td:nth-child(2) {width: 20%;}
+	#staticTable tbody td:nth-child(3) {width: 25%;}
+	#staticTable tbody td:last-child {width: 25%;}
+	/* overrides for masthead 2 */
+	</style>
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<header role="banner" class="masthead gradient">
+		<!-- ajax siteMainheader() -->
+	</header><!-- /header -->
+
+	<header id="header-b" class="record">
+
+		<div class="row">
+			<div class="h-content">
+				<h1 class="name">Style Guide</h1>
+			</div>
+		</div>
+		<!-- menu -->
+		<!-- category content navigation -->
+		<div id="cat-nav" class="row cat-bar">
+
+			<div class="h-content">
+				<!-- details navigation -->
+				<div class="nav-b nav-primary">
+					<nav role="navigation" class="cat-sections">
+						<h4 class="toggleMenu">Menu</h4>
+
+						<ul class="nav-cat">
+							<li class="structure" data-section="structure">
+								<a href="../index.html">General</a>
+							</li>
+							<li class="structure" data-section="structure">
+								<a href="../coding/coding.html">Coding Practices</a>
+							</li>
+							<li class="ui" data-section="ui">
+								<a href="ui.html">UI</a>
+							</li>
+							 <li class="base active" data-section="base">
+								<a href="base.html">Base</a>
+							</li>
+							<li class="modules" data-section="modules">
+								<a href="modules.html">Modules</a>
+							</li>
+							<li class="svg-color" data-section="svg-color">
+								<a href="svg-color.html">SVG Color Chart</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /details navigation -->
+			</div>
+
+		</div>
+
+	</header>
+
+	<!-- content -->
+	<div class="content">
+
+		<!-- complementary content -->
+		<aside role="complementary" class="">
+
+			<nav>
+				<ul class="side-nav">
+					<li class="heading">Base Layout</li>
+					<li><a href="base.html#s-typography">Typography</a></li>
+					<li><a href="base.html#s-tables">Tables</a></li>
+					<li class="divider"></li>
+					<li class="heading">Forms</li>
+					<li><a href="#s-forms">Forms</a></li>
+					<li class="divider"></li>
+					<li class="heading">Buttons</li>
+					<li><a href="buttons.html#s-buttons">Buttons</a></li>
+					<li><a href="buttons.html#s-button-group">Button Groups</a></li>
+					<li><a href="buttons.html#s-button-split">Split Buttons</a></li>
+					<li><a href="buttons.html#s-button-dropdown">Button Dropdowns</a></li>
+					<li class="divider"></li>
+					<li class="heading">Navigation</li>
+					<li><a href="nav.html#s-sitenav">Site Nav</a></li>
+					<li><a href="nav.html#s-sidenav">Side Nav</a></li>
+					<li><a href="nav.html#s-subnav">SubNav</a></li>
+					<li><a href="nav.html#s-breadcrumbs">Breadcrumbs</a></li>
+					<li><a href="nav.html#s-pagination">Pagination</a></li>
+					<li class="divider"></li>
+					<li class="heading">Media</li>
+					<li><a href="media.html#s-images">Images</a></li>
+					<li><a href="media.html#s-tn">Thumbnails</a></li>
+					<li class="divider"></li>
+					<li class="heading">Fonts</li>
+					<li><a href="fonts.html#s-cdnfonts">Fonts CDN</a></li>
+					<li><a href="fonts.html#s-iconfonts">Icon Fonts</a></li>
+				</ul>
+			</nav>
+
+		</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+			<section id="s-forms" class="">
+				<h2>Forms</h2>
+				<section>
+					<header>
+						<h3 class="subheader">Default Styles using a grid</h3>
+						<p>All forms are given default styles to present them in a readable and scalable way. Styles are provided for text inputs, select lists, textareas, radio buttons and checkboxes, and buttons.</p>
+						<p>The default layout for labels is above their inputs, unless you have a simple form with a couple of fields like a login. For questions regarding default form UI, please read <a href="http://www.lukew.com/resources/web_form_design.asp">Luke Wroblewskis' Web Form Design.</a></p>
+						<p>This sample is using the grid for form columns, based on <a href="http://foundation.zurb.com/docs/components/grid.html">Foundation Zurb Grid</a></p>
+					</header>
+					<div class="row">
+						<div class="column large-12">
+							<!-- sample form structure -->
+							<form>
+								<fieldset>
+									<legend>Fieldset Legend</legend>
+								<div class="row">
+									<div class="large-12 columns">
+										<label>Input Label</label>
+										<input type="text" placeholder="large-12.columns" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-4 columns">
+										<label>Input Label</label>
+										<input type="text" placeholder="large-4.columns" />
+									</div>
+									<div class="large-4 columns">
+										<label>Input Label</label>
+										<input type="text" placeholder="large-4.columns" />
+									</div>
+									<div class="large-4 columns">
+										<div class="row collapse">
+											<label>Input Label</label>
+											<div class="small-9 columns">
+												<input type="text" placeholder="small-9.columns" />
+											</div>
+											<div class="small-3 columns">
+												<span class="postfix">.com</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-12 columns">
+										<label>Select Box</label>
+										<select>
+											<option value="husker">Husker</option>
+											<option value="starbuck">Starbuck</option>
+											<option value="hotdog">Hot Dog</option>
+											<option value="apollo">Apollo</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-6 columns">
+										<label>Choose Your Favorite</label>
+										<input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+										<input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+									</div>
+									<div class="large-6 columns">
+										<label>Check these out</label>
+										<input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+										<input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-12 columns">
+										<label>Textarea Label</label>
+										<textarea placeholder="small-12.columns"></textarea>
+									</div>
+								</div>
+							</fieldset>
+							</form>
+							<!-- /sample form -->
+						</div>
+						<div class="column large-12">
+							<!-- sample form code -->
+							<pre><code data-language="html">
+								<form>
+									<div class="row">
+										<div class="large-12 columns">
+											<label>Input Label</label>
+											<input type="text" placeholder="large-12.columns" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-4 columns">
+											<label>Input Label</label>
+											<input type="text" placeholder="large-4.columns" />
+										</div>
+										<div class="large-4 columns">
+											<label>Input Label</label>
+											<input type="text" placeholder="large-4.columns" />
+										</div>
+										<div class="large-4 columns">
+											<div class="row collapse">
+												<label>Input Label</label>
+												<div class="small-9 columns">
+													<input type="text" placeholder="small-9.columns" />
+												</div>
+												<div class="small-3 columns">
+													<span class="postfix">.com</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-12 columns">
+											<label>Select Box</label>
+											<select>
+												<option value="husker">Husker</option>
+												<option value="starbuck">Starbuck</option>
+												<option value="hotdog">Hot Dog</option>
+												<option value="apollo">Apollo</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-6 columns">
+											<label>Choose Your Favorite</label>
+											<input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
+											<input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
+										</div>
+										<div class="large-6 columns">
+											<label>Check these out</label>
+											<input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+											<input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-12 columns">
+											<label>Textarea Label</label>
+											<textarea placeholder="small-12.columns"></textarea>
+										</div>
+									</div>
+								</form>
+							</code></pre>
+							<!-- /sample form code -->
+						</div>
+					</div><!-- /row -->
+				</section><!-- /default form styles -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Default Styles in a flow</h3>
+						<p>The same default styles using an unordered list and wrappers</p>
+						<p>The default layout for labels  again, is above their inputs, unless you have a simple form with a couple of fields like a login. There is an alternative for inline labels</p>
+						<p>Notes:</p>
+						<ol>
+							<li>This sample is using wrapper classes in an unordered list. It uses less markup and classes.</li>
+							<li>Part of the consideration of what style to use for a forms depends on the form complexity and size. Some forms use an outer grid with nested flow wrappers. You will need to test your forms to decide what works best for the fields.</li>
+							<li>In both the flow and grid layouts - neither configuration uses a <strong>label</strong> tag wrapped around the <strong>input</strong>.</li>
+							<li>Remember that the <strong>label for="some-id"...</strong> is <strong>looking for input id="some-id".../</strong></li>
+							<li>We are still using xml endings in markup, at this point.</li>
+						</ol>
+					</header>
+					<div class="row">
+						<div class="column large-12">
+							<!-- sample form structure -->
+							<form>
+								<fieldset>
+									<legend>Fieldset Legend</legend>
+									<ul>
+										<li>
+											<span class="wrap">
+												<label for="p-a-fname">.wrap label</label>
+												<input id="p-a-fname" type="text" title="First Name" placeholder="placeholder" />
+											</span>
+											<span class="wrap">
+												<label for="p-a-lname">.wrap label</label>
+												<input id="p-a-lname" type="text" title="Last Name" placeholder="placeholder" />
+											</span>
+										</li>
+										<li>
+											<span class="wrap">
+												<label>.wrap label</label>
+													<span class="checks" id="p-gender">
+														<input id="all" type="radio" name="gender group" value="All" title="All" />
+														<label for="all">All</label>
+														<input id="male" type="radio" name="gender group" value="Male" title="Male" />
+														<label for="male">Male</label>
+														<input id="female" type="radio" name="gender group" value="Female" title="Female" />
+														<label for="female">Female</label>
+													</span>
+											</span>
+											<span class="wrap">
+												<label>.wrap label</label>
+													<span class="checks">
+														<label for="age-from">From</label>
+														<select class="auto" id="age-from">
+															<option selected="" value="all">All</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
+															<option value="20">20</option>
+															<option value="21">21</option>
+															<option value="22">22</option>
+															<option value="23">23</option>
+															<option value="24">24</option>
+															<option value="25">25</option>
+															<option value="26">26</option>
+															<option value="27">27</option>
+															<option value="28">28</option>
+															<option value="29">29</option>
+															<option value="30">30</option>
+															<option value="31">31</option>
+															<option value="32">32</option>
+															<option value="33">33</option>
+															<option value="34">34</option>
+															<option value="35">35</option>
+															<option value="36">36</option>
+															<option value="37">37</option>
+															<option value="38">38</option>
+															<option value="39">39</option>
+															<option value="40">40</option>
+															<option value="41">41</option>
+															<option value="42">42</option>
+															<option value="43">43</option>
+															<option value="44">44</option>
+															<option value="45">45</option>
+															<option value="46">46</option>
+															<option value="47">47</option>
+															<option value="48">48</option>
+															<option value="49">49</option>
+															<option value="50">50</option>
+															<option value="51">51</option>
+															<option value="52">52</option>
+															<option value="53">53</option>
+															<option value="54">54</option>
+															<option value="55">55</option>
+															<option value="56">56</option>
+															<option value="57">57</option>
+															<option value="58">58</option>
+															<option value="59">59</option>
+															<option value="60">60</option>
+															<option value="61">61</option>
+															<option value="62">62</option>
+															<option value="63">63</option>
+															<option value="64">64</option>
+															<option value="65">65</option>
+															<option value="66">66</option>
+															<option value="67">67</option>
+															<option value="68">68</option>
+															<option value="69">69</option>
+															<option value="70">70</option>
+															<option value="71">71</option>
+															<option value="72">72</option>
+															<option value="73">73</option>
+															<option value="74">74</option>
+															<option value="75">75</option>
+															<option value="76">76</option>
+															<option value="77">77</option>
+															<option value="78">78</option>
+															<option value="79">79</option>
+															<option value="80">80</option>
+															<option value="81">81</option>
+															<option value="82">82</option>
+															<option value="83">83</option>
+															<option value="84">84</option>
+															<option value="85">85</option>
+															<option value="86">86</option>
+															<option value="87">87</option>
+															<option value="88">88</option>
+															<option value="89">89</option>
+															<option value="90">90</option>
+															<option value="91">91</option>
+															<option value="92">92</option>
+															<option value="93">93</option>
+															<option value="94">94</option>
+															<option value="95">95</option>
+															<option value="96">96</option>
+															<option value="97">97</option>
+															<option value="98">98</option>
+															<option value="99">99</option>
+															<option value="100">100</option>
+														</select>
+														<label for="age-to">To</label>
+														<select class="auto" id="age-to">
+																<option selected="" value="all">All</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+																<option value="11">11</option>
+																<option value="12">12</option>
+																<option value="13">13</option>
+																<option value="14">14</option>
+																<option value="15">15</option>
+																<option value="16">16</option>
+																<option value="17">17</option>
+																<option value="18">18</option>
+																<option value="19">19</option>
+																<option value="20">20</option>
+																<option value="21">21</option>
+																<option value="22">22</option>
+																<option value="23">23</option>
+																<option value="24">24</option>
+																<option value="25">25</option>
+																<option value="26">26</option>
+																<option value="27">27</option>
+																<option value="28">28</option>
+																<option value="29">29</option>
+																<option value="30">30</option>
+																<option value="31">31</option>
+																<option value="32">32</option>
+																<option value="33">33</option>
+																<option value="34">34</option>
+																<option value="35">35</option>
+																<option value="36">36</option>
+																<option value="37">37</option>
+																<option value="38">38</option>
+																<option value="39">39</option>
+																<option value="40">40</option>
+																<option value="41">41</option>
+																<option value="42">42</option>
+																<option value="43">43</option>
+																<option value="44">44</option>
+																<option value="45">45</option>
+																<option value="46">46</option>
+																<option value="47">47</option>
+																<option value="48">48</option>
+																<option value="49">49</option>
+																<option value="50">50</option>
+																<option value="51">51</option>
+																<option value="52">52</option>
+																<option value="53">53</option>
+																<option value="54">54</option>
+																<option value="55">55</option>
+																<option value="56">56</option>
+																<option value="57">57</option>
+																<option value="58">58</option>
+																<option value="59">59</option>
+																<option value="60">60</option>
+																<option value="61">61</option>
+																<option value="62">62</option>
+																<option value="63">63</option>
+																<option value="64">64</option>
+																<option value="65">65</option>
+																<option value="66">66</option>
+																<option value="67">67</option>
+																<option value="68">68</option>
+																<option value="69">69</option>
+																<option value="70">70</option>
+																<option value="71">71</option>
+																<option value="72">72</option>
+																<option value="73">73</option>
+																<option value="74">74</option>
+																<option value="75">75</option>
+																<option value="76">76</option>
+																<option value="77">77</option>
+																<option value="78">78</option>
+																<option value="79">79</option>
+																<option value="80">80</option>
+																<option value="81">81</option>
+																<option value="82">82</option>
+																<option value="83">83</option>
+																<option value="84">84</option>
+																<option value="85">85</option>
+																<option value="86">86</option>
+																<option value="87">87</option>
+																<option value="88">88</option>
+																<option value="89">89</option>
+																<option value="90">90</option>
+																<option value="91">91</option>
+																<option value="92">92</option>
+																<option value="93">93</option>
+																<option value="94">94</option>
+																<option value="95">95</option>
+																<option value="96">96</option>
+																<option value="97">97</option>
+																<option value="98">98</option>
+																<option value="99">99</option>
+																<option value="100">100</option>
+														</select>
+													</span>
+											</span>
+										</li>
+									</ul>
+								</fieldset>
+							</form>
+							<!-- /sample form -->
+						</div>
+						<div class="column large-12">
+							<!-- sample form code -->
+							<pre><code data-language="html">
+							<form>
+								<fieldset>
+									<legend>Fieldset Legend</legend>
+									<ul>
+										<li>
+											<span class="wrap">
+												<label for="p-a-fname">.wrap label</label>
+												<input id="p-a-fname" type="text" title="First Name" placeholder="placeholder" />
+											</span>
+											<span class="wrap">
+												<label for="p-a-lname">.wrap label</label>
+												<input id="p-a-lname" type="text" title="Last Name" placeholder="placeholder" />
+											</span>
+										</li>
+										<li>
+											<span class="wrap">
+												<label>.wrap label</label>
+													<span class="checks" id="p-gender">
+														<input id="all" type="radio" name="gender group" value="All" title="All" />
+														<label for="all">label</label>
+														<input id="male" type="radio" name="gender group" value="Male" title="Male" />
+														<label for="male">label</label>
+														<input id="female" type="radio" name="gender group" value="Female" title="Female" />
+														<label for="female">label</label>
+													</span>
+											</span>
+											<span class="wrap">
+												<label>.wrap label</label>
+													<span class="checks">
+														<label for="age-from">From</label>
+														<select class="auto" id="age-from">
+															<option selected="" value="all">All</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
+															<option value="20">20</option>
+															<option value="21">21</option>
+															<option value="22">22</option>
+															<option value="23">23</option>
+															<option value="24">24</option>
+															<option value="25">25</option>
+															<option value="26">26</option>
+															<option value="27">27</option>
+															<option value="28">28</option>
+															<option value="29">29</option>
+															<option value="30">30</option>
+															<option value="31">31</option>
+															<option value="32">32</option>
+															<option value="33">33</option>
+															<option value="34">34</option>
+															<option value="35">35</option>
+															<option value="36">36</option>
+															<option value="37">37</option>
+															<option value="38">38</option>
+															<option value="39">39</option>
+															<option value="40">40</option>
+															<option value="41">41</option>
+															<option value="42">42</option>
+															<option value="43">43</option>
+															<option value="44">44</option>
+															<option value="45">45</option>
+															<option value="46">46</option>
+															<option value="47">47</option>
+															<option value="48">48</option>
+															<option value="49">49</option>
+															<option value="50">50</option>
+															<option value="51">51</option>
+															<option value="52">52</option>
+															<option value="53">53</option>
+															<option value="54">54</option>
+															<option value="55">55</option>
+															<option value="56">56</option>
+															<option value="57">57</option>
+															<option value="58">58</option>
+															<option value="59">59</option>
+															<option value="60">60</option>
+															<option value="61">61</option>
+															<option value="62">62</option>
+															<option value="63">63</option>
+															<option value="64">64</option>
+															<option value="65">65</option>
+															<option value="66">66</option>
+															<option value="67">67</option>
+															<option value="68">68</option>
+															<option value="69">69</option>
+															<option value="70">70</option>
+															<option value="71">71</option>
+															<option value="72">72</option>
+															<option value="73">73</option>
+															<option value="74">74</option>
+															<option value="75">75</option>
+															<option value="76">76</option>
+															<option value="77">77</option>
+															<option value="78">78</option>
+															<option value="79">79</option>
+															<option value="80">80</option>
+															<option value="81">81</option>
+															<option value="82">82</option>
+															<option value="83">83</option>
+															<option value="84">84</option>
+															<option value="85">85</option>
+															<option value="86">86</option>
+															<option value="87">87</option>
+															<option value="88">88</option>
+															<option value="89">89</option>
+															<option value="90">90</option>
+															<option value="91">91</option>
+															<option value="92">92</option>
+															<option value="93">93</option>
+															<option value="94">94</option>
+															<option value="95">95</option>
+															<option value="96">96</option>
+															<option value="97">97</option>
+															<option value="98">98</option>
+															<option value="99">99</option>
+															<option value="100">100</option>
+														</select>
+														<label for="age-to">To</label>
+														<select class="auto" id="age-to">
+																<option selected="" value="all">All</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+																<option value="11">11</option>
+																<option value="12">12</option>
+																<option value="13">13</option>
+																<option value="14">14</option>
+																<option value="15">15</option>
+																<option value="16">16</option>
+																<option value="17">17</option>
+																<option value="18">18</option>
+																<option value="19">19</option>
+																<option value="20">20</option>
+																<option value="21">21</option>
+																<option value="22">22</option>
+																<option value="23">23</option>
+																<option value="24">24</option>
+																<option value="25">25</option>
+																<option value="26">26</option>
+																<option value="27">27</option>
+																<option value="28">28</option>
+																<option value="29">29</option>
+																<option value="30">30</option>
+																<option value="31">31</option>
+																<option value="32">32</option>
+																<option value="33">33</option>
+																<option value="34">34</option>
+																<option value="35">35</option>
+																<option value="36">36</option>
+																<option value="37">37</option>
+																<option value="38">38</option>
+																<option value="39">39</option>
+																<option value="40">40</option>
+																<option value="41">41</option>
+																<option value="42">42</option>
+																<option value="43">43</option>
+																<option value="44">44</option>
+																<option value="45">45</option>
+																<option value="46">46</option>
+																<option value="47">47</option>
+																<option value="48">48</option>
+																<option value="49">49</option>
+																<option value="50">50</option>
+																<option value="51">51</option>
+																<option value="52">52</option>
+																<option value="53">53</option>
+																<option value="54">54</option>
+																<option value="55">55</option>
+																<option value="56">56</option>
+																<option value="57">57</option>
+																<option value="58">58</option>
+																<option value="59">59</option>
+																<option value="60">60</option>
+																<option value="61">61</option>
+																<option value="62">62</option>
+																<option value="63">63</option>
+																<option value="64">64</option>
+																<option value="65">65</option>
+																<option value="66">66</option>
+																<option value="67">67</option>
+																<option value="68">68</option>
+																<option value="69">69</option>
+																<option value="70">70</option>
+																<option value="71">71</option>
+																<option value="72">72</option>
+																<option value="73">73</option>
+																<option value="74">74</option>
+																<option value="75">75</option>
+																<option value="76">76</option>
+																<option value="77">77</option>
+																<option value="78">78</option>
+																<option value="79">79</option>
+																<option value="80">80</option>
+																<option value="81">81</option>
+																<option value="82">82</option>
+																<option value="83">83</option>
+																<option value="84">84</option>
+																<option value="85">85</option>
+																<option value="86">86</option>
+																<option value="87">87</option>
+																<option value="88">88</option>
+																<option value="89">89</option>
+																<option value="90">90</option>
+																<option value="91">91</option>
+																<option value="92">92</option>
+																<option value="93">93</option>
+																<option value="94">94</option>
+																<option value="95">95</option>
+																<option value="96">96</option>
+																<option value="97">97</option>
+																<option value="98">98</option>
+																<option value="99">99</option>
+																<option value="100">100</option>
+														</select>
+													</span>
+											</span>
+										</li>
+									</ul>
+								</fieldset>
+							</form>
+							</code></pre>
+							<!-- /sample form code -->
+						</div>
+					</div><!-- /row -->
+				</section><!-- /default forms in a flow -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Inline Labels</h3>
+						<p>For specific cases where you want inline labels</p>
+						<p>The first sample is using grid classes. Using a grid size for the single label and single input. Put the label inside a different column to the left of the input. Then add a class of .right to the label to have it align to the right. Adding a class of .inline will have it vertically center against an input. </p>
+						<p>This works responsively provided the label is short, and it is a single instance.</p>
+					</header>
+
+					<div class="row">
+						<div class="column large-6">
+							<form>
+								<fieldset>
+									<div class="row">
+										<div class="small-3 columns">
+											<label for="right-label" class="right">Label right</label>
+										</div>
+										<div class="small-9 columns">
+											<input type="text" id="right-label" placeholder="Inline Text Input">
+										</div>
+									</div>
+									<div class="row">
+										<div class="small-3 columns">
+											<label for="right-label2" class="right inline">Label right inline</label>
+										</div>
+										<div class="small-9 columns">
+											<input type="text" id="right-label2" placeholder="Inline Text Input">
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+								<form>
+									<fieldset>
+										<div class="row">
+											<div class="small-3 columns">
+												<label for="right-label" class="right inline">Label right</label>
+											</div>
+											<div class="small-9 columns">
+												<input type="text" id="right-label" placeholder="Inline Text Input">
+											</div>
+										</div>
+										<div class="row">
+											<div class="small-3 columns">
+												<label for="right-label" class="right">Label right inline</label>
+											</div>
+											<div class="small-9 columns">
+												<input type="text" id="right-label" placeholder="Inline Text Input">
+											</div>
+										</div>
+									</fieldset>
+								</form>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+
+					<header>
+						<p>The second example uses flow wrappers. This can be used for multiple dropdown filters above dynamic tables. The wrappers will keep the label and dropdown connected as the layout changes responsively. Again, the preferred layout is label above input. The inliine label is for specific case only.</p>
+						<p>Notes:</p>
+						<ol>
+							<li>The inline label does not work as well for associating the label with its input.</li>
+							<li>The inline label does not work as well for larger forms in columns where the labels may be varying lengths.</li>
+							<li>The inline label will not work responsively as well to keep the label and input associated.</li>
+						</ol>
+					</header>
+					<div class="row">
+						<div class="column large-6">
+							<form>
+								<fieldset>
+									<span class="wrap lbl-inline">
+									<label>.lblinline Label</label>
+									<select id="creditFilterPart" name="credits" class="auto">
+										<option value="0" selected="selected">All</option>
+										  <optgroup label="FILM">
+											<option value="1">All Film</option>
+											<option value="2">Upcoming Film</option>
+											<option value="3">Past Film</option>
+											<option value="4">Inactive Film</option>
+										 </optgroup>
+										  <optgroup label="TV">
+											<option value="10">All TV</option>
+											<option value="5">Upcoming TV</option>
+											<option value="6">Current TV</option>
+											<option value="7">Past TV</option>
+											<option value="8">Episodic TV</option>
+											<option value="9">Inactive TV</option>
+										 </optgroup>
+									</select>
+									</span>
+									<span class="wrap lbl-inline">
+									<label>.lblinline Label</label>
+									<select id="creditFilterRole" name="credits" class="auto">
+										<option value="0" selected="selected">All</option>
+										<option value="1">Director</option>
+										<option value="2">Exec. Producer</option>
+										<option value="3">Producer</option>
+										<option value="4">Actor</option>
+										<option value="5">Writer</option>
+										<option value="6">Cast</option>
+										<option value="7">Screenplay</option>
+										<option value="8">Narrator</option>
+										<option value="9">Presenter</option>
+										<option value="10">Guest</option>
+										<option value="11">Voice</option>
+									</select>
+									</span>
+								</fieldset>
+							</form>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+							<form>
+								<fieldset><span class="wrap">
+									<label>Filter Type</label>
+									<select id="creditFilterPart" name="credits" class="span9">
+										<option value="0" selected="selected">All</option>
+										  <optgroup label="FILM">
+											<option value="1">All Film</option>
+											<option value="2">Upcoming Film</option>
+											<option value="3">Past Film</option>
+											<option value="4">Inactive Film</option>
+										 </optgroup>
+										  <optgroup label="TV">
+											<option value="10">All TV</option>
+											<option value="5">Upcoming TV</option>
+											<option value="6">Current TV</option>
+											<option value="7">Past TV</option>
+											<option value="8">Episodic TV</option>
+											<option value="9">Inactive TV</option>
+										 </optgroup>
+									</select>
+									</span>
+									<span class="wrap">
+									<label>Filter Involvement</label>
+									<select id="creditFilterRole" name="credits" class="auto">
+										<option value="0" selected="selected">All</option>
+										<option value="1">Director</option>
+										<option value="2">Exec. Producer</option>
+										<option value="3">Producer</option>
+										<option value="4">Actor</option>
+										<option value="5">Writer</option>
+										<option value="6">Cast</option>
+										<option value="7">Screenplay</option>
+										<option value="8">Narrator</option>
+										<option value="9">Presenter</option>
+										<option value="10">Guest</option>
+										<option value="11">Voice</option>
+									</select>
+									</span>
+								</fieldset>
+							</form>
+							</code></pre>
+						</div>
+					</div>
+				</section><!-- / section inline labels -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Split Checkbox Lists</h3>
+						<p>Case of a single dynamic list of undetermined length, split into columns</p>
+						<p>We are using <a href="http://www.madeincima.it/download/samples/jquery/easyListSplitter/">easyListSplitter.js</a> jQuery plugin to accomplish this</p>
+					</header>
+
+					<div class="row">
+						<div class="column large-12">
+							<form>
+								<fieldset>
+								<ul>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+											<span class="help-block">Select all, or up to five (5) genre.</span>
+											<span class="checks">
+											<input type="checkbox" id="sa_add-sample" name="sa_add-sample" value="0" data-checkbox-name="add-sample" class="checkAll" />
+											<label for="proj-genre-all">Select All</label>
+											<input id="proj-genre-any" type="checkbox" name="project-tv-status group" value="1" title="" />
+											<label for="proj-genre-any">Any of Selected</label>
+											<input id="proj-genre-allsel" type="checkbox" name="project-tv-status group" value="2" title="" />
+											<label for="proj-genre-allsel">All of Selected</label>
+											</span>
+										</span>
+										<div class="checks checks-block">
+											<ul class="li-5">
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="1" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="2" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="3" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="4" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="5" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="6" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="7" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="8" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="9" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="10" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="11" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="12" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="13" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="14" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="15" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="16" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="17" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="18" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="19" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="20" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="21" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="22" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="23" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="24" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="25" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li><input type="checkbox" id="add-sample_1" name="add-sample" value="26" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="27" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="28" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="29" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="30" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="31" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="32" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="33" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="34" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="35" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="36" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="37" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="38" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="39" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="40" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="41" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="42" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="43" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="44" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="45" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="46" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="47" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="48" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="49" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="50" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+												<li>
+													<input type="checkbox" id="add-sample_1" name="add-sample" value="51" data-select-all="sa_add-sample" class="checkme" />
+													<label>label</label>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</fieldset>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<form>
+									<fieldset>
+									<ul>
+										<li>
+											<span class="wrap">
+												<label>label</label>
+												<span class="help-block">Select all, or up to five (5) genre.</span>
+												<span class="checks">
+												<input type="checkbox" id="sa_add-sample" name="sa_add-sample" value="0" data-checkbox-name="add-sample" class="checkAll" />
+												<label for="proj-genre-all">Select All</label>
+												</span>
+											</span>
+											<div class="checks checks-block">
+												<ul class="li-5">
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="1" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="2" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="3" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="4" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="5" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="6" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="7" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="8" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="9" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="10" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="11" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="12" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="13" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="14" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="15" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="16" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="17" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="18" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="19" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="20" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="21" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="22" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="23" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="24" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="25" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li><input type="checkbox" id="add-sample_1" name="add-sample" value="26" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="27" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="28" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="29" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="30" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="31" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="32" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="33" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="34" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="35" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="36" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="37" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="38" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="39" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="40" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="41" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="42" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="43" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="44" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="45" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="46" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="47" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="48" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="49" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="50" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+													<li>
+														<input type="checkbox" id="add-sample_1" name="add-sample" value="51" data-select-all="sa_add-sample" class="checkme" />
+														<label>label</label>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</fieldset>
+								</form>
+							</code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column large-12">
+							<p>Call the javascript</p>
+							<pre><code data-language="javascript">
+$(document).ready(function () {
+	$('.loremipsum').easyListSplitter({
+			colNumber: 3 // Insert here the number of columns you want. Consider that the plugin will create the number of cols requested only if there's enough items in the list.
+	});
+});
+							</code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="column large-12">
+							<p>Give the list the class name for the number of columns</p>
+							<pre><code data-language="css">
+									//we are set up for 1 to 5 columns with these classes
+									// checkboxes in split lists
+									// one column
+									.li-1 {
+										float: left;
+										width: 100%;
+										margin: 0;// one column
+									}
+									// two columns
+									.li-2 {
+										float: left;
+										width: 49%;
+										margin: 0 1% 0 0;
+									}
+									.li-3 {
+										float: left;
+										width: 32%;
+										margin: 0 1% 0 0;
+									}
+									.li-4 {
+										float: left;
+										width: 24%;
+										margin: 0 1% 0 0;
+									}
+									.li-5 {
+										float: left;
+										width: 19%;
+										margin: 0 1% 0 0;
+									}
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+				</section><!-- / section split checkboxes -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Fieldsets</h3>
+						<p>Nothing fancy in our fieldsets, no outlines or UI. Due to the many long forms we have, we are using fieldsets as sections of the larger forms, and displaying the legends as headers</p>
+					</header>
+					<div class="row">
+						<div class="column large-12">
+
+						<!-- section 1 -->
+							<fieldset>
+								<legend>Fieldset One legend</legend>
+								<ul>
+									<li>
+										<span class="wrap">
+											<label for="p-a-fname">label</label>
+											<input id="p-a-fname" type="text" title="First Name" />
+										</span>
+										<span class="wrap">
+											<label for="p-a-lname">label</label>
+											<input id="p-a-lname" type="text" title="Last Name" />
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks" id="p-gender">
+													<input id="all" type="radio" name="gender group" value="All" title="All" />
+													<label for="all">Radio 1</label>
+													<input id="male" type="radio" name="gender group" value="Male" title="Male" />
+													<label for="male">Radio 2</label>
+													<input id="female" type="radio" name="gender group" value="Female" title="Female" />
+													<label for="female">Radio 3</label>
+												</span>
+										</span>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks">
+													<label for="age-from">From</label>
+													<select class="auto" id="age-from">
+														<option selected="" value="all">All</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+														<option value="13">13</option>
+														<option value="14">14</option>
+														<option value="15">15</option>
+														<option value="16">16</option>
+														<option value="17">17</option>
+														<option value="18">18</option>
+														<option value="19">19</option>
+														<option value="20">20</option>
+														<option value="21">21</option>
+														<option value="22">22</option>
+														<option value="23">23</option>
+														<option value="24">24</option>
+														<option value="25">25</option>
+														<option value="26">26</option>
+														<option value="27">27</option>
+														<option value="28">28</option>
+														<option value="29">29</option>
+														<option value="30">30</option>
+														<option value="31">31</option>
+														<option value="32">32</option>
+														<option value="33">33</option>
+														<option value="34">34</option>
+														<option value="35">35</option>
+														<option value="36">36</option>
+														<option value="37">37</option>
+														<option value="38">38</option>
+														<option value="39">39</option>
+														<option value="40">40</option>
+														<option value="41">41</option>
+														<option value="42">42</option>
+														<option value="43">43</option>
+														<option value="44">44</option>
+														<option value="45">45</option>
+														<option value="46">46</option>
+														<option value="47">47</option>
+														<option value="48">48</option>
+														<option value="49">49</option>
+														<option value="50">50</option>
+														<option value="51">51</option>
+														<option value="52">52</option>
+														<option value="53">53</option>
+														<option value="54">54</option>
+														<option value="55">55</option>
+														<option value="56">56</option>
+														<option value="57">57</option>
+														<option value="58">58</option>
+														<option value="59">59</option>
+														<option value="60">60</option>
+														<option value="61">61</option>
+														<option value="62">62</option>
+														<option value="63">63</option>
+														<option value="64">64</option>
+														<option value="65">65</option>
+														<option value="66">66</option>
+														<option value="67">67</option>
+														<option value="68">68</option>
+														<option value="69">69</option>
+														<option value="70">70</option>
+														<option value="71">71</option>
+														<option value="72">72</option>
+														<option value="73">73</option>
+														<option value="74">74</option>
+														<option value="75">75</option>
+														<option value="76">76</option>
+														<option value="77">77</option>
+														<option value="78">78</option>
+														<option value="79">79</option>
+														<option value="80">80</option>
+														<option value="81">81</option>
+														<option value="82">82</option>
+														<option value="83">83</option>
+														<option value="84">84</option>
+														<option value="85">85</option>
+														<option value="86">86</option>
+														<option value="87">87</option>
+														<option value="88">88</option>
+														<option value="89">89</option>
+														<option value="90">90</option>
+														<option value="91">91</option>
+														<option value="92">92</option>
+														<option value="93">93</option>
+														<option value="94">94</option>
+														<option value="95">95</option>
+														<option value="96">96</option>
+														<option value="97">97</option>
+														<option value="98">98</option>
+														<option value="99">99</option>
+														<option value="100">100</option>
+													</select>
+													<label for="age-to">To</label>
+													<select class="auto" id="age-to">
+															<option selected="" value="all">All</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
+															<option value="20">20</option>
+															<option value="21">21</option>
+															<option value="22">22</option>
+															<option value="23">23</option>
+															<option value="24">24</option>
+															<option value="25">25</option>
+															<option value="26">26</option>
+															<option value="27">27</option>
+															<option value="28">28</option>
+															<option value="29">29</option>
+															<option value="30">30</option>
+															<option value="31">31</option>
+															<option value="32">32</option>
+															<option value="33">33</option>
+															<option value="34">34</option>
+															<option value="35">35</option>
+															<option value="36">36</option>
+															<option value="37">37</option>
+															<option value="38">38</option>
+															<option value="39">39</option>
+															<option value="40">40</option>
+															<option value="41">41</option>
+															<option value="42">42</option>
+															<option value="43">43</option>
+															<option value="44">44</option>
+															<option value="45">45</option>
+															<option value="46">46</option>
+															<option value="47">47</option>
+															<option value="48">48</option>
+															<option value="49">49</option>
+															<option value="50">50</option>
+															<option value="51">51</option>
+															<option value="52">52</option>
+															<option value="53">53</option>
+															<option value="54">54</option>
+															<option value="55">55</option>
+															<option value="56">56</option>
+															<option value="57">57</option>
+															<option value="58">58</option>
+															<option value="59">59</option>
+															<option value="60">60</option>
+															<option value="61">61</option>
+															<option value="62">62</option>
+															<option value="63">63</option>
+															<option value="64">64</option>
+															<option value="65">65</option>
+															<option value="66">66</option>
+															<option value="67">67</option>
+															<option value="68">68</option>
+															<option value="69">69</option>
+															<option value="70">70</option>
+															<option value="71">71</option>
+															<option value="72">72</option>
+															<option value="73">73</option>
+															<option value="74">74</option>
+															<option value="75">75</option>
+															<option value="76">76</option>
+															<option value="77">77</option>
+															<option value="78">78</option>
+															<option value="79">79</option>
+															<option value="80">80</option>
+															<option value="81">81</option>
+															<option value="82">82</option>
+															<option value="83">83</option>
+															<option value="84">84</option>
+															<option value="85">85</option>
+															<option value="86">86</option>
+															<option value="87">87</option>
+															<option value="88">88</option>
+															<option value="89">89</option>
+															<option value="90">90</option>
+															<option value="91">91</option>
+															<option value="92">92</option>
+															<option value="93">93</option>
+															<option value="94">94</option>
+															<option value="95">95</option>
+															<option value="96">96</option>
+															<option value="97">97</option>
+															<option value="98">98</option>
+															<option value="99">99</option>
+															<option value="100">100</option>
+													</select>
+												</span>
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label for="rep-company">label</label>
+											<input id="rep-company" type="text" placeholder="Rep. Company Name" title="" />
+										</span>
+										<span class="wrap">
+													<label for="record-date">label</label>
+													<!-- <span class="help-block">How recent is this record</span> -->
+													<select class="auto" id="record-verify">
+														<option selected="selected" value="1">Latest Update</option>
+														<option value="2">Created Date
+														</option><!-- <option value="3">Verified Date
+														</option> -->
+													</select>
+													<select class="auto" id="record-date">
+														<option selected="selected" value="1">Date Range</option>
+														<option value="1">Past Month
+														</option><option value="3">Past 2 Months
+														</option><option value="4">Past 3 Months
+														</option><option value="5">Past 6 Months
+														</option><option value="6">Past Year
+														</option><option value="7">Past 2 Years
+														</option><option value="8">Past 3 Years
+														</option><option value="9">Past 5 Years
+														</option><option value="10">Past 10 Years</option>
+													</select>
+										</span>
+									</li>
+								</ul>
+							</fieldset><!-- /section 1 -->
+
+							<!-- section 2 -->
+							<fieldset class="">
+								<legend>Fieldset Two legend</legend>
+
+								<ul>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks">
+													<input id="contains" type="radio" name="per-proj-title group" value="Contains" title="Contains" />
+													<label for="contains">Contains</label>
+													<input id="starts" type="radio" name="per-proj-title group" value="Starts with" title="Starts with" />
+													<label for="starts">Starts with</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="proj-title" type="text" title="" />
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks proj-involvement">
+													<input id="proj-all" type="radio" name="project-type group" value="All" title="All" checked="checked" />
+													<label for="proj-all">label</label>
+													<input id="proj-film" type="radio" name="project-type group" value="Film" title="Film" />
+													<label for="proj-film">label</label>
+													<input id="proj-tv" type="radio" name="project-type group" value="TV" title="TV" />
+													<label for="proj-tv">label</label>
+												</span>
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks">
+													<input id="com-contains" type="radio" name="related-com group" value="Male" title="" />
+													<label for="com-contains">label</label>
+													<input id="com-starts" type="radio" name="related-com group" value="Female" title="" />
+													<label for="com-starts">label</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="related-company" type="text" title="" />
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>Keywords</label>
+												<span class="checks">
+													<input id="key-all" type="radio" name="keywords group" value="Male" title="" />
+													<label for="key-all">All</label>
+													<input id="key-any" type="radio" name="keywords group" value="Female" title="" />
+													<label for="key-any">Any</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="keywords" type="text" placeholder="Ex. genres, subject matter" title="" />
+											<span class="help-block">Enter keyword(s) separated by commas.</span>
+										</span>
+									</li>
+								</ul>
+
+							</fieldset><!-- /section 2 -->
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="column large-12">
+							<pre><code data-language="html">
+							<!-- section 1 -->
+							<fieldset>
+								<legend>Fieldset One legend</legend>
+									<ul>
+										<li>
+											<span class="wrap">
+												<label for="p-a-fname">label</label>
+												<input id="p-a-fname" type="text" title="First Name" />
+											</span>
+											<span class="wrap">
+												<label for="p-a-lname">label</label>
+												<input id="p-a-lname" type="text" title="Last Name" />
+											</span>
+										</li>
+										<li>
+											<span class="wrap">
+												<label>label</label>
+													<span class="checks" id="p-gender">
+														<input id="all" type="radio" name="gender group" value="All" title="All" />
+														<label for="all">Radio 1</label>
+														<input id="male" type="radio" name="gender group" value="Male" title="Male" />
+														<label for="male">Radio 2</label>
+														<input id="female" type="radio" name="gender group" value="Female" title="Female" />
+														<label for="female">Radio 3</label>
+													</span>
+											</span>
+											<span class="wrap">
+												<label>label</label>
+													<span class="checks">
+														<label for="age-from">From</label>
+														<select class="auto" id="age-from">
+															<option selected="" value="all">All</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
+															<option value="20">20</option>
+															<option value="21">21</option>
+															<option value="22">22</option>
+															<option value="23">23</option>
+															<option value="24">24</option>
+															<option value="25">25</option>
+															<option value="26">26</option>
+															<option value="27">27</option>
+															<option value="28">28</option>
+															<option value="29">29</option>
+															<option value="30">30</option>
+															<option value="31">31</option>
+															<option value="32">32</option>
+															<option value="33">33</option>
+															<option value="34">34</option>
+															<option value="35">35</option>
+															<option value="36">36</option>
+															<option value="37">37</option>
+															<option value="38">38</option>
+															<option value="39">39</option>
+															<option value="40">40</option>
+															<option value="41">41</option>
+															<option value="42">42</option>
+															<option value="43">43</option>
+															<option value="44">44</option>
+															<option value="45">45</option>
+															<option value="46">46</option>
+															<option value="47">47</option>
+															<option value="48">48</option>
+															<option value="49">49</option>
+															<option value="50">50</option>
+															<option value="51">51</option>
+															<option value="52">52</option>
+															<option value="53">53</option>
+															<option value="54">54</option>
+															<option value="55">55</option>
+															<option value="56">56</option>
+															<option value="57">57</option>
+															<option value="58">58</option>
+															<option value="59">59</option>
+															<option value="60">60</option>
+															<option value="61">61</option>
+															<option value="62">62</option>
+															<option value="63">63</option>
+															<option value="64">64</option>
+															<option value="65">65</option>
+															<option value="66">66</option>
+															<option value="67">67</option>
+															<option value="68">68</option>
+															<option value="69">69</option>
+															<option value="70">70</option>
+															<option value="71">71</option>
+															<option value="72">72</option>
+															<option value="73">73</option>
+															<option value="74">74</option>
+															<option value="75">75</option>
+															<option value="76">76</option>
+															<option value="77">77</option>
+															<option value="78">78</option>
+															<option value="79">79</option>
+															<option value="80">80</option>
+															<option value="81">81</option>
+															<option value="82">82</option>
+															<option value="83">83</option>
+															<option value="84">84</option>
+															<option value="85">85</option>
+															<option value="86">86</option>
+															<option value="87">87</option>
+															<option value="88">88</option>
+															<option value="89">89</option>
+															<option value="90">90</option>
+															<option value="91">91</option>
+															<option value="92">92</option>
+															<option value="93">93</option>
+															<option value="94">94</option>
+															<option value="95">95</option>
+															<option value="96">96</option>
+															<option value="97">97</option>
+															<option value="98">98</option>
+															<option value="99">99</option>
+															<option value="100">100</option>
+														</select>
+														<label for="age-to">To</label>
+														<select class="auto" id="age-to">
+																<option selected="" value="all">All</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+																<option value="11">11</option>
+																<option value="12">12</option>
+																<option value="13">13</option>
+																<option value="14">14</option>
+																<option value="15">15</option>
+																<option value="16">16</option>
+																<option value="17">17</option>
+																<option value="18">18</option>
+																<option value="19">19</option>
+																<option value="20">20</option>
+																<option value="21">21</option>
+																<option value="22">22</option>
+																<option value="23">23</option>
+																<option value="24">24</option>
+																<option value="25">25</option>
+																<option value="26">26</option>
+																<option value="27">27</option>
+																<option value="28">28</option>
+																<option value="29">29</option>
+																<option value="30">30</option>
+																<option value="31">31</option>
+																<option value="32">32</option>
+																<option value="33">33</option>
+																<option value="34">34</option>
+																<option value="35">35</option>
+																<option value="36">36</option>
+																<option value="37">37</option>
+																<option value="38">38</option>
+																<option value="39">39</option>
+																<option value="40">40</option>
+																<option value="41">41</option>
+																<option value="42">42</option>
+																<option value="43">43</option>
+																<option value="44">44</option>
+																<option value="45">45</option>
+																<option value="46">46</option>
+																<option value="47">47</option>
+																<option value="48">48</option>
+																<option value="49">49</option>
+																<option value="50">50</option>
+																<option value="51">51</option>
+																<option value="52">52</option>
+																<option value="53">53</option>
+																<option value="54">54</option>
+																<option value="55">55</option>
+																<option value="56">56</option>
+																<option value="57">57</option>
+																<option value="58">58</option>
+																<option value="59">59</option>
+																<option value="60">60</option>
+																<option value="61">61</option>
+																<option value="62">62</option>
+																<option value="63">63</option>
+																<option value="64">64</option>
+																<option value="65">65</option>
+																<option value="66">66</option>
+																<option value="67">67</option>
+																<option value="68">68</option>
+																<option value="69">69</option>
+																<option value="70">70</option>
+																<option value="71">71</option>
+																<option value="72">72</option>
+																<option value="73">73</option>
+																<option value="74">74</option>
+																<option value="75">75</option>
+																<option value="76">76</option>
+																<option value="77">77</option>
+																<option value="78">78</option>
+																<option value="79">79</option>
+																<option value="80">80</option>
+																<option value="81">81</option>
+																<option value="82">82</option>
+																<option value="83">83</option>
+																<option value="84">84</option>
+																<option value="85">85</option>
+																<option value="86">86</option>
+																<option value="87">87</option>
+																<option value="88">88</option>
+																<option value="89">89</option>
+																<option value="90">90</option>
+																<option value="91">91</option>
+																<option value="92">92</option>
+																<option value="93">93</option>
+																<option value="94">94</option>
+																<option value="95">95</option>
+																<option value="96">96</option>
+																<option value="97">97</option>
+																<option value="98">98</option>
+																<option value="99">99</option>
+																<option value="100">100</option>
+														</select>
+													</span>
+											</span>
+										</li>
+										<li>
+											<span class="wrap">
+												<label for="rep-company">label</label>
+												<input id="rep-company" type="text" placeholder="Rep. Company Name" title="" />
+											</span>
+											<span class="wrap">
+														<label for="record-date">label</label>
+														<!-- <span class="help-block">How recent is this record</span> -->
+														<select class="auto" id="record-verify">
+															<option selected="selected" value="1">Latest Update</option>
+															<option value="2">Created Date
+															</option><!-- <option value="3">Verified Date
+															</option> -->
+														</select>
+														<select class="auto" id="record-date">
+															<option selected="selected" value="1">Date Range</option>
+															<option value="1">Past Month
+															</option><option value="3">Past 2 Months
+															</option><option value="4">Past 3 Months
+															</option><option value="5">Past 6 Months
+															</option><option value="6">Past Year
+															</option><option value="7">Past 2 Years
+															</option><option value="8">Past 3 Years
+															</option><option value="9">Past 5 Years
+															</option><option value="10">Past 10 Years</option>
+														</select>
+											</span>
+										</li>
+									</ul>
+							</fieldset><!-- /section 1 -->
+
+							<!-- section 2 -->
+							<fieldset class="">
+								<legend>Fieldset Two legend</legend>
+
+								<ul>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks">
+													<input id="contains" type="radio" name="per-proj-title group" value="Contains" title="Contains" />
+													<label for="contains">Contains</label>
+													<input id="starts" type="radio" name="per-proj-title group" value="Starts with" title="Starts with" />
+													<label for="starts">Starts with</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="proj-title" type="text" title="" />
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks proj-involvement">
+													<input id="proj-all" type="radio" name="project-type group" value="All" title="All" checked="checked" />
+													<label for="proj-all">label</label>
+													<input id="proj-film" type="radio" name="project-type group" value="Film" title="Film" />
+													<label for="proj-film">label</label>
+													<input id="proj-tv" type="radio" name="project-type group" value="TV" title="TV" />
+													<label for="proj-tv">label</label>
+												</span>
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>label</label>
+												<span class="checks">
+													<input id="com-contains" type="radio" name="related-com group" value="Male" title="" />
+													<label for="com-contains">label</label>
+													<input id="com-starts" type="radio" name="related-com group" value="Female" title="" />
+													<label for="com-starts">label</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="related-company" type="text" title="" />
+										</span>
+									</li>
+									<li>
+										<span class="wrap">
+											<label>Keywords</label>
+												<span class="checks">
+													<input id="key-all" type="radio" name="keywords group" value="Male" title="" />
+													<label for="key-all">All</label>
+													<input id="key-any" type="radio" name="keywords group" value="Female" title="" />
+													<label for="key-any">Any</label>
+												</span>
+										</span>
+										<span class="wrap nolabel">
+											<input id="keywords" type="text" placeholder="Ex. genres, subject matter" title="" />
+											<span class="help-block">Enter keyword(s) separated by commas.</span>
+										</span>
+									</li>
+								</ul>
+							</fieldset><!-- /section 2 -->
+
+							</code></pre>
+						</div>
+					</div>
+				</section><!-- / section fieldsets -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Selects</h3>
+					</header>
+					<div class="row">
+						<div class="column large-6">
+							<label for="normalSelect">Select</label>
+							<select name="normalSelect" id="normalSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+							<label for="normalSelect">Select</label>
+							<select name="normalSelect" id="normalSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+
+								<option>4</option>
+								<option>5</option>
+							</select>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="column large-6">
+							<label for="multiSelect">Multiple select</label>
+							<select class="medium" size="5" multiple="multiple" name="multiSelect" id="multiSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+							<label for="multiSelect">Multiple select</label>
+							<select class="medium" size="5" multiple="multiple" name="multiSelect" id="multiSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="column large-6">
+									<label for="multiSelect">Option Group</label>
+									<select class="" name="multiSelect" id="normalSelect">
+										<option>1</option>
+										<optgroup label="Kinds of Potatoes">
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</optgroup>
+										<option>6</option>
+										<optgroup label="Favorite of Animals">
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+
+										</optgroup>
+									</select>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+									<label for="multiSelect">Option Group</label>
+									<select class="" name="multiSelect" id="normalSelect">
+										<option>1</option>
+										<optgroup label="Kinds of Potatoes">
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</optgroup>
+										<option>6</option>
+										<optgroup label="Favorite of Animals">
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+										</optgroup>
+									</select>
+							</code></pre>
+						</div>
+
+					</div><!-- /row -->
+				</section><!-- / section selects -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Editable/Uneditable</h3>
+					</header>
+					<div class="row">
+						<div class="column large-6">
+							<label>Uneditable input</label>
+							<span class="uneditable-input">Uneditable...carry on.</span>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+								<label>Uneditable input</label>
+								<span class="uneditable-input">Uneditable...carry on.</span>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="column large-6">
+							<label for="disabledInput">Disabled input</label>
+							<input class="disabled" id="disabledInput" name="disabledInput" type="text" placeholder="Disabled input here… carry on." disabled />
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+								<label for="disabledInput">Disabled input</label>
+								<input class="disabled" id="disabledInput" name="disabledInput" type="text" placeholder="Disabled input here… carry on." disabled />
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="column large-6">
+							<label for="disabledInput">Disabled textarea</label>
+							<textarea class="" name="textarea" id="textarea" rows="3" disabled></textarea>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+								<label for="disabledInput">Disabled textarea</label>
+								<textarea class="" name="textarea" id="textarea" rows="3" disabled></textarea>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+				</section><!-- / section editable -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Prefix/Postfix</h3>
+						<p>Actions can be tied to buttons, and prefix / postfix labels. Use <strong>div class="row collapse"</strong> to create label / action / input combinations. Use columns to define the size of the pre/postfix <strong>span class="postfix"</strong> or <strong>span class="prefix"</strong>.</p>
+					</header>
+					<div class="row">
+						<div class="column large-6">
+							<form>
+								<div class="row collapse">
+									<div class="small-3 large-2 columns">
+										<span class="prefix">http://</span>
+									</div>
+									<div class="small-9 large-10 columns">
+										<input type="text" placeholder="Enter your URL...">
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-6 columns">
+										<div class="row collapse">
+											<div class="small-10 columns">
+												<input type="text" placeholder="Hex Value">
+											</div>
+											<div class="small-2 columns">
+												<a href="#" class="button postfix">Go</a>
+											</div>
+										</div>
+									</div>
+									<div class="large-6 columns">
+										<div class="row collapse">
+											<div class="small-9 columns">
+												<input type="text" placeholder="Value">
+											</div>
+											<div class="small-3 columns">
+												<span class="postfix radius">Label</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="column large-6">
+							<pre><code data-language="html">
+								<form>
+									<div class="row collapse">
+										<div class="small-3 large-2 columns">
+											<span class="prefix">http://</span>
+										</div>
+										<div class="small-9 large-10 columns">
+											<input type="text" placeholder="Enter your URL...">
+										</div>
+									</div>
+									<div class="row">
+										<div class="large-6 columns">
+											<div class="row collapse">
+												<div class="small-10 columns">
+													<input type="text" placeholder="Hex Value">
+												</div>
+												<div class="small-2 columns">
+													<a href="#" class="button postfix">Go</a>
+												</div>
+											</div>
+										</div>
+										<div class="large-6 columns">
+											<div class="row collapse">
+												<div class="small-9 columns">
+													<input type="text" placeholder="Value">
+												</div>
+												<div class="small-3 columns">
+													<span class="postfix radius">Label</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+				</section><!-- / prefix/postfix -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Error States</h3>
+					</header>
+					<div class="row">
+						<div class="column large-12">
+							<div class="help-block success">This information has been successfully submitted. This information is now available on the site.</div>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+							<div class="help-block success">This information has been successfully submitted. This information is now available on the site.</div>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<div class="row">
+						<div class="column large-12">
+							<div class="help-block error">There are errors with the form, please see the fields marked below.
+								<ul>
+									<li>Invalid Pitch Title. Please try again.</li>
+									<li>Invalid Status. Please try again.</li>
+								</ul>
+							</div>
+							<p class="error">
+								<span class="column small-12">
+									<label for="errorInput">Input with error</label>
+									<input class="error" id="errorInput" title="New List Name" type="text">
+									<span class="help-inline error">Field is Required lorem ipsum sint ut in est.</span>
+								</span>
+							</p>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+							<div class="help-block error">There are errors with the form, please see the fields marked below.
+								<ul>
+									<li>Invalid Pitch Title. Please try again.</li>
+									<li>Invalid Status. Please try again.</li>
+								</ul>
+							</div>
+							<p class="error">
+								<span class="column small-12">
+									<label for="errorInput">Input with error</label>
+									<input class="error" id="errorInput" title="New List Name" type="text">
+									<span class="help-inline error">Field is Required lorem ipsum sint ut in est.</span>
+								</span>
+							</p>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+				</section><!-- / error states -->
+
+				<section>
+					<header>
+						<h3 class="subheader">Alternate Form field sizes</h3>
+						<p>Customize any form <code>input</code>, <code>select</code>, or <code>textarea</code> width by adding just a few classes to your markup.</p>
+					</header>
+					<div class="row">
+
+						<div class="column large-12">
+							<form action="">
+								<fieldset>
+								<div class="row"><input class="span1" id="" name="" placeholder=".span1" type="text">.span1</div>
+								<div class="row"><input class="span2" id="" name="" placeholder=".span2" type="text"><input class="span3" id="" name="" placeholder=".span3" type="text"></div>
+								<div class="row"><input class="span3" id="" name="" placeholder=".span3" type="text"><input class="span2" id="" name="" placeholder=".span2" type="text"></div>
+								<div class="row"><input class="span4" id="" name="" placeholder=".span4" type="text"></div>
+								<div class="row"><input class="span5" id="" name="" placeholder=".span5" type="text"></div>
+								<div class="row"><input class="span6" id="" name="" placeholder=".span6" type="text"></div>
+								<div class="row"><input class="span7" id="" name="" placeholder=".span7" type="text"></div>
+								<div class="row"><input class="span8" id="" name="" placeholder=".span8" type="text"></div>
+								<div class="row"><input class="span9" id="" name="" placeholder=".span9" type="text"></div>
+								<div class="row"><input class="span10" id="" name="" placeholder=".span10" type="text"></div>
+								<div class="row"><input class="span11" id="" name="" placeholder=".span11" type="text"></div>
+								<div class="row"><input class="span12" id="" name="" placeholder=".span12" type="text"></div>
+								<div class="row"><input class="span13" id="" name="" placeholder=".span13" type="text"></div>
+								<div class="row"><input class="span14" id="" name="" placeholder=".span14" type="text"></div>
+								<div class="row"><input class="span15" id="" name="" placeholder=".span15" type="text"></div>
+								<div class="row"><input class="span16" id="" name="" placeholder=".span16" type="text"></div>
+								</fieldset>
+							</form>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<form action="">
+									<fieldset>
+									<div class="row"><input class="span1" id="" name="" placeholder=".span1" type="text">.span1</div>
+									<div class="row"><input class="span2" id="" name="" placeholder=".span2" type="text"><input class="span3" id="" name="" placeholder=".span3" type="text"></div>
+									<div class="row"><input class="span3" id="" name="" placeholder=".span3" type="text"><input class="span2" id="" name="" placeholder=".span2" type="text"></div>
+									<div class="row"><input class="span4" id="" name="" placeholder=".span4" type="text"></div>
+									<div class="row"><input class="span5" id="" name="" placeholder=".span5" type="text"></div>
+									<div class="row"><input class="span6" id="" name="" placeholder=".span6" type="text"></div>
+									<div class="row"><input class="span7" id="" name="" placeholder=".span7" type="text"></div>
+									<div class="row"><input class="span8" id="" name="" placeholder=".span8" type="text"></div>
+									<div class="row"><input class="span9" id="" name="" placeholder=".span9" type="text"></div>
+									<div class="row"><input class="span10" id="" name="" placeholder=".span10" type="text"></div>
+									<div class="row"><input class="span11" id="" name="" placeholder=".span11" type="text"></div>
+									<div class="row"><input class="span12" id="" name="" placeholder=".span12" type="text"></div>
+									<div class="row"><input class="span13" id="" name="" placeholder=".span13" type="text"></div>
+									<div class="row"><input class="span14" id="" name="" placeholder=".span14" type="text"></div>
+									<div class="row"><input class="span15" id="" name="" placeholder=".span15" type="text"></div>
+									<div class="row"><input class="span16" id="" name="" placeholder=".span16" type="text"></div>
+									</fieldset>
+								</form>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+				</section><!-- / alt input grid -->
+
+				<section id="s-switcher">
+					<header>
+						<h3 class="subheader">Switcher Checkboxes</h3>
+					</header>
+
+					<div class="row">
+							<span class="wrap">
+								<label>Diversity</label>
+								<label class="sw-label"><input type="checkbox" class="ios-switch" checked></label>
+							</span>
+					</div><!-- /row -->
+					<div class="row">
+							<pre><code data-language="html">
+								<span class="wrap">
+									<label>Diversity</label>
+									<label class="sw-label"><input type="checkbox" class="ios-switch" checked></label>
+								</span>
+							</code></pre>
+					</div><!-- /row -->
+				</section>
+				<!-- /section switcher -->
+
+		</section>  <!-- / end forms -->
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+	<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<!-- jQuery UI -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<!-- <script src="../_assets/js/loader.js"></script> -->
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+	<script src="../_assets/js/jquery.stickyFooter.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+
+	<!-- foundation specific -->
+	<script src="../_assets/js/foundation/foundation.min.js"></script>
+	<script src="../_assets/js/vendor/fastclick.js"></script>
+
+	<!-- code formatting for styleguide -->
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script>
+		//sample datatable
+		function initSampleDataTables() {
+
+			$('#guide-sample').dataTable({
+				"bAutoWidth": false,
+				"bJQueryUI": true,
+				"bFilter": true,
+				"bLengthChange": true,
+				"bInfo": false,
+				"bPaginate": true,
+				"sPaginationType": "full_numbers",
+				"aaSorting": [[ 4, "desc" ]],
+				"aoColumnDefs": [
+					{ "bSortable": false, "aTargets": [ 0 ] }
+				],
+			});
+
+			selectAll();
+			selectNone();
+		}
+		initSampleDataTables();
+
+	</script>
+
+
+
+ <script>
+	// 	$("a[href^='#']").click(function(evt){
+	// 		var j = $(evt.currentTarget);
+	// 		var anchorTarget = j.attr("href");
+	// 		$("body")
+	// 			.scrollTo(anchorTarget, 500, {
+	// 				onAfter:function() {
+	// 					window.location.hash = anchorTarget.substr(1);
+	// 					$(anchorTarget).attr("tabindex",-1).focus();
+	// 				}
+	// 			});
+
+	// 		evt.preventDefault();
+	// 	});
+ </script>
+
+ 	<script>
+		$(document).foundation();
+	</script>
+
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+
+</body>
+</html>

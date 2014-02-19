@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem UI Components</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="_assets/css/ui.css" rel="stylesheet" media="all">
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<header role="banner" class="masthead gradient">
+		<!-- ajax siteMainheader() -->
+	</header><!-- /header -->
+
+	<header id="header-b" class="record">
+
+		<div class="row">
+			<div class="h-content">
+
+				<h1 class="name">Style Guide</h1>
+
+			</div>
+			<!-- /h-content -->
+		</div>
+			<!-- menu -->
+			<!-- category content navigation -->
+			<div id="cat-nav" class="row cat-bar">
+
+				<div class="h-content">
+					<!-- details navigation -->
+					<div class="nav-b nav-primary">
+							<ul class="nav-cat">
+								<li class="structure" data-section="structure">
+									<a href="../index.html">General</a>
+								</li>
+								<li class="structure" data-section="structure">
+									<a href="../coding/coding.html">Coding Practices</a>
+								</li>
+								<li class="ui" data-section="ui">
+									<a href="ui.html">UI</a>
+								</li>
+								 <li class="base" data-section="base">
+									<a href="base.html">Base</a>
+								</li>
+								<li class="modules" data-section="modules">
+									<a href="modules.html">Modules</a>
+								</li>
+								<li class="svg-color active" data-section="svg-color">
+									<a href="svg-color.html">SVG Color Chart</a>
+								</li>
+							</ul>
+					</div>
+					<!-- /details navigation -->
+				</div>
+
+			</div>
+
+	</header>
+
+	<!-- content -->
+	<div class="content">
+
+			<!-- complementary content -->
+			<aside role="complementary" class="">
+
+				<nav>
+					<ul class="side-nav">
+						<li class="heading">Color and Branding</li>
+						<li><a href="#s-svg-color">SVG Color Chart</a></li>
+						<li class="divider"></li>
+						<!-- <li class="heading">Structure</li> -->
+					</ul>
+				</nav>
+
+			</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+			<section id="s-svg-color" class="mod box">
+				<h2>SVG Color chart</h2>
+				<div class="row">
+				 <h3>SVG color keywords</h3>
+				<p>The table below provides a list of the X11 colors [X11COLORS] supported by popular browsers with the
+				addition of gray/grey variants from SVG 1.0. The resulting list is precisely
+				the same as the <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG 1.0 color
+				keyword names</a>. The two color swatches on the left illustrate setting the
+				background color of a table cell in two ways: The first column uses the named
+				color value, and the second column uses the respective numeric color value.
+				</p>
+				<table>
+					<tbody>
+						<tr>
+							<th style="background: black none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Named
+							</th>
+							<th>Numeric</th>
+							<th>Color&nbsp;name</th>
+							<th>Hex&nbsp;rgb</th>
+							<th>Decimal</th>
+						</tr>
+						<tr>
+							<td class="c" style="background: aliceblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(240, 248, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>aliceblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f0f8ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">240,248,255
+							</td>
+						</tr>
+						<tr>
+							<td class="c" style="background: antiquewhite none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(250, 235, 215) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>antiquewhite
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#faebd7
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">250,235,215
+						</td>
+						</tr>
+						<tr>
+							<td class="c" style="background: aqua none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 255, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>aqua
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00ffff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,255,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: aquamarine none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(127, 255, 212) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>aquamarine
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#7fffd4
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">127,255,212
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: azure none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(240, 255, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>azure
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f0ffff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">240,255,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: beige none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(245, 245, 220) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>beige
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f5f5dc
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">245,245,220
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: bisque none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 228, 196) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>bisque
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffe4c4
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,228,196
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: black none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 0, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>black
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#000000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,0,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: blanchedalmond none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 235, 205) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>blanchedalmond
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffebcd
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,235,205
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: blue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 0, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>blue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#0000ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,0,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: blueviolet none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(138, 43, 226) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>blueviolet
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#8a2be2
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">138,43,226
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: brown none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(165, 42, 42) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>brown
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#a52a2a
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">165,42,42
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: burlywood none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(222, 184, 135) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>burlywood
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#deb887
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">222,184,135
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: cadetblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(95, 158, 160) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>cadetblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#5f9ea0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">95,158,160
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: chartreuse none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(127, 255, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>chartreuse
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#7fff00
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">127,255,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: chocolate none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(210, 105, 30) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>chocolate
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#d2691e
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">210,105,30
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: coral none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 127, 80) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>coral
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff7f50
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,127,80
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: cornflowerblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(100, 149, 237) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>cornflowerblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#6495ed
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">100,149,237
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: cornsilk none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 248, 220) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>cornsilk
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fff8dc
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,248,220
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: crimson none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(220, 20, 60) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>crimson
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#dc143c
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">220,20,60
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: cyan none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 255, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>cyan
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00ffff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,255,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 0, 139) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00008b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,0,139
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkcyan none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 139, 139) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkcyan
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#008b8b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,139,139
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkgoldenrod none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(184, 134, 11) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkgoldenrod
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#b8860b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">184,134,11
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkgray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(169, 169, 169) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkgray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#a9a9a9
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">169,169,169
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 100, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#006400
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,100,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkgrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(169, 169, 169) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkgrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#a9a9a9
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">169,169,169
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkkhaki none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(189, 183, 107) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkkhaki
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#bdb76b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">189,183,107
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkmagenta none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(139, 0, 139) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkmagenta
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#8b008b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">139,0,139
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkolivegreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(85, 107, 47) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkolivegreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#556b2f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">85,107,47
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkorange none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 140, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkorange
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff8c00
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,140,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkorchid none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(153, 50, 204) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkorchid
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#9932cc
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">153,50,204
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkred none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(139, 0, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkred
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#8b0000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">139,0,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darksalmon none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(233, 150, 122) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darksalmon
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#e9967a
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">233,150,122
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkseagreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(143, 188, 143) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkseagreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#8fbc8f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">143,188,143
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkslateblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(72, 61, 139) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkslateblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#483d8b
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">72,61,139
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkslategray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(47, 79, 79) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkslategray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#2f4f4f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">47,79,79
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkslategrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(47, 79, 79) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkslategrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#2f4f4f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">47,79,79
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkturquoise none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 206, 209) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkturquoise
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00ced1
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,206,209
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: darkviolet none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(148, 0, 211) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>darkviolet
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#9400d3
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">148,0,211
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: deeppink none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 20, 147) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>deeppink
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff1493
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,20,147
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: deepskyblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 191, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>deepskyblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00bfff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,191,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: dimgray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(105, 105, 105) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>dimgray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#696969
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">105,105,105
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: dimgrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(105, 105, 105) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>dimgrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#696969
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">105,105,105
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: dodgerblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(30, 144, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>dodgerblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#1e90ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">30,144,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: firebrick none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(178, 34, 34) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>firebrick
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#b22222
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">178,34,34
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: floralwhite none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 250, 240) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>floralwhite
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fffaf0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,250,240
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: forestgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(34, 139, 34) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>forestgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#228b22
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">34,139,34
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: fuchsia none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 0, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>fuchsia
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff00ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,0,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: gainsboro none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(220, 220, 220) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>gainsboro
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#dcdcdc
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">220,220,220
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: ghostwhite none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(248, 248, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>ghostwhite
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f8f8ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">248,248,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: gold none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 215, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>gold
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffd700
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,215,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: goldenrod none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(218, 165, 32) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>goldenrod
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#daa520
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">218,165,32
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: gray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(128, 128, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>gray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#808080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">128,128,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: green none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 128, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>green
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#008000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,128,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: greenyellow none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(173, 255, 47) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>greenyellow
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#adff2f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">173,255,47
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: grey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(128, 128, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>grey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#808080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">128,128,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: honeydew none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(240, 255, 240) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>honeydew
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f0fff0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">240,255,240
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: hotpink none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 105, 180) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>hotpink
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff69b4
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,105,180
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: indianred none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(205, 92, 92) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>indianred
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#cd5c5c
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">205,92,92
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: indigo none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(75, 0, 130) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>indigo
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#4b0082
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">75,0,130
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: ivory none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 255, 240) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>ivory
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fffff0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,255,240
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: khaki none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(240, 230, 140) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>khaki
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f0e68c
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">240,230,140
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lavender none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(230, 230, 250) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lavender
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#e6e6fa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">230,230,250
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lavenderblush none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 240, 245) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lavenderblush
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fff0f5
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,240,245
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lawngreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(124, 252, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lawngreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#7cfc00
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">124,252,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lemonchiffon none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 250, 205) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lemonchiffon
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fffacd
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,250,205
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(173, 216, 230) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#add8e6
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">173,216,230
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightcoral none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(240, 128, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightcoral
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f08080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">240,128,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightcyan none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(224, 255, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightcyan
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#e0ffff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">224,255,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightgoldenrodyellow none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(250, 250, 210) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightgoldenrodyellow
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fafad2
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">250,250,210
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightgray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(211, 211, 211) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightgray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#d3d3d3
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">211,211,211
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(144, 238, 144) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#90ee90
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">144,238,144
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightgrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(211, 211, 211) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightgrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#d3d3d3
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">211,211,211
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightpink none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 182, 193) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightpink
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffb6c1
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,182,193
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightsalmon none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 160, 122) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightsalmon
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffa07a
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,160,122
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightseagreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(32, 178, 170) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightseagreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#20b2aa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">32,178,170
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightskyblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(135, 206, 250) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightskyblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#87cefa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">135,206,250
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightslategray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(119, 136, 153) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightslategray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#778899
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">119,136,153
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightslategrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(119, 136, 153) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightslategrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#778899
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">119,136,153
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightsteelblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(176, 196, 222) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightsteelblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#b0c4de
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">176,196,222
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lightyellow none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 255, 224) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lightyellow
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffffe0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,255,224
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: lime none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 255, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>lime
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00ff00
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,255,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: limegreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(50, 205, 50) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>limegreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#32cd32
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">50,205,50
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: linen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(250, 240, 230) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>linen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#faf0e6
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">250,240,230
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: magenta none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 0, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>magenta
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff00ff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,0,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: maroon none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(128, 0, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>maroon
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#800000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">128,0,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumaquamarine none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(102, 205, 170) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumaquamarine
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#66cdaa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">102,205,170
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 0, 205) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#0000cd
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,0,205
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumorchid none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(186, 85, 211) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumorchid
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ba55d3
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">186,85,211
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumpurple none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(147, 112, 219) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumpurple
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#9370db
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">147,112,219
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumseagreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(60, 179, 113) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumseagreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#3cb371
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">60,179,113
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumslateblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(123, 104, 238) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumslateblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#7b68ee
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">123,104,238
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumspringgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 250, 154) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumspringgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00fa9a
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,250,154
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumturquoise none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(72, 209, 204) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumturquoise
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#48d1cc
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">72,209,204
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mediumvioletred none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(199, 21, 133) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mediumvioletred
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#c71585
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">199,21,133
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: midnightblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(25, 25, 112) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>midnightblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#191970
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">25,25,112
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mintcream none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(245, 255, 250) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mintcream
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f5fffa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">245,255,250
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: mistyrose none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 228, 225) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>mistyrose
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffe4e1
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,228,225
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: moccasin none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 228, 181) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>moccasin
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffe4b5
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,228,181
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: navajowhite none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 222, 173) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>navajowhite
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffdead
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,222,173
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: navy none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 0, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>navy
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#000080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,0,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: oldlace none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(253, 245, 230) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>oldlace
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fdf5e6
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">253,245,230
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: olive none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(128, 128, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>olive
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#808000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">128,128,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: olivedrab none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(107, 142, 35) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>olivedrab
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#6b8e23
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">107,142,35
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: orange none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 165, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>orange
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffa500
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,165,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: orangered none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 69, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>orangered
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff4500
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,69,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: orchid none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(218, 112, 214) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>orchid
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#da70d6
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">218,112,214
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: palegoldenrod none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(238, 232, 170) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>palegoldenrod
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#eee8aa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">238,232,170
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: palegreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(152, 251, 152) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>palegreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#98fb98
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">152,251,152
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: paleturquoise none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(175, 238, 238) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>paleturquoise
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#afeeee
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">175,238,238
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: palevioletred none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(219, 112, 147) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>palevioletred
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#db7093
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">219,112,147
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: papayawhip none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 239, 213) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>papayawhip
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffefd5
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,239,213
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: peachpuff none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 218, 185) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>peachpuff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffdab9
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,218,185
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: peru none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(205, 133, 63) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>peru
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#cd853f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">205,133,63
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: pink none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 192, 203) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>pink
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffc0cb
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,192,203
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: plum none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(221, 160, 221) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>plum
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#dda0dd
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">221,160,221
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: powderblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(176, 224, 230) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>powderblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#b0e0e6
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">176,224,230
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: purple none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(128, 0, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>purple
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#800080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">128,0,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: red none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 0, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>red
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff0000
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,0,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: rosybrown none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(188, 143, 143) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>rosybrown
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#bc8f8f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">188,143,143
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: royalblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(65, 105, 225) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>royalblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#4169e1
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">65,105,225
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: saddlebrown none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(139, 69, 19) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>saddlebrown
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#8b4513
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">139,69,19
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: salmon none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(250, 128, 114) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>salmon
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fa8072
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">250,128,114
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: sandybrown none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(244, 164, 96) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>sandybrown
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f4a460
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">244,164,96
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: seagreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(46, 139, 87) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>seagreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#2e8b57
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">46,139,87
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: seashell none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 245, 238) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>seashell
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fff5ee
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,245,238
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: sienna none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(160, 82, 45) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>sienna
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#a0522d
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">160,82,45
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(192, 192, 192) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>silver
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#c0c0c0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">192,192,192
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: skyblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(135, 206, 235) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>skyblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#87ceeb
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">135,206,235
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: slateblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(106, 90, 205) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>slateblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#6a5acd
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">106,90,205
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: slategray none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(112, 128, 144) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>slategray
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#708090
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">112,128,144
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: slategrey none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(112, 128, 144) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>slategrey
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#708090
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">112,128,144
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: snow none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 250, 250) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>snow
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#fffafa
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,250,250
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: springgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 255, 127) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>springgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#00ff7f
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,255,127
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: steelblue none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(70, 130, 180) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>steelblue
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#4682b4
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">70,130,180
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: tan none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(210, 180, 140) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>tan
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#d2b48c
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">210,180,140
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: teal none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(0, 128, 128) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>teal
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#008080
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">0,128,128
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: thistle none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(216, 191, 216) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>thistle
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#d8bfd8
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">216,191,216
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: tomato none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 99, 71) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>tomato
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ff6347
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,99,71
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: turquoise none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(64, 224, 208) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>turquoise
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#40e0d0
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">64,224,208
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: violet none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(238, 130, 238) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>violet
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ee82ee
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">238,130,238
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: wheat none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(245, 222, 179) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>wheat
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f5deb3
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">245,222,179
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: white none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 255, 255) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>white
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffffff
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,255,255
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: whitesmoke none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(245, 245, 245) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>whitesmoke
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#f5f5f5
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">245,245,245
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: yellow none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(255, 255, 0) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>yellow
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#ffff00
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">255,255,0
+						</td>
+						</tr>
+						<tr>
+						<td class="c" style="background: yellowgreen none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td class="c" style="background: rgb(154, 205, 50) none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;
+							</td>
+							<td>yellowgreen
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">#9acd32
+							</td>
+							<td class="c" style="background: silver none repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">154,205,50
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				<!-- /row -->
+
+			</section>
+
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+			<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/html5shiv.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<script src="../_assets/js/loader.js"></script>
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+
+	<!-- layout specific -->
+	<script src="../_assets/js/lib/foundation.min.js"></script>
+	<script src="../_assets/js/lib/app.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+	<!-- code formatting -->
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script type="text/javascript">
+		$("a[href^='#']").click(function(evt){
+			var j = $(evt.currentTarget);
+			var anchorTarget = j.attr("href");
+			$("body")
+				.scrollTo(anchorTarget, 500, {
+					onAfter:function() {
+						window.location.hash = anchorTarget.substr(1);
+						$(anchorTarget).attr("tabindex",-1).focus();
+					}
+				});
+
+			evt.preventDefault();
+		});
+	</script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+
+</body>
+</html>

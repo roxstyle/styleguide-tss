@@ -1,0 +1,816 @@
+﻿@page { margin:1.5cm 1.5cm; }
+
+/* 1.HTML5 element
+----------------------------------------------------------*/
+/* 2.Base
+----------------------------------------------------------*/
+*, .drop-shadow {
+	background :transparent !important;
+	color :black !important;
+	text-shadow :none !important;
+	filter :none !important;
+	-ms-filter :none !important;
+	-webkit-box-shadow:none !important;
+	-moz-box-shadow:none !important;
+		box-shadow:none !important;
+}
+html, body {background:transparent; font-size:.9em;}
+body, form {font:11pt 'Helvetica Neue',Helvetica,Arial,sans-serif; width:100%; max-width:100%; margin:0.3em; padding:0;}
+
+
+header[role="banner"] .search,
+header[role="banner"] #mast-menu,
+footer[role="contentinfo"],
+header[role="banner"] #backToClassic,
+aside[role="complementary"] a.read-more,
+#thedetails > section.selected header .h-tools,
+.record #record-menu,
+.profile .gallery-nav,
+.location, .openHint, p.key,
+.ui-dialog, .hint, .map,
+.sections-heading { display:none !important;}
+
+.h-content {
+	min-height:auto;
+	margin:0;
+	padding:0;
+}
+
+header[role="banner"] {
+	min-height:15px;
+	margin:0;
+	padding:0;
+}
+
+/*body * {float:none !important;} */
+
+/* 3.Headings
+----------------------------------------------------------*/
+p, h2, h3 {
+	orphans :3;
+	widows :3;
+}
+h2, h3, .tv-e li h3, .tv-e li .tv-episode { page-break-after :avoid;}
+
+h1 {font:1.5em 'Helvetica Neue',Helvetica,Arial,sans-serif; width:100%; max-width:100%; margin:0 0 .5em 0; padding:0; text-align:left; font-size:1.5em;}
+
+h1.name {font:11px 'Helvetica Neue',Helvetica,Arial,sans-serif; width:100%; max-width:100%; margin:0; padding:0; text-align:left;}
+
+h1.name a:hover {
+	text-decoration:underline;
+}
+/*h1.name > a:first-child:before {
+	content:"‹‹ Back to:";
+	content:"‹‹ ";
+}*/
+
+
+h2, aside h2 {
+	font:1.3em 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	margin-bottom:0;
+	font-size:1.3em;
+	line-height:1;
+	font-style:normal;
+}
+h2 a, aside h2 a {
+	text-decoration :none;
+}
+/* hide screen logo */
+header[role="banner"] .h-content h1 {
+	display:none;
+}
+/* show print logo */
+header[role="banner"] .h-content h1.print-only {
+	display:block;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+	width:100%;
+}
+/* show record name */
+header.record .h-content h1.name {
+	display:block;
+	position:relative;
+	margin:.3em 0;
+	padding:0;
+	width:100%;
+	font-size:1.7em;
+}
+/* start print preview */
+.printlist div[role="main"] h2.preview {
+	border-top: 1px dotted #ccc;
+	margin-top:0;
+	padding-top: 0;
+	margin-bottom: 3em;
+}
+
+#down-triangle {
+	vertical-align: baseline;
+	float: left;
+	width: 0;
+	height: 0;
+	margin-right: .2em;
+	border-top: 20px solid grey;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+}
+
+/* 4.Links
+----------------------------------------------------------*/
+a, a:visited {
+	cursor: auto;
+	color :#444 !important;
+	text-decoration: none;
+}
+/* remove links from print preview */
+a:link:after,
+a:visited:after {
+	content: "";
+}
+
+a, a:hover, a:focus {
+	cursor: none;
+	cursor:  auto;
+	text-decoration: none;
+}
+
+/*a[href]:after {
+	content :" (" attr(href) ")";
+	font-size:90%;
+}*/
+
+a[href^="mailto:"]:after {
+	 content:" (" attr(href) ")";
+	 font-size:80%;
+}
+
+/* 5.Typography
+----------------------------------------------------------*/
+/*abbr[title]:after {
+	content :" (" attr(title) ")";
+}*/
+
+a[href^="javascript:"]:after,
+a[href^="#"]:after,
+a[href^="http://"]:after, {
+	content :"";
+	text-decoration: none;
+	display: none;
+}
+
+pre, blockquote {
+	border :1px solid #999;
+	page-break-inside :avoid;
+}
+
+/* 6.Lists
+----------------------------------------------------------*/
+li ul,
+li ol { margin:0 1em; }
+ul, ol { margin:0 1.5em; padding:0; }
+ul li { list-style-type:disc; margin-bottom:0; }
+ol li { list-style-type:decimal; }
+li { padding:0.1em 0; margin-bottom:.15em; }
+ul.s-details li {margin:0; padding:0;line-height:.9em;}
+ul.s-details dt {font:1em 'Helvetica Neue',Helvetica,Arial,sans-serif; color: red;}
+ul.s-details {margin:0 0 .1em 0;}
+ul.s-details dl {
+	margin-bottom:0;
+	min-height:1em;
+}
+li p {padding:0; margin:0.2em 0  }
+
+.record-sections ul.checks {
+	margin-left: 0;
+	margin-bottom:2em;
+}
+.record-sections .checks li {
+	list-style-type:none;
+}
+
+/* 7.Embedded content
+----------------------------------------------------------*/
+/* 8.Figures and Images
+----------------------------------------------------------*/
+
+img { max-width:100% !important; }
+
+/*header[role="banner"] h1 a[href]:after {
+	content :" ";
+	font-size:50%;
+}*/
+
+/* 9.Forms
+----------------------------------------------------------*/
+
+input[type="checkbox"], input[type="radio"] {
+	display:inline-block;
+	cursor:pointer;
+	width:auto;
+	height:auto;
+	padding:0;
+	margin-right:.125em;
+	line-height:normal;
+	border:none;
+	box-sizing:border-box;
+	z-index:5000;
+}
+
+.actions {
+	background:#f5f5f5 !important;
+	margin-top:18px;
+	margin-bottom:18px;
+	padding:17px 20px 18px 20px;
+	border:1px solid #d5d5d5;
+}
+/* default button */
+button {
+	width:auto;
+	padding:8px 12px 9px;
+	overflow:visible;
+	background-color:rgb(227,227,227) !important;
+	border:1px solid rgb(204,204,204);
+	border-bottom-color:rgb(187,187,187);
+	font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size:.875em;
+	font-weight:bold;
+	text-align:center;
+	line-height:1;
+	color:rgb(51,51,51);
+	text-shadow:0 1px 0 rgb(255,255,255);
+}
+
+button:hover {
+	cursor:pointer;
+	background-color:rgb(217,217,217) !important;
+}
+.btn {
+	-moz-border-bottom-colors:none;
+	-moz-border-image:none;
+	-moz-border-left-colors:none;
+	-moz-border-right-colors:none;
+	-moz-border-top-colors:none;
+	-moz-transition:all 0.1s linear 0s;
+	background-color:#E6E6E6 !important;
+	background-image:-moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6) !important;
+	background-repeat:no-repeat;
+	border-color:#CCCCCC #CCCCCC #BBBBBB;
+	border-radius:4px 4px 4px 4px;
+	border-style:solid;
+	border-width:1px;
+	box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	color:#333333;
+	cursor:pointer;
+	display:inline-block;
+	outline:none;
+	font-size:.875em;
+	line-height:normal;
+	margin-right:.3em;
+	padding:5px 14px 6px;
+	width:auto;
+	text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);
+}
+.btn:hover {
+	background-position:0 -15px;
+	color:#333333;
+	text-decoration:none;
+}
+.btn:focus {
+	outline:1px dotted #666666;
+}
+/* primary button */
+.btn.primary {
+background:#1e5799 !important; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMjk4OWQ4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjMTcyZjUzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background:-moz-linear-gradient(top, #1e5799 0%, #2989d8 0%, #172f53 70%) !important; /* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(0%,#2989d8), color-stop(70%,#172f53)) !important; /* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 70%) !important; /* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 70%) !important; /* Opera 11.10+ */
+background:-ms-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 70%)!important; /* IE10+ */
+background:linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 70%)!important; /* W3C */
+
+  background-repeat:repeat-x;
+
+	border-color:#6e8da9;
+	color:#FFFFFF !important;
+	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.3);
+		-moz-background-clip:padding;     /* Firefox 3.6 */
+	 -webkit-background-clip:padding;  /* Safari 4 Chrome 6 */
+			 background-clip:padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+}
+
+.lt-ie9 .btn.primary {
+	background:#1e5799 !important; /* Old browsers */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#172f53',GradientType=0 ); /* IE6-8 */
+}
+.btn.primary:hover {
+background:#1e5799 !important; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMjk4OWQ4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjMTcyZjUzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background:-moz-linear-gradient(top, #1e5799 0%, #2989d8 0%, #172f53 30%) !important; /* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(0%,#2989d8), color-stop(30%,#172f53)) !important; /* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 30%) !important; /* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 30%) !important; /* Opera 11.10+ */
+background:-ms-linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 30%) !important; /* IE10+ */
+background:linear-gradient(top, #1e5799 0%,#2989d8 0%,#172f53 30%) !important; /* W3C */
+}
+
+/* 10.Tables
+----------------------------------------------------------*/
+thead { display:table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+
+/*table, tr, img {
+	page-break-inside :avoid;
+}*/
+img {
+	page-break-inside :avoid;
+}
+table {width:100%}
+td, th, table.display thead th {
+	border:1px solid #ccc;
+	border-width:1px 0;
+	text-align:left;
+	vertical-align:middle;
+}
+
+tr:last-child td {
+	border-bottom-width:0;
+}
+
+th, td, caption {
+	padding:.5em .5em .5em 0;
+}
+
+/* 11.Banner header[role="banner"]
+----------------------------------------------------------*/
+.h-content {
+	width:100%;
+	min-height:5px;
+	margin:0 0 0 .7em;
+}
+
+/* 12.Navigation nav[role="navigation"]
+----------------------------------------------------------*/
+/* 13.Content
+----------------------------------------------------------*/
+.content {
+	position:relative;
+	width:100%;
+	max-width:auto;
+	margin:.5em 0 0;
+	padding:0;
+}
+
+/* 14.Main div[role="main"]
+----------------------------------------------------------*/
+div[role="main"] {
+	width:98%;
+	margin:0 auto;
+	padding:0 0 2em;
+	border-bottom:1px solid #bbb;
+
+	float:none;
+	border:0;
+}
+
+div[role="main"] > section {
+	position:relative;
+	margin:.5em 0;
+	padding:.2em .75em;
+	max-width:990px;
+}
+div[role="main"] > .controls {
+	position:relative;
+	margin:-1em 0 0;
+	padding:.75em .75em .9em;
+}
+.hasJS #thedetails > section {display:block;}
+#thedetails > section.selected {display:block;}
+
+div[role="main"] p {
+	line-height:1.3;
+}
+div[role="main"] td p {
+	line-height:1;
+}
+
+div[role="main"] table.display td p {
+	line-height:1;
+}
+
+/* main record summary */
+#summary { padding:.5em;}
+#summary ul.s-details {margin:0;}
+#summary ul.s-details li {margin-bottom:0; padding-bottom:0;}
+#summary ul.s-details dl  {margin-bottom:0;}
+#summary ul.s-details dd {padding-bottom:0;}
+
+.pubdates {font-size:.8em;}
+
+.summary-info .title {
+	font-weight:normal;
+}
+
+ul.s-details dt {
+	float:left;
+	display:inline-block;
+	margin-right:.5em;
+	width:23%;
+	margin:0;
+	padding:0;
+}
+
+ul.s-details dd {
+	clear:none;
+	float:left;
+	display:inline-block;
+	width:73%;
+}
+ul.s-list dt {
+	position:absolute;
+	left:1em;
+}
+ul.s-list dd {
+	margin-left:24%;
+}
+ul.s-list dd:first-child {
+	margin-top:-20px;
+}
+.subtog {
+	position:relative;
+	margin:-.8em 0 1em 0em;
+	padding:0 .8em .5em;
+	border-top:2px solid #888;
+}
+	.controls > .subtog {
+	margin:-1.5em 0 0em 1.2em;
+	padding:0 .5em 0em;
+	border:none;
+	}
+	.subtog > header h2,
+	.subtog > header h2 span {
+		display:block;
+		margin:0;
+		padding:0;
+	}
+#main #summary h2,
+div[role="main"] .subtog header h2,
+.subtog > header h2 {
+	font-size:1.2em;
+}
+.subtog > header,
+div[role="main"] .subtog header  {
+	display:block;
+	margin:.5em 0 1em 0;
+	padding:0;
+	cursor:pointer;
+}
+.subtog > header:hover, .subtog > header:focus { background:#ddd; }
+
+.submod {
+	position:relative;
+	margin:-.8em 0 1em 0em;
+	padding:0 .8em .5em;
+	border-top:2px solid #888;
+}
+	.controls > .submod {
+	margin:-1.5em 0 0em 1.2em;
+	padding:0 .5em 0em;
+	border:none;
+	}
+	.submod > header h2,
+	.submod > header h2 span {
+		display:block;
+		margin:0;
+		padding:0;
+	}
+#main #summary h2,
+div[role="main"] .submod header h2,
+.submod > header h2 {
+	font-size:1.2em;
+}
+.submod > header,
+div[role="main"] .submod header  {
+	display:block;
+	margin:.5em 0 1em 0;
+	padding:0;
+	cursor:pointer;
+}
+.submod > header:hover, .submod > header:focus { background:#ddd; }
+
+/* project tv episode */
+.tv-episode {
+	position:relative;
+}
+.nielson-tools li {list-style-type:none;}
+
+/* print controls */
+.controls #checkAll {
+	position:absolute;
+	top:0;
+	left:.8em;
+	clear:right;
+	float:left;
+	font-size:.8em;
+	width:auto;
+}
+.expand-all {
+	margin-left:1.4em;
+	width:160px;
+	height:16px;
+	cursor:pointer;
+	font-weight:bold;
+}
+
+body.printlist .controls #checkAll {
+	position:relative;
+	top:0;
+	left:.1em;
+	clear:right;
+	float:none;
+	font-size:1em;
+	width:auto;
+}
+
+/* home page */
+body.index [role="main"] section {
+	margin:0;
+	padding:0;
+}
+.flex-container {
+	width:100%;
+	max-width:100%;
+	margin:0;
+	padding:0;
+	float:none;
+}
+.flex-control-nav, .flex-direction-nav {display:none;}
+.flexslider {
+	border:none;
+}
+.flexslider ul.slides {
+	display:block;
+	min-height:auto;
+	border:none;
+	overflow:visible;
+}
+.flexslider ul.slides > li {
+	/*left:auto !important;*/
+	position:relative;
+	width:auto;
+	display:block;
+	float:none;
+	width:100%;
+	margin-right:0;
+	display:list-item;
+}
+.flexslider .slides img {
+	max-width:100%;
+	display:block;
+	position:relative;
+	padding:10px;
+	background:red;
+}
+.flex-caption {position:relative; padding:0;}
+.flex-caption p {margin-bottom:0;}
+
+.buzzpop {
+	margin:0;
+	padding:0;
+	width:100%;
+}
+/* tabs */
+.tabs-body div.tabs-panel,
+.popular div.tabs-panel h2,
+.trending div.tabs-panel h2  {display:block;}
+
+.tabs-body div.tabs-panel {padding:0 .5em;}
+
+.tabs-body div.tabs-panel ul.s-details {
+	margin:.5em .3em 0;
+	padding:0;
+}
+.tabs-body div.tabs-panel ul.s-details li {
+	width:100%;
+	list-style-type:none;
+	clear:both;
+}
+.tabs-body div.tabs-panel ul.s-details li dl{
+	width:100%;
+	display:block;
+}
+.tabs-body div.tabs-panel ul.s-details li dl dd{
+	width:72%;
+	float:left;
+	display:inline-block;
+	margin:0;
+}
+
+	.tabs-body div.tabs-panel ul.s-details li:before, .tabs-body div.tabs-panel ul.s-details li:after { content:""; display:table; }
+
+	.tabs-body div.tabs-panel ul.s-details li:before,
+	.tabs-body div.tabs-panel ul.s-details li:after {
+		content:"\0020";
+		display:block;
+		height:0;
+		overflow:hidden; }
+
+	.tabs-body div.tabs-panel ul.s-details li:after { clear:both; }
+	.tabs-body div.tabs-panel ul.s-details li { zoom:1; }
+
+/*.project #summary ul.s-details dt,*/
+.project #thedetails ul.s-details dt {
+	position:relative;
+	display:block;
+	width:100%;
+}
+/*.project #summary ul.s-details dd,*/
+.project #thedetails ul.s-details dd {
+	position:relative;
+	display:block;
+	width:100%;
+}
+#thedetails > header h2 {float:left; display:block; width:100%;}
+#thedetails > header h3 { float:left; display:block; width:100%; font-size:1.2em;}
+
+/* gallery */
+div.pp_pic_holder {
+	position:relative;
+	float:left;
+	width:100px;
+	margin-left:0;
+	margin-top:0;
+}
+
+div.pp_overlay {
+	background:transparent;
+	display:none;
+	position:relative;
+	width:100%;
+}
+
+div[role="main"] .popular .tabs-nav, aside[role="complementary"] .trending .tabs-nav,
+.bb-reports, .thetour, .flex-caption a.readmore , a.more, section.barlists, .folded-corner,
+.subtabs .tabs-nav, header .h-tools, .pp_overlay, p.key, .help-block, .tabs-panel .h-tools {display:none;}
+
+/* 15.Complimentary div[role="complementary"]
+----------------------------------------------------------*/
+*[role="complementary"] {
+	width:100%;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #bbb;
+}
+
+body.printlist aside[role="complementary"] {
+	width:98%;
+	margin:1.5em auto;
+	padding:0;
+	border-bottom:1px solid #bbb;
+}
+body.person aside[role="complementary"],
+body.tv aside[role="complementary"],
+body.film aside[role="complementary"]{
+	margin:0;
+	padding:0;
+	border-bottom:none;
+}
+aside[role="complementary"] > section {
+	width:100%;
+	margin-bottom:0;
+	border:1px solid #ccc;
+}
+div.profile-img,
+div.profile-img figure,
+div.profile-img figure img,
+div.profile-img .toolbar,
+a.read-more {
+	display:none;
+}
+.profile-img,
+.profile-img + div  {
+	float:none;
+	width:100%;
+	max-width:100%;
+}
+.profile-img + div ul.per-rep {
+	margin-left:0;
+	margin:1em;
+	padding-left:0;
+}
+.rep,
+aside li em, aside dt em, aside dd em, aside li div   {
+	clear:none;
+	float:none;
+	display:block;
+	margin-left:0;
+}
+
+aside h2.collapse { margin-bottom:0em; line-height:1;}
+
+.com-afl {float:none; padding:0;}
+
+body.film aside[role="complementary"] section.profile div ul + h2,
+body.film aside[role="complementary"] section.profile div h2 + ul + h2 + ul {
+	display:none;
+}
+aside[role="complementary"] ul.s-details dt {
+	float:left;
+	width:40%;
+}
+aside[role="complementary"] ul.s-details dd {
+	float:left;
+	width:60%;
+}
+
+aside[role="complementary"] ol {
+	list-style-type:none;
+	margin-bottom:0em;
+	margin-left:0;
+	padding:4px 20px;
+}
+body.printlist aside[role="complementary"] ol {
+	list-style-type:none;
+	margin-bottom:0em;
+	margin-left:0;
+	padding:4px 20px 10px;
+}
+
+/* 16.Aside
+----------------------------------------------------------*/
+/* 17.Contentinfo footer[role="contentinfo"]
+----------------------------------------------------------*/
+/* 18.Non-semantic helper classes
+----------------------------------------------------------*/
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content:""; }  /* Don't show links for images, or javascript/internal links */
+
+/* 19.Vendor Specific
+----------------------------------------------------------*/
+/* 20.Template Specific
+----------------------------------------------------------*/
+@media print {
+
+	* {
+		background : transparent !important;
+		color : black !important;
+		text-shadow : none !important;
+		filter : none !important;
+		-ms-filter : none !important;
+	}
+	html, body {background:transparent; font:.85em 'Helvetica Neue',Helvetica,Arial,sans-serif !important;}
+	body, form {font:.85em 'Helvetica Neue',Helvetica,Arial,sans-serif; width:98%; max-width: 98%; margin:0; padding:0;}
+
+	h1 {font:.9em 'Helvetica Neue',Helvetica,Arial,sans-serif; width:100%; max-width:100%; margin:0; padding:0; text-align:left;}
+
+	h1.name > a:first-child:before {content:" ";}
+
+	div[role="main"] header {
+		margin: 0;
+	}
+	div[role="main"]* {
+		line-height:1;
+	}
+	.subtog, .submod {
+		margin:.5em 0 .5em 1em;
+	}
+	.subtog, .submod {
+	border-top-width:0;
+	}
+	.subtog > header,
+	div[role="main"] .subtog header,
+	.submod > header,
+	div[role="main"] .submod header {
+		margin:.3em 0 .3em 0;
+	}
+
+	h1 {font-size:1.25em;}
+
+	#main #summary h2,
+	div[role="main"] .subtog header h2,
+	.subtog > header h2,
+	div[role="main"] .submod header h2,
+	.submod > header h2 {
+		font-size:1em;
+	}
+
+	.summary-info .title {
+		font-weight:normal;
+	}
+	i, em {font-style: normal;}
+
+	/*	section > *:not(input) {
+		display:block !important;
+	} */
+
+	section[data-print-default-hidden], div[data-print-default-hidden],ul[data-print-default-hidden],fieldset[data-print-default-hidden], section[data-not-print], .checkme, .controls, .notPrint, .subtog .hidden, .submod .hidden, h2.preview {
+		display:none !important;
+		width:0;
+		height:0;
+		margin:0;
+		padding:0;
+		float: none;
+	}
+
+}

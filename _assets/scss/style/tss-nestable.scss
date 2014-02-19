@@ -1,0 +1,291 @@
+/* 22. Forms: nested connected lists for my custom lists
+----------------------------------------------------------*/
+.cl {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 336px;
+	min-width: 335px;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0 2em;
+	padding: 0 1em;
+	background: #dde5ee;
+
+	&:first-child {
+		margin-left: 2em;
+	}
+}
+
+// nestable sortable lists
+.dd {
+	position: relative;
+	display: block;
+	max-width: 620px;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0 1em;
+	background: #dde5ee;
+	border: 1px solid #bbcbdd;
+
+	@media screen and (min-width: 53.333em) {
+		// min-width: 800px
+		float: left; width: 49%;
+
+		+ .dd {
+			margin-left: 2%;
+		}
+	}
+
+}
+
+#adminMain .dd {
+	background: #f9f9f9;
+	border: 1px solid #c9c9c9;
+}
+
+.dd-list {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dd-list .dd-list {
+	padding-left: 30px;
+}
+
+.dd-collapsed .dd-list {
+	display: none;
+}
+
+.dd-item,
+.dd-empty,
+.dd-placeholder,
+.itemeditor fieldset ol.dd-list li {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-height: 20px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+// options list
+.dd-handle {
+	display: block;
+	float: none;
+	height: 30px;
+	margin: 5px 0;
+	padding: 5px 10px;
+	color: #333;
+	text-decoration: none;
+	font-weight: 600;
+	border: 1px solid #ccc;
+	background: #fafafa;
+	background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#eee));
+	background: -webkit-linear-gradient(top, #fafafa 0%,#eee 100%);
+	background: -o-linear-gradient(top, #fafafa 0%,#eee 100%);
+	background: -ms-linear-gradient(top, #fafafa 0%,#eee 100%);
+	background: linear-gradient(top, #fafafa 0%,#eee 100%);
+	border-radius: 3px;
+
+	&:hover {
+		color: #2ea8e5;
+		background: rgb(255, 255, 255);
+	}
+
+}
+
+// override
+.itemeditor fieldset ol.dd-list li.dd-item {
+	padding-bottom: 0;
+}
+
+.dd-item > button {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 5px 0;
+	padding: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 0;
+	background: transparent;
+	font-size: 12px;
+	line-height: 1;
+	text-align: center;
+	font-weight: 600;
+
+	&:before {
+		content: '+';
+		display: block;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		text-indent: 0;
+	}
+}
+
+.dd-item > button[data-action="collapse"]:before {
+	content: '-';
+}
+
+.dd-placeholder,
+.dd-empty {
+	margin: 5px 0;
+	padding: 0;
+	min-height: 30px;
+	background: #f2fbff;
+	border: 1px dashed #b6bcbf;
+}
+
+.dd-empty {
+	border: 1px dashed #bbb;
+	min-height: 100px;
+	background-color: #e5e5e5;
+	background-image: -webkit-linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255)), -webkit-linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255));
+	background-image: -moz-linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255)), -moz-linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255));
+	background-image: linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255)), linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255));
+	background-size: 60px 60px;
+	background-position: 0 0, 30px 30px;
+}
+
+.dd-dragel {
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+
+	& > .dd-item .dd-handle {
+		margin-top: 0;
+	}
+
+	.dd-handle {
+		box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+		z-index: 9999;
+	}
+
+}
+
+.nestable-lists {
+	display: block;
+	clear: both;
+	padding: 30px 20px;
+	width: 100%;
+	border: 0;
+	border-top: 2px solid #cdd8e5;
+	border-bottom: 2px solid #cdd8e5;
+
+	h2 {
+		font-size: 1.25em;
+		font-weight: 300;
+		color: rgb(68,68,68);
+		margin: .35em 0;
+
+		#adminMain & {
+			font-size: 1.25em;
+			font-weight: 300;
+			color: rgb(68,68,68);
+			margin: .35em 0;
+		}
+
+	}
+}
+
+#nestable-menu {
+	padding: 1em 0 0;
+	margin:0 1.5em 0;
+}
+
+#nestable-output,
+#nestable2-output {
+	width: 100%;
+	max-width: 1000px;
+	min-height: 40px;
+	font-size: 0.75em;
+	line-height: 1.333333em;
+	height: 10em;
+	margin: 2em;
+	padding: 5px;
+}
+
+// template list
+#l-template > .dd-list {
+	padding-top: 40px;
+}
+
+#l-template .dd-handle {
+	color: rgb(255, 255, 255);
+	border: 1px solid #3f6ca6;
+	background: #90aed5;
+	background: -webkit-linear-gradient(top, #90aed5 0%, #4678b9 100%);
+	background: -moz-linear-gradient(top, #90aed5 0%, #4678b9 100%);
+	background: linear-gradient(top, #90aed5 0%, #4678b9 100%);
+}
+
+#l-template .dd-handle:hover {
+	background: #4678b9;
+}
+
+#l-template .dd-item > button:before {
+	color: rgb(255, 255, 255);
+}
+
+// template list persistent
+#l-template .dd-persistent {
+	color: rgb(255, 255, 255);
+	border: 1px solid #999;
+	background: #bbb;
+	background: -webkit-linear-gradient(top, #bbb 0%, #999 100%);
+	background: -moz-linear-gradient(top, #bbb 0%, #999 100%);
+	background: linear-gradient(top, #bbb 0%, #999 100%);
+
+	&:hover {
+		background: #bbb;
+	}
+
+}
+
+
+#l-template .dd-item[data-id="0"] {
+	position: absolute;
+	top:0;
+}
+
+// non-selectable list item
+.dd-persistent { pointer-events: none; }
+
+// list array number
+.itemeditor #template-num,
+.itemeditor #options-num {
+	height: 20px;
+	min-height: 20px;
+	// width: 40px;
+	margin: -.2em 0 0 -.7em;
+}
+.count {
+	margin-top: 2em;
+	padding-bottom:.5em;
+	bottom:0;
+	text-align: right;
+}
+.custom-list > .cl:first-child .sort-wrapper {
+	max-height: 300px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+#l-options > .dd-list {
+	max-height: 520px;
+	padding: .5em;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}

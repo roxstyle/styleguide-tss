@@ -1,0 +1,193 @@
+/* 11. Record - TV Project -- specific menus,fiters
+----------------------------------------------------------*/
+
+// Complimentary specific: tv projects
+#tvNav {
+	width: 100%;
+	clear: both;
+	margin: 0 auto;
+	margin-bottom:1.2em;
+	padding:.7em;
+	background:rgb(226, 226, 226);
+	@include border-radius(5px);
+}
+
+#tvNav > nav ul,
+#tvNav > nav ol {
+	@include border-radius(5px);
+}
+
+// tv seasons list
+#seasonsList {
+	margin: .5em 0 1em;
+	overflow: hidden;
+}
+
+// tv seasons ul
+ul.nav-seasons {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: .2em .4em .4em;
+	background:rgb(246, 246, 246);
+	border:1px solid rgb(213, 213, 213);
+
+	li {
+		display: block;
+		float:left;
+		margin:6px 4px;
+		padding: 0;
+		height: 22px;
+		background:none;
+		border:none;
+		line-height: 28px;
+		cursor:pointer;
+		text-align:center;
+		list-style-type:none;
+		font-weight:normal;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			margin: 6px 0;
+			width: 50%;
+		}
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			width: 25%;
+		}
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			margin: 6px 5px;
+			width: 94%;
+		}
+
+		a {
+			display:block;
+			// float:left;
+			margin: 0 .3em;
+			padding:0 4px;
+			height:25px;
+			border: 1px solid rgb(208, 208, 208);
+			color:rgb(0, 0, 0);
+			background-color: #e5e5e5; /* Old browsers */
+			text-decoration:none;
+
+			font-size: .825em;
+			line-height:2.4em;
+			letter-spacing: 0.04em;
+			border-radius:5px;
+			-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+				@media only screen and (min-width: 21.333em) {
+					// 320 and over
+					line-height:2em;
+				}
+
+				@media only screen and (min-width: 51em) {
+					// min-width: 768px
+					width: 100%;
+					line-height:2.4em;
+				}
+		}
+
+		&:hover a,
+		& a:hover,
+		& a:focus {
+			color: rgb(255, 255, 255);
+			background:rgb(102, 102, 102);
+			border: 1px solid rgb(85, 85, 85);
+		}
+
+		&.current a {
+			color:rgb(255, 255, 255);
+			background:rgb(122, 122, 122);
+			border: 1px solid rgb(171, 156, 123);
+			cursor:default;
+		}
+
+	}
+
+}
+//
+
+.lt-ie9 ul.nav-seasons {
+
+	li a {
+		letter-spacing: 0.02em;
+	}
+
+}
+
+// aside tv subheader for navigation
+h6.tv-season {
+	margin-left: 1.3em;
+	margin-bottom:.5em;
+	color: rgb(22, 22, 22);
+	font-weight: 700;
+
+	span {
+		white-space: nowrap;
+		font-weight: 500;
+		color: rgb(145, 140, 140);
+	}
+}
+
+// Complimentary specific: tv seasons episodes list
+// ----------------------------------------------------------
+
+// ul
+.nav-episodes {
+	display: block;
+	margin-bottom:.2em;
+	padding: .5em;
+	background:rgb(246, 246, 246);
+	border:1px solid rgb(213, 213, 213);
+	font-size:.9em;
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		padding: .5em 1em;
+		background:rgb(246, 246, 246);
+	}
+
+	> li {
+		position: relative;
+		list-style-position: inside;
+		list-style-type: decimal;
+		padding:.2em .5em;
+
+		> a {
+			margin:0;
+			padding: .3em;
+		}
+	}
+
+	li:hover,
+	li:focus,
+	li:hover a,
+	li:focus a {
+		text-decoration: none;
+		cursor:pointer;
+		color: rgb(255, 255, 255);
+		background:rgb(102, 102, 102);
+	}
+
+	li.current {
+		color:rgb(45, 45, 45);
+		border-top-right: 8px solid white;
+		border-bottom-right: 8px solid white;
+
+		a {
+			color:rgb(0, 0, 0);
+			cursor:default;
+			font-weight: 700;
+		}
+	}
+
+}
+
+
+
+

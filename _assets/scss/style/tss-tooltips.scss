@@ -1,0 +1,147 @@
+/* 7. Tooltips
+----------------------------------------------------------*/
+// http://craigsworks.com/projects/qtip/
+
+.ui-tooltip.qtip {
+	max-width: 500px;
+	min-width: 350px;
+	padding: 15px 25px;
+	border:4px solid rgb(255, 255, 255);
+	background:rgb(248, 248, 248);
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.35);
+	@include border-radius(2px);
+
+		&:before {
+			content: "";
+			position: absolute;
+			// z-index: -1;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCBAMAAAAReh3bAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAACHRSTlMGBwUIBAkDCp/Zqd8AAATNSURBVBgZBcGxkiPHEQTQzOpZys2qBiS3ujBHuxtzG3IHcwjat2KcT9HQ/3+C3kP82Oz8C5DzV2S67Zh91ck0rnA56HGz0xvofVVRoLp09VSbRggNb3euKirIuNpP9DAW3/1tRTnckLmNrQwN+x33Z7WaEK5Px3An3OGncpFEZspl28urHyYKrkJIlhucC/EHcDRYDW7wsKVIvcGi3RNy4MuGhhVNzI2WpeffABrID8E1P7vDsdfQJWtP2Llu7xRaeoxIncNTjrV15gX1VbrKtneDc1M6VcNizMcypuE7D39ECrYlVGD3TbIdlHvuMOK8f28i68iEYwxJkvaAnDnz5YUlgjmvv4DUIMQeoF5TghplO3IdlXvWv9Hhjyeq3Ju1tnmwT9eVqU/2tHEHpW8r9V9PwhBjpghRRvNx6N7Q6OUCnUOo47XG88z/yU23x88+YVhksB4Cw7ulRRMjDRYM0npiJRSVK4eZf6MNgAYxmXC9STiIXpa9ixprBEQvzM07gFIBj1vcmeeaSgc3OkOU8jhGyVQobrDGKVpRqMsRSctrABIvIs1xIwAHXBgAtlxJuwbB3gKoro7CtWRIB5MmWsr7EEDHz6Hu7NPwgJrq5LkI2ugrfVQR3uQxYd4dom4XNd9jCmvraL4XGu4xnoNC0yQWLP08BXzfzt+HydC8E+CyZPU5+j2Gl+/qUbFDBqSAnHb2cHTE+S9hWIs5eNp5S+5wtWczTgrDJ9CbUyEznBu2oYINVSa7Vg7Yt7GcL1C5NRLVpqAUaHx02Rh0n2Wkl7Ca2B13JLq1/3Rr7N1dM6vPJnf+coFmwNDnDgxiUN5uVxHPoI+xEHjbMOA+3TJtolr3Letjp1NyRSmSCV9DOdx9JSx39DU6D4zU3qx7L4gBNJdWvNJjOOgQW+XytSWAJyg0k/clLFch4XS7gL7s/M1Q7IEPo7rgA0/ILqcH17XwzzMKpQFjnME+JtN9HFj0LEHxfCth0a7NkIwWOZnHVPQPr0zfaVHAQI64vZp13Gom3a7JbIxm10bmARvRMzGsay+kFmppS4tl/N3LACj9Rh8PTLtur2g0w9+4sP3BHOJPTInTNFrq+/Byd4zYXnvAvuKh3TF9wgsLJrHHhEEohozQDCaUXkpKDV0dLgDpjIVMhgmY6luNKaJFmZiS9mctAJmws0M4isNlmemClzbtQ3bmCLKnwe1upIyV/SDogY/o8zRHXR9lA27D0uv7I8on2MXjWA2vembtL1UiPd22bpeui8/MlUzZo3nBATZDHpx7wkPJUYWOzkEMtup0+4eBNK8Hnr2LLVLAa2qo3g85xPsd+jGZY0bzP8VfkQ4bGjUs7enwAFKkgfnGelDb+0F2sL657WrxsIb3kHbvOM2b9/7b6NAdjb77KG9e0PSZ4cxpd2vYzyW6u4AtVekGfi0lBg31ySo1LIC91G37iArAV/Bz4RG2PWLYbkXjs7UFx7qBO2Jp3Cj4/k7Sf0A6D3dNsDnmC9g8jm2YOdyy/0kYqgld8N5xJOGuQ8qrK8u/DlzZXUCkeXw4CXQtyiXUzv511An6EnbcOttzFmBRZ0KBHlggBA0wirds1NfZEavMY5gswdgxKaj55SgSuBqW0lwsZoomw4DdawyVhhu28/8rbKpBhhqLpwAAAABJRU5ErkJggg==);
+		}
+}
+
+// .ui-tooltip.qtip #company-tip,
+// .ui-tooltip.qtip #person-tip,
+// .ui-tooltip.qtip #project-tip
+
+.ui-tooltip.qtip [id~="-tip"] {
+	min-width: 0;
+	height: auto;
+	background: transparent;
+}
+
+.ui-tooltip.qtip .ui-tooltip-titlebar {
+	position: relative;
+	min-height: 14px;
+	overflow: hidden;
+	margin:0;
+	padding:0 0 15px;
+	border: 0;
+	border-bottom:1px solid rgba(0, 0, 0, 0.05);
+	color: rgb(34, 34, 34);
+	font-weight: bold;
+	background-color: transparent;
+}
+
+.ui-tooltip.qtip .ui-tooltip-content {
+	position: relative;
+	min-width: 0;
+	overflow: hidden;
+	margin: 0;
+	padding:15px 0 0;
+	border: 0;
+	border-top:1px solid rgba(255, 255, 255, 0.9);
+	text-align: left;
+	word-wrap: break-word;
+	background-color: transparent;
+}
+
+.ui-tooltip.qtip .ui-tooltip-title {
+	font-size:20px;
+	line-height: 22px;
+	font-weight: bold;
+}
+
+.ui-tooltip.qtip .ui-tooltip-title span {
+	display: block;
+	font-size:15px;
+	line-height:18px;
+	margin: 5px 0 0;
+	font-weight: normal;
+}
+
+.ui-tooltip.qtip .tooltip-figure {
+	margin: 0 15px 5px 0;
+	padding: 0;
+}
+
+.ui-tooltip.qtip .tooltip-figure img {
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+.ui-tooltip.qtip .tooltip-article {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+.ui-tooltip.qtip .ui-tooltip-content {
+
+	p {
+		margin:0 0 10px;
+		font-size: 13px;
+		line-height: 17px;
+	}
+
+	p a {
+		font-weight: bold;
+		color: rgb(40, 64, 96);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.titlecell {
+		font-weight: bold;
+		margin-right:4px;
+
+		&:after {
+			content: ':';
+		}
+
+	}
+
+	hr {
+		clear: none;
+	}
+
+}
+
+.tooltipContainer {
+	padding-top: 5px;
+}
+
+.ui-tooltip.qtip article div.ui-tooltip-titlebar {
+	border-bottom-width: 0;
+	padding-bottom: 0;
+}
+
+.ui-tooltip.qtip div.ui-tooltip-content {
+	border-top-width: 0;
+}
+
+div.ui-tooltip-content #person-tip article {
+	overflow: hidden;
+	width: auto;
+}
+
+
+#person-tip .ui-tooltip-title span {
+	margin-bottom: 1px;
+}
+//button styles are with tss-buttons.scss
+// end tss-tooltips

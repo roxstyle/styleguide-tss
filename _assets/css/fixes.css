@@ -1,0 +1,422 @@
+﻿aside.navAside {
+	margin: 0 auto;
+	margin-bottom: 1.6em;
+	padding: .7em;
+	background: #e2e2e2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+	aside.navAside > nav ul, #tvNav > nav ol
+	{
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+/*#1038-Apply Roxannes Changes in UI on 2013-06-07*/
+div[role="main"] ul.primary-info
+{
+	margin-left: 0.5em;
+}
+
+div.content.clearfix
+{
+	margin-bottom: 10px;
+}
+
+.lt-ie9 aside[role="complementary"] li.c-gallery a
+{
+	padding-left: 0;
+	padding-right: 20px !important;
+}
+
+/* Defect #449: TSS: IE8: Missing Tab Vertical Separatorsb
+========================================================== */
+.lt-ie9 #thedetails .nav-primary .sections li a
+{
+	border-left: 1px solid #CACACA;
+	border-top: 1px solid #FFFFFF;
+}
+
+/* #715: NBC Admin: Base Layout and Structure
+============================================= */
+@media only screen and (min-width: 53.333em)
+{
+	.nbc.adminaccount div#admin-main-area div#main
+	{
+		float: right;
+		width: 83%;
+	}
+
+	.nbc.adminaccount div#admin-main-area aside
+	{
+		float: left;
+	}
+}
+
+.nbc.adminaccount div#admin-main-area div#main section.mod
+{
+	float: inherit;
+}
+
+.nbc.adminaccount div#admin-main-area table.cms-edit thead th div.DataTables_sort_wrapper
+{
+	position: relative;
+	padding: 0 1.5em;
+	border-left: 0;
+	cursor: pointer;
+}
+
+	.nbc.adminaccount div#admin-main-area table.cms-edit thead th div.DataTables_sort_wrapper em
+	{
+		font-weight: normal;
+		font-style: normal;
+		padding: 0 .3em;
+	}
+
+	.nbc.adminaccount div#admin-main-area table.cms-edit thead th div.DataTables_sort_wrapper span
+	{
+		position: absolute;
+		top: 50%;
+		margin-top: -8px;
+		right: 0;
+		font-size: .8em;
+	}
+
+		.nbc.adminaccount div#admin-main-area table.cms-edit thead th div.DataTables_sort_wrapper span.checkMaster
+		{
+			position: relative;
+			clear: both;
+			display: inline-block;
+			top: 0;
+			margin-top: 0;
+			margin: 0 auto;
+			right: 0;
+		}
+
+.nbc.adminaccount div#admin-main-area form .actions
+{
+	background: none repeat scroll 0 0 transparent !important;
+	border-width: 1px 0 0 !important;
+}
+
+.nbc.adminaccount div[role="main"] header .itemeditor fieldset:first-child
+{
+	padding: 1em 4em;
+}
+
+.nbc.adminaccount div[role="main"] .mod header .h-tools li:first-child
+{
+	margin-right: 0;
+}
+
+.nbc.adminaccount div#admin-main-area section.d-details .col label
+{
+	width: 35%;
+	max-width: 180px;
+}
+
+	.nbc.adminaccount div#admin-main-area section.d-details .col label ~ span
+	{
+		margin-left: 35%;
+	}
+
+
+/* #700: NBC Admin: Users - Manage Users - List View
+============================================================= */
+.nbc.adminaccount div#admin-main-area .paginate,
+.nbc.adminaccount div#admin-main-area .paging_full_numbers
+{
+	max-width: 550px;
+}
+
+
+.nbc div#main section#thedetails section#section_area div#buttonContainer
+{
+	margin: 10px 0 10px 1px;
+}
+
+.nbc div#main section#thedetails section#section_area a[href^="http://"].btn-primary
+{
+	background: linear-gradient(to bottom, #9E4A57 0%, #822A35 100%) repeat-x scroll 0 0 padding-box transparent;
+	border-color: #9E4A57;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+	color: white;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+	.nbc div#main section#thedetails section#section_area a[href^="http://"].btn-primary:hover
+	{
+		background: #8D424D;
+		color: #FFFFFF;
+	}
+
+.adminaccount table.cms-edit th div
+{
+	padding: 0!important;
+}
+
+.adminaccount table.cms-edit th
+{
+	padding-left: 12px!important;
+}
+
+/*fixed My Lists left aside menu overlapped by content*/
+.mylists .content
+{
+	position: relative;
+	display: table;
+	table-layout: fixed;
+	width: 96.75%;
+	margin: 0 auto 1.5em;
+	padding-top: 1.5em;
+	background-color: transparent;
+	zoom: 1;
+}
+
+.mylists aside[role="complementary"]
+{
+	float: none;
+	display: table-cell;
+}
+
+/*fixed tools buttons height (too narrow so popup menus are displayed incorrect) */
+#recordtools.toolbar li a
+{
+	line-height: 20px;
+}
+
+/*fixed my lists template selection and search area*/
+.mylists .list-details header .h-tools fieldset label
+{
+	margin: 0;
+	min-width: initial;
+	display: inline-block;
+	width: auto;
+	text-align: left;
+}
+
+/* Defect #559: WL: TSS: Person - NBC Universal. The entered data are cut off for some sub tabs page
+=====================================================================================*/
+@media only screen and (min-width: 51em)
+{
+	div#content-person section#section_area .tabs-body div.tabs-panel ul.s-details dl dd
+	{
+		float: left;
+		margin: 0 0 2px 24%;
+		width: 75%;
+	}
+}
+
+
+/* Defect #573: WL-TSS: Admin - Single Network. Incorrect design after expand profile
+========================================================================*/
+.nbc.adminaccount #admin-main-area #main #profiles fieldset.checks ul li
+{
+	display: block;
+}
+
+
+/* #703: NBC Admin: Networks - Manage Networks - List View
+========================================================================*/
+.nbc.adminaccount #admin-main-area #main #networks tbody tr td a
+{
+	color: #172F53;
+}
+
+.nbc.adminaccount #admin-main-area #main #networks td a
+{
+	font-weight: 600;
+}
+
+
+
+/* Defect #577: WL-TSS: Record pages base layout should be changed.
+==========================================================================*/
+.nbc #container .h-content .profile-img .state-default .tool.tool-gallery
+{
+	background-image: url("../img/tools-222222.png") !important;
+	background-position: -192px -159px;
+}
+
+.nbc #container .h-content .profile-img .state-default .tool.tool-trailers
+{
+	background-image: url("../img/tools-222222.png") !important;
+	background-position: -160px -176px;
+}
+
+.nbc #container .h-content .profile-img .h-tools li a
+{
+	color: #393939;
+}
+
+.nbc #container .h-content .profile-img .h-tools.gallery-nav li a:hover
+{
+	color: #393939;
+	background: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 51em)
+{
+	.nbc #container #header-b div.h-content div.story div.s-summary
+	{
+		width: 100%;
+		display: block;
+		float: left;
+	}
+
+	.nbc #container #header-b div.h-content div.story div.profile-img + div.s-summary
+	{
+		width: 88%;
+		display: table-cell;
+		float: left;
+	}
+
+	header .li-2
+	{
+		width: 50%;
+		margin: 0;
+	}
+}
+
+.nbc #container #header-b .itemeditor input[type="text"]
+{
+	max-width: 920px;
+}
+
+.project #header-b .s-summary ul.s-details dd.more div.hidden
+{
+	display: none;
+}
+
+.person #content-person aside.clearfix section.box-office-section table tr td
+{
+	padding: 5px;
+}
+
+/*Def 638 Fixed the styling of "no information saved" block */
+#nbcUniversal-content .help-block.error
+{
+	text-shadow: none;
+}
+
+	#nbcUniversal-content .help-block.error:hover
+	{
+		color: #9d261d;
+	}
+
+	#nbcUniversal-content .help-block.error a
+	{
+		background: none;
+		padding-right: 0;
+	}
+
+/*DEF 638 fixed the width of the aside block on record pages*/
+body.person aside[role="complementary"],
+body.project aside[role="complementary"],
+body.org aside[role="complementary"]
+{
+	width: 297px !important;
+}
+
+/*Defect#630-WL: TSS: Person - NBC Universal. Comment Line Break Error*/
+#main br
+{
+	display: block;
+}
+
+/* Defect #651: WL-TSS: Admin - Profiles. Add / Edit Profile. The style of the error message should be the same
+=============================================================*/
+#container #admin-main-area #main form .validation-summary-errors > ul li
+{
+	color: #9D261D;
+	line-height: 1.3;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* story 1456 unmapped users count - support of redtext and underline for links*/
+header .h-tools li.toolCount a.redtext
+{
+	color: #964d5d !important;
+	font-weight: 700 !important;
+}
+
+	header .h-tools li.toolCount a.redtext:hover
+	{
+		text-decoration: underline;
+	}
+
+
+/* Defect #665: WL-TSS: Admin. Title and number of unmapped users align in one a line
+=========================================================*/
+div#container .record div.h-content #record-menu li a
+{
+	line-height: 17.6px;
+}
+
+
+/* #1453: WL: Admin - Users - Global Administrators - Add
+=========================================================*/
+div#container div#admin-main-area header div#addGlobalAdminContainer div.actions
+{
+	background: none repeat scroll 0 0 transparent !important;
+	border-width: 1px 0 0 !important;
+}
+
+div#container div#admin-main-area header div#addNetworkAdminContainer div.actions
+{
+	background: none repeat scroll 0 0 transparent !important;
+	border-width: 1px 0 0 !important;
+}
+
+/*	#1450: WL: Admin - User - Add Admin
+	#1451: WL: Admin - User - Add Network
+=============================================================================*/
+.nbc.adminaccount div[role="main"] header #addNetworkContainer fieldset:first-child,
+.nbc.adminaccount div[role="main"] header #addAdminContainer fieldset:first-child,
+.nbc.adminaccount div[role="main"] header #addNetworkAdminContainer fieldset:first-child
+{
+	padding: 0;
+}
+
+
+/*	#1455: WL: Admin - Users - Network Administrators - Add
+	#1450: WL: Admin - User - Add Admin
+	#1451: WL: Admin - User - Add Network
+	#1449: WL: Admin - User
+=============================================================================*/
+#container #admin-main-area #main div.validation-summary-valid.error,
+#container #admin-main-area #main #userInfoContainer div.validation-summary-errors
+{
+	background: none repeat scroll 0 0 #FAE5E3;
+	border-radius: 4px 4px 4px 4px;
+	color: #9D261D;
+	margin: 0 0 10px;
+	padding: 9px;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+#container #admin-main-area #main #addNetworkAdminContainer div.validation-summary-valid.error
+{
+	margin: 10px 0 0 20px;
+}
+
+#container #admin-main-area #main #addNetworkContainer div.validation-summary-valid.error,
+#container #admin-main-area #main #addAdminContainer div.validation-summary-valid.error,
+#container #admin-main-area #main #userInfoContainer div.validation-summary-valid.error,
+#container #admin-main-area #main #userInfoContainer div.validation-summary-errors
+{
+	margin: 5px 0 0 10px;
+}
+
+/*us1443 add networks admin form - 'search users' input was not clickable */
+.nbc.adminaccount #addNetworkAdminContainer ul li span.small-12.labin
+{
+	position: static;
+}

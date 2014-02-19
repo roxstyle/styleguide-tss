@@ -1,0 +1,2385 @@
+/* 8.  Section Toolbars, Toolsets, Editing Tools
+----------------------------------------------------------*/
+
+// section tools generic
+// -----------------------------------------------------------
+// individual tool
+.tool {
+	@include fa-FontAwesome();
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	min-width: 16px;
+	min-height: 16px;
+	@include border-radius(3px);
+	color: rgb(136, 136, 136);
+
+	.state-default &,
+	.state-default a & {
+		color: $toolDark;
+	}
+
+	.state-hover &,
+	.state-focus &,
+	.state-hover a &,
+	.state-focus a & {
+		border:1px solid $toolHover;
+		background-color: $background-color;
+		color: $toolHover;
+	}
+
+	.state-active .tool {
+		border:1px solid $borderActive;
+		background-color: $background-color;
+		color: $toolActive;
+	}
+
+	.drop-hover & {
+		color: $toolDark;
+	}
+
+	&:before {
+		display: block;
+		color: rgb(136, 136, 136);
+
+		&:hover, &:focus {
+			color: $toolHover;
+			text-decoration: none;
+		}
+
+	}
+
+	&:hover, &:focus {
+		color: $toolHover;
+		text-decoration: none;
+	}
+
+	.slider & {
+		vertical-align: text-top;
+	}
+
+}
+
+// open and close
+.show-button button {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: 23px;
+	width: 24px;
+	max-width: 24px;
+	margin: 2px 0 0 0;
+	padding: .4em .1em;
+	border: 0;
+	@include border-radius(3px);
+
+	&:before {
+		content:"\003e";
+		content: '► ';
+		float: left;
+		height: 23px;
+		width: 24px;
+		background: rgb(227, 227, 227);
+		color: rgb(126, 126, 126);
+	}
+}
+
+.hide-button button {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 13px;
+	height: 13px;
+	height: 23px;
+	width: 23px;
+	margin-top: 2px;
+	padding: .4em 0;
+	border: 0;
+	border-radius:3px;
+
+	&:before {
+		content:"\03bd";
+		content: '▼ ';
+		float: left;
+		height: 23px;
+		width: 24px;
+		background: rgb(227, 227, 227);
+		color: rgb(126, 126, 126);
+	}
+}
+//
+
+// view all column
+a.viewall {
+	display: block;
+	padding: .2em .3em;
+	width: 24px;
+	height: 30px;
+	font-size: .8em;
+	text-align: center;
+	border: 1px solid rgb(165, 165, 165);
+	color: rgb(85, 85, 85);
+	background: rgb(235, 235, 235);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.subtitle a.viewsub {
+	display: block;
+	padding: .2em .3em;
+	width: 24px;
+	height: 30px;
+	font-size: .8em;
+	text-align: center;
+	border: 1px solid rgb(165, 165, 165);
+	color: rgb(85, 85, 85);
+	background: rgb(235, 235, 235);
+	border-radius:3px;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:after {
+		content:"\003e";
+		content: '► ';
+		float: left;
+		height: 12px;
+		width: 16px;
+		background: transparent;
+		color: rgb(126, 126, 126);
+	}
+}
+
+.subtitle a.viewsub[class~="open"]:after {
+	content: '▼ ';
+}
+
+// mylist templates
+div[role="main"] .list-details > header {
+	margin-bottom: 1.3em;
+	padding-bottom: 0;
+	border-bottom: 4px solid #48515c;
+	position: relative;
+	z-index: 2500;
+}
+
+// used custom lists
+#listtemplate .list-details .tool-remove,
+#listtemplate .custom-lists .tool-remove {
+
+	&:before {
+		content: "\f00d";
+		position: relative;
+		display: block;
+		width:100%;
+		height:100%;
+		line-height: 1.25;
+		color: rgb(255, 255, 255);
+		text-indent: 0;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+}
+
+
+// used custom lists
+#listtemplate .list-details .tool-edit {
+
+	&:before {
+		content: "\f040";
+		position: relative;
+		display: block;
+		width:100%;
+		height:100%;
+		line-height: 1.25;
+		color: rgb(255, 255, 255);
+		text-indent: 0;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+}
+
+// section tool groups toolbar
+.toolbar {
+	display: block;
+	width: auto;
+	min-width:20px;
+
+	.state-hover li a,
+	.state-focus li a {
+		border:1px solid $toolHover;
+		background-color: $background-color;
+		color: $toolHover;
+	}
+
+
+	.state-active .tool {
+		border:1px solid $borderActive;
+		background-color: $background-color;
+		color: $toolActive;
+	}
+
+}
+
+.subbar {
+	display: block;
+	width: auto;
+	min-width:20px;
+	padding:.3em 0 .7em;
+}
+
+.toolbar.audit {
+	display: block;
+	min-width:20px;
+	overflow: hidden;
+}
+.toolbar-box {
+	background: rgb(247, 245, 245);
+}
+
+.toolbar ul {
+
+	>li {
+		position: relative;
+		float: left;
+		padding-bottom: 0;
+	}
+
+	li,
+	li a
+	li span {
+		font-size: 0.87em;
+		letter-spacing: 0.06em;
+		width: auto;
+		display: block;
+		white-space: nowrap;
+	}
+
+	li a span {
+		text-indent: -9000px;
+	}
+}
+
+.toolbar .txt-only {
+	font-weight: normal;
+	margin: 0 .5em;
+	padding: .4em .4em .4em 0;
+
+	span {
+		margin-right: .4em;
+	}
+
+	.title {
+		padding-right: .4em;
+		font-family: georgia, serif;
+		font-weight: 500;
+		letter-spacing: .15em;
+		text-transform: lowercase;
+		color: rgb(142, 142, 142);
+		border-right: 1px solid rgb(78, 78, 78);
+	}
+
+}
+
+// content positioning for tool icons
+
+// currently using inline image
+// .tool-add:before {
+// 	content:"f067";
+// }
+
+.tool-addlist:before {
+	content:"\f03a";
+}
+.tool-addnote:before {
+	content:"\f0f6";
+}
+.tool-addgroup:before {
+	content:"\f0c0";
+}
+.tool-adduser:before {
+	content:"\f007";
+}
+.tool-all:before {
+	content:";";
+}
+.tool-close:before {
+	content: "\f00d";
+}
+.tool-comment:before {
+	content: "\f075";
+}
+.tool-delete:before {
+	content:"\f056";
+	color: $link-error-color;
+}
+.tool-edit:before {
+	content: "\f040";
+}
+.tool-export:before {
+	content: "\f08e";
+}
+.tool-gear:before {
+	content: "\f013";
+}
+.tool-plus:before {
+	content:"\f067";
+}
+.tool-print:before {
+	content:"\f02f";
+}
+.tool-search:before {
+	content:"\f002";
+}
+.tool-update:before {
+	content:"\f040";
+}
+.tool-watch:before {
+	content:"\f06e";
+}
+
+
+// section header tools
+// -----------------------------------------------------------
+
+// font awesome icons for h-tools
+.h-tools a [class^="icon-"], .h-tools a [class*=" icon-"] {
+width: 16px;
+font-size: 14px;
+display: inline-block;
+text-align: right;
+margin-right: 8px;
+}
+
+.h-tools a:hover,
+.h-tools a:focus,
+.h-tools a:hover,
+.h-tools a:focus {
+	color: $iconHover;
+}
+
+.h-tools {
+	margin: .1em 0 0;
+	padding: 0;
+	position: relative;
+	display: block;
+	z-index: 100;
+	@include clearfix();
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		#person-credits & {
+			display: block;
+		}
+
+		header & {
+			list-style-position: inside;
+			margin: 0 0 1em 0;
+			padding-left: 0px;
+		}
+	}
+
+	&.left {
+		float: left;
+		margin: .1em .5em 0 0;
+	}
+
+	&.right {
+		float: right;
+		margin: .1em 0 0 .5em;
+
+			@media only screen and (min-width: 32em) {
+				// 480 and over
+				width: auto;
+			}
+	}
+
+	&.block {
+		display: inline-block;
+	}
+
+	.tool-close,
+	.state-default .tool-close {
+		border:none;
+	}
+
+	.state-hover .tool-close,
+	.state-focus .tool-close {
+		border:none;
+		background-color: $background-color;
+	}
+
+}
+
+// section header tools with icons
+.h-tools li {
+	float: left;
+	min-height: 100%;
+	height: 100%;
+	margin: 0 1em 0 0;
+	padding: 0;
+
+		&.tool-collapse {
+			border: none;
+
+			a { border: none;}
+
+			:hover, :active {border: none;}
+
+		}
+		//
+		a.span:hover,
+		a.span:active {
+			border: 1px solid red;
+		}
+
+		a, span {
+			color: rgb(46, 46, 46);
+		}
+
+		a:hover,
+		a.here,
+		span.here {
+			color: rgb(61, 61, 61);
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		span {
+			// color: rgb(136, 136, 136);
+
+			&.tv-list {
+				color: rgb(110, 110, 110);
+			}
+
+			&.subtype {
+				color: rgb(133, 133, 133);
+				border-right: none;
+			}
+
+			&.rating {
+				padding: 0 .5em;
+				color: rgb(0, 0, 0);
+				background-color: rgb(28, 174, 220);
+				@include border-radius(1.5em);
+			}
+
+			&.tv-premier {
+				padding: 0 .5em;
+				color: rgb(0, 0, 0);
+				background-color: rgb(253, 155, 41);
+				@include border-radius(1.5em);
+			}
+
+			&.title {
+				margin-right: .3em;
+
+				&:after {
+					content: ":";
+				}
+			}
+
+		}
+
+		// mylists templates
+		.ml-templates span,
+		.ml-templates li {
+			color: rgb(68, 68, 68);
+		}
+
+		//specialized lists
+		.t &,
+		.list-details & {
+			float:left;
+			display: inline;
+			position: relative;
+			margin: 0 1.5em .3em 0;
+			padding: 0;
+			min-height: 18px;
+			vertical-align: middle;
+			line-height: 18px;
+			width: auto;
+		}
+
+}
+
+.audit .h-tools li {
+
+	span.title:after {
+		content: "";
+	}
+
+}
+
+.toolbar.audit {
+
+	.txt-only {
+
+		&.title {
+			margin-right: .3em;
+
+			&:after {
+				content: " ";
+			}
+		}
+	}
+
+}
+
+//
+.h-tools a {
+	position:relative;
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	span {
+		position:relative;
+		float: left;
+		margin-right:.4em;
+		text-decoration: none;
+	}
+
+	header & {
+		vertical-align: top;
+	}
+
+	.record #tools & {
+		font-size:.9em;
+	}
+
+	.profile-img & {
+		padding: .4em;
+		@include border-radius(6px);
+	}
+
+}
+
+// default state
+.hasJS #person-credits .h-tools {
+	display: none;
+}
+
+// tools within personalized lists
+// ----------------------------------------------
+// mylists. my watch, mynotes
+
+.mylisting .h-tools a {
+	white-space: nowrap;
+	overflow: hidden;
+	// width:16px;
+}
+
+// tools within header
+// ----------------------------------------------
+header {
+
+	.boxed {
+		margin: .5em;
+		padding: .5em 0;
+		background-color: #f8f8f8;
+		border: 1px solid #e6e6e6;
+	}
+
+}
+
+header .h-tools {
+	margin: 0 .1em 0 0;
+	padding: 0;
+	width: 100%;
+	position: relative;
+	z-index: 100;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			list-style-position: inside;
+			margin: 0 0 1em 0;
+			display: block;
+			min-height: 18px;
+			margin-bottom:.3em;
+		}
+
+		//filter
+		#person-credits & {
+			display: block;
+		}
+
+}
+
+.audit {
+	.h-tools{
+		float: right;
+	}
+}
+
+header h2 + .h-tools.right {
+	margin-top: -.3em;
+}
+
+header .h-tools.left.boxed {
+	margin: 0.4em .5em 0.4em 0;
+	background-color: #f8f8f8;
+	border: 1px solid #e6e6e6;
+}
+
+header .h-tools li {
+	float: left;
+	min-height: 100%;
+	height: 100%;
+	margin: 0 1em 0 0;
+	padding: 0;
+
+		li a {
+			color: rgb(57, 57, 57);
+		}
+
+
+		span.tv-list {
+			display: block;
+			margin: .9em 0 0;
+		}
+
+		&.choose {
+			margin: -.2em .5em 0 .5em;
+			padding: 0;
+		}
+
+}
+
+header .h-tools li.toolCount {
+	font-size: 1.1em;
+
+	span.redtext {
+		color: rgb(150, 77, 93);
+		font-weight: 700;
+	}
+
+}
+
+// inline header tools
+// -----------------------------------------------------------
+// used for mylists, mynotes, mywatch icons
+
+header .inline-tools {
+	float: none;
+	display: inline-block;
+	margin: .3em 0 0 1em;
+	padding: 0;
+	position: relative;
+	z-index: 100;
+	vertical-align: top;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		float: left;
+		margin-top: 1.15em;
+		margin-right: -1.2em;
+	}
+
+	li {
+		display: inline-block;
+		float: none;
+		min-height: 100%;
+		height: 34px;
+		width: 26px;
+		margin: 0 .2em 0 .2em;
+		padding: 0;
+		@include fa-FontAwesome();
+
+		.tool {
+			display: inline-block;
+			position: relative;
+			height: 34px;
+			max-height: 34px;
+			width: 26px;
+			font-size: 2em;
+			vertical-align: baseline;
+			color: $icon-lite-default-color;
+		}
+
+	}
+}
+
+// change status of watch icon
+header .inline-tools li.toolWatch {
+
+	a.watch {
+		background: transparent url('../img/tools-error.png') no-repeat -224px -220px;
+		float: left;
+		display: inline-block;
+		height: 34px;
+		line-height:28px;
+		width:270px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		white-space: pre-wrap;
+
+			&:hover {
+				text-indent: 24px;
+				text-decoration:none;
+			}
+
+	}
+
+	a.unwatch {
+		background: transparent url('../img/tools-default.png') no-repeat -224px -220px;
+		float: left;
+		display: inline-block;
+		height: 34px;
+		line-height:28px;
+		width:270px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		white-space: pre-wrap;
+
+			&:hover {
+				text-indent: 24px;
+				text-decoration:none;
+			}
+	}
+
+
+}
+
+
+// divider
+.h-tools > li.divider {
+	background: black;
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2);
+	height: 100%;
+	margin-right: 1px;
+	width: 1px;
+}
+
+// media gallery tools
+.gallery-nav {
+
+	.state-default .tool,
+	.state-default a .tool {
+		color: $background-color;
+	}
+
+}
+
+// aside header tools
+aside .h-tools {
+	float:left;
+	width: 100%;
+	margin: 0 0 1em -24px;
+	padding-left: 24px;
+
+	li {
+		line-height: 18px;
+
+			@media only screen and (min-width: 51em) {
+			//  min-width: 768px
+				white-space: nowrap;
+			}
+
+	}
+}
+
+// tools within aside h2
+aside h2 .h-tools {
+
+		a {
+			text-decoration: none;
+			color: rgb(255, 255, 255);
+			background-color: rgb(191, 191, 191);
+			border: 1px solid rgb(171, 171, 171);
+			@include border-left-radius(5px);
+
+			&:hover {
+				text-decoration: none;
+				color: rgb(230, 230, 230);
+				background-color: rgb(100, 100, 100);
+			}
+		}
+
+}
+
+// aside record profile
+aside .profile .gallery-nav {
+	float:left;
+	width: 200%;
+	margin: 0 0 1em -20%;
+	padding-left: 0;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			margin: 0 0 1em 0;
+		}
+
+		@media only screen and (min-width: 32.067em) {
+			// 480 and over
+			width: 100%;
+		}
+
+		@media only screen and (min-width:35.333em) {
+			margin: 0;
+		}
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			margin: 0 0 1em 0;
+		}
+
+		@media screen and (min-width: 51.267em) and (max-width: 66.133em) {
+			// 769 to 992
+			float:none;
+			width: auto;
+			margin: 0 auto 1em;
+			white-space: nowrap;
+		}
+
+	li {
+		line-height: 18px;
+		display: inline;
+		margin-left: .6em;
+	}
+
+	li:first-child {
+		margin-left: 0;
+	}
+}
+
+
+// tv episodes listing
+.tv-e > li {
+	margin-bottom: .4em;
+	overflow: hidden;
+	position: relative;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+//
+.tv-episode {
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	strong {
+		margin-right: .5em;
+	}
+}
+
+
+// tv ratings
+.nielson-tools {
+	overflow: hidden;
+	display: block;
+	clear: both;
+	margin: 0.4em 0 .5em;
+	padding: 0;
+
+	li {
+		line-height: 18px;
+		margin: 0 .5em 0.3em 0;
+		min-height: 18px;
+		padding: 0;
+		vertical-align: middle;
+		min-width: 200px;
+		width: auto;
+	}
+
+	li span {
+		display: inline;
+		float: left;
+		line-height: 18px;
+		margin: 0 .5em .3em 0;
+		min-height: 18px;
+		padding: 0;
+		vertical-align: middle;
+		width: auto;
+		min-width: 200px;
+		font-weight: 700;
+	}
+
+	li span + span {
+		min-width: 100px;
+	}
+
+	li strong {
+		padding-right: 0.4em;
+		color: rgb(43, 43, 43);
+		font-weight: 500;
+	}
+}
+
+// #tools dropdown menus
+.dropdown {
+
+	// list
+	ul {
+		right:0;
+		right: 1000em; // hides nested menu
+		margin-top: 0;
+		padding: 0;
+		position: absolute;
+		min-width:160px;
+		width: 100%;
+		z-index: 3000;
+		background:rgb(246, 246, 246);
+		border:1px solid rgb(205, 216, 229);
+		@include border-radius(5px);
+
+		li, a {
+			border: none;
+			display: block;
+			float: none;
+			line-height: 22px;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+		}
+
+	}
+
+	//dropdown top level
+	> ul a {
+		padding: 0 .5em;
+		color: red;
+	}
+
+	//old ie
+	.lt-ie9 .dropdown {
+
+		.menu {
+			margin-top: 2px;
+			top: 1.8em;
+		}
+
+	}
+
+	// show nested menu
+	.dropdown-hover .menu {
+		right:0;
+
+		// old ie
+		.lt-ie9 & {
+			left: 0;
+			margin-left: 0.6em;
+			right: auto;
+		}
+
+	}
+
+}
+
+// header.record toolbar
+#record-tools .dropdown-hover {
+
+	.menu {
+		right: .6em;
+	}
+
+	.menu a {
+		display: block;
+		padding: 0 .5em;
+		border: none;
+		text-decoration: none;
+		z-index: 3000;
+	}
+
+	ul a:hover,
+	ul a:focus,
+	.menu a:hover,
+	.menu a:focus {
+		text-decoration: none;
+	}
+
+}
+
+// divider
+.menu-divider {
+	background: rgb(52,158,219);
+	font-size: 0;
+	height: 1px;
+	line-height: 0;
+	margin: 6px 7px;
+}
+
+// menu in tool sets
+// ----------------------------------------------
+
+// header.record toolbar
+#record-menu {
+	position: relative;
+	float: right;
+	text-align:right;
+	width: auto;
+	z-index: 99999;
+	margin: .4em 0 .9em 0;
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		margin: .9em 0;
+	}
+
+	.h-tools {
+
+		li a {
+			color: rgb(146, 146, 146);
+			font-weight:600;
+		}
+
+		li a:hover, li a:focus {
+			color: rgb(0, 0, 0);
+			font-weight:600;
+		}
+
+	}
+
+}
+
+// mylists specialized lists toolbar
+#mylists-menu {
+	position: relative;
+	float: right;
+	text-align:right;
+	width: auto;
+	z-index: 99999;
+	margin: .5em;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		margin: 0 0 .9em 0;
+	}
+
+	.boxed & {
+
+		@media only screen and (min-width: 32.067em) {
+			// 480 and over
+			margin: .9em .5em;
+		}
+
+	}
+
+}
+
+//section list tools
+.section-menu {
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		margin: 0 0 .9em 0;
+	}
+
+}
+
+// row list tools
+.row-menu {
+	.row-menu {
+	position: relative;
+	float: right;
+	text-align:right;
+	width: auto;
+	z-index: 99999;
+}
+	margin: .2em;
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		margin: .5em;
+	}
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		margin: .7em 0 .2em 0;
+	}
+
+}
+
+// lists tools
+#liststools {
+
+	// ul
+	position: relative;
+	min-width: 20px;
+	width: auto;
+	float: right;
+	margin: .1em 0 0 0.5em;
+	padding: 0;
+	z-index: 99999;
+
+	.h-tools {
+
+		li a {
+			color: rgb(146, 146, 146);
+			font-weight:600;
+		}
+
+		li a:hover, li a:focus {
+			color: rgb(0, 0, 0);
+			font-weight:600;
+		}
+
+	}
+
+}
+
+//record tools, row tools container
+#recordtools,
+.rowtools,
+.rowtools.h-tools  {
+
+	// ul
+	position: relative;
+	min-width: 20px;
+	width: auto;
+	float: right;
+	margin: .1em 0 0 0.5em;
+	padding: 0;
+	z-index: 99999;
+}
+
+// li
+#recordtools > li,
+#liststools > li,
+.section-menu > li,
+.rowtools > li,
+.rowtools.h-tools > li{
+	position: relative;
+	float: left;
+	display: block;
+	height: 100%;
+	min-height: 100%;
+	margin: 0 0 .5em 1em;
+	padding: 0;
+	z-index: 99999;
+
+	cursor: pointer;
+	text-align: left;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 1em;
+
+	border: 1px solid rgb(165, 165, 165);
+	background: rgb(235, 235, 235);
+	color: rgb(85, 85, 85);
+	@include border-radius(4px);
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		margin: 0 0 .5em 1em;
+	}
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:hover {
+		color: $toolDark;
+
+		.tool {
+			color: $toolDark;
+		}
+
+		.tool:before {
+			color: $toolDark;
+		}
+
+	}
+
+}
+
+// with one icon
+#recordtools > li > a,
+#liststools > li > a,
+.rowtools > li > a {
+	display: block;
+	text-indent: -9999em;
+	line-height: 1.7;
+	position: relative;
+	vertical-align: middle;
+	font-weight: 600;
+
+	&.text {
+		text-indent: 0;
+	}
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		line-height: 1.4;
+		text-indent: 0;
+	}
+
+}
+
+#recordtools > li > a,
+#liststools > li > a {
+	padding: 0.4em 1.2em;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		padding: .6em .6em .6em 2.2em;
+	}
+
+}
+
+.rowtools > li > a {
+	padding: 0.4em 1.2em;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		padding: .4em .6em .4em 1.6em;
+	}
+
+}
+
+// rowtools - promote button series CMS
+.rowtools > li.protool > a {
+	padding: .4em 1em .4em 2em;
+}
+
+// with drop icon
+#recordtools li.drop a,
+#recordtools li.drop a.text {
+	padding: .4em 1.2em;
+	text-indent: -9999em;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		padding: .6em 2.5em;
+		text-indent: 0;
+		width: auto;
+	}
+
+}
+
+#liststools li.drop > a,
+#liststools li.drop > a.text {
+	padding: .4em 1.2em;
+	text-indent: -9999em;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		padding: .6em 2.5em;
+		text-indent: 0;
+		width: auto;
+	}
+
+}
+
+.rowtools li.drop > a,
+.rowtools li.drop > a.text {
+	padding: .4em 1.2em;
+	text-indent: -9999em;
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		// padding: .4em 2em;
+		// width:1px;
+	}
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		padding: .4em 1.6em;
+		text-indent: 0;
+		width: auto;
+	}
+}
+
+
+#recordtools span.secondary,
+#liststools span.secondary,
+.rowtools span.secondary {
+	color: $iconLtGrey;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+	height: 16px;
+	width: 16px;
+	display: none;
+	overflow: hidden;
+	@include fa-FontAwesome();
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		display: block;
+
+		&:before {
+			content: "\f0d7";
+			color: $iconLtGrey;
+			height: 16px;
+			width: 16px;
+			margin-top: -2px;
+			text-decoration: inherit;
+			display: inline-block;
+			speak: none;
+			font-size: 1.35em;
+
+		}
+
+	}
+
+}
+
+#recordtools span.secondary,
+#liststools span.secondary {
+	right: .5em;
+}
+
+.rowtools span.secondary {
+	right: 0;
+}
+
+#recordtools > li.drop-hover,
+#recordtools > li:hover,
+#liststools > li.drop-hover,
+#liststools > li:hover,
+.rowtools > li.drop-hover,
+.rowtools > li:hover {
+	text-decoration: none;
+
+	border: 1px solid rgb(211, 211, 211);
+	background-color: rgb(255, 255,255);
+
+	font-weight: normal;
+	color: #000;
+}
+
+#recordtools li a:hover,
+#recordtools li a:focus,
+#liststools li a:hover,
+#liststools li a:focus,
+.rowtools li a:hover,
+.rowtools li a:focus,
+header .rowtools li a:hover,
+header .rowtools li a:focus {
+	text-decoration: none;
+	font-weight: 600;
+	color: rgb(57, 57, 57);
+}
+
+#recordtools .tool,
+#liststools .tool {
+	color: $iconLtGrey;
+	left:30%;
+	margin-top: -2px;
+	position: absolute;
+	// top: 25%;
+	font-size: 1.25em;
+	line-height: 2;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		left: .6em;
+		margin-top: 0px;
+	}
+
+}
+
+// top level icon
+.rowtools .tool {
+	color: $iconLtGrey;
+	left: 0;
+	@include center-block;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+
+	@media only screen and (min-width: 32.067em) {
+		// 480 and over
+		left: .4em;
+		margin-top: -8px;
+	}
+
+}
+
+// if icon in nested list
+.rowtools ul .tool {
+	color: $iconLtGrey;
+	left: .1em;
+	margin-top: .8em;
+	position: relative;
+	display: inline-block;
+	top: 0;
+}
+
+#recordtools > li.active,
+#liststools > li.active,
+.rowtools > li.active {
+	text-decoration: none;
+	font-weight: normal;
+
+	border: 1px solid rgb(211, 211, 211);
+	background-color: $background-color;
+	color: #000;
+}
+
+// dropdown menu
+#record-menu .drop ul.menu,
+#liststools .drop ul.menu {
+	right:0px;
+	right: 1000em; /* hides nested menu */
+	margin-top: 0;
+	top: 32px;
+	padding: 0;
+	position: absolute;
+	min-width: 160px;
+	width: 100%;
+	z-index: 999999;
+
+	font-weight: normal;
+	text-indent: 0;
+	background: $background-color;
+	color: rgb(85, 85, 85);
+	@include border-radius(4px);
+
+	-moz-background-clip: content;     /* Firefox 3.6 */
+	-webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+	background-clip: content-box;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+	li:first-child {
+		@include border-top-radius(4px);
+	}
+
+	li:last-child {
+		@include border-bottom-radius(4px);
+	}
+
+}
+
+.rowtools .drop ul.menu {
+	position: absolute;
+	display: block;
+	right: -6px;
+	right: 1000em; /* hides nested menu */
+	margin-top:0;
+	top:24px;
+	padding:0;
+
+	min-width:60px;
+	width:100%;
+	z-index:999999;
+
+	font-weight: normal;
+		text-indent: 0;
+	border: 1px solid #a4a4a4;
+	background: rgb(247, 247, 247);
+	color: rgb(85, 85, 85);
+	border-radius: 4px;
+
+	-moz-background-clip: content;     /* Firefox 3.6 */
+	-webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+	background-clip: content-box;
+
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		min-width:220px;
+	}
+
+}
+
+.lt-ie9 #record-menu .drop ul.menu,
+.lt-ie9 #liststools .drop ul.menu,
+.lt-ie9 .rowtools .drop ul.menu {
+	width: 200px;
+	margin-top: 2px;
+	top: 2.3em;
+	text-indent: 0;
+	zoom:1;
+	z-index: 4000;
+}
+
+#record-menu .menu:after, #record-menu .menu:before,
+#liststools .menu:after, #liststools .menu:before,
+.rowtools .menu:after, .rowtools .menu:before  {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+// recordtools listools pseudo content
+//pointer
+#record-menu .menu,
+#liststools .menu {
+
+	&:after {
+		border-bottom-color: #ffffff;
+		border-width: 10px;
+		right: auto;
+		right: 1%;
+		margin-right: 4px;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			right: 1%;
+			left: auto;
+		}
+	}
+
+	&:before {
+		border-bottom-color: rgb(164, 164, 164);
+		border-width: 11px;
+		right: auto;
+		right: 1%;
+		margin-right: 3px;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			right: 1%;
+			left: auto;
+		}
+
+	}
+
+}
+
+// rowtools pseudo content
+//pointer
+.rowtools .menu {
+
+	&:after {
+		border-bottom-color: #ffffff;
+		border-width: 10px;
+		right: auto;
+		left: 9%;
+		margin-right: 4px;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			right: 1%;
+			left: auto;
+		}
+
+	}
+
+	&:before {
+		border-bottom-color: rgb(164, 164, 164);
+		border-width: 11px;
+		right: auto;
+		left: 9%;
+		margin-right: 3px;
+
+		@media only screen and (min-width: 21.333em) {
+			// 320 and over
+			right: 1%;
+			margin-right: 3px;
+			left: auto;
+		}
+
+	}
+
+}
+
+
+#record-menu .drop ul li,
+#liststools .drop ul li,
+.rowtools .drop ul li  {
+	position: relative;
+	border: none;
+	display: block;
+	float: none;
+	line-height: 22px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	z-index:999999;
+	background: rgb(255, 255, 255);
+
+	&:hover, &:focus {
+		background: #eee;
+	}
+
+}
+
+#record-menu .drop ul a,
+#liststools .drop ul a {
+	position: relative;
+	border: none;
+	display: block;
+	line-height: 22px;
+	margin: 0;
+	padding: .4em .25em .4em 2.5em;
+	text-align: left;
+	z-index: 999999;
+	font-size: 1em;
+	color: rgb(146, 146, 146);
+	background: transparent;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.rowtools .drop ul a {
+	position: relative;
+	border: none;
+	display: inline-block;
+	line-height: 22px;
+	margin: 0;
+	padding: .4em 0 .4em .3em;
+	text-align: left;
+	z-index: 999999;
+	font-size: 1em;
+	color: rgb(162, 142, 92);
+	color: rgb(146, 146, 146);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+// menu with icons and drop menu
+#record-menu .drop ul li a span,
+#liststools .drop ul li a span,
+.liststools .drop ul li a span,
+.rowtools .drop ul li a span {
+	position:relative;
+	float: left;
+	margin-right:.5em;
+	text-decoration: none;
+}
+
+#record-menu .drop.drop-hover ul.menu,
+#record-menu .drop.drop-hover .menu,
+#liststools .drop.drop-hover ul.menu,
+#liststools .drop.drop-hover .menu,
+#mylists-menu .drop.drop-hover ul.menu,
+#mylists-menu .drop.drop-hover .menu,
+.rowtools .drop.drop-hover ul.menu,
+.rowtools .drop.drop-hover .menu {
+	margin-top: 2px;
+	right: 0; /* show nested menu */
+	left: auto;
+	z-index: 999999;
+	width: 200px;
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		right: 0px;
+		left: auto;
+		width: auto;
+	}
+}
+
+.lt-ie9 #mylists-menu .drop.drop-hover ul.menu {
+	display: block;
+	margin-top: 0;
+	top: 26px;
+	right: 12px; // show nested menu
+}
+
+.lt-ie9 #record-menu .drop.drop-hover ul,
+.lt-ie9 #liststools .drop.drop-hover ul {
+	margin-top: 0;
+	left: -84px;
+	right: auto;
+}
+
+* li.drop-hover .menu li,
+* .drop.drop-hover .menu li {
+
+	&:hover, &:focus {
+		background: #eee;
+	}
+
+}
+
+#recordtools .drop-hover,
+#liststools .drop-hover {
+
+	.tool {
+		float: left;
+		left: .6em;
+		margin-top: 0;
+	}
+
+	.menu .tool {
+		margin-top: .2em;
+	}
+
+	.menu a {
+		display: block;
+		padding: .4em 2.5em;
+		color: rgb(85, 85, 85);
+		border: none;
+		text-decoration: none;
+		text-indent: 0;
+		z-index: 999999;
+	}
+
+}
+//
+.rowtools .drop-hover {
+
+	.menu a {
+		position: relative;
+		display: inline-block;
+		padding: .4em 0 .4em .3em;
+		color: rgb(85, 85, 85);
+		border: none;
+		text-decoration: none;
+		z-index: 999999;
+	}
+
+}
+//
+
+* li.drop.drophover .menu li:hover .tool,
+* li.drop.drophover .menu li:focus .tool {
+	color: $toolDark;
+	left: 0.5em;
+	margin-top: -7px;
+	position: absolute;
+	top: 50%;
+}
+
+* .drop-hover ul a:hover,
+* .drop-hover ul a:focus,
+* .drop-hover .menu a:hover,
+* .drop-hover .menu a:focus {
+	text-decoration: underline;
+	color: rgb(150, 77, 93);
+}
+
+#record-menu .menu-divider,
+#liststools .menu-divider,
+.rowtools .menu-divider  {
+	background: rgb(52,158,219);
+	font-size: 0;
+	height: 1px;
+	line-height: 0;
+	margin: 6px 7px;
+}
+
+#recordtools select,
+#liststools select,
+.rowtools select {
+	margin:0;
+	border:0;
+}
+
+// home feature toolbars
+// -----------------------------------------------------------
+
+// nav
+.home-feature-menu {
+	position: absolute;
+	top:.5em;
+	right:.5em;
+	text-align:right;
+	margin: 0em 0 .9em;
+	width: auto;
+	z-index: 4000;
+}
+
+.lt-ie9 .home-feature-menu  {
+	position: absolute;
+	float: none;
+	margin: .9em 0;
+	width: auto;
+	right: .5em;
+	top: 0.5em;
+	z-index: 2000;
+}
+
+// listtools
+
+// ul
+.liststools {
+	position: relative;
+	min-width: 20px;
+	width: auto;
+	float: right;
+	margin: .1em 0 0 0.5em;
+	padding: 0;
+	z-index: 4000;
+
+
+}
+
+// mylists tools
+.h-tools.liststools li {
+
+	a:hover,
+	a.here,
+	span.here {
+		color: rgb(0, 0, 0);
+		background-color: transparent;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+}
+
+// li
+.liststools > li {
+	position: relative;
+	float: left;
+	display: block;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: 4000;
+
+	cursor: pointer;
+	text-align: left;
+	text-decoration: none;
+
+	font-weight: normal;
+	color: rgb(85, 85, 85);
+	border-radius: 4px;
+}
+
+// with one icon
+.liststools a,
+.liststools a.text {
+	display: block;
+	line-height: 1.4;
+	position: relative;
+	vertical-align: middle;
+}
+
+.liststools > li > a {
+	text-indent: -99999em;
+	white-space: nowrap;
+}
+
+// with drop icon
+.liststools li > a {
+	padding: 0em 1em;
+}
+
+.liststools li.drop > a,
+.liststools li.drop > a.text {
+	padding: 0em 1em;
+
+	@media only screen and (min-width: 21.333em) {
+		// 320 and over
+		padding: .4em 2em;
+		text-indent: -9999em;
+		width:1px;
+	}
+
+}
+
+.liststools span.secondary {
+	color: $iconLtGrey;
+	background-position: -64px -16px;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+	right: 0.5em;
+	height: 16px;
+	width: 16px;
+	background-repeat: no-repeat;
+	display: block;
+	overflow: hidden;
+	text-indent: -99999px;
+}
+
+.liststools > li.drop-hover,
+.liststools > li:hover {
+	text-decoration: none;
+	font-weight: normal;
+	color: #000;
+}
+
+.liststools li a:hover,
+.liststools li a:focus  {
+	text-decoration: none;
+	font-weight: normal;
+	color: #000;
+}
+
+.liststools .tool {
+	color: $toolDark;
+	left: .5em;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+}
+
+.liststools .tool:hover,
+.liststools .tool:active {
+	color: $toolDark;
+}
+
+.liststools {
+
+	.drop-hover .tool{
+		color: $toolDark;
+	}
+
+	li:hover, li:active {
+
+		.tool {
+			color: $toolDark;
+		}
+	}
+
+}
+
+// dropdown menu
+.liststools .drop ul.menu {
+	right:-2px;
+	right: 1000em; // hides nested menu
+	margin-top:0;
+	top: 20px;
+	padding:0;
+	position: absolute;
+	min-width:150px;
+	width:100%;
+	z-index:4000;
+
+	font-weight: normal;
+	border: 1px solid rgb(119, 119, 119);
+	background: rgb(252, 252, 252);
+	color: rgb(85, 85, 85);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+
+}
+
+.lt-ie9 .liststools .drop ul.menu {
+	width: 200px;
+	margin-top: 2px;
+	top: 2.3em;
+	zoom:1;
+	z-index: 4000;
+}
+
+	.liststools .menu:after,
+	.liststools .menu:before {
+		bottom: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.liststools .menu:after {
+		border-bottom-color: #f6f6f6;
+		border-width: 6px;
+		right: 1%;
+		margin-right: 6px;
+	}
+	.liststools .menu:before {
+		border-bottom-color: #a4a4a4;
+		border-width: 7px;
+		right: 1%;
+		margin-right: 5px;
+	}
+
+.liststools .drop ul li {
+	position: relative;
+	border: none;
+	display: block;
+	float: none;
+	line-height: 18px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	z-index:4000;
+}
+
+.liststools .drop ul a {
+	position: relative;
+	border: none;
+	display: block;
+	line-height: 18px;
+	margin: 0;
+	padding: .4em 1em;
+	text-align: left;
+	z-index:4000;
+	font-size: 1em;
+	color: rgb(133, 206, 239);
+	color: #444;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	text-indent: 0;
+}
+
+// icons
+.liststools .drop ul li a span {
+	position:relative;
+	float: left;
+	margin-right:.5em;
+	text-decoration: none;
+}
+
+.liststools .drop.drop-hover ul.menu,
+.liststools .drop.drop-hover .menu {
+	margin-top: 0px;
+	right:-2px; // show nested menu
+}
+
+.lt-ie9 .liststools .drop.drop-hover ul {
+	margin-top: 0;
+	left: -85px;
+	right: auto;
+}
+
+.liststools li.drop-hover .menu li:hover,
+.liststools .drop.drop-hover .menu li:hover,
+.liststools .drop.drop-hover .menu li:focus {
+	// left:0;*/ /* show nested menu
+	background-color: rgb(241,241,241);
+}
+
+.liststools .drop-hover .menu a {
+	display: block;
+	padding: .4em 1em;
+	color: #000;
+	border: none;
+	text-decoration: none;
+	// width: 200%;
+	z-index: 4000;
+}
+
+.liststools .drop-hover ul a:hover,
+.liststools .drop-hover ul a:focus,
+.liststools .drop-hover .menu a:hover,
+.liststools .drop-hover .menu a:focus {
+	text-decoration: none;
+	font-weight: normal;
+	color: #000;
+	background-color: #dadada;
+}
+
+.liststools .menu-divider {
+	background: rgb(52,158,219);
+	font-size: 0;
+	height: 1px;
+	line-height: 0;
+	margin: 6px 7px;
+}
+
+// section footer tools
+// -----------------------------------------------------------
+.f-tools {
+	float: left;
+	margin:.4em 0 .5em;
+	padding: 0;
+	font-size: .9em;
+
+	// adv search footer
+	#adv-search & {
+		float: left;
+		margin:.4em .5em .5em;
+		padding: 0;
+	}
+
+	// transparent box
+	.nobk,
+	.state-default .nobk {
+		border:none;
+		background-color: transparent;
+	}
+
+	// interaction
+	.state-hover .nobk,
+	.state-focus .nobk {
+		border:none;
+		background-color: transparent;
+	}
+
+	.state-active .nobk { border:none; }
+
+}
+//
+
+.f-tools li {
+	float:left;
+	display: inline;
+	position: relative;
+	margin: 0 1.5em .3em 0;
+	padding: 0;
+	min-height: 18px;
+	vertical-align: middle;
+	line-height: 18px;
+	overflow: hidden;
+	width: auto;
+	white-space: nowrap;
+}
+
+//
+aside .f-tools {
+	float: none;
+	display: block;
+
+	li {
+		float: none;
+		display: block;
+		margin: 0 0 .3em .5em;
+	}
+}
+
+//
+.f-tools a {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-size: .9em;
+	line-height:2;
+
+		span {
+			position: relative;
+			float: left;
+			margin-right:.2em;
+			text-decoration: none;
+		}
+}
+
+// close icon for open form
+// -----------------------------------------------------------
+.h-tools li.toolClose {
+	display: inline;
+	float: left;
+	line-height: 14px;
+	margin: 0;
+	padding: 0;
+	width:20px;
+	height:20px;
+	position: relative;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.h-tools li.toolClose a,
+.mylisting .h-tools li.toolClose .state-default {
+	display: block;
+	position: relative;
+	width:20px;
+	height:20px;
+	background: rgb(82, 95, 116);
+	border: 1px solid rgb(29, 53, 94);
+	border-radius: 4px;
+	color: rgb(225, 225, 225);
+	text-decoration: none;
+	text-align: center;
+
+	&:hover, &:focus {
+		background: rgb(35, 50, 78);
+		color: rgb(255, 255, 255);
+	}
+}
+
+.h-tools .tool-close:before {
+	content: "\f00d";
+	position: relative;
+	display: block;
+	width:100%;
+	height:100%;
+	line-height: .9;
+	color: rgb(255, 255, 255);
+	text-indent: 0;
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+
+// adminwrap specific
+// -----------------------------------------------------------
+.adminWrap .h-tools {
+	margin: .5em 1em 0;
+	min-width: 20px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: auto;
+	z-index: 3010;
+
+		li.adminClose a {
+			background: #878787;
+			border: 1px solid #7a7a7a;
+			border-radius: 4px 4px 4px 4px;
+			color: rgb(255, 255, 255);
+			text-decoration: none;
+		}
+
+		li.adminClose a:hover,
+		li.adminClose a:focus {
+			background: #616161;
+			border: 1px solid #545454;
+			border-radius: 4px 4px 4px 4px;
+			color: rgb(255, 255, 255);
+			text-decoration: none;
+		}
+
+}
+
+// personalized lists tools
+// -----------------------------------------------------------
+// mylists, mywatch, mynotes
+
+.mylisting .titlecell {
+	float: left;
+	margin: 0 1em 0 0;
+	padding: 0;
+	font-weight: 700;
+}
+
+.mylisting .h-tools li {
+
+	a {
+		white-space: nowrap;
+		overflow: hidden;
+		// width:16px;
+		vertical-align: top;
+
+		.tool-delete:before {
+			color: $icon-lite-default-color;
+		}
+
+		.tool-delete:hover:before {
+			color: $link-error-color;
+		}
+
+		.tool-comment:before {
+			color: $icon-lite-default-color;
+		}
+
+		.tool-comment:hover:before {
+			color: $icon-default-color;
+		}
+
+	}
+
+}
+
+// my watch list, my notes, t-aside
+.mylisting .f-tools {
+	float: left;
+	margin: 0 .2em 0 0;
+	padding: 0;
+}
+
+// notes
+.mylisting.notes .f-tools {
+	float: left;
+	margin: .4em .2em 0 0;
+	padding: 0;
+}
+
+// interactive toolState mywatch
+.toolState {
+
+	a {width: 70px;}
+
+	a.activate {
+		color: rgb(0, 128, 0);
+
+		&:hover {
+			color: rgb(0, 128, 0);
+		}
+
+		.tool-state {
+			&:before {
+				content: "\f058";
+				color: rgb(0, 128, 0);
+			}
+		}
+	}
+
+	a.inactive {
+		color: rgb(255, 0, 0);
+
+		&:hover {
+			color: rgb(255, 0, 0);
+		}
+
+		.tool-state {
+			&:before {
+				content: "\f05e";
+				color: rgb(255, 0, 0);
+			}
+		}
+	}
+
+}
+
+// tool specific: client edit button within section of tabs
+.client-edit {
+	margin: -3em .4em 0;
+	min-width: 2px;
+	padding: 0;
+	position: relative;
+	float: right;
+	right: 0;
+	top: 0;
+	width: auto;
+	z-index: 2000;
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+		margin: .4em .4em 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	a {
+		color:rgb(255,255,255);
+	}
+}
+
+.client-tosite {
+	margin: -3em .7em 0;
+	min-width: 20px;
+	padding: 0;
+	position: relative;
+	float:right;
+	right: 0;
+	top: 0;
+	width: auto;
+	z-index: 2000;
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+		margin: .2em .7em 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	a {
+		color:rgb(255,255,255);
+	}
+}
+
+// features editor
+.f-edit {
+	display: block;
+	background: rgb(247,247,247);
+	margin: -1.5em 0 1em;
+	padding: .5em;
+
+	label {
+		width: auto;
+		min-width: 10px;
+	}
+
+	button {
+		float: right;
+	}
+
+}
+
+
+// all itemeditor tools default state
+.hasJS #addlist,
+.hasJS #addnote,
+.hasJS #updater,
+.hasJS #savesearch,
+.hasJS #editlist,
+.hasJS #customlist,
+.hasJS #listtemplate,
+.hasJS #this-features,
+.hasJS .s-edit,
+.hasJS .f-edit {
+	display: none;
+}

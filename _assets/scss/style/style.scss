@@ -1,0 +1,51 @@
+// File: style.scss
+// Outputs: style.css
+//
+// Description:
+// 	Project Structure Style
+//
+// Requires:
+// 	- Sass
+// 	- Compass
+
+// First, import easings from core
+@import "../core/easings";
+
+// Default project mixins
+@import "../mixins/mixins";
+
+// Default Resets
+@import "../site-settings";
+
+// Import partials
+@import "../font-awesome/scss/font-awesome",
+		"../icomoon/style",
+		"tss-nav-cat",
+		"tss-nav-menus",
+		"tss-nav-primary-sections",
+		"tss-vertmenu",
+		"jquery-ui",
+		"jquery-qtip",
+		"tss-tooltips",
+		"tss-toolbars",
+		"tss-itemeditor",
+		"tss-select2",
+		"tss-project-tv",
+		"tss-media-gallery",
+		"cms-media",
+		"tss-progtrac",
+		"tss-successicon",
+		"bootstrap-duallistbox",
+		"responsive-tables",
+		"tss-flexslider",
+		"tss-list-template",
+		"tss-list-mylist",
+		"tss-login",
+		"tss-nestable",
+		"tss-nav-vert3",
+		"tss-vert-nav",
+		"tss-home",
+		"tss-t-customlist",
+		"tss-modals",
+		"tss-color",
+		"tss-print";

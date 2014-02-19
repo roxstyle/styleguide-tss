@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem UI Components</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="../_assets/css/ui.css" rel="stylesheet" media="all">
+
+	<style type="text/css">
+	#staticTable tbody td:first-child {width: 30%;}
+	#staticTable tbody td:nth-child(2) {width: 20%;}
+	#staticTable tbody td:nth-child(3) {width: 25%;}
+	#staticTable tbody td:last-child {width: 25%;}
+		.row.display {
+			background: #eeeeee;
+			font-size: 11px;
+			margin-bottom: 10px;
+			line-height: 2rem;
+			border: solid 1px #c6c6c6;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+		}
+		.row.display .columns:nth-child(2),
+		.row.display .columns.small-centered,
+		.row.display .columns.large-centered {
+			background: #e1e1e1;
+		}
+	</style>
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<header role="banner" class="masthead gradient">
+		<!-- ajax siteMainheader() -->
+	</header><!-- /header -->
+
+		<header id="header-b" class="record">
+
+			<div class="row">
+				<div class="h-content">
+
+					<h1 class="name"><a href="participant.html">Style Guide</a></h1>
+
+						<!-- tool menu -->
+						<nav id="record-menu">
+
+							<ul id="recordtools" class="toolbar h-tools">
+								<li id="toolGears" class="drop">
+									<span class="tool tool-gears"></span>
+									<a href=" " title="Tool List">Actions</a>
+									<span class="secondary">More</span>
+									<ul class="menu">
+										<li>
+											<span class="tool tool-list"></span>
+											<a class="toggler" title="Add to My Lists" href="#addlist">Add to My Lists</a>
+										</li>
+										<li>
+											<span class="tool tool-note"></span>
+											<a class="toggler" title="Add/Edit My Notes" href="#addnote">Add/Edit My Notes (3)</a>
+										</li>
+										<li>
+											<span class="tool tool-watch"></span>
+											<a href=" " title="Add to Watch List">Remove System Watch</a>
+										</li>
+									</ul>
+								</li>
+								<li id="toolUpdate">
+									<span class="tool tool-update"></span>
+									<a class="toggler" title="Update this Record" href="#updater">Update</a>
+								</li>
+								<li id="toolPrint" class="drop">
+									<span class="tool tool-print"></span>
+									<a href=" " title="Print">Print</a>
+									<span class="secondary">More</span>
+									<ul class="menu">
+										<li><a class="text" title="Print" onClick="window.print()">Print Current Page</a></li>
+
+										<li><a href="participant-printrecord.html">Print - Page Options</a></li>
+										<li><a href="#" data-type="fullrecord" class="opener">Print - Modal Options</a></li>
+										<li><a href="#" data-type="sectionlist" class="lister">Print - Modal List</a></li>
+										<li><a href="#" data-type="radiosection" class="radiolist">Print - Modal RadioBtn List</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav><!-- / tool menu -->
+
+						<!-- add edit my lists form -->
+						<div id="addlist" class="itemeditor comment atl dropshadow">
+							<fieldset>
+								<legend><span>Add to My Lists</span></legend>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>My Lists</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<select id="ddlExistingList" class="auto">
+											<option value="0" selected="selected">Please Select</option>
+												<optgroup label="Existing">
+												<option value="39987">my people lists</option>
+												<option value="39991">New actors list</option>
+												<option value="39992">film directors</option>
+											</optgroup>
+											<optgroup label="Create">
+												<option value="new">New List</option>
+											</optgroup>
+										</select>
+									</span>
+								</p>
+								<p id="pNewListName" style="display: none;">
+									<span class=" column small-12 large-2">
+										<label class="req" for="mylist-new-name">Title</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input id="mylist-new-name" title="New List Name" type="text">
+									</span>
+								</p>
+
+								<p id="pNewListDescription" style="display: none;">
+									<span class=" column small-12 large-2">
+										<label class="req" for="mylist-new-desc">Description</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="mylist-new-desc" title="Add Description"></textarea>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label for="mylist-new-comment">Comment</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="mylist-new-comment" title="Add Comment"></textarea>
+									</span>
+								</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+
+							<ul class="toolbar h-tools">
+								<li class="toolClose">
+									<a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a>
+								</li>
+						   </ul>
+						</div>
+						<!-- /atl -->
+
+						<!-- add note form -->
+						<div id="addnote" class="itemeditor an">
+							<fieldset>
+								<legend><span>Add a Note</span></legend>
+								<!-- sample success message -->
+								<div class="help-block success">Project was created as In-Development by such and such user on such and such date</div>
+								<!-- sample error message -->
+								<div class="help-block error">There are errors with the form, please see the fields marked below.
+									<ul>
+										<li>Invalid Pitch Title. Please try again.</li>
+										<li>Invalid Status. Please try again.</li>
+									</ul>
+								</div>
+
+								<p>
+									<span class=" column small-12 large-2">
+										<label class="req">Project Name</label>
+									</span>
+									<span class=" column small-12 large-10">
+										Speed
+									</span>
+								</p>
+								<p id="pNewNoteName">
+									<span class=" column small-12 large-2">
+									<label for="note-new-name">Note Title</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input id="note-new-name" title="New List Name" type="text">
+									</span>
+								</p>
+								<p id="pNewNoteText">
+									<span class=" column small-12 large-2">
+									<label for="note-new-text">Note Text</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="note-new-text" title="Add Note Text"></textarea>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+									<label>Options</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<span class="checks">
+											<input type="checkbox" checked="" value="1" name="printable">
+											<label>Display this note in printed reports.</label>
+										</span>
+										<span class="checks">
+											<input type="checkbox" checked="" value="1" name="import">
+											<label>Display this note in saved lists.</label>
+										</span>
+									</span>
+								</p>
+								<p class="error">
+									<span class=" column small-12 large-2">
+									<label for="note-new-name">Sample Error</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input class="error" id="note-new-name" title="New List Name" type="text">
+										<span class="help-inline error">List Title is Required Lorem ipsum Sint ut in est.</span>
+									</span>
+								</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+								<fieldset>
+										<legend><span>Current Notes</span></legend>
+										<section class="s">
+											<article class="note-text column small-12 large-8">
+												<div class="t-note">
+													<span class="note" title="Note"></span>
+													<span class="n-title">Note Title</span>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+												</div>
+											</article>
+											<article class="note-view column small-6 large-2">
+											<span class="checks">
+												<input type="checkbox" checked="" value="1" name="printable">
+												<label>Printed reports.</label>
+												<input type="checkbox" checked="" value="1" name="import">
+												<label>Saved lists.</label>
+											 </span>
+											</article>
+											<article class="note-options column small-6 large-2">
+												<div class="makeListnoLabel">
+													<ul class="listaction">
+														<li class="remove"><a href=" " title="Remove"><span>Remove</span></a></li>
+													</ul>
+												</div>
+											</article>
+										</section>
+										<section class="s">
+											<article class="note-text column small-12 large-8">
+												<div class="t-note">
+													<span class="note" title="Note"></span>
+													<span class="n-title">Note Title</span>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+												</div>
+											</article>
+											<article class="note-view column small-6 large-2">
+											<span class="checks">
+												<input type="checkbox" checked="" value="1" name="printable">
+												<label>Printed reports.</label>
+												<input type="checkbox" checked="" value="1" name="import">
+												<label>Saved lists.</label>
+											 </span>
+											</article>
+											<article class="note-options column small-6 large-2">
+												<div class="makeListnoLabel">
+													<ul class="listaction">
+														<li class="remove"><a href=" " title="Remove"><span>Remove</span></a></li>
+													</ul>
+												</div>
+											</article>
+										</section>
+								</fieldset>
+								<ul class="toolbar h-tools">
+									<li class="toolClose"><a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a></li>
+								</ul>
+						</div>
+						<!-- /addnote -->
+
+						<!-- update this record form -->
+						<div id="updater" class="itemeditor updater">
+							<fieldset>
+								<legend><span>Update this Record</span></legend>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>Project Name</label>
+									</span>
+									<span class=" column small-12 large-10">
+										Speed
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>Section to Edit</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<span class="checks">
+										<input id="i-maincontent" type="radio" value="Main">
+										<label for="i-maincontent">Main</label>
+										<input id="i-credits" type="radio" value="Credits">
+										<label for="i-credits">Credits</label>
+										<!-- <input id="i-clients" type="radio" value="clients" />
+										<label for="i-clients">Clients</label>
+										<input id="i-biography" type="radio" value="Biography" />
+										<label for="i-biography">Biography</label>
+										<input id="i-bo" type="radio" value="Box Office" />
+										<label for="i-bo">Box Office</label>
+										<input id="i-salary" type="radio" value="Star Salary" />
+										<label for="i-salary">Star Salary</label> -->
+										</span>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label for="i-list-description" class="req"><span class="req">* </span>Description</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="i-list-description" rows="1" title="define this list"></textarea>
+									</span>
+								</p>
+								<p><label>Note</label> Upon submitting, your description will be sent to our editors for verification.</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+							<ul class="toolbar h-tools">
+								<li class="toolClose"><a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a></li>
+							</ul>
+						</div>
+						<!-- /update this record -->
+				</div>
+			</div>
+
+			<!-- menu -->
+			<!-- category content navigation -->
+			<div id="cat-nav" class="row cat-bar">
+
+				<div class="h-content">
+					<!-- details navigation -->
+					<div class="nav-b nav-primary">
+						<nav role="navigation" class="cat-sections">
+							<h1 class="toggleMenu">Menu</h1>
+
+							<ul class="nav-cat">
+								<li class="structure" data-section="structure">
+									<a href="../index.html">General</a>
+								</li>
+								<li class="structure" data-section="structure">
+									<a href="../coding/coding.html">Coding Practices</a>
+								</li>
+								<li class="ui active" data-section="ui">
+									<a href="ui.html">UI</a>
+								</li>
+								 <li class="base" data-section="base">
+									<a href="base.html">Base</a>
+								</li>
+								<li class="modules" data-section="modules">
+									<a href="modules.html">Modules</a>
+								</li>
+								<li class="svg-color" data-section="svg-color">
+									<a href="svg-color.html">SVG Color Chart</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!-- /details navigation -->
+				</div>
+
+			</div>
+
+		</header>
+
+	<!-- content -->
+	<div class="content">
+
+		<!-- complementary content -->
+		<aside role="complementary" class="">
+
+				<nav>
+					<ul class="side-nav">
+						<li class="heading">UI</li>
+						<li><a href="#s-grid">Grid</a></li>
+						<li><a href="#s-layout">Layout</a></li>
+						<li class="divider"></li>
+						<li class="heading">RWD</li>
+						<li><a href="#s-rwd">Responsive Design</a></li>
+						<li><a href="#s-rwd">Responsive Gestures</a></li>
+						<li class="divider"></li>
+						<li class="heading">Syntax</li>
+						<li><a href="#s-syntax">Syntax Highlighting Tools</a></li>
+						<li><a href="#s-syntax">Syntax Highlighting Resources</a></li>
+					</ul>
+				</nav>
+
+		</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+			<section id="s-grid" class="mod box">
+				<h2>Grid</h2>
+
+				<section>
+					<h3>Basic</h3>
+					<p>Within the outer framework, the content areas are wrapped into sections. The section tag has no margins or padding, and clears everything before and after itself. Within a section, start by adding an element with a class of row. This will create a horizontal block to contain vertical columns. Then add divs with a column class within that row. You can use column or columns - the only difference is grammar. Specify the widths of each column with the small-#, medium-#, and large-# classes.</p>
+					<p>We are using Foundation Grid which is mobile-first. Code for small screens first, and larger devices will inherit those styles. Customize for larger screens as necessary.</p>
+						<div class="row">
+								<pre><code data-language="html">
+									<div class="row">
+									  <div class="small-2 large-4 columns"><span class="show-for-small">2</span><span class="hide-for-small">4</span></div>
+									  <div class="small-4 large-4 columns">4</div>
+									  <div class="small-6 large-4 columns"><span class="show-for-small">6</span><span class="hide-for-small">4</span></div>
+									</div>
+									<div class="row">
+									  <div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+									  <div class="large-6 columns"><span class="show-for-small">full</span><span class="hide-for-small">6</span></div>
+									  <div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+									</div>
+									<div class="row">
+									  <div class="small-6 large-2 columns"><span class="show-for-small">6</span><span class="hide-for-small">2</span></div>
+									  <div class="small-6 large-8 columns"><span class="show-for-small">6</span><span class="hide-for-small">8</span></div>
+									  <div class="small-12 large-2 columns"><span class="show-for-small">full</span><span class="hide-for-small">2</span></div>
+									</div>
+									<div class="row">
+									  <div class="small-3 columns">3</div>
+									  <div class="small-9 columns">9</div>
+									</div>
+									<div class="row">
+									  <div class="large-4 columns"><span class="show-for-small">full</span><span class="hide-for-small">4</span></div>
+									  <div class="large-8 columns"><span class="show-for-small">full</span><span class="hide-for-small">8</span></div>
+									</div>
+									<div class="row">
+									  <div class="small-6 large-5 columns"><span class="show-for-small">6</span><span class="hide-for-small">5</span></div>
+									  <div class="small-6 large-7 columns"><span class="show-for-small">6</span><span class="hide-for-small">7</span></div>
+									</div>
+									<div class="row">
+									  <div class="small-2 columns">2 columns</div>
+									  <div class="small-10 columns">10 columns</div>
+									</div>
+									<div class="row">
+									  <div class="small-3 columns">3 columns</div>
+									  <div class="small-9 columns">9 columns</div>
+									</div>
+								</code></pre>
+						</div>
+						<!-- /nested row -->
+						<div class="row">
+								<div class="row display">
+								  <div class="small-2 large-4 columns"><span class="show-for-small">2</span><span class="hide-for-small">4</span></div>
+								  <div class="small-4 large-4 columns">4</div>
+								  <div class="small-6 large-4 columns"><span class="show-for-small">6</span><span class="hide-for-small">4</span></div>
+								</div>
+								<div class="row display">
+								  <div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+								  <div class="large-6 columns"><span class="show-for-small">full</span><span class="hide-for-small">6</span></div>
+								  <div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+								</div>
+								<div class="row display">
+								  <div class="small-6 large-2 columns"><span class="show-for-small">6</span><span class="hide-for-small">2</span></div>
+								  <div class="small-6 large-8 columns"><span class="show-for-small">6</span><span class="hide-for-small">8</span></div>
+								  <div class="small-12 large-2 columns"><span class="show-for-small">full</span><span class="hide-for-small">2</span></div>
+								</div>
+								<div class="row display">
+								  <div class="small-3 columns">3</div>
+								  <div class="small-9 columns">9</div>
+								</div>
+								<div class="row display">
+								  <div class="large-4 columns"><span class="show-for-small">full</span><span class="hide-for-small">4</span></div>
+								  <div class="large-8 columns"><span class="show-for-small">full</span><span class="hide-for-small">8</span></div>
+								</div>
+								<div class="row display">
+								  <div class="small-6 large-5 columns"><span class="show-for-small">6</span><span class="hide-for-small">5</span></div>
+								  <div class="small-6 large-7 columns"><span class="show-for-small">6</span><span class="hide-for-small">7</span></div>
+								</div>
+								<div class="row display">
+								  <div class="small-2 columns">2 columns</div>
+								  <div class="small-10 columns">10 columns</div>
+								</div>
+								<div class="row display">
+								  <div class="small-3 columns">3 columns</div>
+								  <div class="small-9 columns">9 columns</div>
+								</div>
+						</div>
+						<!-- /nested row -->
+				</section>
+				<!-- /subsection -->
+
+				<section>
+					<h3>Advanced Nesting</h3>
+					<p>You can nest the grids indefinitely, though at a certain point it will get absurd.</p>
+					<div class="row">
+						<pre><code data-language="html">
+							<div class="row display">
+							  <div class="small-8 columns">8
+							    <div class="row">
+							      <div class="small-8 columns">8 Nested
+							        <div class="row">
+							          <div class="small-8 columns">8 Nested Again</div>
+							          <div class="small-4 columns">4</div>
+							        </div>
+							      </div>
+							      <div class="small-4 columns">4</div>
+							    </div>
+							  </div>
+							  <div class="small-4 columns">4</div>
+							</div>
+						</code></pre>
+					</div>
+					<div class="row display">
+					  <div class="small-8 columns">8
+					    <div class="row">
+					      <div class="small-8 columns">8 Nested
+					        <div class="row">
+					          <div class="small-8 columns">8 Nested Again</div>
+					          <div class="small-4 columns">4</div>
+					        </div>
+					      </div>
+					      <div class="small-4 columns">4</div>
+					    </div>
+					  </div>
+					  <div class="small-4 columns">4</div>
+					</div>
+				</section>
+			</section>
+
+
+			<section id="s-layout" class="mod box">
+				<h2>Layout</h2>
+
+				<section>
+				  <h3>Basic Outer Framework</h3>
+				  <p><img src="_assets/img/blssi-outerstructure-css-map.png"></p>
+				</section>
+				<!-- /subsection -->
+
+			</section>
+
+			<section id="s-rwd" class="mod box">
+				<h2>Responsive Design</h2>
+
+				<section>
+				  <h3>Directory</h3>
+				  <p>Lorem ipsum irure ullamco in laboris est in pariatur Excepteur culpa proident eiusmod do aliquip ut voluptate et enim cillum eiusmod sunt esse in.</p>
+				</section>
+				<!-- /subsection -->
+
+			</section>
+
+			<section id="s-rwd" class="mod box">
+				<h2>Responsive Gestures</h2>
+
+				<section>
+					<h3>ipad zooming research</h3>
+					<p>We are using the improved ios-viewport-scaling-bug-fix.js at the top of the site script.js. the older version resulted in tabs not working on ipad.</p>
+						<h3><a href="https://gist.github.com/mathiasbynens/901295">from Mathias Bynens' github</a></h3>
+<pre><code data-language="javascript">
+// ios-viewport-scaling-bug-fix
+// https://gist.github.com/mathiasbynens/901295
+// By @mathias, @cheeaun and @jdalton
+
+(function(doc) {
+
+	var addEvent = 'addEventListener',
+		type = 'gesturestart',
+		qsa = 'querySelectorAll',
+		scales = [1, 1],
+		meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+
+}(document));
+</code></pre>
+					<p>A list of resources and discussion follows.</p>
+					<ul>
+						<li><a href="http://adactio.com/journal/4470/">Jeremy Keith</a></li>
+						<li><a href="https://gist.github.com/mathiasbynens/901295">Mathias Bynens</a></li>
+						<li><a href="http://css-tricks.com/forums/discussion/15236/ipad-zoom-problems/p1">CSS Tricks</a></li>
+						<li><a href="http://46424.com/question/311418#.UR7LjlrrksY">iquen</a></li>
+					</ul>
+				</section>
+				<!-- /subsection -->
+
+			</section>
+
+			<section id="s-syntax" class="mod box">
+				<h2>Syntax Highlighting Examples</h2>
+				<div class="row">
+					<h3>HTML Code Sample</h3>
+
+						<pre><code data-language="html">
+							<header>
+								<h2>
+									<span>DataTables sorting</span>
+								</h2>
+									<p>Lorem Ipsum</p>
+							</header>
+
+							<blockquote>This is a blockquote.</blockquote>
+
+						</code></pre>
+
+
+					<h3>CSS Code Sample</h3>
+
+						<pre><code data-language="css">
+							.sections,
+							nav.section,
+							form.search,
+							.sections,
+							form.search {
+								border: none;
+								text-align: inherit;
+								margin: 0;
+								padding: 0;
+								background: transparent;
+							}
+
+						</code></pre>
+
+
+					<h3>Javascript Code Sample</h3>
+
+						<pre><code data-language="javascript">
+							function Plugin(element, options)
+							{
+								this.w  = $(window);
+								this.el = $(element);
+								this.options = $.extend({}, defaults, options);
+								this.init();
+							}
+
+						</code></pre>
+
+				</div>
+				<!-- /row -->
+				<h2>Syntax Highlighting Resources</h2>
+				<div class="row">
+					<p>Syntax highlighting code (For pro work):</p>
+					<ol>
+						<li><a href="http://craig.is/making/rainbows">rainbows (very near Perfect)</a> - this is what we are using</li>
+						<li><a href="https://code.google.com/p/google-code-prettify/">prettify</a> - google</li>
+						<li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">syntaxhighlighter</a> - old google now maintained</li>
+						<li><a href="http://highlightjs.org/">highlight</a> - looks promising, has lots of dev love</li>
+						<li><a href="http://devpro.it/jshighlighter/">JSHighlighter</a></li>
+					</ol>
+				</div>
+			</section>
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+	<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/html5shiv.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<script src="../_assets/js/loader.js"></script>
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+
+	<!-- layout specific -->
+	<script src="../_assets/js/lib/foundation.min.js"></script>
+	<script src="../_assets/js/lib/app.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script>
+		$(function() {
+			//financials salary
+			$('.film-upcoming').dataTable({
+				"bAutoWidth": false,
+				"bJQueryUI": true,
+				"bFilter": false,
+				"bLengthChange": false,
+				"bInfo": false,
+				"bPaginate": false,
+				"bRetrieve": true,
+				//"sPaginationType": "full_numbers",
+				"aaSorting": [[0, "asc"]],
+
+				"aoColumns": [
+						{ "sWidth": "30%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "20%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "25%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "25%", "bSortable": true, "bVisible": true }
+				]
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$("a[href^='#']").click(function(evt){
+			var j = $(evt.currentTarget);
+			var anchorTarget = j.attr("href");
+			$("body")
+				.scrollTo(anchorTarget, 500, {
+					onAfter:function() {
+						window.location.hash = anchorTarget.substr(1);
+						$(anchorTarget).attr("tabindex",-1).focus();
+					}
+				});
+
+			evt.preventDefault();
+		});
+	</script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+// File: ui-style.scss
+// Outputs: ui.css
+//
+// Project: studiosystem
+//
+// Description:
+//  styleguide only styles
+//
+// Requires:
+// - Sass <http://sass-lang.com/>
+
+a, a:visited {
+	color: rgb(56, 114, 201);
+}
+
+//
+table.rainbow {
+	background: rgb(47, 47, 47);
+	border: 1px solid #ddd;
+}
+
+//
+.guide {
+	list-style: none;
+	*zoom: 1;
+	@include clearfix();
+}
+
+.guide ul {
+	list-style: none;
+	width: 12em;
+}
+
+.guide a {
+	padding: 10px 15px;
+	color: #333333;
+	text-decoration: none;
+	font-size: 1.167em;
+	font-weight: 700;
+}
+
+.guide li {
+	position: relative;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.guide > li {
+	float: left;
+}
+
+/*.guide > li > .parent {
+	background-image: url("../img/icons/downArrow.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}*/
+
+.guide > li > a {
+	display: block;
+	color: #333333;
+}
+
+.guide > li > a.parent {
+	padding-right: 33.75px;
+}
+
+.guide > li > a.parent:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: solid 5px;
+	border-color: #333333 transparent transparent transparent;
+	margin-right: 16px;
+	margin-top: -2.5px;
+	position: absolute;
+	right: 0;
+	top: 18px; }
+
+.guide li ul {
+	position: absolute;
+	left: -9999px; }
+
+.guide > li.hover > ul {
+	left: 0; }
+
+.guide li li.hover ul {
+	left: 100%;
+	top: 0; }
+
+.guide > li:hover,
+.guide > li:focus {
+	background: #d1d1d1; }
+
+.guide li li a,
+.guide li.active li a {
+	display: block;
+	position: relative;
+	z-index: 100;
+	color: black;
+	background: #d1d1d1;
+	border-top: 1px solid #8c8c8c; }
+
+.guide li li a:hover,
+.guide li li a:focus {
+	display: block;
+	position: relative;
+	z-index: 100;
+	color: black;
+	background: #e9e9e9;
+	border-top: 1px solid #a28e5c; }
+
+.guide li.active a {
+	color: white;
+	background: #964d5d;
+	font-weight: 800;
+}
+
+@media only screen and (min-width: 51em) {
+	/*  min-width: 768px */
+
+	.active {
+		display: block;
+	}
+
+	.guide > li {
+		float: none;
+	}
+
+	.guide > li > .parent {
+		background-position: 95% 50%;
+	}
+
+	.guide ul {
+		display: block;
+		width: 100%;
+	}
+
+	.guide > li.hover > ul, .guide li li.hover ul {
+		position: static;
+	}
+
+	.guide li.active a {
+		color: white;
+		background: #333333;
+		font-weight: 800;
+	}
+
+}

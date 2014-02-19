@@ -1,0 +1,280 @@
+// 28. color
+// ----------------------------------------------------------
+
+#container.gradient {
+	z-index: 10;
+
+		@media only screen and (min-width: 32.067em) {
+				background: #f2f2f2;
+				/* Old browsers */
+				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I1YjBhZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZTVlM2UzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTclIiBzdG9wLWNvbG9yPSIjZThlOGU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDElIiBzdG9wLWNvbG9yPSIjZThlOGU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+				background: -moz-linear-gradient(top, #e3e3e3 0%, #e3e3e3 5%, #e8e8e8 17%, #e8e8e8 41%, #f2f2f2 77%);
+				/* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e3e3e3), color-stop(5%, #e3e3e3), color-stop(17%, #e8e8e8), color-stop(41%, #e8e8e8), color-stop(77%, #f2f2f2));
+				/* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #e3e3e3 0%, #e3e3e3 5%, #e8e8e8 17%, #e8e8e8 41%, #f2f2f2 77%);
+				/* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #e3e3e3 0%, #e3e3e3 5%, #e8e8e8 17%, #e8e8e8 41%, #f2f2f2 77%);
+				/* Opera 11.10+ */
+				background: -ms-linear-gradient(top, #e3e3e3 0%, #e3e3e3 5%, #e8e8e8 17%, #e8e8e8 41%, #f2f2f2 77%);
+				/* IE10+ */
+				background: linear-gradient(top, #e3e3e3 0%, #e3e3e3 5%, #e8e8e8 17%, #e8e8e8 41%, #f2f2f2 77%);
+				/* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e6e6e6',GradientType=0 );
+				/* IE6-8 */
+		}
+
+}
+
+// rounded radius section specific
+.box_round, .tih, .new-m, .tabwrap {
+	border-radius: 4px; /* Opera 10.5, IE 9 */
+}
+.box_shadow {
+	box-shadow: 0 2px 7px #d9d9d9; /* Opera 10.5, IE 9.0 */
+}
+
+.box_gradient {
+		background-color: rgb(255, 255, 255);
+		background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(255, 255, 255) 90%, #f2f2f2 99%); /* FF3.6 */
+		background-image: -webkit-gradient(linear,0 0,0 100%,from(rgb(255, 255, 255)),color-stop(90%, rgb(255, 255, 255)),color-stop(99%, #f2f2f2)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(rgb(255, 255, 255), #f2f2f2); /* Chrome 10+, Saf6 */
+		background-image: linear-gradient(rgb(255, 255, 255), #f2f2f2);
+}
+
+// section titles
+header {
+
+	&.title_gradient {
+		background-color: #858585;
+		background-image: -moz-linear-gradient(top, rgb(191, 191, 191), #969696 30%, #858585 90%); /* FF3.6 */
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(191, 191, 191)), color-stop(30%, #969696), color-stop(90%, #858585)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(rgb(191, 191, 191), #858585); /* Chrome 10+, Saf6 */
+		background-image: linear-gradient(top, rgb(191, 191, 191), #858585);
+	}
+
+	&.title_highlight {
+		background-color: #858585;
+		background-image: -moz-linear-gradient(top, #b46929, #b46929 30%, #7b3E15 90%); /* FF3.6 */
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b46929), color-stop(30%, #b46929), color-stop(90%, #7b3E15)); /* Saf4+, Chrome */
+		background-image: -webkit-linear-gradient(#b46929, #7b3E15);
+	}
+
+	&.title_round {
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+
+			-moz-background-clip: padding;     /* Firefox 3.6 */
+		 -webkit-background-clip: padding;  /* Safari 4 Chrome 6 */
+				 background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	}
+
+	&.title_brand {
+		background:transparent url('../img/brand/brand-hd-bg.jpg') no-repeat -50px 0;
+	}
+}
+
+// Layout Specific : search results, lists
+// ----------------------------------------------------------
+.s .comment > span,
+.s .step > span,
+.s .t-note > span,
+.t .premise > span,
+.t .synopsis > span {
+	color: rgb(136, 136, 136);
+	font-weight: 600;
+}
+.t .premise > span,
+.t .synopsis > span {
+	color: #b5260a;
+	font-weight: 600;
+}
+.s .t-note > span.n-title {
+	color: #444;
+	font-weight: 600;
+}
+
+//	Layout Specific : toolbars
+// ----------------------------------------------------------
+
+// .list-details {
+// 	.tool, button {
+// 	background-image: url(../img/tools-ffffff.png);
+// 	}
+// }
+
+// record page media tools
+.h-tools.gallery-nav li {
+
+	a:hover {
+		color: rgb(129, 216, 247);
+		background: rgb(22, 35, 58);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+}
+
+// tool exceptions
+// .tool-hint {background-image:url("../img/tools-active.png");}
+
+// itemeditor exceptions
+// .itemeditor {
+
+// 	.state-default .tool,
+// 	.state-default a .tool {
+
+// 		.tool {
+// 			background-image: url(../img/tools-error.png);
+// 		}
+// 	}
+
+// }
+
+// favorite star icon
+.state-default .tool-fav,
+.state-hover .tool-fav,
+.state-focus .tool-fav,
+.state-active .tool-fav,
+.state-default a .tool-all,
+.state-hover a .tool-all,
+.state-focus a .tool-all,
+.state-active a .tool-all {
+	border:none;
+	background-color: transparent;
+}
+
+
+//
+.tool-hilite {
+	background: rgb(255, 255, 255);
+	border: 1px solid #ccc;
+	border-width: 0 1px;
+}
+.btnseparator {
+	border-left: 1px solid #BCBA78;
+	border-right: 1px solid rgb(255, 255, 255);
+}
+
+
+
+// tool exceptions
+// .tool-hint {background-image:url("../img/tools-active.png");}
+
+// positioning for tool icons
+// .tool-add { background-position: -34px -130px; }
+// .tool-addlist { background-position: -160px -288px; }
+// .tool-addnote { background-position: -209px -288px; }
+// .tool-addgroup { background-position: -207px -257px; }
+// .tool-adduser { background-position: -224px -257px; }
+// .tool-all { background-position: -162px -65px; }
+// .tool-close { background-position: -94px -208px; }
+// .itemeditor .tool-close { background-position: -95px -209px; }
+// .tool-collapse { background-position: 0 0; }
+// .tool-panelcollapse { background-position: -16px -192px; }
+// .tool-collapse-close { background-position: -16px 0; }
+// .tool-comment { background-position: -130px -96px; }
+// .tool-delete { background-position: -16px -192px; }
+// .tool-edit { background-position: -240px -272px; }
+// .tool-email { background-position: -97px -161px; }
+// .tool-emp { background-position: -145px -161px; }
+// .tool-email-open {background-position: -97px -161px; }
+// .tool-export { background-position: -240px -288px; }
+// .tool-panelexpand { background-position: 0 -192px; }
+// .tool-fav { background-position: -176px -208px; }
+// .tool-flag { background-position: -64px -16px; }
+// .tool-gallery { background-position: -192px -159px;}
+// .tool-gears { background-position: -144px -224px; }
+// .tool-hcard {background-position: -193px -193px; }
+// .tool-hint {background-position: -158px -177px; }
+// .tool-less { background-position: -97px -257px; }
+// .tool-list { background-position: -128px -290px; }
+// .tool-map { background-position: -161px -16px; }
+// .tool-modifysearch { background-position: -128px -256px; }
+// .tool-more { background-position: -65px -257px; }
+// .tool-morego { background-position: -225px -224px; }
+// .tool-mysearch { background-position: -160px -112px; }
+// .tool-gomore { background-position: -38px -18px; }
+// .tool-next { background-position: -33px -81px; }
+// .tool-note { background-position: -144px -290px; }
+// .tool-previous { background-position: -98px -81px; }
+// .tool-primary {background-position: -192px 3px; }
+// .tool-print {background-position: -112px -224px; }
+// .tool-remove { background-position: -96px -209px; }
+// .tool-reorder { background-position: -64px -82px; }
+// .tool-repeat { background-position: -144px -240px; }
+// .tool-savesearch { background-position: -144px -254px; }
+// .tool-update { background-position: -240px -274px; }
+// .tool-video { background-position: -226px -128px; }
+// .tool-trailers { background-position: -160px -176px; }
+// .tool-verify { background-position: -64px -146px; }
+// .tool-viewnote { background-position: -192px -290px; }
+// .tool-watch { background-position: -96px -290px; }
+// .circle-delete { background-position: -64px -32px; }
+// .circle-add { background-position: -48px -32px; }
+// masthead tool list
+// #controls .tool-list { background-position: -128px -286px; }
+// #controls .tool-note { background-position: -144px -287px; }
+// #controls .tool-watch { background-position: -96px -286px; }
+// #controls .tool-systool { background-position: -224px -144px; }
+// #controls .tool-search { background-position: -160px -254px;}
+
+// .controls .tool-advsearch { background-position: -160px -254px; }
+// .controls .tool-list { background-position: -128px -286px; }
+// .controls .tool-note { background-position: -144px -287px; }
+// .controls .tool-research { background-position: -112px -320px; }
+// .controls .tool-systool { background-position: -224px -144px; }
+// .controls .tool-search { background-position: -160px -254px;}
+// .controls .tool-watch { background-position: -96px -286px; }
+
+// .top-bar .tool-advsearch { background-position: -160px -254px; }
+// .top-bar .tool-list { background-position: -128px -286px; }
+// .top-bar .tool-note { background-position: -144px -287px; }
+// .top-bar .tool-research { background-position: -112px -320px; }
+// .top-bar .tool-systool { background-position: -224px -144px; }
+// .top-bar .tool-search { background-position: -160px -254px;}
+// .top-bar .tool-watch { background-position: -96px -286px; }
+
+// home bar tool list
+// .bar-tools .tool-account { background-position: -240px -256px; }
+// .bar-tools .tool-list { background-position: -128px -286px; }
+// .bar-tools .tool-note { background-position: -144px -287px; }
+// .bar-tools .tool-search { background-position: -160px -254px; }
+// .bar-tools .tool-share { background-position: -176px -255px; }
+// .bar-tools .tool-reports { background-position: -144px -270px; }
+// .bar-tools .tool-watch { background-position: -96px -286px; }
+
+// tool status icons
+// .toolState a.inactive .tool {background-image: url(../img/tools-error.png);}
+// .toolState a.activate .tool {background-image: url(../img/tools-green.png);}
+// .toolState a.inactive {color: red;}
+// .toolState a.activate {color: green;}
+// a.inactive .tool-state { background-position: -224px -192px; }
+// a.activate .tool-state { background-position: -208px -192px; }
+
+// .list-details .tool-edit { background-position: -112px -288px; }
+// .list-details .tool-remove { background-position: -96px -209px; }
+
+// system tool panel icons
+// #toppanel .panel_button .tool {background-image: url(../img/tools-green.png);}
+// #toppanel #hide_button.panel_button .tool {background-image: url(../img/tools-ffffff.png);}
+
+// .tool.tool-primary {background-image: url(../img/tools-brown.png);}
+
+// snapshop search results tool
+.state-default a .tool-more,
+.state-hover a .tool-more,
+.state-focus a .tool-more,
+.state-active a .tool-more,
+.state-default a .tool-less,
+.state-hover a .tool-less,
+.state-focus a .tool-less,
+.state-active a .tool-less,
+.f-tools li a span.tool-more {background-color: transparent; border: none;}
+
+// toolbar dialogue
+.tooltarget {
+	background-color:rgb(255, 255, 255);
+	border: 1px solid rgb(111, 111, 111);
+}

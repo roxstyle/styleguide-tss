@@ -1,0 +1,83 @@
+/* 21. Login Form
+----------------------------------------------------------*/
+
+.login [role="main"] h2 {
+	margin-bottom: .83em;
+	font-size: 1.2em;
+	line-height: 1.2;
+
+	@media only screen and (min-width: 32.067em) {
+			font-size: 2em;
+			-moz-transition: all 0.3s ease-in-out 0s;
+			-webkit-transition: all 0.3s ease-in-out 0s;
+			-o-transition: all 0.3s ease-in-out 0s;
+			-ms-transition: all 0.3s ease-in-out 0s;
+			transition: all 0.3s ease-in-out 0s;
+	}
+}
+
+.login .content {
+	width: 98%;
+	margin: .75em auto 1.5em;
+	padding-top: .75em;
+	background: transparent;
+
+	@media only screen and (min-width: 32.067em) {
+		width: 93%;
+	}
+
+	@media only screen and (min-width: 51em) {
+		max-width: 960px;
+		width: 93%;
+		margin-bottom: 5.2em;
+		border:none;
+		border-bottom: none;
+	}
+}
+
+
+.login div[role="main"],
+.index [role="main"],
+.fullcol [role="main"] {
+	float: left;
+	width: 100%;
+	margin: 0;
+	border-bottom-width: 0;
+}
+
+.login-section {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 1em;
+	width: 500px;
+}
+
+.loginwrap {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0 .3em .5em;
+	width: 98%;
+
+	@media only screen and (min-width: 32.067em) {
+		padding: 1em;
+		width:77%;
+	}
+
+	@media only screen and (min-width: 51em) {
+		width: 600px;
+	}
+
+	fieldset {
+		margin: 0 auto;
+		padding: 1em;
+		position: relative;
+		border: 1px solid rgb(216, 225, 235);
+		background-color: rgb(233, 238, 244);
+		border-radius: 12px;
+	}
+
+}
+//
+

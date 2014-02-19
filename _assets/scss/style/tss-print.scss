@@ -1,0 +1,509 @@
+/* 29. print
+----------------------------------------------------------*/
+
+.print-only { display: none; }
+
+@media print {
+
+	@page { margin: 1.5cm 1.5cm; }
+
+	// 2.Base
+	// ----------------------------------------------------------
+	*, .drop-shadow {
+		background : transparent !important;
+		color : black !important;
+		text-shadow : none !important;
+		filter : none !important;
+		-ms-filter : none !important;
+	}
+
+	html, body {
+		background:transparent;
+		font-size: .9em;
+	}
+
+	body, form {
+		font:12pt "Times New Roman",Times,serif;
+		width:98%;
+		max-width: 98%;
+		margin:0;
+		padding:0;
+	}
+
+	header[role="banner"] .search,
+	header[role="banner"] #mast-menu,
+	footer[role="contentinfo"],
+	header[role="banner"] #backToClassic,
+	aside[role="complementary"] a.read-more,
+	#thedetails > section.selected header .h-tools,
+	.record #record-menu,
+	.profile .gallery-nav,
+	.location, .openHint, p.key,
+	.ui-dialog, .hint, .map,
+	.sections-heading,
+	.nav-b.nav-primary,
+	.tabs-nav[role="tablist"] {
+		display:none !important;
+	}
+
+	.h-content {
+		min-height: inherit;
+		margin: 0;
+		padding: 0;
+	}
+
+	header[role="banner"] {
+		min-height: 15px;
+		margin: 0;
+		padding: 0;
+	}
+
+	// 3.Headings
+	// ----------------------------------------------------------
+	p, h2, h3 {
+		orphans : 3;
+		widows : 3;
+	}
+
+	h2, h3,
+	.tv-e li h3,
+	.tv-e li .tv-episode {
+		page-break-after : avoid;
+	}
+
+	h1, h1.name {
+		font:12pt "Times New Roman",Times,serif;
+		width:100%;
+		max-width: 100%;
+		margin:0;
+		padding:0;
+		text-align: left;
+	}
+
+	h2, aside h2 {
+		margin-bottom: 0;
+		font-size: 12pt;
+		line-height: 1;
+		font-style: normal;
+	}
+
+	/* hide screen logo */
+	header[role="banner"] .h-content h1,
+	header[role="banner"] .h-content h1.beta {
+		display: none;
+	}
+
+	/* show print logo */
+	header[role="banner"] .h-content h1.print-only {
+		display: block;
+		position: relative;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	header.record .h-content h1.name {
+		display: block;
+		position: relative;
+		float: left;
+		margin: 0 0 10px;
+		padding: 0;
+		width: 100%;
+		font-size: 1.2em;
+	}
+	/* start print preview */
+	.printlist div[role="main"] h2.preview {
+		border-top: 1px dotted #ccc;
+		margin-top:0;
+		padding-top: 0;
+		margin-bottom: 3em;
+	}
+
+	// 4.Links
+	// ----------------------------------------------------------
+	a, a:visited {
+		color : #444 !important;
+		text-decoration : none;
+	}
+
+	/* remove links from print preview */
+	a:link:after,
+	a:visited:after {
+		content: "";
+	}
+
+	a[href^="mailto:"]:after {
+		content:" (" attr(href) ")";
+		font-size:80%;
+	}
+
+	// 5.Typography
+	// ----------------------------------------------------------
+
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content : "";
+	}
+
+	pre, blockquote {
+		border : 1px solid #999;
+		page-break-inside : avoid;
+	}
+
+	// 6.Lists
+	// ----------------------------------------------------------
+	li ul,
+	li ol {
+		margin: 0 1.5em;
+	}
+
+	ul, ol {
+		margin: 1.5em;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	li {
+		padding:0.5em 0;
+	}
+
+	ul.s-details dt {
+		font:13pt "Times New Roman",Times,serif;
+	}
+
+	// 8.Figures and Images
+	// ----------------------------------------------------------
+
+	img {
+		max-width: 100% !important;
+	}
+
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	// 10.Tables
+	// ----------------------------------------------------------
+	thead {
+		display: table-header-group;
+	}
+
+	img {
+		page-break-inside : avoid;
+	}
+
+	table {
+		width: 96%
+	}
+
+	// 11.Banner header[role="banner"]
+	// ----------------------------------------------------------
+	.h-content {
+		width: 100%;
+		min-height:5px;
+		margin: 0;
+		}
+
+	// 13.Content
+	// ----------------------------------------------------------
+	.content {
+		width: 100%;
+		max-width: inherit;
+		margin:0;
+		padding: 0;
+	}
+
+	// 14.Main div[role="main"]
+	// ----------------------------------------------------------
+	*[role="main"] {
+		float: none;
+		width: 100%;
+		margin:0;
+		padding: 0;
+		border: 0;
+		page-break-after: always;
+	}
+	.mytools *[role="main"] section h3.folded-corner-left {
+		background:transparent;
+		color:#000;
+	}
+	.mlist div[role="main"] header h3 {
+		background:transparent;
+		color:#000;
+	}
+
+	/* main record summary */
+	div[role="main"] #summary {
+		width: 98%;
+		border: 1px solid #ccc;
+		padding: .5em;
+	}
+
+	#summary ul.s-details {
+		margin: 0;
+	}
+
+	#summary ul.s-details li {
+		margin-bottom: 0;
+		padding-bottom:0;
+	}
+
+	#summary ul.s-details dl {
+		margin-bottom: 0;
+	}
+
+	#summary ul.s-details dd {
+		padding-bottom: 0;
+	}
+
+	.pubdates {
+		font-size:.8em;
+	}
+
+	*[role="main"] > section > header {
+		page-break-after: avoid;
+	}
+
+	ul.s-details dt {
+		float: left;
+		display: inline-block;
+		margin-right: .5em;
+		width: 23%;
+	}
+
+	ul.s-details dd {
+		clear:none;
+		float: left;
+		display:inline-block;
+		width: 73%;
+	}
+
+	// main record content
+	#summary header:first-child {
+		margin-top: -.2em;
+	}
+
+	body.printrecord #summary header:first-child {
+		margin-top: .5em;
+	}
+
+	body.person div[role="main"] #summary,
+	body.film div[role="main"] #summary {
+		page-break-after: always;
+	}
+
+	div[role="main"] .submod > header h2,
+	div[role="main"] .submod > header h2 span {
+		display: block;
+		margin:0;
+		padding:0;
+		page-break-after: avoid;
+	}
+	div[role="main"] .submod > header {
+		margin-top: 1em;
+		page-break-after: avoid;
+	}
+
+	// home page
+	body.index [role="main"] section {
+		margin:0;
+		padding: 0;
+	}
+
+	.tabs-body div.tabs-panel,
+	div[role="main"] .popular div.tabs-panel h2,
+	aside[role="complementary"] .trending div.tabs-panel h2 {
+		display: block;
+	}
+
+	.tabs-body div.tabs-panel {
+		padding:0 1.5em;
+	}
+
+	//.project #summary ul.s-details dt,
+	.project #thedetails ul.s-details dt {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+
+	// .project #summary ul.s-details dd,
+	.project #thedetails ul.s-details dd {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+
+	#thedetails > header h2 {
+		float: left;
+		display: block;
+		width: 100%;
+	}
+
+	#thedetails > header h3 {
+		float: left;
+		display: block;
+		width: 100%;
+		font-size: 1.2em;
+	}
+
+	/* gallery */
+	section#media div.m-img,
+	section#media div.m-video,
+	section#media div.m-gallery {
+		page-break-after: always;
+	}
+
+	div.pp_pic_holder {
+		position: relative;
+		float: left;
+		width: 100px;
+		margin-left:0;
+		margin-top:0;
+		page-break-before: always;
+	}
+
+	div.pp_overlay {
+		background: transparent;
+		display: none;
+		position: relative;
+		width: 100%;
+	}
+
+	.folded-corner,
+	.folded-corner-left,
+	.folded-corner-top,
+	.folded-corner-right {
+		background: transparent;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		color: #000;
+	}
+
+	div[role="main"] .popular .tabs-nav, aside[role="complementary"] .trending .tabs-nav,
+	.bb-reports, .thetour, .flex-caption a.readmore , a.more, section.barlists, .folded-corner,
+	.subtabs .tabs-nav, header .h-tools, .pp_overlay, p.key, .help-block, .tabs-panel .h-tools {
+		display: none;
+	}
+
+
+	// 15.Complimentary div[role="complementary"]
+	// ---------------------------------------------------------
+	*[role="complementary"] {
+		width: 100%;
+		margin:0;
+		padding: 0;
+		border-bottom: 1px solid #bbb;
+		page-break-after: always;
+	}
+	body.person aside[role="complementary"] {
+		margin:0;
+		padding: 0;
+		border-bottom: none;
+		page-break-after: always;
+	}
+
+	body.tv aside[role="complementary"],
+	body.film aside[role="complementary"] {
+		margin:0;
+		padding: 0;
+		border-bottom: none;
+		page-break-after: avoid;
+	}
+
+	body.mylists aside[role="complementary"],
+	body.mylists aside[role="complementary"] .vert-wrapper,
+	body.mytools aside[role="complementary"],
+	body.mytools aside[role="complementary"] .nav-lists,
+	body.admin aside[role="complementary"] .nav-admin,
+	body.advancedSearch aside[role="complementary"] {
+		display: none;
+	}
+
+	aside[role="complementary"] section {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	aside[role="complementary"] .profile div.profile-img {
+		display: none;
+	}
+
+	aside[role="complementary"] .profile div {
+		float: left;
+		width: 75%;
+		max-width: 75%;
+	}
+
+	aside[role="complementary"] .profile ul.per-rep {
+		margin-left: 0;
+		margin: 1em;
+		padding-left: 0;
+	}
+
+	aside[role="complementary"] .rep,
+	aside li em, aside dt em, aside dd em, aside li div {
+		clear: both;
+		float: left;
+		display: block;
+		margin-left: 0;
+	}
+
+	aside h2.collapse {
+		margin-bottom: 0em;
+		line-height: 1;
+	}
+
+	aside[role="complementary"] .com-afl {
+		float: none;
+		margin:0;
+		padding:0;
+	}
+
+	body.person aside[role="complementary"] section[data-print-default-hidden="true"],
+	body.org aside[role="complementary"] section[data-print-default-hidden="true"],
+	#tvNav,
+	body.tv aside[role="complementary"] section[data-print-default-hidden="true"],
+	body.film aside[role="complementary"] section[data-print-default-hidden="true"],
+	body.film aside[role="complementary"] section.profile div ul + h2,
+	body.film aside[role="complementary"] section.profile div h2 + ul + h2 + ul {
+		display: none;
+	}
+	aside[role="complementary"] ul.s-details dt {
+		float: left;
+		width: 40%;
+	}
+	aside[role="complementary"] ul.s-details dd {
+		float: left;
+		width: 60%;
+	}
+
+	// 18.Non-semantic helper classes
+	// ----------------------------------------------------------
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+		content: "";
+	}
+
+	// 20.Template Specific
+	// ----------------------------------------------------------
+	section[data-print-default-hidden], div[data-print-default-hidden], section[data-not-print], .checkme, .controls, .notPrint, .subtog .hidden {
+		display:none !important;
+		width:0;
+		height:0;
+		margin:0;
+		padding:0;
+		float: none;
+	}
+
+}
+// end default print

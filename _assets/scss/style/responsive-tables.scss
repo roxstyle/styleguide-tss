@@ -1,0 +1,77 @@
+// 17. Foundation responsive-tables
+// ----------------------------------------------------------
+// http://foundation.zurb.com
+
+// table td, table th {
+// 	padding: 9px 10px;
+// 	text-align: left;
+// }
+
+// Mobile
+@media only screen and (max-width: 47.938em) {
+	// 767px
+	table.responsive {
+		margin-bottom: 0;
+
+		td, th {
+			position: relative;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		th:first-child,
+		td:first-child,
+		td:first-child,
+		&.pinned td {
+			display: none;
+		}
+	}
+
+	.pinned {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: white;
+		width: 35%;
+		overflow: hidden;
+		overflow-x: scroll;
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+
+		table {
+			border-right: none;
+			border-left: none;
+			width: 100%;
+
+			th, td {
+				white-space: nowrap;
+			}
+		}
+
+		td:last-child {
+			border-bottom: 0;
+		}
+
+	}
+
+	div.table-wrapper {
+		position: relative;
+		margin-bottom: 20px;
+		overflow: hidden;
+		border-right: 1px solid #ccc;
+
+		div.scrollable {
+			overflow: scroll;
+			overflow-y: hidden;
+
+			div.scrollable table {
+				margin-left: 35%;
+			}
+		}
+
+	}
+
+// end mediaquery
+}
+
+//  end foundation responsive-tables

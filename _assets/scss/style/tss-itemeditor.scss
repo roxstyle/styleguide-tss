@@ -1,0 +1,482 @@
+// 9.  Content Editing Forms
+// ----------------------------------------------------------
+
+.itemeditor {
+	border: 1px solid rgb(170, 179, 194);
+	counter-reset: group;
+	margin: .5em 0 1.5em;
+	padding-bottom: 1em;
+	position: relative;
+	z-index: 9998;
+
+	color: rgb(45, 45, 45);
+	background: rgb(255, 255, 255);
+	border-radius: 4px;
+
+	  /* useful if you don't want a bg color from leaking outside the border: */
+	  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+	.record & {
+		clear: both;
+	}
+
+		legend {
+			display: block;
+			background: rgb(80, 114, 133);
+			border-bottom: 1px solid #cdd8e5;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: $text-inverse-color;
+			margin: 0 0 .5em;
+			padding: 0;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+		}
+		//mimic legend
+		h3.legend {
+			display: block;
+			width: 100%;
+			min-height: 30px;
+			background: rgb(96, 111, 137);
+			border-bottom: 1px solid #cdd8e5;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: rgb(250, 250, 250);
+			margin: 0 0;
+			padding: 0 1em;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-weight: 600;
+			font-size:1.5em;
+			line-height: 1.5;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+		}
+
+		label {
+			float: left;
+			display: inline-block;
+			min-width: 90px;
+			width: auto;
+			margin: 0 .8em 0.3em 0;
+			padding: .2em;
+			vertical-align: top;
+			text-align: left;
+			font-weight: 700;
+			color: $text-alt-color;
+
+				p > label {
+					float: none;
+					min-width: 90px;
+					text-align: right;
+				}
+		}
+		.text-center {
+
+			label {
+				text-align: center;
+				float: none;
+			}
+
+		}
+
+		.labin {
+			@include clearfix();
+			position: relative;
+			@include inline-block();
+			margin-bottom: .5em;
+
+			textarea {
+				min-height: 50px;
+			}
+
+			label {
+				float: none;
+				display: block;
+				min-width:.2em;
+				min-height: 26px;
+				line-height: 1.2;
+				margin: 0 .6em 0 0;
+				padding: .2em 0 0 0;
+			}
+
+			// open text
+			p {
+				display: block;
+			}
+
+		}
+
+		.checks {
+
+			label {
+				float: none;
+				text-align: left;
+			}
+
+		}
+
+		textarea {
+			height: 70px;
+			min-height: 70px;
+
+			.list-details & {
+				height: 50px;
+				min-height: 50px;
+				width: 60%;
+			}
+		}
+
+		input[type="checkbox"] {
+			vertical-align: middle;
+		}
+
+		img {
+			border: 1px solid rgb(190, 190, 190);
+		}
+
+}
+
+//
+.itemeditor fieldset {
+	@include clearfix();
+	position: relative;
+	margin: 0;
+	padding: 0;
+
+		&:first-child {
+			margin-top: 0;
+			-webkit-padding-before: 0em;
+			-webkit-padding-start: 0em;
+			-webkit-padding-end: 0em;
+			-webkit-padding-after: 0em;
+		}
+
+		&:not(:first-child) {
+			margin-top: .4em;
+			-webkit-padding-before: 0em;
+			-webkit-padding-start: 0em;
+			-webkit-padding-end: 0em;
+			-webkit-padding-after: 0em;
+		}
+
+		h3 {
+			display: block;
+			background: rgb(96, 111, 137);
+			border-bottom: 1px solid #cdd8e5;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: rgb(250, 250, 250);
+			margin: 0 0;
+			padding: 0;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+		}
+
+		h5 {
+			clear: none;
+			margin: .5em;
+			padding: .3em;
+			font-family: georgia, serif;
+			font-size: 1.05em;
+			color: #8f8f8f;
+			background: rgb(245, 245, 245);
+
+			div[role="main"] & {
+				clear: none;
+				margin: .5em;
+				padding: .3em;
+				font-family: georgia, serif;
+				font-size: 1.05em;
+				color: #1b1b1b;
+				background: #98a4b8;
+			}
+		}
+
+		legend {
+			display: block;
+			background: rgb(96, 111, 137);
+			border-bottom: 1px solid #cdd8e5;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: rgb(250, 250, 250);
+			margin: 0 0 .5em;
+			padding: 0;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+		}
+
+		.legend {
+			display: block;
+			background: rgb(96, 111, 137);
+			border-bottom: 1px solid #cdd8e5;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: rgb(250, 250, 250);
+			margin: 0 0 .5em;
+			padding: 0;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+		}
+
+		> p, > div {
+			@include clearfix();
+			margin: 0 1em .4em 1em;
+			line-height: 24px;
+		}
+
+		.s p {
+			margin: .4em 1em .4em 0;
+			line-height: 24px;
+		}
+
+		&:not(:first-child) {
+			margin-top:1em;
+		}
+
+		//nested fieldset
+		fieldset legend span {
+			margin: 0 0 0 1em;
+			padding: .3em .5em .3em 0;
+		}
+
+}
+
+// mylists itemeditor
+.list-details .itemeditor {
+	margin: -.2em 0 .6em;
+	background: rgb(221, 225, 228);
+
+		&.comment {
+			padding-top: .5em;
+
+		}
+
+		&.comment:before {
+			bottom: 100%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+
+			border-bottom-color: rgb(221, 225, 228);
+			border-width: 8px;
+			right: 2%;
+			margin-right: 5px;
+		}
+
+		&.comment .toolClose {
+			display: inline-block;
+			margin: 1em;
+		}
+}
+
+// admin itemeditor
+#adminMain .itemeditor {
+	border: 1px solid #e4e4e4;
+	clear: both;
+	counter-reset: group;
+	margin: 0em .5em;
+	position: relative;
+	z-index: 10;
+	background: #f1f1f1;
+
+		fieldset legend,
+		fieldset .legend {
+			display: block;
+			background: #e4e4e4;
+			border-bottom: 1px solid #d7d7d7;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			color: #444;
+			margin: 0 0;
+			padding: 0;
+			height: 36px;
+		}
+
+		label {
+			float: none;
+			display: inline-block;
+			min-width: 80px;
+			width: auto;
+			margin: 0 .8em .3em 0;
+			padding: 0.2em;
+			vertical-align: top;
+			text-align: right;
+			font-weight: normal;
+			color: #555;
+		}
+
+}
+
+//
+.nbc-cms .itemeditor {
+	border: 1px solid rgb(62, 81, 107);
+	clear: both;
+	counter-reset: group;
+	margin: 1em .5em;
+	position: relative;
+	z-index: 10;
+
+	background: rgb(255, 255, 255);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+	h3 {
+		margin: 0 0;
+		padding: 0 1em;
+		font-family: 'Oswald', Helvetica, sans-serif;
+		font-weight: 300;
+	}
+
+	h3.legend {
+		display: block;
+		background: rgb(96, 111, 137);
+		border-bottom: 1px solid rgb(205, 216, 229);
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		color: rgb(250, 250, 250);
+		margin: 0 0;
+		padding: 0 1em;
+		font-family: 'Oswald', Helvetica, sans-serif;
+		font-weight: 600;
+		line-height: 1.5;
+		text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+	}
+
+}
+
+.nbc-cms [role="main"] .itemeditor {
+
+	fieldset h5 {
+		color: rgb(94, 94, 94);
+		background: rgb(245, 245, 245);
+		border-bottom: 1px solid rgb(223, 223, 223);
+	}
+
+}
+
+//
+div[role="main"] header .itemeditor {
+	margin: .8em 0 1.5em;
+
+	fieldset {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		@include clearfix();
+
+		legend {
+			line-height: 1.5;
+			padding-left: 1rem;
+		}
+
+
+	}
+
+	&.edit-tinymce {
+
+		fieldset {
+			position: relative;
+			margin: 0;
+			padding: 0;
+
+			ol {
+				margin:0;
+				padding: 0;
+			}
+
+			.actions{
+				border: none;
+			}
+
+			.mce-panel{
+				border: none;
+			}
+		}
+
+	}
+
+}
+
+// tool bar actions
+.itemeditor .h-tools {
+	margin: .5em 1em 0;
+	min-width: 20px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: auto;
+	z-index: 2000;
+
+	a span {
+		margin: .15em 0 0;
+		width: 100%;
+		height: 100%;
+		max-height: 18px;
+	}
+
+	li {
+
+		a, span {
+			color: rgb(68, 68, 68);
+		}
+
+	}
+
+	.lt-ie9 &,
+	.gt-ie8 & {
+		margin: .3em .3em 0;
+	}
+
+	a .tool-close:before {
+		color: rgb(255, 255, 255);
+	}
+
+}
+
+// tool delete
+.itemeditor .tool-delete {
+background-position: -15px -192px;
+}
+
+
+// itemeditor specialized list
+// used for notes
+.itemeditor .s {
+	@include clearfix();
+	display: block;
+	margin: 0;
+	padding: 0 20px;
+	color: #888888;
+
+		span {
+			margin-right: 0.5em;
+		}
+
+		span.note {
+			margin: 0 2px 0 -14px;
+			width: 10px;
+		}
+
+		* {
+			font-size: 0.95em;
+		}
+
+		.h-tools {
+			margin: 0;
+			min-width: 20px;
+			padding: 0;
+			position: relative;
+			width: auto;
+			vertical-align: middle;
+
+			a {
+				line-height: 20px
+			}
+
+			li {
+				margin: 0 ;
+			}
+		}
+
+}
+
+//

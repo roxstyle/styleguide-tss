@@ -1,0 +1,30 @@
+// File: ui.scss
+// Outputs: global.css
+//
+// Project: studiosystem
+//
+// Description:
+//  styleguide only styles
+//
+// Requires:
+// - Sass <http://sass-lang.com/>
+// - Compass <http://compass-style.org/>
+
+// First, import easings from core
+@import "core/easings";
+
+// Default project mixins
+@import "mixins/mixins";
+
+// Default Resets
+@import "site-settings";
+
+// Import studiosystem
+@import "ui-style.scss",
+		"theme/github",
+		"theme/solarized-light";
+
+// not currently using
+// "theme/solarized-dark",
+
+

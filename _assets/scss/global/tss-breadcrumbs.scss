@@ -1,0 +1,255 @@
+// 14. breadcrumb list
+// ----------------------------------------------------------
+
+ul.breadcrumb {
+	margin: .8em 0;
+	padding: 0;
+	line-height: 0%;
+	font-size: 0;
+}
+
+ul.breadcrumb li {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	display:inline-block;
+	*display:inline; // IE ONLY
+	position:relative;
+	zoom:1;
+	line-height:100%;
+	font-size:.8rem;
+
+	a {
+		display:inline-block;
+		*display:inline; // IE ONLY
+		position:relative;
+		padding: .5rem 1.2rem .5rem .5rem;
+		font-size: 0.9rem;
+		zoom:1;
+		margin:0;
+
+		&:after {
+			content:"\003e";
+			content: '► ';
+			display: inline-block;
+			width: .8rem;
+			height: .8rem;
+			// border-top: 30px solid transparent;
+			// border-bottom: 30px solid transparent;
+			// border-left: 30px solid rgb(147, 81, 95);
+			position: absolute;
+			top: 32%;
+			margin-top: 0;
+			right: 0;
+			color: darken($default-color, 20%);
+		}
+	}
+
+	&:last-child a {
+		color:#333;
+		cursor: default;
+		text-decoration:none;
+		background:none;
+
+		&:after {
+			content:" ";
+			display: none;
+		}
+	}
+
+	&:last-child a:hover {
+		text-decoration:none;
+	}
+
+}
+//
+
+ul.breadcrumb.alt {
+	list-style: none;
+	overflow: hidden;
+	font: 1em Helvetica, Arial, Sans-Serif;
+	margin-bottom: 1em;
+}
+
+ul.breadcrumb.alt li {
+	float: left;
+	margin-bottom: 0;
+	padding-bottom: 0;
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 10px 0 10px 40px;
+			background: $primary-color;
+			// background: rgb(147, 81, 95);
+			position: relative;
+			display: block;
+			float: left;
+		}
+
+		a:after {
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+			border-left: 30px solid $primary-color;
+			position: absolute;
+			top: 50%;
+			margin-top: -30px;
+			left: 100%;
+			z-index: 2;
+		}
+
+		a:before {
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+			border-left: 30px solid white;
+			position: absolute;
+			top: 50%;
+			margin-top: -30px;
+			margin-left: 1px;
+			left: 100%;
+			z-index: 1;
+		}
+
+		a:hover {
+			background: darken($primary-color, 10%);
+		}
+
+		a:hover:after {
+			border-left-color: darken($primary-color, 10%) !important;
+		}
+
+}
+//
+
+ul.breadcrumb.alt li:first-child a {
+	padding-left: 10px;
+}
+
+ul.breadcrumb.alt li:nth-child(2) a {
+	background: lighten($primary-color, 10%);
+
+	&:after {
+		border-left-color: lighten($primary-color, 10%);
+	}
+
+	&:hover {
+		background: darken($primary-color, 10%);
+	}
+
+	&:hover:after {
+		border-left-color: darken($primary-color, 10%) !important;
+	}
+}
+
+ul.breadcrumb.alt li:nth-child(3) a {
+	background: lighten($primary-color, 20%);
+
+	&:after {
+		border-left-color: lighten($primary-color, 20%);
+	}
+
+	&:hover {
+		// background: rgb(170, 58, 82);
+		background: darken($primary-color, 10%);
+	}
+
+	&:hover:after {
+		// border-left-color: rgb(170, 58, 82) !important;
+		border-left-color: darken($primary-color, 10%) !important;
+	}
+}
+
+ul.breadcrumb.alt li:nth-child(4) a {
+	background: lighten($primary-color, 30%);
+
+	&:after {
+		border-left-color: lighten($primary-color, 30%);
+	}
+
+	&:hover {
+		background: darken($primary-color, 10%);
+	}
+
+	&:hover:after {
+		border-left-color: darken($primary-color, 10%) !important;
+	}
+}
+
+ul.breadcrumb.alt li:nth-child(5) a {
+	background: lighten($primary-color, 40%);
+
+	&:after {
+		border-left-color: lighten($primary-color, 40%);
+	}
+
+	&:hover {
+		background: darken($primary-color, 10%);
+	}
+
+	&:hover:after {
+		border-left-color: darken($primary-color, 10%) !important;
+	}
+}
+
+ul.breadcrumb.alt li:last-child a {
+	background: transparent !important;
+	color: black;
+	pointer-events: none;
+	cursor: default;
+
+	&:after,
+	&:before {
+		border-top: 0;
+		border-bottom: 0;
+		border-left: 0;
+	}
+}
+
+.tabs-body div.tabs-panel ul.breadcrumb.alt {
+	margin-bottom: 1em;
+
+	li {
+		margin-bottom: 0;
+	}
+}
+//
+
+// breadcrumbs with images
+.crumbs {
+	border: 1px solid #dedede;
+	height: 2.3em;
+
+	li {
+		float: left;
+		line-height: 2.2em;
+		padding-left: .75em;
+		padding-bottom: 0;
+		color: #777777;
+
+			a {
+				display: block;
+				padding: 0 15px 0 0;
+				background: url(../img/base/crumbs.gif) no-repeat right center;
+
+					&:link, &:visited {
+						text-decoration: none;
+						color: #777777;
+					}
+
+					&:hover, &:focus, &.active {
+						color: #dd2c0d;
+					}
+
+			}
+
+	}
+
+}

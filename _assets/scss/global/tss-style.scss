@@ -1,0 +1,2702 @@
+// 5. General Layout UI
+// ----------------------------------------------------------
+
+// Base
+// ----------------------------------------------------------
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+button, input, select, textarea {
+	color: rgb(85, 85, 85);
+}
+
+body {
+	max-width: 100%;
+	min-height: 100%;
+	// margin: 0;
+	// padding: 0;
+	// color: #393939;
+	// font-size: 0.813em;
+	// font-size: 0.938em;
+	// line-height: 1.231;
+	// -webkit-font-smoothing: antialiased;
+	// font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+
+	&.printlist {
+			max-width: 100%;
+			margin: 0;
+			padding: 0;
+			background: transparent;
+			background-color: transparent;
+			color: #444444;
+			font-size: 14px;
+			line-height: 1.231;
+	}
+
+	// hook for js loading
+	&:after {
+		display: none;
+
+		//Default
+		content: "small";
+
+			@media (min-width: 32.067em) {
+				content: "m";
+			}
+
+			@media (min-width: 51em) {
+				content: "l";
+			}
+	}
+
+}
+//
+
+#container {
+	margin: 0 auto;
+	width: 100%;
+	background:rgb(250, 250, 250);
+	background: white;
+	clear: both;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: 0;
+
+		@media only screen and (min-width: 32.067em) {
+			background: rgb(250, 250, 250);
+
+				.printlist & {
+					background: white;
+				}
+		}
+
+	#container-footer {
+		height: 100px;
+		width: 96%;
+		margin: auto;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			height: 82px;
+		}
+	}
+
+	.lt-ie9 #container {
+		padding-bottom: 0 !important;
+	}
+
+}
+//
+
+#contain {
+	margin-top: 10px;
+	position: relative;
+	background: white;
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			margin: 0 auto 10px;
+			width: 98%;
+		}
+
+		@media screen and (min-width: 93.333em) {
+			width: 1232px;
+		}
+
+}
+
+// tinymce editor
+.mce-container, .mce-container-body, .mce-container * {
+	z-index: 9999999 !important;
+}
+
+.mce-menu {
+	z-index: 9999999 !important;
+}
+
+// 3.Links
+// ----------------------------------------------------------
+a {
+	text-decoration: none;
+}
+
+a,
+a:visited {
+	color: $link-color;
+	outline: none;
+	-moz-transition: color .1s linear,background-color .1s linear;
+	-ms-transition: color .1s linear,background-color .1s linear;
+	-o-transition: color .1s linear,background-color .1s linear;
+	-webkit-transition: color .1s linear,background-color .1s linear;
+	transition: color .1s linear,background-color .1s linear;
+	text-decoration: none;
+}
+
+a:link {
+	-webkit-tap-highlight-color: #349edb;
+}
+
+a:hover,
+a:focus {
+	color: $link-hover-color;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+// Mozilla dosen't style place holders by default
+input:-moz-placeholder {
+	color: #a9a9a9;
+}
+
+textarea:-moz-placeholder {
+	color: #a9a9a9;
+}
+
+// links to toggle hidden content
+a.slideOpen {
+	color: rgb(68, 68, 68);
+	font-weight: 700;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+
+}
+
+.slideOpen:before {
+	content:"\003e";
+	content: '► ';
+	color: rgb(68, 68, 68);
+	font-size: 1.2em;
+	// transition: .6s linear;
+}
+
+.slideOpen[class~="open"]:before {
+	content:"\03bd";
+	content: '▼ ';
+}
+
+.slideOpen + .slid {
+	display: none;
+}
+
+.slideOpen.open + .slid {
+	display: block;
+	transition: .6s $linear;
+}
+
+// links to toggle hidden content
+a.slider {
+	&:hover, &:focus {
+		.tool {
+			text-decoration: none;
+		}
+	}
+}
+.slid {
+	margin: 1.5em;
+}
+
+// readmore links look like buttons
+a.read-more-link {
+	display: inline-block;
+	margin: -1em 0 0;
+	margin-bottom: 1em;
+	padding: .45em .7em;
+	background: #9e4a57;
+	border-bottom: 1px solid #d5d5d5;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	font-size: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+
+	&:visited {
+		background: #efefef;
+		color: #fff;
+	}
+
+	&:after {
+		content:'\00bb';
+		margin-left: .3em;
+		font-size: 1.45em;
+		font-weight: 700;
+		line-height: 1;
+		vertical-align: bottom;
+	}
+
+	&:hover, &:focus {
+		color: #fff;
+		background-color: #8d424d;
+		text-decoration: none;
+	}
+	// more links in summary section
+	.s-summary & {
+		font-size: .875em;
+		float: right;
+	}
+
+}
+//
+
+// more links
+a.link-more {
+	display: inline-block;
+	padding-right: 1em;
+
+		&:after {
+		content:'\00bb';
+		margin-left: .3em;
+		font-size: 1.25em;
+		font-weight: 700;
+		line-height: 1;
+		vertical-align: bottom;
+
+		&:focus, &:hover {
+			text-decoration: none;
+		}
+	}
+
+
+}
+
+//more inline links
+a.gomore {
+	white-space: nowrap;
+	color: rgb(43, 93, 168);
+	text-decoration: none;
+
+	&:after {
+		content:'\00bb';
+		margin-left: .3em;
+		font-size: 1.25em;
+		font-weight: 700;
+		line-height: 1;
+		vertical-align: bottom;
+
+		&:focus, &:hover {
+			text-decoration: none;
+		}
+	}
+
+
+}
+
+@media only screen and (min-width: 32.067em) {
+	// min-width: 480
+
+	// remote links
+	#main a[href^="http://"] {
+		background:url('../img/base/icon-external.png') no-repeat right bottom;
+		padding-right: 15px;
+		vertical-align: baseline;
+	}
+
+	// remote links in gallery
+	#gslide-nav a[href^="http://"] {
+		background:none;
+		padding-right: 0;
+		vertical-align: baseline;
+	}
+
+	a[href$=".pdf"]:after {
+		content: url("../img/icons/icon-pdf.png") no-repeat;
+		margin-left: .2em;
+	}
+
+	// a[rel="external"]:after {
+	//	content: url("icon_link.png");
+	//}
+
+}
+
+// 4.Headings
+// ----------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+	// font-weight: normal;
+	// text-rendering: optimizeLegibility;
+	// line-height: 1.2125em;
+	// margin-bottom: .5em;
+	// color: rgb(68, 68, 68);
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+				// line-height: 1.4;
+		}
+
+		.record & {
+			color: rgb(37, 81, 141);
+
+		}
+
+		a, a:visited {
+			color: rgb(68, 68, 68);
+		}
+
+}
+
+
+h1 {
+	// margin-bottom: .67em;
+	// font-size: 2.125em;
+	// font-family: 'Oswald', Helvetica, sans-serif;
+	// font-weight: 500;
+
+
+		@media only screen and (min-width: 32.067em) {
+			// margin-bottom: .67em;
+			// font-size: 2em;
+			// line-height: 1.2;
+		}
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			// font-size: 2.75em;
+		}
+
+}
+
+h2 {
+	// margin-bottom: .67em;
+	// font-size: 1.6875em;
+	// font-family: 'Oswald', Helvetica, sans-serif;
+	// font-weight: 500;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			// font-size: 2em;
+
+		}
+
+	div[role="main"] & {
+		// margin-bottom: .83em;
+		// font-size: 1.5em;
+		// font-family: 'Oswald', Helvetica, sans-serif;
+		// font-weight: 500;
+		// line-height: 1.2;
+
+			@media only screen and (min-width: 51em) {
+				// min-width: 768px
+					// font-size: 2em;
+			}
+	}
+
+	aside & {
+		margin: 0 0 .83em 0;
+		padding: 0 0 .4em;
+		// line-height: 1.2;
+		// font-family: 'Oswald', Helvetica, sans-serif;
+		// font-size: 1.6875em;
+		// font-weight: 500;
+		border-bottom: 1px solid rgb(218, 218, 218);
+	}
+
+	header & {
+		// margin-bottom: .83em;
+		// font-size: 1.8em;
+		// font-family: 'Oswald', Helvetica, sans-serif;
+		// font-weight: 500;
+	}
+
+}
+
+div[role="main"] .home-systemtools h2 {
+	margin-bottom: 0;
+	margin: .5em 0;
+	// font-size: 1em;
+	// line-height: 1.2;
+}
+
+div[role="main"] fieldset h2 {
+	margin-top: 1.2em;
+	margin-bottom: .3em;
+	// font-size: 1.8em;
+	// font-family: 'Oswald', Helvetica, sans-serif;
+	// font-weight: 500;
+	// line-height: 1.2;
+	color: #152e50;
+}
+
+h3 {
+	// margin-bottom: 1em;
+	// font-size: 1.35em;
+	// line-height: 1.3;
+	// font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			// font-size: 1.6875em;
+		}
+
+}
+
+div[role="main"] fieldset h3 {
+	// margin-top: 1.2em;
+	// margin-bottom: .3em;
+	// font-size: 1.35em;
+	// font-family: 'Oswald', Helvetica, sans-serif;
+	// font-weight: 500;
+	line-height: 1.2;
+	color: #152e50;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			// font-size: 1.6875em;
+		}
+
+}
+
+h4 {
+	// margin-bottom: 1.25em;
+	// font-size: 1.25em;
+	// line-height: 1.25;
+	// font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			// font-size: 1.4375em;
+		}
+}
+
+h5 {
+	// margin-bottom: 1.5em;
+	// font-size: 1.125em;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+h6 {
+	// margin-bottom: 2.2em;
+	// font-size: .938em;
+	font-weight: 400;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+// additional color headers
+.blutext {
+	color: rgb(42, 92, 161);
+
+}
+.ltblutext {
+	color: rgb(53, 116, 201);
+
+}
+.redtext {
+	color: rgb(150, 77, 93);
+}
+
+// header specific
+.content > header {
+	z-index: 3000;
+	position: relative;
+}
+
+// mytools mylists
+.mytools h1.name, .mylists h1.name {
+	padding: .5em;
+	margin: 0;
+}
+
+//
+.textstroke {
+	text-shadow: 0 -0.0125em 0.015em white, 0.0125em -0.0125em 0.015em white, -0.0125em -0.0125em 0.015em white, -0.0125em 0 0.015em #888888, -0.0125em -0.0125em 0.015em #888888, -0.0125em 0.0125em 0.015em #888888, 0.0125em 0 0.015em #888888, 0.0125em -0.0125em 0.015em #888888, 0.0125em 0.0125em 0.015em #888888, 0 0.0125em 0.015em white, -0.0125em 0.0125em 0.015em white, 0.0125em 0.0125em 0.015em white;
+}
+//indent first line in para, used in record summary
+.textindent {
+	text-indent: 1.5em;
+}
+
+//styleguide swatches
+.swatch {
+	p {
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		display: block;
+		float: left;
+		height: 5rem;
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.swatch-detail {
+	display: block;
+	margin: 0;
+	padding: .3em 0;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	font-size: .9rem;
+	clear: both;
+}
+
+
+// 5.Typography
+// ----------------------------------------------------------
+blockquote {
+	// margin: 1em 40px;
+	// padding: 1em;
+	// quotes: none;
+	// color: rgb(120, 120, 117);
+	// background: #f0f0f0;
+
+	cite {
+		// display: block;
+		// font-size: 12px;
+		// color: #555;
+
+		// &:before {
+		// 	content: "2014";
+		// }
+	}
+}
+
+code {
+	color: #727272;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+i, em {
+	font-style: italic;
+}
+
+dfn {
+	font-style: italic;
+}
+
+// from tss-4.0
+hr.shadow {
+	clear: both;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+ins {
+	text-decoration: none;
+	background: #ffff99;
+	color: #000;
+}
+
+mark {
+	font-style: italic;
+	font-weight: 500;
+	background-color: #ffff99;
+	color: black;
+}
+
+p, address {
+	margin-bottom: .5em;
+}
+
+p {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+
+	&.intro {
+		font-size: 1.5em;
+	}
+}
+
+
+// Improve readability of pre-formatted text in all browsers
+// http://www.longren.org/wrapping-text-inside-pre-tags/
+// see also html5-preset
+pre {
+	margin-bottom: 20px;
+	color: white;
+	background: #f0f0f0;
+	font-size: 1em;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+pre code {
+	display: block;
+	margin: 1em;
+	padding: 1em;
+	font-family: 'Monaco', courier, monospace;
+	line-height: 1.4;
+}
+
+// rainbow highlighter code samples
+pre .comment {
+	color: #727272;
+}
+
+pre .constant {
+	color: rgb(88, 133, 21);
+}
+
+pre .storage {
+	color: #fbdee2;
+}
+
+pre .string,
+pre .comment.docstring {
+	color: #61ce3c;
+}
+
+pre .string.regexp,
+pre .support.tag.script,
+pre .support.tag.style {
+	color: white;
+}
+
+pre .keyword, pre .selector {
+	color: #FBDE2D;
+}
+
+pre .inherited-class {
+	font-style: italic;
+}
+
+pre .entity {
+	color: #FF6400;
+}
+
+pre .support,
+*[data-language="c"] .function.call {
+	color: #8DA6CE;
+}
+
+pre .variable.global,
+pre .variable.class,
+pre .variable.instance {
+	color: #FF6400;
+}
+
+// STANDARD QUOTES
+q {
+	quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+q:lang(en) {
+	quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
+}
+
+// SAFARI SUPPORT
+q:before {
+	content: '\201C';
+}
+
+q:after {
+	content: '\201D';
+}
+
+q q:before {
+	content: '\2018';
+}
+
+q q:after {
+	content: '\2019';
+}
+
+strong, .strong {
+	font-weight: 600;
+}
+
+time {
+	font: 0.85em Verdana,sans-serif;
+	margin-left: 0.25em;
+	color: #919191;
+}
+
+// exceptions
+p.lead {
+	font-size: 1.25em;
+	line-height: 1.6;
+	margin-bottom: 17px;
+}
+
+p.byline {
+	margin-bottom: 0;
+}
+
+.byline {
+	font-size: 0.95em;
+	letter-spacing: 0.095em;
+	color: #656565;
+}
+
+// us calendar selected text
+.uscal .byline {
+	display: inline-block;
+}
+
+// user selected text
+::-webkit-selection {
+	background: #272e36;
+	color: #fafafa;
+	text-shadow: none;
+	text-decoration: none;
+}
+
+::-moz-selection {
+	background: #272e36;
+	color: #fafafa;
+	text-shadow: none;
+	text-decoration: none;
+}
+
+::selection {
+	background: #272e36;
+	color: #fafafa;
+	text-shadow: none;
+	text-decoration: none;
+}
+
+// generic positioning
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	margin: auto;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center, .txt-centered, .text-center * {
+	text-align: center;
+}
+
+.show, .enabled .show, .fadeIn, .block {
+	display: block;
+}
+
+// using Modernizer feature detection
+.hasJS .hide,
+.hasJS .enabled .hide,
+.hasJS .fadeOut,
+.hasJS .hidden {
+	display: none;
+}
+
+.inline {
+	display: inline;
+}
+
+//
+small, .small {
+	font-size: 85%;
+}
+
+// primary icon
+.prime {
+	margin-right: .5em;
+	padding-left: 12px;
+	color: rgb(85, 85, 85);
+	float: left;
+	font-weight: 700;
+
+		&:before {
+			/*content: "\0020";*/
+			content: "★";
+			overflow: hidden;
+			width: 8px;
+			height: 12px;
+			margin-left: -12px;
+			margin-right: 0;
+			color: rgb(137, 50, 61);
+		}
+
+}
+
+* > dd.prime {
+	margin-right: 0;
+	padding-left: 0;
+
+		&:before {
+			/*content: "\0020";*/
+			content: "★";
+			overflow: hidden;
+			width: 12px;
+			height: 15px;
+			margin-left: -12px;
+			margin-right: 0;
+			color: rgb(137, 50, 61);
+			position: absolute;
+			left: -10px;
+		}
+
+}
+
+// circle icon to hold one letter - callout
+// rating TV
+.rating {
+	display: inline-block;
+	padding: 0 .4em;
+	color: rgb(0, 0, 0);
+	background-color: lighten(rgb(28, 174, 220), 20%);
+	background-clip: padding-box;
+	white-space: nowrap;
+	font-size: .85em;
+	line-height: 1.5;
+	@include border-radius(1.5em);
+}
+// premier TV
+.tv-premier {
+	display: inline-block;
+	padding: 0 .4em;
+	margin: 0 .3em;
+	color: rgb(0, 0, 0);
+	background-color: lighten(rgb(253, 155, 41), 10%);
+	background-clip: padding-box;
+	font-size: .85em;
+	line-height: 1.5;
+	@include border-radius(1.5em);
+}
+
+// hide print-only content on screen
+.print-only {
+	display: none;
+}
+
+.keystroke, kbd {
+	font-family: "Consolas", "Menlo", "Courier", monospace;
+	font-size: 12px;
+	padding: 2px 4px 0px;
+	margin: 0;
+	background: #ededed;
+	border: solid 1px #dbdbdb;
+	@include border-radius(3px);
+}
+
+// generic borders
+.rt-bdr {border-right:1px dotted rgb(150, 150, 150);}
+.lt-bdr {border-left:1px dotted rgb(150, 150, 150); margin-bottom:2em;}
+//bottom border
+.bt-bdr:not(:last-child):not(:only-child) {border-bottom:1px dotted rgb(150, 150, 150); margin:2em 0;}
+// mylists
+.mlist .bt-bdr {border-bottom:none;}
+
+//generic callout area
+.callout{
+	overflow: hidden;
+	background: #f0f0f0;
+}
+
+// added classes for colors
+.primary-color { color: $primary-color;}
+.secondary-color { color: $secondary-color;}
+.alert-color { color: $alert-color;}
+.success-color { color: $success-color;}
+.warning-color { color: $warning-color;}
+.info-color { color: $info-color;}
+.inverse-color { color: $inverse-color;}
+
+.primary-color-box { background-color: $primary-color;}
+.secondary-color-box { background-color: $secondary-color;}
+.alert-color-box { background-color: $alert-color;}
+.success-color-box { background-color: $success-color;}
+.warning-color-box { background-color: $warning-color;}
+.info-color-box { background-color: $info-color;}
+.inverse-color-box { background-color: $inverse-color;}
+
+//	Layout Specific : microformats
+// -----------------------------------------------
+
+// vcard
+.vcard .role,
+.vcard .fn {
+	font-weight: 800;
+}
+
+#main ul.vcard {
+	display: inline-block;
+	margin: 0 0 12px 0;
+	border: 1px solid #fbfbfb;
+	padding: 10px;
+
+	#main ul.vcard li {
+		margin: 0;
+		display: block;
+	}
+
+	&.fn {
+		font-weight: 700;
+		font-size: 14px;
+	}
+}
+
+// event
+p.vevent {
+
+	span.summary {
+		font-weight: 700;
+	}
+
+	p.vevent abbr {
+		cursor: default;
+		text-decoration: none;
+		font-weight: 700;
+		border: none;
+		padding: 0 1px;
+	}
+
+}
+
+aside .vcard {
+
+	span.fname {
+		margin-left: 0;
+	}
+
+	.adr {
+		margin-bottom: .75em;
+	}
+}
+
+//vcard location
+.vcard .locality {
+	margin-left: 0;
+}
+
+// vcard  phone email status location
+.tel, .email, .status, .url, .pj {
+	position: relative;
+
+	span:first-child {
+		font-weight: 700;
+		margin-right: .3em;
+	}
+}
+
+.tel.icons, .email.icons {
+
+	.type {
+		display: inline-block;
+		position: relative;
+		width: 18px;
+		height: 18px;
+		color: rgb(51, 51, 51);
+		@include fa-FontAwesome();
+		font-size: 1.4em;
+
+		&.phone {
+
+			&:before {
+				position: absolute;
+				color: $icon-default-color;
+				content: "\f095";
+				position: absolute;
+				margin: 5px;
+			}
+
+		}
+
+		&.fax {
+
+			&:before {
+				position: absolute;
+				color: $icon-default-color;
+				content: "\f02f";
+				position: absolute;
+				margin: 5px;
+			}
+
+		}
+
+		&.mail {
+
+			&:before {
+				position: absolute;
+				color: $icon-default-color;
+				content: "\f0e0";
+				margin: 5px;
+
+			}
+
+		}
+
+	}
+
+	.rep & {
+		margin-left: 6px;
+	}
+
+	aside .rep & {
+		margin-left: 0;
+	}
+}
+
+.url.icons {
+
+	.type {
+		display: inline-block;
+		position: relative;
+		width: 18px;
+		height: 18px;
+		color: rgb(51, 51, 51);
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		@include tss-font();
+		font-size: 1.6em;
+
+		&.web {
+
+			&:before {
+				position: absolute;
+				color: $icon-default-color;
+				content: "\e60c";
+				left: .2em;
+			}
+
+		}
+	}
+
+
+}
+
+// map using google map
+.location {
+	text-transform: uppercase;
+}
+
+.location .map {
+	position: relative;
+	display: inline-block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	// background: url("../img/tools-2c82fc.png") no-repeat -146px -146px;
+
+	&:before {
+		color: $icon-default-color;
+		content: "\f095";
+	}
+}
+
+// 6.Lists
+// ----------------------------------------------------------
+// ol, ul, dl {
+// 	margin-bottom: 1.5em;
+// 	font-size: 1em;
+// }
+
+// ul, ol {
+// 	margin: 0 0 .5em 0;
+// 	padding-left: 0;
+// 	list-style-position: inside;
+// }
+
+ul.last, ol.last {
+
+	@media only screen and (min-width: 41.4em) {
+	// min-width: 621px
+
+		margin: 0 0 0 0;
+	}
+
+}
+
+nav ul,
+nav ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// ul {
+// 	list-style-type: disc;
+// }
+
+// ul.square,
+// ul.circle,
+// ul.disc {
+// 	margin-left: 17px;
+// }
+
+// ul.square {
+// 	list-style-type: square;
+
+// 	li ul {
+// 		list-style: inherit;
+// 	}
+// }
+
+// ul.circle {
+// 	list-style-type: circle;
+
+// 	li ul {
+// 		list-style: inherit;
+// 	}
+// }
+
+// ul.disc {
+// 	list-style-type: disc;
+
+// 		li ul {
+// 		list-style: inherit;
+// 	}
+
+// }
+
+// ul.no-bullet {
+// 	list-style: none;
+// }
+
+// ol {
+// 	list-style-type: decimal;
+// }
+
+// ol ul,
+// ol ol {
+// 	margin-left: 20px;
+// 	margin-bottom: 0;
+// }
+
+li {
+	// margin-bottom: .5em;
+	// padding-bottom: .5em;
+
+	p {
+		font-size: 1em;
+	}
+
+	// ul, ol {
+	// 	margin: 0;
+	// 	font-size: 1em;
+	// }
+
+	// ol li {
+	// 	// list-style-type: lower-alpha;
+	// 	// list-style-position: inside;
+	// }
+
+	fieldset & {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		list-style-type: none;
+		list-style-position: outside;
+	}
+}
+
+// dl, dd {
+// 	margin-bottom: 1.5em;
+// }
+
+// dt {
+// 	margin: .75em 0 .25em;
+// 	font-size: 1em;
+// 	font-weight: 600
+// }
+
+// dd {
+// 	margin-left: 1em;
+// 	clear: both;
+// }
+
+
+// dialog {
+// 	font-size: 1em;
+// 	line-height: 1.3em;
+// 	position: relative;
+// 	top: 5px;
+// 	margin-top: 1.2em;
+// 	margin-bottom: 1.2em;
+
+// 	dt {
+// 		font-size: 1em;
+// 		font-weight: 600;
+// 	}
+
+// 	dd {
+// 		font-size: 1em;
+// 	}
+// }
+
+//	SPLIT LISTS used in modals, media gallery
+// easysplitter.js dependant
+// split list in columns
+
+// container
+.li_container {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	width: 100%;
+	float: none;
+	margin-bottom: 1em;
+	@include clearfix();
+
+	ol, ul {
+		margin: .3em .2em 1em 0;
+		padding: 0;
+
+		&:first-child {
+			margin-left:0;
+		}
+
+		&:last-child {
+			margin-right:0;
+		}
+
+	}
+
+}
+
+.story .li_container {
+	overflow: visible;
+	*zoom: 1;
+}
+
+
+// one column
+.li-1 {
+	float: left;
+	width: 100%;
+	margin: 0;
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			margin: 0 1% 0 0;
+		}
+
+		li {
+
+			@media only screen and (min-width: 41.4em) {
+				// min-width: 621px
+				float: left;
+				width: 100%;
+			}
+
+		}
+
+		.checks  & {
+
+			li {
+
+				@media only screen and (min-width: 41.4em) {
+					padding: 3px 0;
+				}
+			}
+
+			li li {
+				@media only screen and (min-width: 41.4em) {
+					padding: 3px 0 3px 14px;
+				}
+			}
+		}
+
+}
+
+// two columns
+.li-2 {
+	float: left;
+	width: 100%;
+	margin: 0;
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			width: 49%;
+			margin: 0 1% 0 0;
+		}
+
+	header & {
+		float: left;
+		width: 100%;
+		margin: 0;
+
+			@media only screen and (min-width: 32.067em) {
+				// 481px to 621px
+				width: 49%;
+			}
+
+		&:first-child {
+			clear: left;
+
+				@media only screen and (min-width: 32.067em) {
+					clear: none;
+				}
+		}
+
+	}
+
+	li {
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	.checks & {
+
+		li {
+
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px;
+			}
+		}
+
+		li li {
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px 0 3px 14px;
+			}
+		}
+	}
+
+}
+//
+
+.li-3 {
+	float: left;
+	width: 100%;
+	margin: 0;
+
+		@media only screen and (min-width: 41.4em) {
+		// min-width: 621px
+				width: 32%;
+				margin: 0 1% 0 0;
+		}
+
+	li {
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	.checks  & {
+
+		li {
+
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px;
+			}
+		}
+
+		li li {
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px 0 3px 14px;
+			}
+		}
+	}
+}
+
+.li-4 {
+	float: left;
+	width: 100%;
+	margin: 0;
+
+		@media only screen and (min-width: 41.4em) {
+		// min-width: 621px
+				width: 24%;
+				margin: 0 1% 0 0;
+		}
+
+	li {
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	.checks  & {
+
+		li {
+
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px;
+			}
+		}
+	}
+}
+
+.li-5 {
+	float: left;
+	width: 100%;
+	margin: 0;
+
+		@media only screen and (min-width: 41.4em) {
+		// min-width: 621px
+				width: 19%;
+				margin: 0 1% 0 0;
+		}
+
+	li {
+
+		@media only screen and (min-width: 41.4em) {
+			// min-width: 621px
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	.checks  & {
+
+		li {
+
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px 3px 3px 0;
+			}
+		}
+
+		li li {
+			@media only screen and (min-width: 41.4em) {
+				padding: 3px 0 3px 14px;
+			}
+		}
+
+	}
+}
+
+// checkboxes in split lists
+fieldset.checks ul.li-5 {
+	width: 19%;
+}
+
+.nested {
+	margin-left: .4em;
+	padding-left: 1em;
+	border-left: 5px solid #eee;
+
+	.checks.nested {
+		padding-left: 1em;
+	}
+}
+
+li.selected {
+	background: #e2eaf2;
+}
+
+// bulletted lists
+// ul.blt {
+// 	margin: 0 0 .5em 0;
+// 	padding-left: 10px;
+// }
+
+ul.blt li {
+	margin: 0 0 0 .7em;
+	position: relative;
+	padding-bottom: 1em;
+
+	&:before {
+		position: absolute;
+		content: "\00b7";
+		padding: 0 .5em 0 0;
+		margin-left: -.7em;
+		font-size: 2em;
+		line-height: .2em;
+		height: 14px;
+		top: .2em;
+	}
+
+	.index & {
+		margin: 1em;
+		padding: 0 0;
+	}
+
+	.callout & {
+
+		&:before {
+			content:"\00b7";
+		}
+	}
+
+}
+
+// 7.Embedded content
+// ----------------------------------------------------------
+img, embed, object, video, canvas object {
+	max-width: 100%;
+}
+
+.lt-ie8 img,
+.lt-ie8 object {
+	width: 100%;
+}
+
+
+// 1. Improve image quality when scaled in IE7: h5bp.com/d
+// 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+// Correct overflow displayed oddly in IE9
+svg:not(:root) {
+	overflow: hidden;
+}
+
+// 8.Figures and Images
+// ----------------------------------------------------------
+figure {
+	position: relative;
+	margin: 0 0 .5em;
+	padding: 0 0 0 1em;
+
+	header & {
+		margin: 0;
+		padding: 0 .5em;
+	}
+
+	figcaption {
+		margin: .50em 0 .25em;
+		zoom: 1;
+		display: block;
+	}
+
+	> a {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+figure img,
+figure object,
+figure embed {
+	margin-bottom: .75em;
+	max-width: 100%;
+}
+
+.lt-ie8 figure img,
+.lt-ie8 figure object,
+.lt-ie8 figure embed {
+	width: 100%;
+}
+
+figcaption {
+	display: block;
+	font-weight: normal;
+}
+
+@media only screen and (min-width: 32.067em) {
+	td figure > a {
+		max-width: 115px;
+}
+
+}
+
+// 13.Content
+// ----------------------------------------------------------
+.content,
+.mytools .content {
+	position: relative;
+	display: block;
+	width: 96.75%;
+	margin: 0 auto 1.5em;
+	padding-top: 1.5em;
+	background-color: transparent;
+	zoom: 1;
+	z-index: 100;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			filter: none;
+		}
+
+		@media only screen and (min-width: 41.4em) {
+			// 481px to 621px
+			margin: 1.75em auto 1.5em;
+		}
+		// going from single column to 2 column
+		// for main aside content blocks
+		@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			display: table;
+			table-layout: fixed;
+			margin: 0 auto 1.5em;
+			border: none;
+			border-bottom: none;
+		}
+
+		@media screen and (min-width: 92.133em) {
+			max-width: 1356px;
+		}
+}
+
+.mylists .content {
+	background-color: transparent;
+}
+
+.content > header {
+	margin: 0 auto;
+	width: 95.75%;
+
+	@media screen and (min-width: 66.133em) {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+.lt-ie9 .content {
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+		display: block;
+	}
+
+}
+
+// admin resets
+.admin {
+
+	.adminWrap {
+		position: relative;
+		background-color: #f9f9f9;
+		border: 1px solid #e0e0e0;
+
+			.hasJS & {
+					display: none;
+			}
+
+			header h2 {
+				margin-bottom: .75em;
+				padding: .75em .5em 0;
+				font-size: 1.5em;
+			}
+
+			.h-tools {
+				margin: .5em 1em 0;
+				min-width: 20px;
+				padding: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: auto;
+				z-index: 2000;
+			}
+
+	}
+
+}
+
+.content #misc fieldset {
+	background-color: transparent;
+	border: medium none;
+}
+
+// Content specific: header container
+.h-content {
+	position: relative;
+	width: 97%;
+	min-height: 15px;
+	position: relative;
+	@include center-block;
+	vertical-align: bottom;
+	@include clearfix();
+
+		header[role="banner"] & {
+			padding: .5em .75em;
+			text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+	}
+
+	@media screen and (min-width: 66.133em) {
+		min-height: 35px;
+		padding: 0 .75em;
+	}
+
+	@media screen and (min-width: 92.133em) {
+		max-width: 1356px;
+		padding-bottom: .7em;
+
+	}
+
+}
+
+// Content specific: footer container
+.f-content {
+	position: relative;
+	@include center-block;
+	width: 94.75%;
+	min-height: 15px;
+
+	@media screen and (min-width: 92.133em) {
+		max-width: 1356px;
+		margin-bottom: 1.5em;
+	}
+}
+
+// 14.Main [role="main"]
+// ----------------------------------------------------------
+div[role="main"] {
+	position: relative;
+	display: block;
+	margin: .5em 0;
+	margin-left: 0;
+	width: 100%;
+	vertical-align: top;
+
+
+		@media only screen and (min-width: 32.067em) {
+			// 481px
+			margin: 0;
+			padding: 0 0.9375em;
+			border-bottom-width: 0;
+		}
+
+		@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			display: table-cell;
+			padding: 0 0.9375em;
+			margin-top: 1em;
+			margin-bottom: 0;
+			border-bottom-width: 0;
+
+			> section {
+				display: block;
+
+				&.box {
+					background: rgb(255, 255, 255);
+					border: 1px solid  rgb(218, 218, 218);
+					padding: 0 .65em;
+				}
+			}
+		}
+
+		// fullwidth specific
+		.login &,
+		.index &,
+		.fullcol & {
+			float: left;
+			width: 100%;
+			margin: 0;
+			border-bottom-width: 0;
+		}
+		// mylists specific
+		.mylists & {
+			background-color: transparent;
+			zoom: 1;
+		}
+
+}
+
+// hack ie8
+.lt-ie9 div[role="main"] {
+
+		@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			position: relative;
+			display: block;
+			float: left;
+			width: 100%;
+		}
+
+}
+
+.lt-ie9 aside[role="complementary"] + div[role="main"] {
+
+		@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			position: relative;
+			display: block;
+			float: left;
+			width: 75%;
+		}
+
+}
+
+// default dropshadow for content blocks
+.drop-shadow {
+	background: white;
+	box-shadow: none;
+	overflow: hidden;
+	position: relative;
+
+		@media only screen and (min-width: 32.067em) {
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+				&:before, &:after {
+						content: "";
+						position: absolute;
+						z-index: -2;
+				}
+		}
+
+}
+
+.drop-shadow-overflow {
+
+	@media only screen and (min-width: 32.067em) {
+		background: white;
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		overflow: visible;
+		position: relative;
+	}
+
+}
+
+[role="main"].drop-shadow {
+	background: white;
+	box-shadow: none;
+	overflow: visible;
+	position: relative;
+
+		@media only screen and (min-width: 32.067em) {
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		}
+
+}
+
+// general class for bordered boxes
+.box {
+	background: white;
+	border: 1px solid #cccccc;
+
+		@media screen and (min-width: 66.133em) {
+			// 992
+			border: 1px solid #dadada;
+		}
+
+		&:first-child {
+
+			@media screen and (min-width: 66.133em) {
+				// 992
+				border-width: 0;
+			}
+
+		}
+
+		// list templates box
+		.t & {
+
+			@media screen and (min-width: 66.133em) {
+				// 992
+				background: white;
+				border: 1px solid #cccccc;
+			}
+
+		}
+
+		fieldset & {
+			padding: 0.75em;
+		}
+
+}
+
+// general borders
+.borderleft {
+	border-left: 4px solid rgb(227,227,227);
+	padding-left: .5em;
+}
+
+.borderbottom {
+	border-bottom: 4px solid rgb(227,227,227);
+	margin-bottom: .5em;
+}
+
+// 5 Col Grid System
+// ----------------------------------------------------------
+
+// simple 3 column grid
+div[class*="col "] {
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		display: block;
+		float: left;
+		margin-left: 0;
+
+			&:first-child {
+				margin-left: 0;
+			}
+	}
+
+	@media only screen and (min-width: 51em) {
+		// min-width: 768px
+		position: relative;
+		display: inline;
+
+	}
+
+	// nested columns
+	ul.s-details & {
+		margin: 1.7em 0 0;
+	}
+
+}
+
+.col1of1 {
+	float: left;
+	clear: none;
+	width: 100%;
+
+	@media only screen and (min-width: 51em) {
+		// min-width: 768px
+		margin-left: 0;
+		width: 98%;
+	}
+
+}
+
+.col1of2 {
+	float: left;
+	clear: none;
+	width: 100%;
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+		margin-left: 0;
+		width: 49.5%;
+		padding-right: 1em;
+	}
+
+	.index & {
+			padding-right: 0;
+	}
+}
+
+.col2of2 {
+	float: left;
+	clear: none;
+	width: 100%;
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+		margin-left: 0;
+		width: 49.5%;
+		padding-right: .1em;
+	}
+
+}
+
+.col1of3 {
+	float: left;
+	clear: none;
+	width: 100%;
+
+	@media only screen and (min-width: 53.333em) {
+		// min-width: 800px
+			width: 31.85%;
+	}
+
+}
+
+.col1of3, .col2of3 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			float: left;
+			width: 64.50%;
+		}
+
+}
+
+.col1of4 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 23%;
+		}
+
+}
+
+.col2of4 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 49.5%;
+		}
+
+}
+
+.col3of4 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 73%;
+		}
+
+}
+
+.col1of5 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 17.5%;
+		}
+
+}
+
+.col2of5 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 35%;
+		}
+
+}
+
+.col3of5 {
+	float: left;
+	width: 100%;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			width: 52.5%;
+		}
+
+}
+
+.col-last {
+	padding-right: 1em;
+}
+
+.col label {
+	position: relative;
+	float: left;
+	left:0;
+	min-width: 10px;
+	width: 15%;
+	max-width: 15%;
+	padding-top: 0;
+	padding-left: 0;
+	vertical-align: top;
+	font-weight: 700;
+
+	@media screen and (min-width: 66.133em) {
+		// 992
+		position: absolute;
+		float: none;
+		width: 26%;
+		max-width: 130px;
+		vertical-align: top;
+	}
+
+	fieldset & {
+
+		@media screen and (min-width: 66.133em) {
+			// 992
+			position: relative;
+			float: none;
+			min-width: 10px;
+			width: 20%;
+			padding-top: 0;
+			padding-left: 0;
+			max-width: 100px;
+			vertical-align: top;
+		}
+
+	}
+
+}
+
+.col label ~ span,
+div[role="main"] td .col label ~ span {
+	clear: left;
+	float: left;
+	margin-left: 0;
+
+	@media only screen and (min-width: 32.067em) {
+		clear: none;
+		margin-left: 5%;
+	}
+
+	@media screen and (min-width: 66.133em) {
+		// 992
+		clear: left;
+		margin-left: 26.5%;
+	}
+
+}
+
+// Main specific: sections header & footer within
+// ----------------------------------------------------------
+div[role="main"] footer {
+	clear: both;
+	min-height: .2em;
+	overflow: hidden;
+	width: 100%;
+
+		ul, ol {
+			float: left;
+			width: 100%;
+
+			li {
+				margin: 0;
+				padding: 0 1em 0.5em 0;
+			}
+
+			li:last-child {
+				margin-right: 0;
+				padding-right: 0;
+			}
+		}
+}
+
+// Main Specific:  content sections
+div[role="main"] #thedetails {
+	position: relative;
+
+	> header h3 {
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+
+			color: #6a6a6a;
+			margin: 0;
+			float: right;
+		}
+
+	}
+
+	footer {
+		padding: 7em 0 .7em 0;
+
+			p, li {
+					font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+					font-size: 1em;
+					line-height: 1.5;
+			}
+
+	}
+
+}
+
+// Record Pages Biography Section summary bio
+div[role="main"] .sum-bio {
+	padding-top: 5px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+// Main Specific: html5 Details
+// -----------------------------------------------
+details {
+	border: none;
+	padding: 0;
+}
+
+summary {
+	display: block;
+	border: 1px solid white;
+	padding: .5em;
+	margin-bottom: 1em;
+	cursor: pointer;
+
+	&:hover, &:focus {
+		background: #fbfbfb;
+	}
+}
+
+.no-details details {
+
+	// by default (and probably most of the time), the contents of the <details> element are hidden.
+	> * {
+		display: none;
+	}
+
+	> summary:before {
+		float: left;
+		width: 20px;
+		content:"\003e";
+		content: '► ';
+	}
+
+	> summary:before {
+		content:"\03bd";
+		content: '▼ ';
+	}
+
+	summary {
+		display: block;
+		cursor: pointer;
+	}
+
+	details p {
+		padding: 1px;
+	}
+
+	details ul {
+		margin: 0 0 .5em 0;
+		padding: 1px;
+	}
+
+}
+
+// IE7 doesn't support support generated content
+.lt-ie8 .no-details details > summary {
+	position: relative;
+	padding-left: 20px;
+	background: url("../img/arrow-sprite.png") no-repeat 0 0;
+}
+
+.lt-ie8 .no-details details.open > summary {
+	background-position: 0 -20px;
+}
+
+/* Make sure summary remains visible */
+.no-details details summary {
+	display: block;
+}
+
+// Main Specific: Search
+// -----------------------------------------------
+// Search
+.sub-details {
+	display: block;
+	max-width: 845px;
+	padding: 2em;
+	background: #f4f7fa;
+}
+
+// Search Results
+.mylistbox {
+	float: left;
+	left: 0;
+	vertical-align: top;
+
+	input[type="checkbox"] {
+		margin-top: 7px;
+	}
+}
+
+.tolist h2 {
+	margin: 0 0 .2em;
+	padding: 0;
+	font-size: 1.3em;
+}
+
+// search results listing
+.s {
+	display: block;
+	margin: 0 0 0 1.4em;
+	min-height: 3em;
+	position: relative;
+
+		a {
+			color: #40708c;
+		}
+
+		a.simg {
+			display: inline-block;
+			min-width: 58px;
+			min-height: 90px;
+			max-height: 100px;
+			clear: left;
+			float: left;
+			margin: 0;
+			padding: 0 0.6em 0 0;
+		}
+
+		img {
+			margin: auto;
+			padding: 0;
+		}
+
+		p {
+			line-height: 1.4;
+			margin: 0;
+			padding: 0;
+		}
+
+}
+
+// templates with nested search, mylist templates, itemeditor
+.t {
+
+	.s {
+		display: block;
+		margin: 0.5em 0 1.5em;
+		padding: 0 28px;
+		color: #888888;
+
+	}
+
+	.s span,
+	.premise span,
+	.synopsis span {
+		margin-right: 0.5em;
+	}
+
+	.s * {
+		font-size: 0.95em;
+	}
+
+}
+//
+
+//footer notes comments in lists
+span.comment,
+span.note {
+	position: relative;
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 0 2px 0 -18px;
+	border: none;
+	@include fa-FontAwesome();
+}
+
+span.comment:before,
+span.note:before {
+	position: relative;
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	@include fa-FontAwesome();
+}
+// positioning
+span.note:before {
+	content: "\f016";
+}
+
+span.comment:before {
+	content: "\f075";
+}
+
+//comments in code
+.rainbow span.comment {
+	float: none;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+
+}
+.rainbow span.comment:before {
+	content: "";
+	float: none;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+
+// controls for admin
+.admin #adminMain table#overview span#checkAll {
+	clear: right;
+	font-size: .8em;
+	width: auto;
+	padding: 0 0 0 .3em;
+}
+
+// 15. aside[role="complementary"]
+
+aside[role="complementary"] {
+	position: relative;
+	display: block;
+	left: .5em;
+	width: 100%;
+	vertical-align: top;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			margin: 0;
+			left: 0;
+			padding: 0 0.5em 0.5em 0.75em;
+			border-bottom-width: 0;
+		}
+
+		@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			display: table-cell;
+			padding-bottom:30px;
+			padding-right: 0.9375em;
+			width: 25%;
+			background: transparent;
+		}
+
+		h1 {
+			border-bottom: 1px dotted #444444;
+			font-size: 1.6em;
+
+				.sections-heading {
+						border-bottom: 1px solid #fbfbfb;
+						font-size: 1.6em;
+				}
+
+		}
+
+}
+//
+//hack ie8
+.lt-ie9 aside[role="complementary"] {
+
+			@media only screen and (min-width: 53.333em) {
+			// min-width: 800px
+			position: relative;
+			display: inline-block;
+			width: 25%;
+			float: left;
+		}
+}
+
+// hack ie8
+.lt-ie9 aside[role="complementary"] li.dl {
+
+	@media screen and (min-width: 66.133em) {
+		// 992
+		padding-left: 0;
+		background-image: none;
+	}
+
+}
+
+//admin Aside Complimentary
+.admin .adminWrap aside[role="complementary"] {
+	width: 95.75%;
+	margin: .75em;
+	float: none;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			width: 95.75%;
+			margin: .75em;
+		}
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			float: none;
+			margin: .75em 0 0;
+		}
+
+		@media screen and (min-width: 66.133em) {
+			// 992
+			float: left;
+			width: 21.87%;
+			overflow: hidden;
+			margin: 0;
+		}
+
+		@media screen and (min-width: 92.133em) {
+			//
+			width: 32.32%;
+		}
+
+}
+//
+
+// tool pointer
+.triangle-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	margin-right: -12px;
+	border-top: 9px solid transparent;
+	border-left: 18px solid #bfb39a;
+	border-bottom: 9px solid transparent;
+}
+
+// 18.Non-semantic helper classes
+// Please define your styles before this section.
+// ----------------------------------------------------------
+
+// For image replacement
+.ir {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+
+.hasJS .ir br {
+	display: none;
+}
+
+// Hide for both screenreaders and browsers:
+// css-discuss.incutio.com/wiki/Screenreader_Visibility
+.hasJS .hidden, .hasJS .hide {
+	display: none;
+	visibility: hidden;
+}
+
+.hasJS .hide-override {
+	display: none !important;
+}
+
+// Hide only visually, but have it available for screenreaders: by Jon Neal.
+//	www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
+.visuallyhidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	border: 0;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	position: static;
+	clip: auto;
+	overflow: visible;
+	margin: 0;
+	height: auto;
+	width: auto;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible {
+	visibility: hidden;
+}
+
+// clearfix specific
+#container:before, #container:after,
+.masthead:before, .masthead:after,
+.record:before, .record:after,
+.content:before, .content:after,
+div[role="main"] header:before, div[role="main"] header:after,
+div[role="main"] .li_container:before, div[role="main"] .li_container:after,
+aside[role="complementary"]:before, aside[role="complementary"]:after,
+aside[role="complementary"] > section:before, aside[role="complementary"] > section:after,
+.mylisting > li:before, .mylisting > li:after {
+	content: "";
+	display: table;
+}
+
+#container:after,
+.masthead:after,
+.record:after,
+.content:after,
+.masthead .h-content:after,
+div[role="main"] header:after,
+div[role="main"] .li_container:after,
+aside[role="complementary"]:after,
+.mylisting > li:after {
+	clear: both;
+}
+
+.masthead, div[role="main"] header, .mylisting > li {
+	zoom: 1;
+}
+//
+
+.mylisting {
+
+	h4 {
+		font-weight: 500;
+	}
+
+	h4 a {
+		color: $link-color;
+
+		&:hover, &:focus {
+			color: $link-hover-color;
+		}
+	}
+
+	> li {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	> li:last-child {
+		border-bottom: none;
+	}
+
+	&.notes {
+		margin-left: 1em;
+	}
+
+	&.t > li:not(:last-child) {
+		border-bottom: none;
+	}
+
+	&.watchlist > li {
+		border-bottom: none;
+	}
+
+}
+
+
+// 19.Vendor Specific
+// ----------------------------------------------------------
+body {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+// Improve image quality when scaled in IE7
+// code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+
+img {
+	-ms-interpolation-mode: bicubic;
+}
+
+.lt-ie8 img, .iem7 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+// scale images in IE7 more attractively
+.lt-ie8 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+// 20.Template Specific
+// ----------------------------------------------------------
+#goog-fixurl ul {
+	list-style-type: none;
+}
+
+#goog-fixurl input {
+	margin-bottom: 1.5em;
+}
+
+// 21.Modernizer
+// ----------------------------------------------------------
+// csstransitions
+.csstransitions a {
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+//

@@ -1,0 +1,142 @@
+<!-- form.search -->
+<form action="/advancedsearch" class="search-advanced" method="post">
+
+			<!-- section 1 -->
+			<fieldset class="form-stacked">
+			<legend>Casting Project Searches</legend>
+			<span class="help-block">Find Film and TV Casting Projects</span>
+			<ul>
+				<li>
+					<span class="wrap labin">
+						<label>Project Type</label>
+							<span class="checks">
+								<input id="casting-proj-film" type="radio" name="project-type group" value="0" title="Film" />
+								<label for="casting-proj-film">Film</label>
+								<input id="casting-proj-tv" type="radio" name="project-type group" value="1" title="TV" />
+								<label for="casting-proj-tv">TV</label>
+							</span>
+					</span>
+					<span class="wrap labin">
+						<label>Talent Type (with upcoming Projects)</label>
+							<span class="checks">
+								<input id="talent-type-dir" type="radio" name="talent-type group" value="0" title="Directors" />
+								<label for="talent-type-dir">Directors</label>
+								<input id="talent-type-pro" type="radio" name="talent-type group" value="1" title="Producers" />
+								<label for="talent-type-pro">Producers</label>
+								<input id="talent-type-casting" type="radio" name="talent-type group" value="2" title="Casting Directors" />
+								<label for="talent-type-casting">Casting Directors</label>
+							</span>
+					</span>
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Casting Type (upcoming Project Type)</label>
+							<span class="checks">
+								<input id="casting-type-action" type="radio" name="casting-type group" value="0" title="Action" />
+								<label for="casting-type-action">Action</label>
+								<input id="casting-type-thriller" type="radio" name="casting-type group" value="1" title="Thriller" />
+								<label for="casting-type-thriller">Thriller</label>
+								<input id="casting-type-drama" type="radio" name="casting-type group" value="2" title="Drama" />
+								<label for="casting-type-drama">Drama</label>
+								<input id="casting-type-comedy" type="radio" name="casting-type group" value="0" title="Comedy" />
+								<label for="casting-type-comedy">Comedy</label>
+								<input id="casting-type-horror" type="radio" name="casting-type group" value="1" title="Horror" />
+								<label for="casting-type-horror">Horror</label>
+								<input id="casting-type-science" type="radio" name="casting-type group" value="2" title="Science" />
+								<label for="casting-type-science">Science</label>
+								<input id="casting-type-animation" type="radio" name="casting-type group" value="0" title="Animation" />
+								<label for="casting-type-animation">Animation</label>
+								<input id="casting-type-family" type="radio" name="casting-type group" value="1" title="Family" />
+								<label for="casting-type-family">Family</label>
+							</span>
+					</span>
+				</li>
+			</ul>
+			</fieldset>
+
+			<div class="actions">
+				<button type="button" id="submitcastingprojectSearch" class="btn btn-primary" onClick="window.location='search-results.html'">Submit</button>
+				<button type="reset" class="btn">Cancel</button>
+			</div>
+			<!-- /section 1 -->
+
+			<!-- section 2 -->
+			<fieldset class="form-stacked">
+			<legend>Casting Talent Searches</legend>
+			<span class="help-block">Find Film and TV Casting Talent (people)</span>
+			<ul>
+				<li>
+					<span class="wrap labin">
+						<label>Project Type</label>
+							<span class="checks">
+								<input id="casting-film" type="radio" name="project-type group" value="0" title="Film" />
+								<label for="casting-film">Film</label>
+								<input id="casting-tv" type="radio" name="project-type group" value="1" title="TV" />
+								<label for="casting-tv">TV</label>
+							</span>
+					</span>
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Gender</label>
+							<span class="checks">
+								<input id="male" type="radio" name="gender group" value="0" title="Male" />
+								<label for="male">Male</label>
+								<input id="female" type="radio" name="gender group" value="1" title="Female" />
+								<label for="female">Female</label>
+							</span>
+					</span>
+					<span class="wrap">
+						<label for="p-race">Race</label>
+							<select id="p-race">
+							<option selected="selected" value="-1">All
+							</option><option value="0">American Indian and Alaska Native
+							</option><option value="1">Asian
+							</option><option value="2">Black or African American
+							</option><option value="3">Caucasian
+							</option><option value="4">Hispanic/Latino
+							</option><option value="5">Middle Eastern/North African
+							</option><option value="6">Native Hawaiian and Other Pacific Islander
+							</option><option value="7">Southeast Asian/Indian
+							</option><option value="8">Other</option>
+						</select>
+					</span>
+
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Project Genre</label>
+							<span class="checks">
+								<input id="casting-genre-action" type="radio" value="1" title="Action" />
+								<label for="casting-genre-action">Action</label>
+								<input id="casting-genre-comedy"type="radio" value="10" title="Comedy" />
+								<label for="casting-genre-comedy">Comedy</label>
+								<input id="casting-genre-drama" type="radio" value="14" title="Drama" />
+								<label for="casting-genre-drama">Drama</label>
+							</span>
+					</span>
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Leading Actors</label>
+						<span class="checks">
+							<input id="leading-youth" type="radio" value="1" title="Action" />
+							<label for="leading-youth">Youth/Teen</label>
+							<input id="leading-young"type="radio" value="10" title="Comedy" />
+							<label for="leading-young">Young</label>
+							<input id="leading-midrange" type="radio" value="14" title="Drama" />
+							<label for="leading-midrange">Midrange</label>
+							<input id="leading-senior" type="radio" value="14" title="Drama" />
+							<label for="leading-senior">Senior</label>
+						</span>
+					</span>
+				</li>
+			</ul>
+
+			</fieldset>
+
+			<div class="actions">
+				<button type="button" id="submitcastingtalentSearch" class="btn btn-primary" onClick="window.location='search-results.html'">Submit</button>
+				<button type="reset" class="btn">Cancel</button>
+			</div>
+</form>

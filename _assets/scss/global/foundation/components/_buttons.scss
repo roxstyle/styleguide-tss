@@ -1,0 +1,360 @@
+@import "global";
+
+//
+// @variables
+//
+$include-html-button-classes: $include-html-classes !default;
+
+// We use these to build padding for buttons.
+$button-tny: rem-calc(7) !default;
+$button-sml: rem-calc(9) !default;
+$button-med: rem-calc(10) !default;
+$button-lrg: rem-calc(12) !default;
+
+// We use this to control the display property.
+$button-display: inline-block !default;
+$button-margin-bottom: rem-calc(10) !default;
+
+// We use these to control button text styles.
+$button-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$button-font-color: #fff !default;
+$button-font-color-alt: #333 !default;
+$button-font-tny: rem-calc(10) !default;
+$button-font-sml: rem-calc(12) !default;
+$button-font-med: rem-calc(14) !default;
+$button-font-lrg: rem-calc(16) !default;
+$button-font-weight: normal !default;
+$button-font-align: center !default;
+$button-letter-spacing: .025em !default;
+$button-text-decoration: none !default;
+
+// We use these to control various hover effects.
+$button-function-factor: -15% !default;
+
+// We use these to control button border styles.
+$button-border-width: 1px !default;
+$button-border-style: solid !default;
+$button-overflow: visible !default;
+
+// We use this to set the default radius used throughout the core.
+$button-radius: rem-calc(6) !default;
+$button-round: $global-rounded !default;
+
+// We use this to set default opacity for disabled buttons.
+$button-disabled-opacity: 0.7 !default;
+
+
+//
+// @MIXIN
+//
+// We use this mixin to create a default button base.
+//
+// $style - Sets base styles. Can be set to false. Default: true.
+// $display - Used to control display property. Default: $button-display || inline-block
+
+@mixin button-base($style:true, $display:$button-display) {
+  @if $style {
+    border-style: $button-border-style;
+    border-width: $button-border-width;
+    cursor: $cursor-pointer-value;
+    font-family: $button-font-family;
+    font-weight: $button-font-weight;
+    line-height: normal;
+    margin: 0 0 $button-margin-bottom;
+    position: relative;
+    text-decoration: none;
+    text-align: $button-font-align;
+    overflow: $button-overflow;
+  }
+  @if $display { display: $display; }
+}
+
+// @MIXIN
+//
+// We use this mixin to add button size styles
+//
+// $padding - Used to build padding for buttons Default: $button-med ||= rem-calc(12)
+// $full-width - We can set $full-width:true to remove side padding extend width - Default: false
+// $is-input - <input>'s and <button>'s take on strange padding. We added this to help fix that. Default: false
+
+@mixin button-size($padding:$button-med, $full-width:false, $is-input:false) {
+
+  // We control which padding styles come through,
+  // these can be turned off by setting $padding:false
+  @if $padding {
+    padding-top: $padding + rem-calc(-.2);
+    padding-#{$opposite-direction}: $padding * 1.2;
+    padding-bottom: $padding + rem-calc(-.2);
+    padding-#{$default-float}: $padding * 1.2;
+
+    // We control the font-size based on mixin input.
+    @if      $padding == $button-med { font-size: $button-font-med; }
+    @else if $padding == $button-tny { font-size: $button-font-tny; }
+    @else if $padding == $button-sml { font-size: $button-font-sml; }
+    @else if $padding == $button-lrg { font-size: $button-font-lrg; }
+/*     @else                            { font-size: $padding - rem-calc(2); } */
+  }
+
+  // We can set $full-width:true to remove side padding extend width.
+  @if $full-width {
+    // We still need to check if $padding is set.
+    @if $padding {
+    padding-top: $padding;
+    padding-bottom: $padding + rem-calc(1);
+    } @else if $padding == false {
+      padding-top:0;
+      padding-bottom:0;
+    }
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  // <input>'s and <button>'s take on strange padding. We added this to help fix that.
+  @if $is-input == $button-lrg {
+    padding-top: $is-input + rem-calc(.5);
+    padding-bottom: $is-input + rem-calc(.5);
+    -webkit-appearance: none;
+    // border: none;
+    font-weight: $button-font-weight !important;
+  }
+  @else if $is-input {
+    padding-top: $is-input + rem-calc(1);
+    padding-bottom: $is-input;
+    -webkit-appearance: none;
+    // border: none;
+    font-weight: $button-font-weight !important;
+  }
+}
+
+// @MIXIN
+//
+// We use this mixin to add button color styles
+//
+// $bg - Primary color set in settings file. Default: $primary-color.
+// $radius - If true, set to button radius which is $global-radius || explicitly set radius amount in px (ex. $radius:10px). Default: false
+// $disabled - We can set $disabled:true to create a disabled transparent button. Default: false
+@mixin button-style($bg:$default-color, $radius:false, $disabled:false) {
+
+  // We control which background styles are used,
+  // these can be removed by setting $bg:false
+  @if $bg {
+    // This find the lightness percentage of the background color.
+    $bg-lightness: lightness($bg);
+    $button-text-shadow: 0 1px 1px scale-color($bg, $lightness: -95%);
+
+    background-color: $bg;
+    border-color: scale-color($bg, $lightness: $button-function-factor);
+    &:hover,
+    &:focus { background-color: scale-color($bg, $lightness: $button-function-factor); }
+
+    // We control the text color for you based on the background color.
+    @if $bg-lightness > 70% {
+      color: $button-font-color-alt;
+      &:hover,
+      &:focus { color: $button-font-color-alt; text-decoration: $button-text-decoration;}
+    }
+    @else {
+      color: $button-font-color;
+      &:hover,
+      &:focus { color: $button-font-color; text-decoration: $button-text-decoration;}
+    }
+  }
+
+  // We can set $disabled:true to create a disabled transparent button.
+  @if $disabled {
+    cursor: not-allowed;
+    opacity: $button-disabled-opacity;
+    @if $experimental {
+      -webkit-box-shadow: none;
+    }
+    box-shadow: none;
+    &:hover,
+    &:focus { background-color: $bg; }
+  }
+
+  // We can control how much button radius us used.
+  @if $radius == true { @include radius($button-radius); }
+  @else if $radius { @include radius($radius); }
+
+}
+
+// @MIXIN
+//
+// We use this mixin to add button gradient styles
+//
+@mixin linear-gradient($fromColor:true, $toColor:true) {
+
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true;
+  background-image: linear-gradient(top, $fromColor 0%,$toColor 100%);
+
+    &:hover,
+    &:focus {
+      background-color: scale-color($toColor, $lightness: -15%);
+      background-image: none;
+    }
+}
+
+
+// @MIXIN
+//
+// We use this to quickly create buttons with a single mixin. As @jaredhardy puts it, "the kitchen sink mixin"
+//
+// $padding - Used to build padding for buttons Default: $button-med ||= rem-calc(12)
+// $bg - Primary color set in settings file. Default: $primary-color.
+// $radius - If true, set to button radius which is $global-radius || explicitly set radius amount in px (ex. $radius:10px). Default:false.
+// $full-width - We can set $full-width:true to remove side padding extend width. Default:false.
+// $disabled - We can set $disabled:true to create a disabled transparent button. Default:false.
+// $is-input - <input>'s and <button>'s take on strange padding. We added this to help fix that. Default:false.
+// $is-prefix - Not used? Default:false.
+@mixin button($padding:$button-med, $bg:$default-color, $radius:false, $full-width:false, $disabled:false, $is-input:false, $is-prefix:false) {
+  @include button-base;
+  @include button-size($padding, $full-width, $is-input);
+  @include button-style($bg, $radius, $disabled);
+}
+
+@include exports("button") {
+  @if $include-html-button-classes {
+
+    // Default styles applied outside of media query
+    button, .button, input[type="button"], input[type="submit"],  {
+      @include button-base;
+      @include button-size;
+      @include button-style($bg:$default-color);
+
+      @include single-transition(background-color);
+      @include button-size($padding:false, $is-input:$button-med);
+
+       a { color: $text-color;}
+
+
+        &.bg-gradient {
+          @include linear-gradient(#ffffff, #e6e6e6);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      &.default {
+        @include button-style($bg:$default-color); color: $text-color;
+
+        &.bg-gradient {
+          @include linear-gradient(#ffffff, #e6e6e6);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.primary {
+        @include button-style($bg:$primary-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(#9e4a57, #822a35);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.secondary {
+        @include button-style($bg:$secondary-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(100, 142, 176), rgb(45, 71, 104));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.success { @include button-style($bg:$success-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(91, 183, 91), rgb(81, 163, 81));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.alert { @include button-style($bg:$alert-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(218, 79, 73), rgb(196, 60, 53));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.warning { @include button-style($bg:$warning-color); color: $text-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(250, 167, 50), rgb(248, 148, 6));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+      &.info { @include button-style($bg:$info-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(73, 175, 205), rgb(47, 150, 180));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.inverse { @include button-style($bg:$inverse-color); color: $text-inverse-color;
+
+        &.bg-gradient {
+          @include linear-gradient(rgb(34, 34, 34), rgb(14, 14, 14));
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+          border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+      }
+
+      &.btn-shadow {
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      }
+
+
+      &.large  { @include button-size($padding:$button-lrg); }
+      &.small  { @include button-size($padding:$button-sml); }
+      &.tiny   { @include button-size($padding:$button-tny); }
+      &.expand { @include button-size($padding:null,$full-width:true); }
+
+      &.left-align  { text-align: left; text-indent: rem-calc(12); }
+      &.right-align { text-align: right; padding-right: rem-calc(12); }
+
+      &.radius { @include button-style($bg:false, $radius:true); }
+      &.round  { @include button-style($bg:false, $radius:$button-round); }
+
+      &.disabled, &[disabled] { @include button-style($bg:$default-color, $disabled:true);
+        &.primary { @include button-style($bg:$secondary-color, $disabled:true); }
+        &.secondary { @include button-style($bg:$secondary-color, $disabled:true); }
+        &.success { @include button-style($bg:$success-color, $disabled:true); }
+        &.alert { @include button-style($bg:$alert-color, $disabled:true); }
+      }
+    }
+
+    @media #{$medium-up} {
+      button, .button {
+        @include button-base($style:false, $display:inline-block);
+        @include button-size($padding:false, $full-width:false);
+      }
+    }
+  }
+}

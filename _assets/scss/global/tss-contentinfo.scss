@@ -1,0 +1,119 @@
+// 13. Contentinfo footer[role="contentinfo"]
+// ----------------------------------------------------------
+
+[role="contentinfo"] {
+	position: relative;
+	padding: 1em 0;
+	margin-top: -100px;
+	// negative value of footer height
+	height: 100px;
+	width: 100%;
+	vertical-align: top;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+	border-top: 1px solid #183052;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	background-color: #183052;
+
+		@media only screen and (min-width: 51em) {
+			// min-width: 768px
+			clear: both;
+			margin-top: -82px;
+			// negative value of footer height
+			height: 82px;
+		}
+
+		@media screen and (min-width: 92.133em) {
+			//width: 100%;
+		}
+
+}
+
+[role="contentinfo"] ul {
+	list-style-type: none;
+	overflow: hidden;
+	float: left;
+	margin: 0 0 0 -.5em;
+	padding: 0;
+
+		@media only screen and (min-width:41.400em) {
+			// min-width: 621px
+			width: auto;
+			float: right;
+			margin: .6em 0 0 0;
+		}
+
+		li {
+			float: left;
+			clear: none;
+			padding: 0;
+			text-align: center;
+			white-space: nowrap;
+
+				@media only screen and (min-width: 51em) {
+					// min-width: 768px
+					margin-bottom: 1em;
+				}
+
+				a {
+					display: block;
+					padding: 0 .5em;
+					color: #eff5ff;
+				}
+
+				a, a:visited {
+					outline: none;
+					color: #d5e5ff;
+					text-decoration: none;
+				}
+
+				a:hover, a:focus {
+					color: white;
+				}
+		}
+}
+//
+
+[role="contentinfo"] h1 {
+	float: left;
+	margin-top: .125em;
+	margin-bottom: .125em;
+	padding-left: 0px;
+	min-height: 22px;
+	width: 38%;
+	min-width: 148px;
+	background: transparent url("../img/logos/ss-logo-143x24.png") no-repeat 0 0;
+
+		@media only screen and (min-width:41.400em) {
+		// min-width: 621px
+			width: 28%;
+			max-width: 215px;
+		}
+
+		@media screen and (min-width: 66.133em) {
+			// 992
+			width: 24%;
+		}
+
+		a {
+			display: block;
+		}
+
+}
+
+[role="contentinfo"] small {
+	position: relative;
+	float: left;
+	padding-top: .5em;
+	line-height: 1.5;
+	color: rgb(220, 220, 220);
+
+	@media only screen and (min-width:41.400em) {
+		// min-width: 621px
+		margin-left: 0;
+		float: left;
+		top: 0px;
+		text-align: left;
+		line-height: 2.5;
+	}
+
+}

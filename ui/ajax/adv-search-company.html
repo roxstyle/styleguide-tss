@@ -1,0 +1,1414 @@
+<!-- form.search -->
+<form action="/advancedsearch" class="search-advanced" method="post">
+
+		<!-- section 1 -->
+		<fieldset class="form-stacked">
+		<legend>Company Search</legend>
+		<ul>
+			<li>
+				<!-- columns -->
+				<ul>
+					<li class="col1of2">
+						<ul>
+							<li>
+								<span class="wrap labin">
+									<label>Company Name</label>
+										<span class="checks">
+											<input id="company-contains" type="radio" name="companytitle group" value="Contains" title="Starts with" />
+											<label for="company-contains">Contains</label>
+											<input id="company-starts" type="radio" name="companytitle group" value="Starts with" title="Starts with" />
+											<label for="company-starts">Starts with</label>
+											<input id="company-title" type="text" title="TV Title" />
+										</span>
+
+								</span>
+							</li>
+							<li>
+								<span class="wrap labin">
+									<label>Location</label>
+											<span class="wrap labin">
+												<label for="company-loc-country">Country</label>
+													<select id="company-loc-country" class="auto">
+														<option value="0" selected="selected">Select A Country
+														</option><option value="231">United States
+														</option><option value="38">Canada
+														</option><option value="268">- - - - - - - - - 
+														</option><option value="249">
+														</option><option value="4">Afghanistan
+														</option><option value="255">Aland Islands
+														</option><option value="7">Albania
+														</option><option value="5">Algeria
+														</option><option value="254">American Samoa
+														</option><option value="9">Andorra
+														</option><option value="10">Angola
+														</option><option value="15">Anguilla
+														</option><option value="16">Antarctica
+														</option><option value="2">Antigua And Barbuda
+														</option><option value="11">Argentina
+														</option><option value="8">Armenia
+														</option><option value="1">Aruba
+														</option><option value="12">Australia
+														</option><option value="14">Austria
+														</option><option value="6">Azerbaijan
+														</option><option value="22">Bahamas
+														</option><option value="17">Bahrain
+														</option><option value="23">Bangladesh
+														</option><option value="18">Barbados
+														</option><option value="29">Belarus
+														</option><option value="21">Belgium
+														</option><option value="24">Belize
+														</option><option value="28">Benin
+														</option><option value="20">Bermuda
+														</option><option value="33">Bhutan
+														</option><option value="26">Bolivia
+														</option><option value="25">Bosnia And Herzegovina
+														</option><option value="19">Botswana
+														</option><option value="35">Bouvet Island
+														</option><option value="31">Brazil
+														</option><option value="106">British Indian Ocean Territory
+														</option><option value="237">British Virgin Islands
+														</option><option value="36">Brunei Darussalam
+														</option><option value="34">Bulgaria
+														</option><option value="232">Burkina Faso
+														</option><option value="37">Burundi
+														</option><option value="39">Cambodia
+														</option><option value="48">Cameroon
+														</option><option value="38">Canada
+														</option><option value="55">Cape Verde
+														</option><option value="46">Cayman Islands
+														</option><option value="53">Central Africa
+														</option><option value="40">Chad
+														</option><option value="45">Chile
+														</option><option value="44">China
+														</option><option value="124">Christmas Island
+														</option><option value="47">Cocos (Keeling) Islands
+														</option><option value="50">Colombia
+														</option><option value="49">Comoros
+														</option><option value="43">Congo
+														</option><option value="56">Cook Islands
+														</option><option value="52">Costa Rica
+														</option><option value="111">Cote D'Ivoire
+														</option><option value="100">Croatia
+														</option><option value="54">Cuba
+														</option><option value="57">Cyprus
+														</option><option value="71">Czech Republic
+														</option><option value="58">Denmark
+														</option><option value="59">Djibouti
+														</option><option value="60">Dominica
+														</option><option value="61">Dominican Republic
+														</option><option value="474">East Timor
+														</option><option value="62">Ecuador
+														</option><option value="63">Egypt
+														</option><option value="68">El Salvador
+														</option><option value="65">Equatorial Guinea
+														</option><option value="67">Eritrea
+														</option><option value="66">Estonia
+														</option><option value="69">Ethiopia
+														</option><option value="75">Falkland Islands (Malvinas)
+														</option><option value="76">Faroe Islands
+														</option><option value="74">Fiji
+														</option><option value="73">Finland
+														</option><option value="78">France
+														</option><option value="72">French Guiana
+														</option><option value="77">French Polynesia
+														</option><option value="79">French Southern Territories
+														</option><option value="81">Gabon
+														</option><option value="80">Gambia
+														</option><option value="82">Georgia
+														</option><option value="88">Germany
+														</option><option value="83">Ghana
+														</option><option value="84">Gibraltar
+														</option><option value="91">Greece
+														</option><option value="87">Greenland
+														</option><option value="85">Grenada
+														</option><option value="90">Guadeloupe
+														</option><option value="259">Guam
+														</option><option value="92">Guatemala
+														</option><option value="86">Guernsey
+														</option><option value="93">Guinea
+														</option><option value="183">Guinea-Bissau
+														</option><option value="94">Guyana
+														</option><option value="96">Haiti
+														</option><option value="98">Heard Island And Mcdonald Islands
+														</option><option value="239">Holy See (Vatican City State)
+														</option><option value="99">Honduras
+														</option><option value="97">Hong Kong
+														</option><option value="101">Hungary
+														</option><option value="102">Iceland
+														</option><option value="105">India
+														</option><option value="103">Indonesia
+														</option><option value="108">Iran
+														</option><option value="112">Iraq
+														</option><option value="64">Ireland
+														</option><option value="104">Isle Of Man
+														</option><option value="109">Israel
+														</option><option value="110">Italy
+														</option><option value="115">Jamaica
+														</option><option value="113">Japan
+														</option><option value="114">Jersey
+														</option><option value="117">Jordan
+														</option><option value="126">Kazakhstan
+														</option><option value="119">Kenya
+														</option><option value="122">Kiribati
+														</option><option value="125">Kuwait
+														</option><option value="120">Kyrgyzstan
+														</option><option value="127">Laos
+														</option><option value="129">Latvia
+														</option><option value="128">Lebanon
+														</option><option value="134">Lesotho
+														</option><option value="131">Liberia
+														</option><option value="136">Libya
+														</option><option value="133">Liechtenstein
+														</option><option value="130">Lithuania
+														</option><option value="135">Luxembourg
+														</option><option value="139">Macao
+														</option><option value="146">Macedonia
+														</option><option value="137">Madagascar
+														</option><option value="144">Malawi
+														</option><option value="156">Malaysia
+														</option><option value="154">Maldives
+														</option><option value="147">Mali
+														</option><option value="152">Malta
+														</option><option value="261">Marshall Islands
+														</option><option value="138">Martinique
+														</option><option value="151">Mauritania
+														</option><option value="150">Mauritius
+														</option><option value="141">Mayotte
+														</option><option value="155">Mexico
+														</option><option value="258">Micronesia
+														</option><option value="140">Moldova
+														</option><option value="148">Monaco
+														</option><option value="142">Mongolia
+														</option><option value="145">Montenegro
+														</option><option value="143">Montserrat
+														</option><option value="149">Morocco
+														</option><option value="157">Mozambique
+														</option><option value="27">Myanmar
+														</option><option value="240">Namibia
+														</option><option value="167">Nauru
+														</option><option value="166">Nepal
+														</option><option value="164">Netherlands
+														</option><option value="169">Netherlands Antilles
+														</option><option value="263">New Caledonia
+														</option><option value="171">New Zealand
+														</option><option value="170">Nicaragua
+														</option><option value="161">Niger
+														</option><option value="163">Nigeria
+														</option><option value="159">Niue
+														</option><option value="264">Norfolk Island
+														</option><option value="121">North Korea
+														</option><option value="262">Northern Mariana Islands
+														</option><option value="165">Norway
+														</option><option value="153">Oman
+														</option><option value="178">Pakistan
+														</option><option value="266">Palau
+														</option><option value="95">Palestine
+														</option><option value="180">Panama
+														</option><option value="182">Papua New Guinea
+														</option><option value="173">Paraguay
+														</option><option value="175">Peru
+														</option><option value="188">Philippines
+														</option><option value="174">Pitcairn
+														</option><option value="179">Poland
+														</option><option value="181">Portugal
+														</option><option value="265">Puerto Rico
+														</option><option value="184">Qatar
+														</option><option value="186">Reunion
+														</option><option value="187">Romania
+														</option><option value="189">Russia
+														</option><option value="190">Rwanda
+														</option><option value="256">Saint Barthélemy
+														</option><option value="197">Saint Helena
+														</option><option value="193">Saint Kitts And Nevis
+														</option><option value="204">Saint Lucia
+														</option><option value="260">Saint Martin
+														</option><option value="192">Saint Pierre And Miquelon
+														</option><option value="235">Saint Vincent And The Grenadines
+														</option><option value="244">Samoa
+														</option><option value="200">San Marino
+														</option><option value="219">Sao Tome And Principe
+														</option><option value="191">Saudi Arabia
+														</option><option value="416">Scotland
+														</option><option value="196">Senegal
+														</option><option value="185">Serbia
+														</option><option value="194">Seychelles
+														</option><option value="199">Sierra Leone
+														</option><option value="201">Singapore
+														</option><option value="132">Slovakia
+														</option><option value="198">Slovenia
+														</option><option value="30">Solomon Islands
+														</option><option value="202">Somalia
+														</option><option value="195">South Africa
+														</option><option value="208">South Georgia And The South Sandwich Islands
+														</option><option value="123">South Korea
+														</option><option value="289">Soviet Union
+														</option><option value="203">Spain
+														</option><option value="41">Sri Lanka
+														</option><option value="205">Sudan
+														</option><option value="168">Suriname
+														</option><option value="206">Svalbard And Jan Mayen
+														</option><option value="245">Swaziland
+														</option><option value="207">Sweden
+														</option><option value="210">Switzerland
+														</option><option value="209">Syria
+														</option><option value="224">Taiwan
+														</option><option value="214">Tajikistan
+														</option><option value="226">Tanzania
+														</option><option value="213">Thailand
+														</option><option value="42">The Democratic Republic Of The Congo
+														</option><option value="221">Timor-Leste
+														</option><option value="218">Togo
+														</option><option value="216">Tokelau
+														</option><option value="217">Tonga
+														</option><option value="211">Trinidad And Tobago
+														</option><option value="220">Tunisia
+														</option><option value="222">Turkey
+														</option><option value="225">Turkmenistan
+														</option><option value="215">Turks And Caicos Islands
+														</option><option value="223">Tuvalu
+														</option><option value="228">Uganda
+														</option><option value="230">Ukraine
+														</option><option value="3">United Arab Emirates
+														</option><option value="229">United Kingdom
+														</option><option value="231">United States
+														</option><option value="267">United States Minor Outlying Islands
+														</option><option value="233">Uruguay
+														</option><option value="268">US Virgin Islands
+														</option><option value="234">Uzbekistan
+														</option><option value="162">Vanuatu
+														</option><option value="236">Venezuela
+														</option><option value="238">Viet Nam
+														</option><option value="242">Wallis And Futuna
+														</option><option value="243">Western Sahara
+														</option><option value="246">Yemen
+														</option><option value="247">Zambia
+														</option><option value="248">Zimbabwe</option>
+													</select>
+											</span>
+								</span>
+								</li>
+							<li>
+									<span class="wrap labin">
+										<label for="com-loc-city">City</label>
+										<input id="com-loc-city" type="text" title="City" placeholder="Ex: Los Angeles" />
+									</span>
+									<span class="wrap labin">
+										<label for="com-loc-stateid">State</label>
+										<select id="com-loc-stateid" class="auto">
+											<option value="" selected="selected">Select
+											</option><option value="3722">AK
+											</option><option value="3721">AL
+											</option><option value="3724">AR
+											</option><option value="3772">AS
+											</option><option value="3723">AZ
+											</option><option value="3725">CA
+											</option><option value="3726">CO
+											</option><option value="3727">CT
+											</option><option value="3771">DC
+											</option><option value="3728">DE
+											</option><option value="3729">FL
+											</option><option value="3730">GA
+											</option><option value="3774">GU
+											</option><option value="3731">HI
+											</option><option value="3735">IA
+											</option><option value="3732">ID
+											</option><option value="3733">IL
+											</option><option value="3734">IN
+											</option><option value="3736">KS
+											</option><option value="3737">KY
+											</option><option value="3738">LA
+											</option><option value="3741">MA
+											</option><option value="3740">MD
+											</option><option value="3739">ME
+											</option><option value="3742">MI
+											</option><option value="3743">MN
+											</option><option value="3745">MO
+											</option><option value="3776">MP
+											</option><option value="3744">MS
+											</option><option value="3746">MT
+											</option><option value="3753">NC
+											</option><option value="3754">ND
+											</option><option value="3747">NE
+											</option><option value="3749">NH
+											</option><option value="3750">NJ
+											</option><option value="3751">NM
+											</option><option value="3748">NV
+											</option><option value="3752">NY
+											</option><option value="3755">OH
+											</option><option value="3756">OK
+											</option><option value="3757">OR
+											</option><option value="3758">PA
+											</option><option value="3778">PR
+											</option><option value="3759">RI
+											</option><option value="3760">SC
+											</option><option value="3761">SD
+											</option><option value="3762">TN
+											</option><option value="3763">TX
+											</option><option value="3779">UM
+											</option><option value="3764">UT
+											</option><option value="3766">VA
+											</option><option value="3780">VI
+											</option><option value="3765">VT
+											</option><option value="3767">WA
+											</option><option value="3769">WI
+											</option><option value="3768">WV
+											<option value="3770">WY</option>
+										</select>
+									</span>
+							</li>
+							<li>
+								<span class="wrap labin">
+									<label>Contact Information</label>
+									<span class="help-block">Only display companies with contact information?</span>
+									<span class="checks">
+									<input id="company-contact-yes" type="radio" name="company-contact group" value="0" checked="checked" />
+									<label for="company-contact-yes">Yes</label>
+									<input id="company-contact-no" type="radio" name="company-contact group" value="1" />
+									<label for="company-contact-no">No</label>
+									</span>
+								</span>
+							</li>
+							<li>
+								<span class="wrap labin">
+											<label for="record-date">When Was Record Created</label>
+											<!-- <span class="help-block">How recent is this record</span> -->
+											<select class="auto" id="record-verify">
+												<option selected="selected" value="1">Latest Update</option>
+												<option value="2">Created Date
+												</option><!-- <option value="3">Verified Date
+																									</option> -->
+											</select>
+											<select class="auto" id="record-date">
+												<option selected="selected" value="1">Date Range</option>
+												<option value="1">Past Month
+												</option><option value="3">Past 2 Months
+												</option><option value="4">Past 3 Months
+												</option><option value="5">Past 6 Months
+												</option><option value="6">Past Year
+												</option><option value="7">Past 2 Years
+												</option><option value="8">Past 3 Years
+												</option><option value="9">Past 5 Years
+												</option><option value="10">Past 10 Years</option>
+											</select>
+								</span>
+							</li>
+						</ul>
+					</li>
+					<li class="col2of2">
+						<ul>
+							<li>
+								<span class="wrap labin">
+									<label>Company Type</label>
+									<span class="help-block">Select up to four (4) company types</span>
+									<span class="checks">
+										<input id="company-type-all" type="checkbox" value="1" name="company-type group" checked="checked" title="All" />
+										<label for="company-type-all">All</label>
+									</span>
+								</span>
+								<fieldset class="checks">
+									<ul class="li-2">
+										<li>
+											<input id="company-type-cable-network" type="checkbox" name="company-type group" value="1" title="Cable Network" />
+											<label for="company-type-cable-network">Cable Network</label>
+										</li>
+										<li>
+											<input id="company-type-casting-agency" type="checkbox" name="company-type  group" value="2" title="Casting Agency" />
+											<label for="company-type-casting-agency">Casting Agency</label>
+										</li>
+										<li>
+											<input id="company-type-co-financier" type="checkbox" name="company-type  group" value="3" title="Co-Financier" />
+											<label for="company-type-co-financier">Co-Financier</label>
+										</li>
+										<li>
+											<input id="company-type-completion-bond-provider" type="radio" name="company-subtype group" value="1" title="Completion Bond Provider" />
+											<label for="company-type-completion-bond-provider">Completion Bond Provider</label>
+										</li>
+										<li>
+											<input id="company-type-distribution-rights" type="radio" name="company-subtype group" value="2" title="Distribution Rights" />
+											<label for="company-type-distribution-rights">Distribution Rights</label>
+										</li>
+										<li>
+											<input id="company-type-distribution-sales" type="radio" name="company-subtype group" value="3" title="Distribution Sales" />
+											<label for="company-type-distribution-sales">Distribution Sales</label>
+										</li>
+										<li>
+											<input id="company-type-film-financier" type="radio" name="company-subtype group" value="4" title="Film Financier" />
+											<label for="company-type-film-financier">Film Financier</label>
+										</li>
+										<li>
+											<input id="company-type-funding" type="radio" name="company-subtype group" value="4" title="Funding" />
+											<label for="company-type-funding">Funding</label>
+										</li>
+										<li>
+											<input id="company-type-internet-dis" type="radio" name="company-subtype group" value="4" title="Internet Distributor" />
+											<label for="company-type-internet-dis">Internet Distributor</label>
+										</li>
+										<li>
+											<input id="company-type-lender" type="radio" name="company-subtype group" value="4" title="Lender" />
+											<label for="company-type-lender">Lender</label>
+										</li>
+										<li>
+											<input id="company-type-network" type="radio" name="company-subtype group" value="4" title="Network" />
+											<label for="company-type-network">Network</label>
+
+										</li>
+										<li>
+											<input id="company-type-pay-tv-dis" type="checkbox" name="company-type group" value="4" title="Pay TV Distributor" />
+											<label for="company-type-pay-tv-dis">Pay TV Distributor</label>
+										</li>
+										<li>
+											<input id="company-type-producer-credit" type="checkbox" name="company-type group" value="5" title="Producer Credit" />
+											<label for="company-type-producer-credit">Producer Credit</label>
+										</li>
+									</ul>
+								</fieldset>
+							</li>
+							<li>
+								<span class="wrap labin">
+									<label>Representation Type</label>
+									<span class="help-block">Select up to four (4) representation types</span>
+								</span>
+								<fieldset class="checks">
+									<ul class="li-2">
+										<li>
+											<input id="rep-type-mini" type="checkbox" name="rep-type group" value="1" title="" />
+											<label for="rep-type-mini">Agency</label>
+										</li>
+										<li>
+											<input id="rep-type-mow" type="checkbox" name="rep-type  group" value="2" title="" />
+											<label for="rep-type-mow">Law Firm</label>
+										</li>
+										<li>
+											<input id="rep-type-pil" type="checkbox" name="rep-type  group" value="3" title="" />
+											<label for="rep-type-pil">Management Company</label>
+										</li>
+										<li>
+											<input id="rep-type-series" type="checkbox" name="rep-type group" value="4" title="" />
+											<label for="rep-type-series">Public Relations Company</label>
+										</li>
+									</ul>
+								</fieldset>
+
+							</li>
+						</ul>
+
+					</li>
+				</ul><!-- /columns -->
+
+			</li>
+		</ul>
+
+		</fieldset>
+		<!-- /section 1 -->
+
+		<!-- section 2 -->
+		<fieldset class="form-stacked">
+			<a class="slider" title="Additional Project Involvement" href="#comproject"><span class="tool ui-icon-plus"></span>Additional Project Involvement</a>
+
+			<ul id="comproject" class="slid">
+				<li>
+					<span class="wrap labin">
+						<label>Project Title</label>
+							<span class="checks">
+								<input id="com-proj-contains" type="radio" name="project-title group" value="Contains" title="Contains" />
+								<label for="com-proj-contains">Contains</label>
+								<input id="com-proj-starts" type="radio" name="project-title group" value="Starts with" title="Starts with" />
+								<label for="com-proj-starts">Starts with</label>
+							</span>
+					</span>
+					<span class="wrap nolabel">
+						<input id="com-proj-title" type="text" title="" />
+					</span>
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Project Type</label>
+							<span class="checks com-involvement">
+								<input type="radio" name="companyproject-type group" value="All" title="All" checked="checked" />
+								<label>All</label>
+								<input type="radio" name="companyproject-type group" value="Film" title="Film" />
+								<label>Film</label>
+								<input type="radio" name="companyproject-type group" value="TV" title="TV" />
+								<label>TV</label>
+							</span>
+					</span>
+					<div class="sub-details filter-proj-tv">
+							<h5>Television Project Involvement</h5>
+							<ul class="">
+								<li>
+									<span class="wrap labin">
+										<label>Television Type</label>
+										<span class="checks">
+										<input id="com-status-tv-sel-all" type="checkbox" name="project-tv-type group" value="0" checked="checked" title="Select All" />
+										<label for="com-status-tv-sel-all">Select All</label>
+										</span>
+									</span>
+
+									<fieldset class="checks">
+										<ul class="li-5">
+											<li>
+												<input id="com-tv-type-mini" type="checkbox" name="project-tv-type group" value="1" title="" />
+												<label for="com-tv-type-mini">TV MiniSeries</label>
+
+											</li>
+											<li>
+												<input id="com-tv-type-mow" type="checkbox" name="project-com-tv-type  group" value="2" title="" />
+												<label for="com-tv-type-mow">TV Movie (MOW)</label>
+											</li>
+											<li>
+													<input id="com-tv-type-pil" type="checkbox" name="project-com-tv-type  group" value="3" title="" />
+													<label for="com-tv-type-pil">TV Pilot</label>
+
+													<span class="checks nested">
+													<input id="com-tv-type-pil-all" type="radio" name="project-com-tv-subtype group" value="1" title="" />
+													<label for="com-tv-type-pil-all">All</label>
+
+													<input id="com-tv-type-pil-order" type="radio" name="project-com-tv-subtype group" value="2" title="" />
+													<label for="com-tv-type-pil-order">Ordered To Series</label>
+
+													<input id="com-tv-type-pil-pickup" type="radio" name="project-com-tv-subtype group" value="3" title="" />
+													<label for="com-tv-type-pil-pickup">Picked Up</label>
+
+													<input id="com-tv-type-pil-roll" type="radio" name="project-com-tv-subtype group" value="4" title="" />
+													<label for="com-tv-type-pil-roll">Rolled over</label>
+													</span>
+
+											</li>
+											<li>
+												<input id="com-tv-type-series" type="checkbox" name="project-com-tv-type group" value="4" title="" />
+												<label for="com-tv-type-series">TV Series</label>
+											</li>
+											<li>
+												<input id="com-tv-type-special" type="checkbox" name="project-com-tv-type group" value="5" title="" />
+												<label for="com-tv-type-special">TV Specials</label>
+											</li>
+										</ul>
+									</fieldset>
+
+								</li>
+								<li>
+										<span class="wrap labin">
+											<label>Television Season</label>
+												<span class="checks">
+													<label for="com-release-startdate-season">From</label>
+													<select id="com-release-startdate-season">
+														<option value="all" selected="selected">TV Season
+														<option value="2020">2020</option>
+														<option value="2019">2019</option>
+														<option value="2018">2018</option>
+														<option value="2017">2017</option>
+														<option value="2016">2016</option>
+														<option value="2015">2015</option>
+														<option value="2014">2014</option>
+														<option value="2013">2013</option>
+														<option value="2012">2012</option>
+														<option value="2011">2011</option>
+														<option value="2010">2010</option>
+														<option value="2009">2009</option>
+														<option value="2008">2008</option>
+														<option value="2007">2007</option>
+														<option value="2006">2006</option>
+														<option value="2005">2005</option>
+														<option value="2004">2004</option>
+														<option value="2003">2003</option>
+														<option value="2002">2002</option>
+														<option value="2001">2001</option>
+														<option value="2000">2000</option>
+														<option value="1999">1999</option>
+														<option value="1998">1998</option>
+														<option value="1997">1997</option>
+														<option value="1996">1996</option>
+														<option value="1995">1995</option>
+														<option value="1994">1994</option>
+														<option value="1993">1993</option>
+														<option value="1992">1992</option>
+														<option value="1991">1991</option>
+														<option value="1990">1990</option>
+														<option value="1989">1989</option>
+														<option value="1988">1988</option>
+														<option value="1987">1987</option>
+														<option value="1986">1986</option>
+														<option value="1985">1985</option>
+														<option value="1984">1984</option>
+														<option value="1983">1983</option>
+														<option value="1982">1982</option>
+														<option value="1981">1981</option>
+														<option value="1980">1980</option>
+														<option value="1979">1979</option>
+														<option value="1978">1978</option>
+														<option value="1977">1977</option>
+														<option value="1976">1976</option>
+														<option value="1975">1975</option>
+														<option value="1974">1974</option>
+														<option value="1973">1973</option>
+														<option value="1972">1972</option>
+														<option value="1971">1971</option>
+														<option value="1970">1970</option>
+														<option value="1969">1969</option>
+														<option value="1968">1968</option>
+														<option value="1967">1967</option>
+														<option value="1966">1966</option>
+														<option value="1965">1965</option>
+														<option value="1964">1964</option>
+														<option value="1963">1963</option>
+														<option value="1962">1962</option>
+														<option value="1961">1961</option>
+														<option value="1960">1960</option>
+														<option value="1959">1959</option>
+														<option value="1958">1958</option>
+														<option value="1957">1957</option>
+														<option value="1956">1956</option>
+														<option value="1955">1955</option>
+														<option value="1954">1954</option>
+														<option value="1953">1953</option>
+														<option value="1952">1952</option>
+														<option value="1951">1951</option>
+														<option value="1950">1950</option>
+														<option value="1949">1949</option>
+														<option value="1948">1948</option>
+														<option value="1947">1947</option>
+														<option value="1946">1946</option>
+														<option value="1945">1945</option>
+														<option value="1944">1944</option>
+														<option value="1943">1943</option>
+														<option value="1942">1942</option>
+														<option value="1941">1941</option>
+														<option value="1940">1940</option>
+														<option value="1939">1939</option>
+														<option value="1938">1938</option>
+														<option value="1937">1937</option>
+														<option value="1936">1936</option>
+													</select>
+
+													<label for="com-release-enddate-season">To</label>
+													<select id="com-release-enddate-season">
+														<option value="all" selected="selected">TV Season
+														<option value="2020">2020</option>
+														<option value="2019">2019</option>
+														<option value="2018">2018</option>
+														<option value="2017">2017</option>
+														<option value="2016">2016</option>
+														<option value="2015">2015</option>
+														<option value="2014">2014</option>
+														<option value="2013">2013</option>
+														<option value="2012">2012</option>
+														<option value="2011">2011</option>
+														<option value="2010">2010</option>
+														<option value="2009">2009</option>
+														<option value="2008">2008</option>
+														<option value="2007">2007</option>
+														<option value="2006">2006</option>
+														<option value="2005">2005</option>
+														<option value="2004">2004</option>
+														<option value="2003">2003</option>
+														<option value="2002">2002</option>
+														<option value="2001">2001</option>
+														<option value="2000">2000</option>
+														<option value="1999">1999</option>
+														<option value="1998">1998</option>
+														<option value="1997">1997</option>
+														<option value="1996">1996</option>
+														<option value="1995">1995</option>
+														<option value="1994">1994</option>
+														<option value="1993">1993</option>
+														<option value="1992">1992</option>
+														<option value="1991">1991</option>
+														<option value="1990">1990</option>
+														<option value="1989">1989</option>
+														<option value="1988">1988</option>
+														<option value="1987">1987</option>
+														<option value="1986">1986</option>
+														<option value="1985">1985</option>
+														<option value="1984">1984</option>
+														<option value="1983">1983</option>
+														<option value="1982">1982</option>
+														<option value="1981">1981</option>
+														<option value="1980">1980</option>
+														<option value="1979">1979</option>
+														<option value="1978">1978</option>
+														<option value="1977">1977</option>
+														<option value="1976">1976</option>
+														<option value="1975">1975</option>
+														<option value="1974">1974</option>
+														<option value="1973">1973</option>
+														<option value="1972">1972</option>
+														<option value="1971">1971</option>
+														<option value="1970">1970</option>
+														<option value="1969">1969</option>
+														<option value="1968">1968</option>
+														<option value="1967">1967</option>
+														<option value="1966">1966</option>
+														<option value="1965">1965</option>
+														<option value="1964">1964</option>
+														<option value="1963">1963</option>
+														<option value="1962">1962</option>
+														<option value="1961">1961</option>
+														<option value="1960">1960</option>
+														<option value="1959">1959</option>
+														<option value="1958">1958</option>
+														<option value="1957">1957</option>
+														<option value="1956">1956</option>
+														<option value="1955">1955</option>
+														<option value="1954">1954</option>
+														<option value="1953">1953</option>
+														<option value="1952">1952</option>
+														<option value="1951">1951</option>
+														<option value="1950">1950</option>
+														<option value="1949">1949</option>
+														<option value="1948">1948</option>
+														<option value="1947">1947</option>
+														<option value="1946">1946</option>
+														<option value="1945">1945</option>
+														<option value="1944">1944</option>
+														<option value="1943">1943</option>
+														<option value="1942">1942</option>
+														<option value="1941">1941</option>
+														<option value="1940">1940</option>
+														<option value="1939">1939</option>
+														<option value="1938">1938</option>
+														<option value="1937">1937</option>
+														<option value="1936">1936</option>
+													</select>
+
+												</span>
+										</span>
+								</li>
+								<li>
+										<span class="wrap labin">
+											<label>Television Status</label>
+											<span class="checks">
+											<input id="status-com-tv-status-all" type="checkbox" name="project-com-tv-status group" value="0" checked="checked" title="" />
+											<label for="status-com-tv-status-all">Select All</label>
+											</span>
+										</span>
+
+										<fieldset class="checks">
+											<ul>
+												<li>
+													<span class="wrap">
+														<input id="com-tv-status-aired" type="checkbox" name="project-com-tv-status group" value="1" title="Aired" />
+														<label for="com-tv-status-aired">Aired</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-airing" type="checkbox" name="project-com-tv-status group" value="2" title="Airing" />
+														<label for="com-tv-status-airing">Airing</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-dead" type="checkbox" name="project-com-tv-status group" value="3" title="Dead" />
+														<label for="com-tv-status-dead">Dead</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-indev" type="checkbox" name="project-com-tv-status group" value="4" title="In Development" />
+														<label for="com-tv-status-indev">In Development</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-preprod" type="checkbox" name="project-com-tv-status group" value="5" title="In Pre-Production" />
+														<label for="com-tv-status-preprod">In Pre-Production</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-prod" type="checkbox" name="project-com-tv-status group" value="6" title="In Production" />
+														<label for="com-tv-status-prod">In Production</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-hold" type="checkbox" name="project-com-tv-status group" value="5" title="On Hold" />
+														<label for="com-tv-status-hold">On Hold</label>
+													</span>
+													<span class="wrap">
+														<input id="com-tv-status-wrap" type="checkbox" name="project-com-tv-status group" value="6" title="Wrapped" />
+														<label for="com-tv-status-wrap">Wrapped</label>
+													</span>	
+												</li>
+											</ul>
+										</fieldset>
+
+								</li>
+								<li>
+									<span class="wrap labin">
+										<label>Television Networks</label>
+										<span class="help-block">Select all, or up to six (6) individual networks.</span>
+										<span class="checks">
+										<input id="net-com-tv-sel-all" type="checkbox" name="project-com-tv-status group" value="0" checked="checked" title="" />
+										<label for="net-com-tv-sel-all">Select All</label>
+										</span>
+									</span>
+									<fieldset class="checks">
+										<ul class="li-5">
+											<li>
+												<input type="checkbox" name="networks" value="4513934" title="" />
+												<label>A &amp; E</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4641811" title="" />
+												<label>ABC Ent. Group</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4614604" title="" />
+												<label>ABC Family</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4516475" title="" />
+												<label>AMC</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4513344" title="" />
+												<label>BBC</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4528054" title="" />
+												<label>Bravo</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4513310" title="" />
+												<label>CBS</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4626477" title="" />
+												<label>CW Network</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4616844" title="" />
+												<label>Cartoon Network</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4534135" title="" />
+												<label>Cinemax</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4515735" title="" />
+												<label>Comedy Central</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4617406" title="" />
+												<label>DIY Network</label>
+											</li>
+											<li>
+												
+												<input type="checkbox" name="networks" value="4514111" title="" />
+												<label>Disney Channel</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4513408" title="" />
+												<label>E!</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4544752" title="" />
+												<label>ESPN</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4550428" title="" />
+												<label>FX</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4548873" title="" />
+												<label>Food Network</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514163" title="" />
+												<label>Fox</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4555209" title="" />
+												<label>HBO</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4556596" title="" />
+												<label>HGTV</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4517162" title="" />
+												<label>Hallmark Channel</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4618429" title="" />
+												<label>IFC</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4583628" title="" />
+												<label>ION</label>
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4623201" title="" />
+												<label>Lifetime</label>	
+											</li>
+											<li>	
+												<input type="checkbox" name="networks" value="4617283" title="" />
+												<label>Lifetime Movies Network</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514347" title="" />
+												<label>MTV</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4626772" title="" />
+												<label>My Network TV*</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4623207" title="" />
+												<label>NBC</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4579295" title="" />
+												<label>Nickelodeon</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514383" title="" />
+												<label>Oxygen</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4620207" title="" />
+												<label>Planet Green</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4623226" title="" />
+												<label>Showtime</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4516067" title="" />
+												<label>Spike TV</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4513894" title="" />
+												<label>Starz</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4616409" title="" />
+												<label>Style Network</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514520" title="" />
+												<label>Sundance Channel</label>		
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4516905" title="" />
+												<label>Syfy</label>	
+											</li>
+											<li>
+
+												<input type="checkbox" name="networks" value="4514556" title="" />
+												<label>TBS</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4616454" title="" />
+												<label>TLC</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4623237" title="" />
+												<label>TNT</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4513330" title="" />
+												<label>The WB*</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4516695" title="" />
+												<label>Turner Classic Movies</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514561" title="" />
+												<label>UPN*</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514565" title="" />
+												<label>USA Network</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4514568" title="" />
+												<label>VH1</label>	
+											</li>
+											<li>
+												<input type="checkbox" name="networks" value="4610583" title="" />
+												<label>WE:  Women’s Ent.</label>		
+											</li>
+										</ul>
+									</fieldset>
+								</li>
+							</ul>
+
+					</div>
+					<!-- /sub-detail TV -->
+					<div class="sub-details filter-proj-film">
+							<h5>Film Project Involvement</h5>
+							<ul class="">
+								<li>
+									<span class="wrap labin">
+										<label>Film Type</label>
+										<span class="checks">
+											<input id="com-proj-film-all" type="radio" value="1" name="film-type group" checked="checked" title="All" />
+											<label for="com-proj-film-all">All</label>
+											<input id="com-proj-film-feature" type="radio" value="2" name="film-type group" title="Feature Film" />
+											<label for="com-proj-film-feature">Feature Film</label>
+											<input id="com-proj-film-short" type="radio" value="3" name="film-type group" title="Short Film" />
+											<label for="com-proj-film-short">Short Film</label>
+										</span>
+									</span>
+								</li>
+								<li>
+
+										<span class="wrap labin">
+										<label>Film Status</label>
+											<span class="checks">
+											<input id="com-film-status-sel-all" type="checkbox" name="com-project-film-status group" value="0" checked="checked" title="" />
+											<label for="com-film-status-sel-all">Select All</label>
+											</span>
+										</span>
+
+									<fieldset class="checks">
+										<ul class="li-2">
+											<li>
+												<input id="com-film-status-in-development" type="checkbox" name="project-film-status  group" value="1" title="" />
+												<label for="com-film-status-in-development">In Development</label>
+
+												<span class="checks nested">
+												<input id="com-film-status-all-in-development" type="radio" name="project-film-substatus group" value="all" title="" />
+												<label for="com-film-status-all-in-development">All</label>
+
+												<input id="com-film-status-active-in-development" type="radio" name="project-film-substatus group" value="2" title="" />
+												<label for="com-film-status-active-in-development">Active Development</label>
+
+												<input id="com-film-status-greenlit-in-development" type="radio" name="project-film-substatus group" value="3" title="" />
+												<label for="com-film-status-greenlit-in-development">Greenlit</label>
+												</span>
+
+											</li>
+											<li>
+												<input id="com-film-status-in-preproduction" type="checkbox" name="project-film-status group" value="7" title="" />
+												<label for="com-film-status-in-preproduction">In Pre-Production</label>
+											</li>
+											<li>
+												<input id="com-film-status-in-production" type="checkbox" name="project-film-status group" value="12" title="" />
+												<label for="com-film-status-in-production">In Production</label>
+											</li>
+											<li>
+												<input id="com-film-status-completed" type="checkbox" name="project-film-status group" value="8" title="" />
+												<label for="com-film-status-completed">Completed</label>
+											</li>
+											<li>
+												<input id="com-film-status-wrapped" type="checkbox" name="project-film-status group" value="4" title="" />
+												<label for="com-film-status-wrapped">Wrapped</label>
+											</li>
+											<li>
+												<input id="com-film-status-waiting-release" type="checkbox" name="project-film-status group" value="6" title="" />
+												<label for="com-film-status-waiting-release">Awaiting Release</label>
+											</li>
+											<li>
+												<input id="com-film-status-released" type="checkbox" name="project-film-status group" value="5" title="" />
+												<label for="com-film-status-released">Released</label>
+											</li>
+											<li>
+												<input id="com-film-status-inactive" type="checkbox" name="project-film-status group" value="10" title="" />
+												<label for="com-film-status-inactive">Inactive</label>
+											</li>
+											<li>
+												<input id="com-film-status-turnaround" type="checkbox" name="project-film-status group" value="13" title="" />
+												<label for="com-film-status-turnaround">Turnaround</label>
+											</li>
+										</ul>
+									</fieldset>
+
+								</li>
+								<li>
+									<span class="wrap labin">
+										<label>Film Release Information</label>
+									</span>
+										<ul>
+											<li>
+												<span class="wrap checks">
+												<input id="com-release-sel-theatr" type="checkbox" name="com-proj-film-release group" value="0" checked="checked" title="" />
+												<label for="com-release-sel-theatr">US Theatrical</label>
+												<!-- for future release -->
+												<!-- <input id="release-sel-dvd" type="checkbox" name="com-proj-film-release group" value="0" title="" />
+												<label for="release-sel-dvd">DVD</label> -->
+												</span>
+												<span class="wrap">
+													<select name="release_period_from" title="release_period_from">
+															<option value="">Select Release Period</option>
+															<option value="30">Last One Month</option>
+															<option value="60">Last Two Months</option>
+															<option value="90">Last Three Months</option>
+															<option value="180">Last Six Months</option>
+															<option value="365">Last One Year</option>
+															<option value="730">Last Two Years</option>
+															<option value="1095">Last Three Years</option>
+															<option value="1825">Last Five Years</option>
+															<option value="3650">Last Ten Years</option>
+															<option value="-30">Next One Month</option>
+															<option value="-60">Next Two Months</option>
+															<option value="-90">Next Three Months</option>
+															<option value="-180">Next Six Months</option>
+															<option value="-365">Next One Year</option>
+															<option value="-730">Next Two Years</option>
+													</select>
+												</span>
+
+											</li>
+										</ul>
+
+								</li>
+							</ul>
+
+					</div>
+					<!-- /sub-detail Film -->
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Company Related to Project</label>
+							<span class="checks">
+								<input id="com-film-contains" type="radio" name="related-com group" value="Male" title="" />
+								<label for="com-film-contains">Contains</label>
+								<input id="com-film-starts" type="radio" name="related-com group" value="Female" title="" />
+								<label for="com-film-starts">Starts with</label>
+							</span>
+					</span>
+					<span class="wrap nolabel">
+						<input id="com-related-company" type="text" title="" />
+					</span>
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Genre</label>
+						<span class="help-block">Select all, or up to five (5) genre.</span>
+						<span class="checks">
+						<input id="com-film-proj-genre-all" type="checkbox" name="project-tv-status group" value="0" checked="checked" title="" />
+						<label for="com-film-proj-genre-all">Select All</label>
+						<input id="com-film-proj-genre-any" type="checkbox" name="project-tv-status group" value="1" title="" />
+						<label for="com-film-proj-genre-any">Any of Selected</label>
+						<input id="com-film-proj-genre-allsel" type="checkbox" name="project-tv-status group" value="2" title="" />
+						<label for="com-film-proj-genre-allsel">All of Selected</label>
+						</span>
+					</span>
+					<fieldset class="checks">
+						<ul class="li-5">
+							<li>
+								<input type="checkbox" name="networks" value="1" title="" />
+								<label>Action</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="2" title="" />
+								<label>Adaption</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="3" title="" />
+								<label>Adventure</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="4" title="" />
+								<label>Animated</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="5" title="" />
+								<label>Anthology</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="6" title="" />
+								<label>Award Show</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="7" title="" />
+								<label>Biopic</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="8" title="" />
+								<label>Black Comedy</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="9" title="" />
+								<label>Children</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="10" title="" />
+								<label>Comedy</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="11" title="" />
+								<label>Crime</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="12" title="" />
+								<label>Dance</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="13" title="" />
+								<label>Documentary</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="14" title="" />
+								<label>Drama</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="15" title="" />
+								<label>Experimental</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="16" title="" />
+								<label>Family</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="17" title="" />
+								<label>Fantasy</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="18" title="" />
+								<label>Foreign</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="19" title="" />
+								<label>Game Show</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="20" title="" />
+								<label>Historical</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="21" title="" />
+								<label>Holiday</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="22" title="" />
+								<label>Horror</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="23" title="" />
+								<label>Legal</label>
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="24" title="" />
+								<label>Medical</label>	
+							</li>
+							<li>	
+								<input type="checkbox" name="networks" value="25" title="" />
+								<label>Music</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="26" title="" />
+								<label>Musical</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="27" title="" />
+								<label>Mystery</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="28" title="" />
+								<label>Nature</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="29" title="" />
+								<label>Noir</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="30" title="" />
+								<label>Period</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="31" title="" />
+								<label>Political</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="32" title="" />
+								<label>Reality</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="33" title="" />
+								<label>Religion</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="34" title="" />
+								<label>Remake</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="35" title="" />
+								<label>Romance</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="36" title="" />
+								<label>Romantic Comedy</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="37" title="" />
+								<label>Satire</label>	
+							</li>
+							<li>
+
+								<input type="checkbox" name="networks" value="38" title="" />
+								<label>Sci-Fi</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="39" title="" />
+								<label>Sequel</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="40" title="" />
+								<label>Sketch</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="41" title="" />
+								<label>Sports</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="42" title="" />
+								<label>Spy</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="43" title="" />
+								<label>Supernatural</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="44" title="" />
+								<label>Talk</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="45" title="" />
+								<label>Technology</label>	
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="46" title="" />
+								<label>Teen</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="47" title="" />
+								<label>Thriller</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="48" title="" />
+								<label>Urban</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="49" title="" />
+								<label>Variety</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="50" title="" />
+								<label>War</label>		
+							</li>
+							<li>
+								<input type="checkbox" name="networks" value="51" title="" />
+								<label>Western</label>		
+							</li>
+						</ul>
+					</fieldset>
+
+				</li>
+				<li>
+					<span class="wrap labin">
+						<label>Keywords</label>
+							<span class="checks">
+								<input id="com-key-all" type="radio" name="keywords group" value="All" title="All" />
+								<label for="com-key-all">All</label>
+								<input id="com-key-any" type="radio" name="keywords group" value="Any" title="Any" />
+								<label for="com-key-any">Any</label>
+							</span>
+					</span>
+					<span class="wrap nolabel">
+						<input id="com-keywords" type="text" placeholder="Ex. genres, subject matter" title="Keywords" />
+						<span class="help-block">Enter keyword(s) separated by commas.</span>
+					</span>
+				</li>
+			</ul>
+
+		</fieldset><!-- /section 2 -->
+
+		<div class="actions">
+			<button type="button" id="submitcompanySearch" class="btn btn-primary" onClick="window.location='search-results.html'">Submit</button>
+			<button type="reset" class="btn">Cancel</button>
+		</div>
+
+</form>

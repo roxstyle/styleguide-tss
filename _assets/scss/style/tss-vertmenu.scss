@@ -1,0 +1,314 @@
+/* 4. Tertiary View Specific Navigation
+----------------------------------------------------------*/
+// used in cms, white label projects, my lists
+// aside nav
+.vert-wrapper {
+	display: block;
+	margin: 10px auto;
+	padding: 0;
+	width: 100%;
+	font-size: 0.8125em;
+	@include clearfix();
+
+	@media screen and (min-width: 66.133em) {
+		// 992
+		margin:100px auto 0;
+		padding: 0;
+		margin-bottom: 1.2em;
+	}
+}
+
+.vert-menu {
+	width: auto;
+	height: auto;
+	padding-left:0;
+	margin-left:0;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.13), 0px 0px 4px 0px rgba(0, 0, 0, 0.13);
+}
+.lt-ie9 .vert-menu {
+	width: auto;
+	height: auto;
+	padding-left:0;
+	margin-left:0;
+	box-shadow: 0px 1px 4px 0px #4c0000, 0px 0px 24px 0px #210000;
+}
+
+.vert-menu a {
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+
+}
+
+.vert-menu > li {
+	margin-bottom:0;
+	padding-bottom: 0;
+	border-bottom: none;
+	position: relative;
+
+	> ul {
+		border-bottom: none;
+		padding-left: 0;
+	}
+
+	ul li {
+		margin-bottom:0;
+		padding-bottom:0;
+		border-bottom: 1px solid #efeff0;
+	}
+
+	// people
+	&.l-people > a .vert-icon:before,
+	&.l-people > a.active .vert-icon:before {
+		content: "\e603";
+	}
+
+	// project
+	&.l-project > a .vert-icon:before,
+	&.l-project > a.active .vert-icon:before {
+		content: "\e60d";
+	}
+
+	// company
+	&.l-company > a .vert-icon:before,
+	&.l-company > a.active .vert-icon:before {
+		content: "\e601";
+	}
+
+}
+//
+
+.vert-menu > li > a {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 2.75em;
+	line-height: 2.75em;
+	text-indent: 2.75em;
+	font-size: 1.2em;
+	text-shadow: 0px 1px 0px rgba(255,255,255,.5);
+	text-transform: uppercase;
+	white-space: nowrap;
+
+	color: rgb(70, 70, 70);
+	background: rgb(245, 245, 245);
+	border-bottom: 1px solid #ccc;
+	text-decoration:none;
+
+		&:hover {
+			color: #000;
+			background-color: #ccc;
+			border-bottom: 1px solid rgb(118, 143, 158);
+		}
+
+		// right numbers
+		span.vert-num {
+			display: inline-block;
+			position: absolute;
+			right: 1em;
+			top: 50%;
+			background: #8a919a;
+			line-height: 1em;
+			height: 1.6em;
+			padding: .4em .6em;
+			margin: -.8em 0 0 0;
+			color: rgb(255, 255, 255);
+			text-indent: 0;
+			text-align: center;
+			@include border-radius(.769em);
+			box-shadow: inset 0px 1px 3px 0px rgba(23, 47, 83, .26), 0px 1px 0px 0px rgba(255, 255, 255, .15);
+			text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+			font-size: 0.857em;
+			font-weight: 700;
+		}
+
+		&:hover span.vert-num {
+			background: #707781;
+		}
+
+		&.active span.vert-num,
+		&.active:hover span.vert-num {
+			background: #2173a1;
+			color: rgb(255, 255, 255);
+		}
+
+		//left icons
+		span.vert-icon {
+			@include tss-font();
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: transparent;
+			line-height: 1em;
+			height: 1.6em;
+			width: 1em;
+			padding: .4em .6em;
+			margin: 0 0 0 0;
+			color: rgb(134, 134, 134);
+			text-indent: 0;
+			text-align: center;
+			text-shadow: none;
+			font-weight: 700;
+			text-decoration: none;
+
+			&:before {
+				@include tss-font();
+				position: absolute;
+				border-bottom: none;
+				height: 1em;
+				width: 1em;
+				left: .5em;
+				top: .7em;
+				margin: 0 0 0 0;
+				color: rgb(134, 134, 134);
+				font-size: 1.4em;
+				text-shadow: none;
+			}
+
+		}
+		//
+
+		&.active {
+			color: rgb(255, 255, 255);
+			background-color: rgb(53, 175, 227);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(69, 199, 235)),to(rgb(38, 152, 219)));
+			background-image: -webkit-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+			background-image: -moz-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+			background-image: -o-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+			background-image: -ms-linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+			background-image: linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219));
+			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
+			border-bottom: 1px solid #1a638f;
+			box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+
+			//left icons
+			span.vert-icon {
+				color: rgb(255, 255, 255);
+
+				&:before {
+					color: rgb(255, 255, 255);
+				}
+
+			}
+			//
+
+		}
+		//
+
+		.lt-ie9 & {
+			text-indent: 1.1em;
+		}
+
+}
+
+
+//nested ul
+.vert-menu ul li {
+
+	 a {
+		background: rgb(255, 255, 255);
+		width: 100%;
+		height: 2.75em;
+		line-height: 2.75em;
+		text-indent: 2.75em;
+		text-align: left;
+		display: block;
+		position: relative;
+		font-size: 1em;
+		font-weight: 400;
+		color: #878d95;
+	}
+
+	&:last-child a {
+		border-bottom: 1px solid #33373d;
+	}
+
+}
+
+// nested list
+.vert-menu > li ul li a:before {
+	content: '▶';
+	font-size: 8px;
+	color: #bcbcbf;
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	top: 0;
+	left: -2.7em;
+}
+
+.lt-ie9 .vert-menu > li ul li a:before,
+.gt-ie8 .vert-menu > li ul li a:before {
+	left: -1.7em;
+	height: 1.25em;
+}
+
+.vert-menu > li ul li:hover a,
+.vert-menu > li ul li:hover a span,
+.vert-menu > li ul li:hover a:before {
+	color: #32373D;
+	font-weight: 600;
+}
+
+.vert-menu > li ul li a.active,
+.vert-menu > li ul li a.active:before {
+	color: #32373D;
+	font-weight: 600;
+}
+
+.vert-menu > li ul li:hover a:before {
+	border-bottom: none;
+	background:rgb(255, 255, 255);
+}
+.vert-menu ul > li > a span {
+	font-size: 0.857em;
+	display: inline-block;
+	position: absolute;
+	right: 1em;
+	top: 48%;
+	background: rgb(255, 255, 255);
+	border: 1px solid #d0d0d3;
+	line-height: 1em;
+	height: 1.8em;
+	padding: .2em .7em;
+	margin: -.9em 0 0 0;
+	color: #878d95;
+	text-indent: 0;
+	text-align: center;
+	@include border-radius(.769em);
+	text-shadow: 0px 0px 0px rgba(255,255,255,.01);
+}
+
+// specific
+.vert-menu > li.l-none > a:before {
+ 	content: none;
+}
+
+// overflow scrolling for long lists
+.vert-menu .overflow {
+	position: relative;
+	display: block;
+	width: 100%;
+	max-height: 156px;
+	margin: 0;
+	padding: .3em 0 0;
+	border: 1px solid rgb(209, 209, 209);
+	border-width: 0 1px 1px;
+
+	/*overflow-y: scroll;*/
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.vert-menu .overflow-enabled.overflow {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-height: 156px;
+}
+.vert-menu .overflow > ul {
+	width: auto;
+	overflow-y: auto;
+}
+
+

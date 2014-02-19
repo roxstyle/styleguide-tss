@@ -1,0 +1,284 @@
+// 20. MY List Templates
+// ----------------------------------------------------------
+
+// list specific mylists
+.t li section {
+
+	@include clearfix();
+
+	&:before,
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		display:table;
+		table-layout:fixed;
+		width:100%;
+		margin:0 0;
+	}
+
+}
+
+//
+.lt-ie9 .t li section {
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		display:block;
+		width:100%;
+		margin:0 0 1em 0;
+	}
+
+}
+
+div[role="main"] .t li h2 {
+	display: block;
+	border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+// templateheadings
+div[role="main"] .t {
+
+	li h2 {
+		display: block;
+		border-bottom: 1px solid rgb(204, 204, 204);
+	}
+
+	li h3 {
+		margin-bottom: .5em;
+		font-size: 1.35em;
+	}
+
+	li h4 {
+		margin-bottom: 0;
+		font-size: .9em;
+	}
+
+}
+//
+
+//
+.t section article {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 5px;
+
+	@media only screen and (min-width: 51em) {
+		// min-width: 768px
+		float: none;
+		display:table-cell;
+		padding:10px;
+		vertical-align:top;
+		border-collapse:separate;
+	}
+
+
+	.row {
+		padding-bottom: .5em;
+	}
+
+	ul {
+		padding-left: 0;
+	}
+
+}
+
+.t section article.vcard {
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		float: left;
+		display:table-cell;
+		padding:10px;
+		margin: 10px;
+		width:40%;
+		vertical-align:top;
+		border-collapse:separate;
+		border: 1px solid rgb(251,251,251);
+	}
+
+}
+
+//
+.t section p {
+	display: table-row;
+
+	@media only screen and (min-width: 51em) {
+		// min-width: 768px
+		display: block;
+	}
+
+	&.title {
+		font-weight: 700;
+	}
+
+}
+
+//
+.t section .t-aside {
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		width: 210px;
+	}
+
+	header {
+		margin: 0 0 0.5em 0;
+	}
+
+}
+
+.t section .t-aside .vcard {
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		margin:0 0 .9em;
+		font-size: .938em;
+	}
+
+}
+
+//
+.t .tm {
+	width: 15%;
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		width: 24%;
+	}
+
+	a {
+		display: block;
+	}
+
+}
+
+
+//
+.t .contact article {
+	width: 42%;
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		width: 39%;
+	}
+
+}
+
+//
+.t .box {
+
+	@media screen and (min-width: 66.133em) {
+		// 992
+		background: white;
+		border: 1px solid rgb(204, 204, 204);
+	}
+
+}
+
+//
+.t .s .p {
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		color:rgb(87, 87, 87);
+		margin-bottom: .2em
+	}
+}
+
+//
+.lt-ie9 .t section article {
+	display: block;
+	float: left;
+	width: 80%;
+	margin: 5px;
+
+	@media only screen and (min-width: 51em) {
+		//  min-width: 768px
+		width:auto;
+		display:table-cell;
+		float: none;
+		padding:10px;
+		vertical-align:top;
+	}
+
+}
+
+//grid
+@media only screen and (min-width: 51em) {
+	//  min-width: 768px
+
+	// default project
+	.t .tproj article { width: 24%; }
+	 // project leads
+	.t .tprojleads article { width: 10%; }
+	.t .tprojleads article:nth-child(2) { width: 10%; }
+	.t .tprojleads article:nth-child(3) { width: 14%; }
+	.t .tprojleads article:nth-child(4) { width: 31%; }
+	.t .tprojleads article:nth-child(5) { width: 31%; }
+	// project tv grid
+	.t .tvgrid article { width: 32%; }
+	//
+	.t .t-p-rel article { width: 19%; }
+
+	// company
+	// section level
+	.t .t-1 article { width: 100%; }
+	.t .t-2 article { width: 48%; }
+	.t .t-3 article { width: 32%; }
+	.t .t-4 article { width: 24%; }
+	.t .t-5 article { width: 19%; }
+	// article level
+	.t article.t-a1 { width: 100%; }
+	.t article.t-a2 { width: 48%; }
+	.t article.t-a3 { width: 32%; }
+	.t article.t-a4 { width: 24%; }
+	.t article.t-a5 { width: 19%; }
+
+	// sortable tables
+	// user build tables based on user defined number of col
+	.t .tbl-1 col { width: 100%;}
+	.t .tbl-2 col { width: 50%;}
+	.t .tbl-3 col { width: 33.33%;}
+	.t .tbl-4 col { width: 25%;}
+	.t .tbl-5 col { width: 20%;}
+	.t .tbl-6 col { width: 16.66%;}
+	.t .tbl-7 col { width: 14.28%;}
+	.t .tbl-8 col { width: 12.50%;}
+
+	// user build tables based predefined number of col
+	.tc10 { width:10% }
+	.tc20 { width:20% }
+	.tc25 { width:25% }
+	.tc30 { width:30% }
+	.tc33 { width:33.333% }
+	.tc40 { width:40% }
+	.tc50 { width:50% }
+	.tc60 { width:60% }
+	.tc66 { width:66.666% }
+	.tc70 { width:70% }
+	.tc75 { width:75% }
+	.tc80 { width:80% }
+	.tc90 { width:90% }​
+
+	.lt-ie9 .t .t-aside {
+		width: 210px;
+	}
+
+	span.place {
+		text-align: center;
+		color:rgb(251,251,251);
+	}
+
+/* end mediaquery */
+}

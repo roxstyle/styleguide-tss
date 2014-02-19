@@ -1,0 +1,145 @@
+/* 23. vertical 3 level nav
+----------------------------------------------------------*/
+//used in admin
+
+.nav-vert {
+	list-style: none;
+	background:rgb(120, 120, 120);
+	padding-left:0px;
+	@include clearfix();
+}
+//
+
+.nav-vert ul {
+	list-style: none;
+	width: 9em;
+}
+
+.nav-vert a {
+	padding: 10px 15px;
+	color:rgb(255, 255, 255);
+
+		&.active {
+			padding: 10px 15px;
+			color:rgb(243, 198, 17);
+		}
+}
+
+.nav-vert li {
+	position: relative;
+	padding-bottom: 0;
+	margin-bottom:0;
+}
+.nav-vert > li {
+	float: none;
+	border-top: 1px solid rgb(90, 90, 90);
+
+	> .parent {
+
+		&:before {
+			position: absolute;
+			@include fa-FontAwesome();
+			width: 16px;
+			height: 16px;
+			content: "\f0da";
+			color: rgb(209, 209, 209);
+			right: 0;
+			top: 7px;
+			font-size: 1.2em;
+		}
+	}
+
+	&.hover > .parent {
+
+		&:before {
+			position: absolute;
+			@include fa-FontAwesome();
+			width: 16px;
+			height: 16px;
+			content: "\f0d7";
+			color: rgb(209, 209, 209);
+			margin: auto;
+			right: 5px;
+			top: 7px;
+			font-size: 1.2em;
+		}
+	}
+
+	> a {
+		display: block;
+		text-decoration: none;
+	}
+
+}
+
+.nav-vert li ul {
+	position: absolute;
+	left: -9999px;
+}
+
+.nav-vert > li.hover > ul {
+	position: static;
+	left: 0;
+}
+.nav-vert li li.hover ul {
+	position: static;
+	left: 100%;
+	top: 0;
+}
+
+.nav-vert li li a {
+	display: block;
+	background: rgb(145, 145, 145);
+	position: relative;
+	z-index:100;
+	border-top: 1px solid rgb(90, 90, 90);
+	text-decoration: none;
+}
+
+.nav-vert li li li a {
+	background:rgb(160, 160, 160);
+	z-index:200;
+	border-top: 1px solid rgb(90, 90, 90);
+}
+
+.nav-vert li li {
+
+	> .parent {
+
+		&:before {
+			position: absolute;
+			@include fa-FontAwesome();
+			width: 16px;
+			height: 16px;
+			content: "\f0da";
+			color: rgb(209, 209, 209);
+			right: 0;
+			top: 7px;
+			font-size: 1.2em;
+		}
+	}
+
+	&.hover > .parent {
+
+		&:before {
+			position: absolute;
+			@include fa-FontAwesome();
+			width: 16px;
+			height: 16px;
+			content: "\f0d7";
+			color: rgb(209, 209, 209);
+			margin: auto;
+			right: 5px;
+			top: 7px;
+			font-size: 1.2em;
+		}
+	}
+
+}
+
+.nav-vert ul {
+	display: block;
+	width: 100%;
+	padding-left:7px;
+}
+//end vertical 3 level nav

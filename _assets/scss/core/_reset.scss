@@ -1,0 +1,354 @@
+// Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	border: 0;
+// 	outline: 0;
+// 	font: inherit;
+// 	vertical-align: baseline;
+// 	list-style: none;
+// 	// http://paulirish.com/2012/box-sizing-border-box-ftw/
+// 	@include box-sizing(border-box);
+// }
+
+// *:before, *:after {
+// 	@include box-sizing(border-box);
+// }
+
+.chromeframe {
+	position: absolute;
+	top: 0;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, dialog, figcaption, figure, figure img, footer, header, hgroup, main, menu, nav, section, small, summary {
+	display: block;
+}
+
+audio[controls],
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+
+// Prevents modern browsers from displaying 'audio' without controls
+// Remove excess height in iOS5 devices
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+
+// Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+// Known issue: no IE6 support
+
+[hidden] {display: none;}
+
+
+// 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+//    http://clagnut.com/blog/348/#c790
+// 2. Force vertical scrollbar in non-IE
+// 3. Remove Android and iOS tap highlight color to prevent entire container being highlighted
+//    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+// 4. Prevent iOS text size adjust on device orientation change, without disabling user zoom
+//    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+
+html {
+	// font-size: 100%; // 1
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: 100%; // 2
+	-ms-text-size-adjust: 100%; // 2
+	background: rgb(255, 255, 255);
+	background: #f2f2f2;
+}
+
+body {line-height:1;}
+
+// Neutralize styling: Elements with a vertical margin:
+address, code, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, pre, form, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+// Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301)
+::-moz-selection {
+	background: #85ceef;
+	color: rgb(68, 68, 68);
+	text-shadow: none;
+}
+
+::selection {
+	background: #85ceef;
+	color: rgb(68, 68, 68);
+	text-shadow: none;
+}
+
+// remember to define focus styles!
+:focus {
+	outline: 0;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+// Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test
+a:hover,
+a:active {
+	outline: 0;
+}
+
+// http://www.quirksmode.org/oddsandends/wbr.html
+wbr:after { content: "\00200B" }
+
+/* AD WORKAROUNDS */
+br {display: none;}
+
+center {text-align: left;}
+
+//  we use a lot of ULs that aren't bulleted.
+//	don't forget to restore the bullets within content.
+// ol, ul {
+// 	list-style: none;
+// }
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content:''; content:none;
+}
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr,
+acronym,
+abbr[title],
+dfn[title] {
+	border-bottom: none;
+	cursor: help;
+}
+abbr[title]:hover,
+dfn[title]:hover {
+	border-bottom: 1px dotted #000;
+}
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; clear:both;}
+
+.enhanced object, .enhanced embed {display: block;}
+
+// Improve readability of pre-formatted text in all browsers
+// http://www.longren.org/wrapping-text-inside-pre-tags/
+pre {
+	margin: 0;
+	padding: 0;
+	overflow: auto; // If the Code exceeds the width, a scrolling is available
+	overflow-y: hidden; //  Hides vertical scroll created by IE--*/
+	white-space: pre; // CSS2
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap; // CSS 2.1
+	white-space: pre-line; // CSS 3 (and 2.1 as well, actually)
+	word-wrap: break-word; // IE
+}
+
+// standardize any monospaced elements
+// Re-declare monospace font family: en.wikipedia.org/wiki/User:Davidgothberg/Test59
+pre, code, kbd, samp, tt {
+	font-family: monospace, sans-serif;
+	_font-family: 'courier new', monospace;
+	font-size: .9em;
+}
+
+small, .small {font-size: 85%; line-height: inherit;}
+
+strong {font-weight: 600;}
+
+// Make sure sup and sub don't screw with your line-heights
+//	gist.github.com/413930
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {top: -0.5em;}
+
+sub {bottom: -0.25em;}
+
+time{ display:inline;}
+
+// 7.Embedded Content
+// ----------------------------------------------------------
+// Responsive images and other embedded objects
+//  Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+//   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead.
+img,
+object,
+embed {max-width: 100%;}
+
+// 8.Figure
+//   ----------------------------------------------------------
+
+// Address margin not present in IE 8/9 and Safari 5.
+
+figure {
+    margin: 0;
+}
+// 9.Forms
+//   ----------------------------------------------------------
+
+// Define consistent border, margin, and padding.
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+
+// 1. Correct `color` not being inherited in IE 8/9.
+// 2. Remove padding so people aren't caught out if they zero out fieldsets.
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+// input, select { vertical-align: middle; }
+
+// input[type="radio"] {vertical-align: text-bottom;}
+// input[type="checkbox"] {vertical-align: bottom;}
+
+
+// select, input, textarea {font: 99% sans-serif;}
+// button, input, select, textarea {
+// 	-webkit-font-smoothing:antialiased;
+// 	font: 99% sans-serif;
+// }
+
+// hand cursor on clickable elements
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+// Webkit browsers add a 2px margin outside the chrome of form elements
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+
+// make buttons play nice in IE
+button {width: auto; overflow: visible;}
+
+
+// Address Firefox 4+ setting `line-height` on `input` using `!important` in
+// the UA stylesheet.
+
+
+button,
+input {
+    line-height: normal;
+}
+
+
+// Address inconsistent `text-transform` inheritance for `button` and `select`.
+// All other form control elements do not inherit `text-transform` values.
+// Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+// Correct `select` style inheritance in Firefox 4+ and Opera.
+
+button,
+select {
+    text-transform: none;
+}
+
+// Remove inner padding and border in Firefox 4+.
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+// 1. Remove default vertical scrollbar in IE 8/9.
+// 2. Improve readability and alignment in all browsers.
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+// 10.Tables
+//   ----------------------------------------------------------
+
+// tables still need cellspacing="0" in the markup
+table { border-collapse:collapse; border-spacing:0; }
+th {font-weight: bold; vertical-align: bottom;}
+td, td img{font-weight: normal; vertical-align: top;}
+
+table {font-size: inherit; font-size: 100%;}
+
+
+// scale images in IE7 more attractively
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+// prevent BG image flicker upon hover
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+// clearing fix
+//   ----------------------------------------------------------
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { *zoom: 1; }
+
+/* END RESET CSS */
+
+
+@media screen and (max-device-width: 50.625em) {
+	* { -webkit-text-size-adjust: 100%; }
+}
+
+// unsets from Basic CSS
+// - these are here to combat the appearance when JS is disabled in a media-aware browser, and basic.css styles apply alongside enhanced ones */
+// .sections,
+// nav.section,
+// form.search,
+// .sections,
+// form.search {
+// 	border: none;
+// 	text-align: inherit;
+// 	margin: 0;
+// 	padding: 0;
+// 	background: transparent;
+// }
+
+// .sections li {
+// 	font-size: 1em;
+// 	text-align: left;
+// }
+// end unsets

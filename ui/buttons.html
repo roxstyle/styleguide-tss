@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem UI Components Buttons</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="../_assets/css/ui.css" rel="stylesheet" media="all">
+	<!--  -->
+	<style type="text/css">
+	#staticTable tbody td:first-child {width: 30%;}
+	#staticTable tbody td:nth-child(2) {width: 20%;}
+	#staticTable tbody td:nth-child(3) {width: 25%;}
+	#staticTable tbody td:last-child {width: 25%;}
+	/* overrides for masthead 2 */
+	</style>
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<!-- <script src="../_assets/js/lib/modernizr.min.js"></script> -->
+	<script src="../_assets/js/vendor/modernizr.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<!-- <header role="banner" class="masthead gradient"> -->
+		<!-- ajax siteMainheader() -->
+	<!-- </header> --><!-- /header -->
+
+	<header id="header-b" class="record">
+
+		<div class="row">
+			<div class="h-content">
+				<h1 class="name">Style Guide</h1>
+			</div>
+		</div>
+		<!-- menu -->
+		<!-- category content navigation -->
+		<div id="cat-nav" class="row cat-bar">
+
+			<div class="h-content">
+				<!-- details navigation -->
+				<div class="nav-b nav-primary">
+					<nav role="navigation" class="cat-sections">
+						<h4 class="toggleMenu">Menu</h4>
+
+						<ul class="nav-cat">
+							<li class="structure" data-section="structure">
+								<a href="../index.html">General</a>
+							</li>
+							<li class="structure" data-section="structure">
+								<a href="../coding/coding.html">Coding Practices</a>
+							</li>
+							<li class="ui" data-section="ui">
+								<a href="ui.html">UI</a>
+							</li>
+							 <li class="base active" data-section="base">
+								<a href="base.html">Base</a>
+							</li>
+							<li class="modules" data-section="modules">
+								<a href="modules.html">Modules</a>
+							</li>
+							<li class="svg-color" data-section="svg-color">
+								<a href="svg-color.html">SVG Color Chart</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /details navigation -->
+			</div>
+
+		</div>
+
+	</header>
+
+	<!-- content -->
+	<div class="content">
+
+		<!-- complementary content -->
+		<aside role="complementary" class="">
+			<nav>
+				<ul class="side-nav">
+					<li class="heading">Base Layout</li>
+					<li><a href="base.html#s-typography">Typography</a></li>
+					<li><a href="base.html#s-tables">Tables</a></li>
+					<li class="divider"></li>
+					<li class="heading">Forms</li>
+					<li><a href="forms.html#s-forms">Forms</a></li>
+					<li class="divider"></li>
+					<li class="heading">Buttons</li>
+					<li><a href="#s-buttons">Buttons</a></li>
+					<li><a href="#s-button-group">Button Groups</a></li>
+					<li><a href="#s-button-split">Split Buttons</a></li>
+					<li><a href="#s-button-dropdown">Button Dropdowns</a></li>
+					<li class="divider"></li>
+					<li class="heading">Navigation</li>
+					<li><a href="nav.html#s-sitenav">Site Nav</a></li>
+					<li><a href="nav.html#s-sidenav">Side Nav</a></li>
+					<li><a href="nav.html#s-subnav">SubNav</a></li>
+					<li><a href="nav.html#s-breadcrumbs">Breadcrumbs</a></li>
+					<li><a href="nav.html#s-pagination">Pagination</a></li>
+					<li class="divider"></li>
+					<li class="heading">Media</li>
+					<li><a href="media.html#s-images">Images</a></li>
+					<li><a href="media.html#s-tn">Thumbnails</a></li>
+					<li class="divider"></li>
+					<li class="heading">Fonts</li>
+					<li><a href="fonts.html#s-cdnfonts">Fonts CDN</a></li>
+					<li><a href="fonts.html#s-iconfonts">Icon Fonts</a></li>
+				</ul>
+			</nav>
+		</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+				<section id="s-buttons">
+					<header>
+						<h3 class="subheader">Buttons</h3>
+						<p>As a convention, buttons are used for actions while links are used for objects. For instance, "Download" could be a button and "recent activity" could be a link.</p>
+					</header>
+
+					<div class="row">
+					<p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a <code>.primary</code> class, a <code>.info</code> class, a <code>.success</code> class, and a <code>.inverse</code> class.</p>
+
+					<h4>Example buttons</h4>
+					<p>Button styles can be applied to anything with the <code>.button</code> applied. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
+					<div>
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th>Button</th>
+								<th>Button Radius</th>
+								<th>Button Radius Gradient</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<button type="button" class="button">Default</button>
+										<p><code>button</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius">Default</button>
+										<p><code>button radius</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius bg-gradient">Default</button>
+										<p><code>button radius bg-gradient</code></p>
+									</td>
+									<td>Standard gray button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button primary">Primary</button>
+										<p><code>button primary</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius primary">Primary</button>
+										<p><code>button radius primary</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius primary bg-gradient">Primary</button>
+										<p><code>button radius primary bg-gradient</code></p>
+									</td>
+									<td>Primary button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button secondary">Secondary</button>
+										<p><code>button secondary</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius secondary">Secondary</button>
+										<p><code>button radius secondary</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius secondary bg-gradient">Secondary</button>
+										<p><code>button radius secondary bg-gradient</code></p>
+									</td>
+									<td>Secondary button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button info">Info</button>
+										<p><code>button info</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius info">Info</button>
+										<p><code>button radius info</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius info bg-gradient">Info</button>
+										<p><code>button radius info bg-gradient</code></p>
+									</td>
+									<td>Info button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button success">Success</button>
+										<p><code>button success</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius success">Success</button>
+										<p><code>button radius success</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius success bg-gradient">Success</button>
+										<p><code>button radius success bg-gradient</code></p>
+									</td>
+									<td>Success button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button warning">Warning</button>
+										<p><code>button warning</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius warning">Warning</button>
+										<p><code>button radius warning</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius warning bg-gradient">Warning</button>
+										<p><code>button radius warning bg-gradient</code></p>
+									</td>
+									<td>Warning button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button alert">Alert</button>
+										<p><code>button warning</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius alert">Alert</button>
+										<p><code>button radius warning</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius alert bg-gradient">Alert</button>
+										<p><code>button radius warning bg-gradient</code></p>
+									</td>
+									<td>Alert button</td>
+								</tr>
+								<tr>
+									<td>
+										<button type="button" class="button inverse">Inverse</button>
+										<p><code>button inverse</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius inverse">Inverse</button>
+										<p><code>button radius inverse</code></p>
+									</td>
+									<td>
+										<button type="button" class="button radius inverse bg-gradient">Inverse</button>
+										<p><code>button radius inverse bg-gradient</code></p>
+									</td>
+									<td>Inverse button</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>Button types</h4>
+					<p>As a convention, buttons are used for actions while links are used for objects. For instance, "Download" could be a button and "recent activity" could be a link.</p>
+					<div class="row">
+						<div class="column small-12">
+							<button>Button</button>
+							<button type="submit">Submit button</button>
+							<a href="#" class="button">Link button</a>
+							<input type="button" value="Input button">
+							<input type="submit" value="Input submit button">
+						</div>
+						<div class="column small-12">
+						<button disabled="">Disabled Button</button>
+						<button type="submit" disabled="">Disabled Submit button</button>
+						<a href="#" class="button disabled">Disabled Link button</a>
+						<input type="button" value="Disabled Input button" disabled="">
+						<input type="submit" value="Disabled Input submit button" disabled="">
+						</div>
+					</div>
+					<h4>Button sizes</h4>
+						<div class="row">
+							<div class="column small-12">
+								<button type="button" class="button large">.button .large</button>
+								<button type="button" class="button large radius">.button .large .radius</button>
+								<button type="button" class="button large radius btn-shadow">.button .large .btn-shadow</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-12">
+								<button type="button" class="button">.button</button>
+								<button type="button" class="button radius">.button .radius</button>
+								<button type="button" class="button radius btn-shadow">.button .radius .btn-shadow</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-12">
+								<button type="button" class="button small">.button .small</button>
+								<button type="button" class="button small radius">.button .small .radius</button>
+								<button type="button" class="button small radius btn-shadow">.button .small .radius .btn-shadow</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-12">
+								<button type="button" class="button tiny">.button .tiny</button>
+								<button type="button" class="button tiny radius">.button .tiny .radius</button>
+								<button type="button" class="button tiny radius btn-shadow">.button .tiny .btn-shadow</button>
+							</div>
+						</div>
+				</section>
+				<!-- /section buttons -->
+
+
+				<section id="s-button-group">
+					<header>
+						<h3 class="subheader">Button Groups</h3>
+						<p>use an unordered list to group buttons</p>
+					</header>
+
+					<div class="row">
+						<div class="column large-12">
+							<ul class="button-group">
+								<li><a href="#" class="button primary">Button 1</a></li>
+								<li><a href="#" class="button primary">Button 2</a></li>
+								<li><a href="#" class="button primary">Button 3</a></li>
+								<li><a href="#" class="button primary">Button 4</a></li>
+							</ul>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<ul class="button-group">
+									<li><a href="#" class="button primary">Button 1</a></li>
+									<li><a href="#" class="button primary">Button 2</a></li>
+									<li><a href="#" class="button primary">Button 3</a></li>
+									<li><a href="#" class="button primary">Button 4</a></li>
+								</ul>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+					<h4 class="subheader">Advanced</h4>
+					<p>add radius to the group</p>
+					<div class="row">
+						<div class="column large-12">
+							<ul class="button-group radius">
+								<li><a href="#" class="button primary">Button 1</a></li>
+								<li><a href="#" class="button primary">Button 2</a></li>
+								<li><a href="#" class="button primary">Button 3</a></li>
+								<li><a href="#" class="button primary">Button 4</a></li>
+							</ul>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<ul class="button-group">
+									<li><a href="#" class="button primary">Button 1</a></li>
+									<li><a href="#" class="button primary">Button 2</a></li>
+									<li><a href="#" class="button primary">Button 3</a></li>
+									<li><a href="#" class="button primary">Button 4</a></li>
+								</ul>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+
+					<p>Make a button bar with multiple groups</p>
+					<div class="row">
+						<div class="column large-12">
+							<div class="button-bar">
+							  <ul class="button-group radius">
+							    <li><a href="#" class="button small secondary">Button 1</a></li>
+							    <li><a href="#" class="button small secondary">Button 2</a></li>
+							    <li><a href="#" class="button small secondary">Button 3</a></li>
+							  </ul>
+							  <ul class="button-group radius">
+							    <li><a href="#" class="button small secondary">Button 1</a></li>
+							    <li><a href="#" class="button small secondary">Button 2</a></li>
+							    <li><a href="#" class="button small secondary">Button 3</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<div class="button-bar">
+								  <ul class="button-group radius">
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 1</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 2</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 3</a></li>
+								  </ul>
+								  <ul class="button-group radius">
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 1</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 2</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 3</a></li>
+								  </ul>
+								</div>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+
+					<p>Make a button bar pills with multiple groups</p>
+					<div class="row">
+						<div class="column large-12">
+							<div class="button-bar">
+							  <ul class="button-group round">
+							    <li><a href="#" class="button small secondary">Button 1</a></li>
+							    <li><a href="#" class="button small secondary">Button 2</a></li>
+							    <li><a href="#" class="button small secondary">Button 3</a></li>
+							  </ul>
+							  <ul class="button-group round">
+							    <li><a href="#" class="button small secondary">Button 1</a></li>
+							    <li><a href="#" class="button small secondary">Button 2</a></li>
+							    <li><a href="#" class="button small secondary">Button 3</a></li>
+							  </ul>
+							</div>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+								<div class="button-bar">
+								  <ul class="button-group round">
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 1</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 2</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 3</a></li>
+								  </ul>
+								  <ul class="button-group round">
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 1</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 2</a></li>
+								    <li><a href="#" class="[tiny small large] button [alert success secondary] [disabled]">Button 3</a></li>
+								  </ul>
+								</div>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+
+				</section><!-- /end button groups -->
+
+				<section id="s-button-split">
+					<header>
+						<h3 class="subheader">Split Buttons</h3>
+						<p>Buttons with dropdowns, using a universal dropdown element. The same dropdown is used for menu dropdowns.</p>
+					</header>
+
+					<div class="row">
+						<div class="column large-12">
+							<p><a href="#1" class="button default split">Split Button <span data-dropdown="drop"></span></a><br></p>
+							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop"></span></a><br></p>
+							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" class="small secondary radius button split">Split Button <span data-dropdown="drop2"></span></a><br></p>
+							<ul id="drop2" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" class="small info radius button split">Split Button <span data-dropdown="drop3"></span></a><br></p>
+							<ul id="drop3" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" class="small inverse radius button split">Split Button <span data-dropdown="drop4"></span></a><br></p>
+							<ul id="drop4" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+						</div>
+						<div class="column large-12">
+							<pre><code data-language="html">
+							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop"></span></a><br></p>
+							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							</code></pre>
+						</div>
+					</div><!-- /row -->
+
+				</section><!-- /end split buttons -->
+
+				<section id="s-button-dropdown">
+					<h3 class="subheader">Dropdown Buttons</h3>
+						<p>Buttons with dropdowns, using a universal dropdown element. The same dropdown is used for menu dropdowns.</p>
+					</header>
+
+					<div class="row">
+						<div class="column large-12">
+							<p><a href="#1" data-dropdown="drop" class="small button dropdown">Dropdown Button</a><br></p>
+							<ul id="drop" data-dropdown-content="" class="f-dropdown">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" data-dropdown="drop2" class="small secondary radius button dropdown">Dropdown Button</a><br></p>
+							<ul id="drop2" data-dropdown-content="" class="f-dropdown">
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section><!-- /end button dropdowns -->
+
+
+
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+	<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<!-- jQuery UI -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<!-- <script src="../_assets/js/loader.js"></script> -->
+
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+	<script src="../_assets/js/jquery.stickyFooter.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+
+	<!-- foundation -->
+	<script src="../_assets/js/foundation.min.js"></script>
+	<script src="../_assets/js/vendor/fastclick.js"></script>
+
+	<!-- code formatting for styleguide -->
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script>
+		$(document).foundation();
+	</script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+</body>
+</html>
+

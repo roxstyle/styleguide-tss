@@ -1,0 +1,130 @@
+/* 2.  Tertiary, View Specific Navigation
+----------------------------------------------------------*/
+
+//menu dropdowns for tools global
+
+// nav link treatment
+.sections ul li.menu-expanded {
+	border-right-color: #bbb;
+	border-left-color: #bbb;
+	background: rgb(255, 255, 255);
+}
+.sections ul li.menu-expanded a {
+	color: #9B1518;
+}
+
+// drop menu formatting
+div.menu {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	z-index: 300;
+	background: white;
+	overflow: hidden;
+	box-shadow: 0 10px 6px rgba(0, 0, 0, 0.4);
+	width: 100%;
+}
+
+div.menu-expanded {
+	display: block;
+}
+
+@media screen and (min-width: 54.000em) {
+	// 810px
+
+	.menu div.content {
+		width: auto;
+		padding: 20px 24px 0 20px;
+		overflow: hidden;
+		float: none;
+		display: block;
+		border: 1px solid #bbb;
+		border-top: none;
+		margin: 0;
+	}
+
+	.lt-ie8 .menu div.content {
+		padding-bottom: 20px;
+	}
+
+	.menu-feature,
+	.menu .latest-headlines,
+	.menu-more {
+		float: left;
+	}
+
+	.menu-feature {
+		width: 12%;
+		border-right: 1px solid #fbfbfb;
+		padding-right: 2%;
+		margin-right: 2%;
+		text-align: center;
+	}
+
+	.menu .latest-headlines {
+		width: 36%;
+		border-right: 1px solid #fbfbfb;
+		text-align: left;
+		padding: 0 2% 10px 0;
+	}
+
+	.menu-more {
+		width: 25%;
+		padding-left: 20px;
+		text-align: left;
+	}
+
+	.menu .latest-headlines ul {
+		margin-top: .7em;
+	}
+
+	#contain .menu .latest-headlines li,
+	#contain .menu-more li {
+		clear: both;
+		text-align: left;
+		float: none;
+		background: none;
+		width: auto;
+		zoom: 1;
+	}
+
+	.menu .latest-headlines ul li a {
+		padding: .7em 0;
+		border-top: 1px solid #fbfbfb;
+	}
+
+	#contain .menu-more ul {
+		float: left;
+		width: 50%;
+		padding-bottom: 10px;
+	}
+
+	.lt-ie8 #contain .menu-more ul {
+		width: 49%;
+	}
+
+	#contain .menu-more li {
+		font-size: 1em;
+		text-transform: uppercase;
+		font-family: "Helvetica", Arial, sans-serif;
+	}
+
+	#contain .menu-more li a {
+		padding: .7em 0;
+		display: block;
+		border-right: none;
+	}
+
+
+}
+
+@media screen and (min-width: 80.000em) {
+	// min 1200
+
+	.sections li.nth-1 a.menu-expanded {
+		border-left: none;
+	}
+}
+
+// end nav-menus

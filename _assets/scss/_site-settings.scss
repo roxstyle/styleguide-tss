@@ -1,0 +1,90 @@
+// File: project/site-settings
+// Imported by: ui.scss
+//
+// Description:
+// 	Base project settings
+//
+// Requires:
+// 	- Sass
+// 	- Compass
+
+// First, import easings
+@import "core/easings";
+
+
+// Defaults
+$foreground-color: rgb(255, 255, 255) !default;
+$background-color: rgb(255, 255, 255) !default;
+$background-inverse-color: rgb(34, 34, 34) !default;
+$background-inverse-hover: rgb(71, 71, 71) !default;
+$background-red-color: rgb(150, 65, 81) !default;
+$background-red-hover:rgb(187, 86, 102) !default;
+
+// Global blue links
+$link-text-decoration: none !default;
+$link-color: rgb(19, 87, 189) !default;
+
+//Global red hover links
+$link-hover-color: rgb(145, 65, 66) !default;
+//Global bright blue active links
+$link-active-color: rgb(50, 125, 237) !default;
+//Global white inverse links
+$link-inverse-color: rgb(255, 255, 255) !default;
+
+//link and icon state colors
+//error state red
+$link-error-color: rgb(218, 79, 73) !default;
+//success state green
+$link-success-color: rgb(91, 183, 91) !default;
+
+//Global grey default icons
+$icon-default-color: rgb(34, 34, 34) !default;
+//Global lite grey default icons
+$icon-lite-default-color: rgb(136, 136, 136) !default;
+//Global color hover icons
+$icon-hover-color: rgb(187, 187, 187) !default;
+//Global color active icons
+$icon-active-color: rgb(111, 111, 111) !default;
+//Global white inverse icons
+$icon-inverse-color: rgb(255, 255, 255) !default;
+
+$borderColor: rgb(238, 238, 238) !default;
+$borderActive: rgb(102, 102, 102) !default;
+$iconMuted: rgb(238, 238, 238) !default;
+$iconLight: white !default;
+
+//grey values
+$iconDark: rgb(51, 51, 51) !default;
+$iconLtGrey: rgb(136, 136, 136) !default;
+//red
+$iconHover: rgb(145, 65, 66) !default;
+$icons-li-width: (30em/14);
+
+$toolLight: white !default;
+$toolDark: rgb(34, 34, 34) !default;
+//red
+$toolHover: rgb(145, 65, 66) !default;
+//blue
+$toolActive: rgb(43, 93, 168) !default;
+
+// Useful for letter-spacing: $global-kern-value;
+$global-kern-value: 0 !default;
+
+// A set of parameters for your CSS transitions / animations
+// If you base your animation values entirely off of these variables
+// you can really improve your debugging experience.
+//
+// Example:
+// @include transition(transform $global-animation-duration $global-animation-easing)
+//
+// Quicker transition time:
+// @include transition(transform ($global-animation-duration * 0.5) $global-animation-easing)
+
+// Global animation duration
+$global-animation-duration: 10s !default;
+
+// Global animation easing
+$global-animation-easing: $ease-out-quint !default;
+
+// Global animation delay
+$global-animation-delay: ($global-animation-duration * 0.25) !default;

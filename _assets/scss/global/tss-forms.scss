@@ -1,0 +1,1979 @@
+@import "foundation/components/global";
+@import "foundation/components/forms";
+
+//
+// @variables
+//
+$include-html-form-classes: $include-html-classes !default;
+
+// We use these to control input specific sizes.
+$input-width-mini: rem-calc(70) !default;
+$input-width-short: rem-calc(100) !default;
+$input-width-fix: rem-calc(110) !default;
+
+
+// 6.  Global Forms
+// ----------------------------------------------------------
+
+.row {
+	+ .callout {
+		margin: .6em 0;
+		padding: .6em 0;
+	}
+}
+
+// Fieldset
+fieldset {
+	padding: 0;
+	display: block;
+	@include clearfix();
+
+
+	&:first-child {
+		margin-top: .4em;
+		-webkit-padding-before: 0em;
+		-webkit-padding-start: 0em;
+		-webkit-padding-end: 0em;
+		-webkit-padding-after: 0em;
+	}
+
+	&:not(:first-child) {
+		margin-top: 1.5em;
+	}
+	// title
+	h5 {
+		clear: both;
+		margin: .5em 0 .5em -.25em;
+		padding: .3em;
+		font-family: georgia, serif;
+		font-size: 1.05em;
+		color: #5e5e5e;
+		background: rgb(245, 245, 245);
+		border-bottom: 1px solid #dfdfdf;
+	}
+
+}
+//
+
+//Fieldset section specific
+div[role="main"] header fieldset {
+	margin-bottom: 0;
+}
+
+.row-detail-inner fieldset {
+	margin-bottom: .5em;
+}
+
+//
+legend {
+	min-height: 30px;
+
+	span {
+		display: inline-block;
+		/*float: left;*/
+		margin:0 0 0 1em;
+		padding: .3em .5em .3em 0;
+	}
+
+	.groupname {
+		margin:0 0 0 .2em;
+		padding: .5em .5em .5em 0;
+	}
+
+	.checks {
+		font-size: 0.9em;
+		padding: .8em .5em .5em 1em;
+	}
+}
+
+.legend {
+	margin: 0 0 .5em;
+	font-family: 'Oswald', Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+	width: 100%;
+	min-height: 30px;
+	color: #404040;
+	display: block;
+	line-height: 1;
+	padding-left: 0;
+
+	span {
+		display: inline-block;
+		/*float: left;*/
+		margin:0 0 0 1em;
+		padding: .3em .5em .3em 0;
+	}
+
+	.groupname {
+		margin:0 0 0 .2em;
+		padding: .5em .5em .5em 0;
+	}
+
+	.checks {
+		font-size: 0.9em;
+		padding: .8em .5em .5em 1em;
+	}
+}
+fieldset fieldset legend,
+.form-stacked fieldset legend {
+	margin: .5em 0 0;
+	min-height: 15px;
+
+	span {
+		margin:0;
+		padding-left:0;
+		margin: 0 0 0 1em;
+		padding: .3em .5em .3em 0;
+	}
+}
+
+.hasJS .h-tools fieldset legend,
+.hasJS .f-tools fieldset legend {
+	display: none;
+}
+
+// default one to one label/input in rows
+
+// label
+label {
+
+	.inline & {
+		display: inline;
+		line-height: 32px;
+		margin: 0 0 12px 0;
+	}
+
+	.h-tools & {
+		width: auto;
+	}
+
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	font-weight: 500;
+}
+
+//label exceptions
+.bootstrap-duallistbox-container label {
+	display: block;
+	width: auto;
+}
+
+form .input {
+  margin-left: 160px;
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Define consistent vertical alignment display in all browsers
+ */
+// button,
+// input,
+// select,
+// textarea {
+// 	vertical-align: middle;
+// 	*vertical-align: middle;
+// }
+
+// basic styling all forms
+
+input[type="hidden"] {
+	display: none;
+	height: 0;
+	line-height: 0;
+}
+
+// input search specific
+input[type="search"] {
+	-webkit-appearance: textfield;
+	@include box-sizing(content-box);
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+select, datalist, .uneditable-input {
+	display: block;
+	// width: 210px;
+
+	// height: 24px;
+	// margin: .2em 0;
+	// padding: .3em;
+	vertical-align: middle;
+	// font-size: 1em;
+	// line-height: 20px;
+	// color: rgb(85, 85, 85);
+	// background-color: rgb(255,255,255);
+	// border: 1px solid rgb(200,200,200);
+	// border-radius: 3px;
+
+	// -webkit-transition: all 0.15s linear;
+	// -moz-transition: all 0.15s linear;
+	// -o-transition: all 0.15s linear;
+	// transition: all 0.15s linear;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			@include inline-block();
+			min-width: 100px;
+			// width: 210px;
+		}
+
+}
+
+.lt-ie9 select,
+.lt-ie9 select > option {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+}
+
+.gt-ie8 select,
+.gt-ie8 select > option {
+	position: relative;
+	display: inline-block;
+	padding: 0 0 0 .3em;
+}
+
+//
+textarea {
+	min-height: 66px;
+	height: 66px;
+	// height: auto;
+	overflow: auto;
+	vertical-align: top;
+	margin: .2em 0;
+	padding: .3em;
+	font-size: 1em;
+	line-height: 20px;
+
+		@media only screen and (min-width: 32.067em) {
+			// min-width: 480
+			display: inline-block;
+
+			.row & {
+				display: block;
+				width: 100%;
+				min-height: 72px;
+
+			}
+
+			.itemeditor .row & {
+				display: block;
+				width: 100%;
+				min-height: 72px;
+			}
+		}
+
+}
+
+//
+select {
+	position: relative;
+	height: 2.16667rem;
+	width: 100%;
+	min-width: 60px;
+	// line-height: 1.33;
+	font-size: 0.93333rem;
+
+	> option {
+		padding: 1px 3px;
+		// font-size: .9em;
+		font-weight: normal;
+		vertical-align: middle;
+		// margin: 2px 0;
+	}
+
+	//select optgroup
+	optgroup {
+		font-weight:700;
+		// padding:0 3px;
+		text-transform: uppercase;
+
+		option {
+			font-weight: normal;
+			// padding: 0 5px;
+		}
+
+		&[label="Pre-made Templates"],
+		&[label="My Custom Templates"] {
+			color: red;
+		}
+
+	}
+
+	&[multiple] {
+		height: inherit;
+	}
+
+}
+// fix ie8 selects
+.lt-ie9 select {
+	height: 27px;
+	line-height: 27px;
+	position:relative ;
+}
+
+.lt-ie9 select:hover,
+.lt-ie9 select:focus {
+	width: 100%;
+	max-width:700px;
+}
+
+//itemeditor inputs
+.itemeditor input[type=text],
+.itemeditor input[type=password],
+.itemeditor input[type=tel],
+.itemeditor input[type=email],
+.itemeditor input[type=url],
+.itemeditor textarea,
+.itemeditor select,
+.itemeditor .uneditable-input {
+	background:$input-bg-color;
+}
+
+// focus
+input[type=text]:focus,
+input[type=password]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="number"]:focus,
+input[type=tel]:focus,
+input[type="time"]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+textarea:focus {
+	outline: 0;
+	border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input[type=search]:focus {
+	background: rgb(250, 250, 250);
+	border-color: rgb(250, 250, 250);
+}
+
+.search-primary input.isearch:focus {
+	border: none
+}
+
+// disabled
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="email"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+textarea[disabled] {
+	background-color: rgb(251,251,251);
+}
+
+input[type="search"] {
+	@include box-sizing(content-box);
+}
+
+// input submit
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="image"],
+button {
+	cursor: pointer;
+	-webkit-appearance: button;
+	width: auto;
+	height: auto;
+}
+
+// Button Reset
+// 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+// 2. Correct inner spacing displayed oddly in IE6/7
+button { line-height: normal; *overflow: visible; }
+// Remove inner padding and border in FF3/4
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+
+// File Upload
+// http://geniuscarrier.com/how-to-style-a-html-file-upload-button-in-pure-css/
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+}
+.file-upload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	-moz-opacity: 0;
+	-webkit-opacity:0;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+
+#uploadFile {
+	height: 27px;
+	max-width: 300px;
+	width: 300px;
+	line-height: 1.5;
+	margin-top: 9px;
+	padding: 0 .5em;
+}
+
+// Forms: feedback colors
+input:valid,
+textarea:valid { }
+
+input:invalid,
+textarea:invalid {
+	background-color: #f0dddd;
+	box-shadow: 0 0 2px rgb(255,0,0);
+}
+
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+	background-color: rgb(240,221,221);
+}
+
+.uneditable-input {
+	background-color: rgb(255, 255, 255);
+	display: block;
+	border-color: #eee;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+	cursor: not-allowed;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	background-color: #f5f5f5;
+	border-color: rgb(251,251,251);
+	cursor: not-allowed;
+}
+
+// Forms: help feedback inline or block
+.help-inline, .help-block {
+	color: rgb(134, 134, 134);
+	font-size: 13px;
+	line-height: 18px;
+
+	.itemeditor & {
+		color: rgb(136, 136, 136);
+		font-size: 13px;
+		line-height: 18px;
+		margin: .35em 0 0 0;
+	}
+}
+
+.help-inline {
+	padding-left: 5px;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+
+	.itemeditor & {
+		float: left;
+		margin: .5em 0;
+	}
+}
+
+.help-block {
+	display: block;
+	padding: .5em;
+	margin-bottom: 1em;
+}
+
+.help-block p {
+	display: inline-block;
+}
+
+.comment-inline,
+.comment-block {
+	color: rgb(191, 191, 191);
+	font-size: 13px;
+	line-height: 18px;
+}
+.comment-inline {
+	padding-left: 5px;
+	overflow: hidden;
+	position: relative;
+	width: auto;
+}
+.comment-block {
+	display: block;
+	max-width: 550px;
+}
+
+// Forms: feedback
+
+// required fields
+label.req:before {color: rgb(153, 0, 9);}
+span.req {color: rgb(153, 0, 9);}
+//
+span.inst {color: rgb(164, 164, 164);}
+// primary
+span.prm {color: rgb(240, 139, 47);}
+
+// error
+.errorMsg,
+.help-block.error {
+	background: #fae5e3;
+	color: #9d261d;
+	padding: 10px;
+	margin: 0 0 10px;
+	border-radius: 4px;
+
+	ul, ol {
+		margin: 0 0 0 24px;
+	}
+
+	li {
+		margin-bottom: 0;
+		padding-bottom:.1em;
+
+
+		&:before {
+			content:'\2013';
+			margin-right: .2em;
+		}
+	}
+
+	.itemeditor & {
+		margin: 0 2em .4em;
+	}
+
+	a {
+	color: #9d261d;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+}
+
+.help-inline.error {
+	background: #fae5e3;
+	color: #9d261d;
+	padding: 10px;
+	margin: 0 0 10px;
+	border-radius: 4px;
+
+	.itemeditor & {
+		float: left;
+		margin: .3em 0;
+		padding: 5px;
+	}
+
+	a {
+		color: #9d261d;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
+}
+
+.errorMsg:before,
+.help-block.error:before {
+	display: inline-block;
+	content: "!";
+	margin-right: .3em;
+	padding-left: .4em;
+	color: rgb(157, 38, 29);
+	background-color: rgba(255, 255, 255, 0.4);
+	height: 1.2em;
+	width: 1.2em;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	border: none;
+	border-radius: 1.2em;
+}
+
+// success
+.successMsg,
+.help-block.success {
+	background: rgb(169, 219, 169);
+	color: rgb(34, 100, 35);
+	padding: 10px;
+	margin: 0 0 10px;
+	border-radius: 4px;
+
+	.itemeditor & {
+		margin: 0 2em .4em;
+	}
+
+	a {
+		color: rgb(34, 100, 35);
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
+}
+
+.successMsg:before,
+.help-block.success:before {
+	display: inline-block;
+	content: "\2713";
+	margin-right: .3em;
+	padding-left: .15em;
+	color: rgb(34, 100, 35);
+	background-color: rgba(255, 255, 255, 0.3);
+	height: 1.2em;
+	width: 1.2em;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	border: none;
+	border-radius: 1.2em;
+}
+
+.help-inline.success {
+	background: #A9DBA9;
+	color: #468847;
+	padding: 5px;
+	margin: 0 0 5px;
+	border-radius: 4px;
+
+	.itemeditor & {
+		float: left;
+		margin: .5em 0;
+	}
+
+	a {
+		color: rgb(34, 100, 35);
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
+}
+
+// inline error
+.error > p,
+.error > label,
+.error span.help-inline,
+.error span.help-block {color: #9d261d;}
+
+.error .ui-icon {
+	float: left;
+	margin-right: 3px;
+	// background-image: url('../img/icons/tools-error.png');
+	@include fa-FontAwesome();
+	color: $link-error-color;
+
+	&:before {
+		display: inline-block;
+		content: "!";
+		margin-right: .3em;
+		padding-left: .4em;
+		color: rgb(157, 38, 29);
+		background-color: rgba(255, 255, 255, 0.4);
+		height: 1.2em;
+		width: 1.2em;
+		font-size: 1.2em;
+		line-height: 1.2em;
+		border: none;
+		border-radius: 1.2em
+	}
+
+}
+
+.error > p,
+.errorMsg > p  {
+	margin-bottom: 0;
+}
+
+.error input,
+.error textarea,
+.error select,
+.error .bootstrap-duallistbox-container select {
+	border-color: #EE5F5B;
+	color: #B94A48;
+	box-shadow: 0 0 3px rgba(171, 41, 32, 0.25);
+}
+
+.error input:focus,
+.error textarea:focus
+.error select:focus {
+	border-color: #b9554d;
+	box-shadow: 0 0 6px rgba(171, 41, 32, 0.5);
+}
+
+.error .input-prepend span.add-on,
+.error .input-append span.add-on {
+	background: #f4c8c5;
+	border-color: #c87872;
+	color: #b9554d;
+}
+
+// buttons
+.btn-warning > label,
+.btn-warning .help-block,
+.btn-warning .help-inline {
+	color: #C09853;
+}
+
+.btn-warning input,
+.btn-warning textarea {
+	border-color: #CCAE64;
+	color: #C09853;
+}
+
+.btn-warning input:focus,
+.btn-warning textarea:focus {
+	border-color: #BE9A3F;
+	box-shadow: 0 0 6px #E5D6B1;
+}
+
+.btn-warning .input-prepend .add-on,
+.btn-warning .input-append .add-on {
+	background-color: #D2B877;
+	border-color: #C09853;
+	color: #C09853;
+}
+
+// inline success
+.success > p,
+.success > label,
+.success .help-block,
+.success .help-inline {
+	color: #468847;
+}
+.success input,
+.success textarea {
+	border-color: #57A957;
+	color: #468847;
+}
+.success input:focus,
+.success textarea:focus {
+	border-color: #458845;
+	box-shadow: 0 0 6px #9ACC9A;
+}
+.success .input-prepend .add-on,
+.success .input-append .add-on {
+	background-color: #BCDDBC;
+	border-color: #468847;
+	color: #468847;
+}
+
+//validation .net
+.validation-summary-errors {
+	color: #9D261D;
+}
+
+/* help comments within form */
+.form-comments {
+	clear: left;
+	display: block;
+	margin: 0;
+	padding: 0;
+	max-width: 600px;
+	min-height: 15px;
+	font-size: 0.9em;
+}
+/* IE7 */
+.ie7.form-comments {
+	position: relative;
+	top: -5px;
+}
+
+// Nested in fieldset
+fieldset p {
+	color:#444;
+	line-height:1;
+	margin:0 .8em .3em 0;
+	padding:.2em;
+
+	aside & {
+		margin:0 .4em .2em 0;
+		padding: .1em .2em;
+	}
+}
+
+// Placeholder Text Older Browsers
+// using theme-library.js
+// native styling
+input::-webkit-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+input:-moz-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+input::-moz-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+input:-ms-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+
+// .cms input::-webkit-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+// .cms input:-moz-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+// .cms input::-moz-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+// .cms input:-ms-input-placeholder {color: rgb(124, 124, 124); font-size: 1em; padding-left: .1em; }
+
+[placeholder]:focus::-webkit-input-placeholder {color: transparent;}
+[placeholder]:focus::-moz-input-placeholder {color: transparent;}
+
+/* current fallback */
+.placeholder {color: #bbb; line-height: 1.4;}
+
+
+// old browers
+.lt-ie8 legend {
+	margin-left: -7px;
+}
+
+.lt-ie8 input[type="checkbox"],
+.lt-ie8 input[type="checkbox"] {
+	vertical-align: baseline;
+}
+
+// fieldset lists
+fieldset {
+
+	ol, ul, li {
+		display: block;
+		min-height: 19px;
+		width: 100%;
+	}
+
+	ol, ul {
+		margin-left: 0;
+		margin: 0 0 .4em;
+		padding: 0;
+		display: block;
+
+		li {
+			clear: both;
+			margin: 0;
+			padding: 0 0 0.5em;
+
+			> div {
+				margin: .2em 0 0;
+			}
+
+			.itemeditor & {
+				margin: 0;
+				padding: 0 1rem;
+			}
+		}
+
+		.itemeditor & {
+			margin: 0 0 .4em;
+			padding: 0 .6em;
+		}
+
+		//nested ol
+		ol li {
+			margin: 0;
+			padding: .3em 0 .8em;
+		}
+
+	}
+	//top level li
+	> ol > li,
+	> ul > li {
+		@include clearfix();
+	}
+
+}
+//
+
+// fieldset within table
+th fieldset {
+	margin: 0 0 0 .7em;
+	padding: 0;
+
+	ol li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+// Forms: Checkboxes and Radio Inputs
+// -----------------------------------------------
+
+// horizontal radio buttons
+.checks {
+	font-size: 0.93333rem;
+	padding-left: 0;
+	white-space: nowrap;
+	display: inline-block;
+
+	label {
+		display: inline-block;
+		margin-left: 0.43333rem;
+		margin-right: 0.86667rem;
+		margin-bottom: 0;
+		vertical-align: baseline;
+		font-weight: 500;
+		// margin-right: 1.5em;
+		// margin-bottom: -0.5em;
+		// margin-left: 0;
+		// padding-top: 0;
+		// width: auto;
+		// float: none;
+		// clear: none;
+		// display: inline;
+		// font-weight: 400;
+		// vertical-align: middle;
+
+		label:after {
+			content: "";
+		}
+	}
+	input[type="file"],
+	input[type="radio"],
+	input[type="checkbox"],
+	input {
+		margin: 0 0 $form-spacing 0;
+	}
+
+	select {
+		float: none;
+		margin: 0;
+	}
+
+	label + select {
+		display: inline-block;
+		margin: 0;
+		margin-bottom: 0;
+		vertical-align: baseline;
+	}
+
+	p, span:not(.tool) {
+		clear: none;
+		display: inline;
+		margin: 0 .5em .5em 0;
+		vertical-align: bottom;
+	}
+
+	li {
+		padding-left: 0;
+		width: auto;
+		white-space: nowrap;
+		display: inline-block;
+	}
+
+
+	li & {
+		padding:.3em 0;
+		white-space: nowrap;
+	}
+
+	// wrapped sections with label above input
+	.wrap & {
+		display: inline-block;
+		margin-top: 0;
+		padding: .2em 0 0 0;
+		font-size: 0.93333rem;
+
+			label:after {
+				content: "";
+			}
+
+			&.withlabel {
+				margin: 1.7em 0 0 0;
+			}
+
+	}
+
+	.checks,
+	.lblinline & {
+
+		label {
+			margin: 0 .6em 0 0;
+			padding: 0;
+		}
+
+	}
+
+	.record-sections & {
+		display: block;
+	}
+
+}
+//
+
+// hack ie8 checks and split list
+.lt-ie9 .checks .li_container li {
+	width: 100%;
+	display: block;
+}
+
+.column .checks {
+
+	p, span {
+		clear: none;
+		display: inline;
+		margin: 0 0 .5em;
+		vertical-align: bottom;
+	}
+
+	p.row,
+	span.row {
+		display: block;
+		width: 100%;
+		margin: 0 0 .5em;
+		vertical-align: bottom;
+	}
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+}
+
+.checks .column {
+
+	p, span {
+		clear: none;
+		display: inline;
+		margin: 0 0 .5em;
+		vertical-align: bottom;
+	}
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+}
+
+.checksblock {
+	display: block;
+	width: 100%;
+	@include clearfix();
+}
+
+// checkboxes in tables
+table .checks {
+	margin: 0;
+	padding: .3em .3em .3em 0;
+	white-space: nowrap;
+
+		label {
+			margin-right: .5em;
+			margin-bottom: -0.5em;
+			margin-left: 0;
+			padding-top: 0;
+			width: auto;
+			float: none;
+			clear: none;
+			display: inline;
+		}
+		span {
+			display: inline;
+			vertical-align: bottom;
+		}
+
+		input {
+			margin: .2em .2em .5em 0;
+			width: auto;
+			float: left;
+			display: inline;
+		}
+}
+
+.hasJS table td.remove .checks label {display: none;}
+
+// nested checkbox groups
+.checks.checks-block {
+	margin-top: 0;
+	padding:.3em 0 0;
+	vertical-align: top;
+	display: block;
+
+		.wrap {
+			min-width:36px;
+			margin: 0 .5em .5em 0;
+		}
+		ul {
+			margin-left: 0px;
+		}
+
+}
+
+// nested in tabs
+.tabs .checks label {
+	font-size: 0.9em;
+}
+
+
+// labin and checkbox with label
+.lbl-inline .checklabel {
+
+	input[type="checkbox"] {
+		float: none;
+		margin-right: 4px;
+		margin-top: .3em;
+		display: inline-block;
+		float: left;
+		clear: left;
+	}
+
+	label {
+		margin-left: 1.2em;
+	}
+
+}
+
+.lbl-inline .choice {
+	display: table-cell;
+	margin-top: 0;
+	padding: .2em 1em 0 .1em;
+	overflow: hidden;
+}
+
+// Forms: specific
+// ----------------------------------------------------------
+
+// used for time fields
+.input-mini, .mini {
+	width: $input-width-mini;
+}
+
+.lt-ie9 select.mini {
+	width: auto;
+	min-width: $input-width-mini;
+}
+
+// used for date fields
+.input-short, .short {
+	width: $input-width-short;
+}
+
+.lt-ie9 select.short {
+	width: auto;
+	min-width: $input-width-short;
+}
+
+// used for prefix or siffix fields
+.input-fix, .fix {
+	width: $input-width-fix;
+}
+
+.lt-ie9 select.fix {
+	width: auto;
+	min-width: $input-width-fix;
+}
+
+// override for default auto width
+.auto,
+select.auto,
+input[type="text"].auto {
+	// height: 26px;
+	// line-height: 26px;
+	width: auto;
+	vertical-align: middle;
+}
+
+// grid width
+[class*="span"],
+[data-span*="span"] {
+	float: none;
+	font-size: 0.93333rem;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-right: 0.83333rem;
+	margin-left: 0;
+	vertical-align: baseline;
+}
+
+[class="span1"] {
+	width: 3.20%;
+}
+[class="span2"] {
+	width: 9.60%;
+}
+[class="span3"] {
+	width: 16.10%;
+}
+[class="span4"] {
+	width: 22.50%;
+}
+[class="span5"] {
+	width: 29.0%;
+}
+[class="span6"] {
+	width: 35.4%;
+}
+[class="span7"]{
+	width: 41.9%;
+}
+[class="span8"] {
+	width: 48.38%;
+}
+[class="span9"] {
+	width: 54.8%;
+}
+[class="span10"] {
+	width: 61.29%;
+}
+[class="span11"] {
+	width: 67.7%;
+}
+[class="span12"] {
+	width: 74.2%;
+}
+[class="span13"] {
+	width: 80.6%;
+}
+[class="span14"] {
+	width: 87.0%;
+}
+[class="span15"] {
+	width: 93.5%;
+}
+[class="span16"] {
+	width: 100%;
+}
+
+// Forms: prepend append elements
+.input-prepend input,
+.input-append input {
+	border-radius: 0 3px 3px 0;
+}
+.input-prepend .add-on,
+.input-append .add-on {
+	position: relative;
+	display: block;
+	float: left;
+	min-width: 16px;
+	width: auto;
+	height: 18px;
+	margin-right: -1px;
+	padding: 4px 4px 4px 5px;
+
+	font-weight: normal;
+	line-height: 18px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgb(255, 255, 255);
+
+	background: none repeat scroll 0 0 #F5F5F5;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 0 0 3px;
+	color: rgb(191, 191, 191);
+	z-index: 2;
+}
+.input-prepend .active,
+.input-append .active {
+	background: none repeat scroll 0 0 #A9DBA9;
+	border-color: #46A546;
+}
+.input-prepend .add-on {
+}
+.input-append input {
+	border-radius: 3px 0 0 3px;
+	float: left;
+}
+.input-append .add-on {
+	border-radius: 0 3px 3px 0;
+	margin-left: -1px;
+	margin-right: 0;
+}
+
+//  checkbox/radio button list
+.inputs-list {
+	margin: 0 0 5px;
+	width: 100%;
+}
+.inputs-list li {
+	display: block;
+	padding: 0;
+	width: 100%;
+}
+.inputs-list label {
+	display: block;
+	float: none;
+	width: auto;
+	padding: 0;
+	line-height: 18px;
+	text-align: left;
+	white-space: normal;
+}
+.inputs-list label strong {
+	color: #808080;
+}
+.inputs-list label small {
+	font-size: 11px;
+	font-weight: normal;
+}
+.inputs-list .inputs-list {
+	margin-left: 25px;
+	margin-bottom: 10px;
+	padding-top: 0;
+}
+.inputs-list:first-child {
+	padding-top: 6px;
+}
+.inputs-list li:nth-child(2) {
+	padding-top: 2px;
+}
+.inputs-list input[type="radio"],
+.inputs-list input[type="checkbox"] {
+	float: left;
+	margin-bottom: 0;
+	margin-left: -20px;
+}
+
+// Forms: wrapped label above input
+.form-stacked {
+	padding-left: 0;
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		padding-left: 20px;
+	}
+
+}
+.form-stacked > fieldset {
+	padding-top: 9px;
+}
+.no-margin > fieldset {
+	padding-top: 0;
+}
+.form-stacked > legend {
+	padding-left: 0;
+}
+.form-stacked .wrap > label {
+	display: block;
+	float: none;
+	width: auto;
+	text-align: left;
+	line-height: 20px;
+	padding-top: 0;
+}
+.form-stacked .lbl-inline > label {
+	display: block;
+	float: none;
+	width: auto;
+	font-weight: 500;
+	text-align: left;
+	line-height: 20px;
+	padding-top: 0;
+}
+.form-stacked .checks label {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	font-weight: normal;
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		display: inline;
+		margin: 0 0.6em 0 0;
+		padding: 0;
+		vertical-align: middle;
+		font-weight: normal;
+	}
+}
+.form-stacked .clearfix {
+	 margin-bottom: 9px;
+}
+.form-stacked .clearfix div.input {
+	margin-left: 0;
+}
+.form-stacked .inputs-list {
+	margin-bottom: 0;
+}
+.form-stacked .inputs-list li {
+	padding-top: 0;
+}
+.form-stacked .inputs-list li label {
+	font-weight: normal;
+	padding-top: 0;
+}
+.form-stacked div.clearfix.error {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-top: 0;
+	margin-left: -10px;
+}
+.form-stacked .actions {
+	margin-left: -20px;
+	padding-left: 20px;
+}
+
+// single modules input and label wrapped
+// default label above input
+.wrap {
+	position:relative;
+	display: block;
+	// margin: 0 1.7em 0 0;
+	width: 100%;
+	min-width:66px;
+	white-space: nowrap;
+	vertical-align: top;
+	@include clearfix();
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		display: inline-block;
+		// margin: 0 1em 1em 0;
+		width: auto;
+		padding-right: 0.83333rem;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	em {
+		float: left;
+		display: inline;
+		margin: 0 1em 0 0;
+		padding: .2em;
+	}
+
+	strong {
+		margin: 0 .7em 0 0;
+	}
+
+	// default label above input
+	> label {
+		display: block;
+		width: auto;
+		font-weight: 600;
+		padding: 0;
+	}
+
+	select {
+		font-size: 0.93333rem;
+		display: inline-block;
+		margin-bottom: 0;
+		margin-right: 0.83333rem;
+		vertical-align: baseline;
+	}
+
+	textarea {
+		width: 100%;
+		min-height: 50px;
+	}
+
+	.h-tools & {
+
+		select {
+			width: 210px;
+		}
+	}
+
+	// wrap with no label
+	&.nolabel {
+		padding-top: 1.5em;
+	}
+
+}
+//
+
+.wrap > label {
+
+	&:first-child {
+
+		&:after {
+			content: ":";
+		}
+
+	}
+
+	&.sw-label {
+
+		&:after {
+			content: "";
+		}
+
+	}
+
+}
+
+.wrap.row {
+	position:relative;
+	display: block;
+	// margin: 0 1.7em 0 0;
+	padding: .3em 0;
+	width: 100%;
+	min-width:66px;
+	white-space: nowrap;
+	vertical-align: top;
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		position:relative;
+		display: block;
+		margin: 0 1.7em 0 0;
+		width: 100%;
+		min-width:66px;
+		white-space: nowrap;
+		vertical-align: top;
+	}
+
+	label {
+		padding-top: 0;
+		vertical-align: top;
+	}
+}
+
+// wrapped label and input
+// label inline
+.wrap.lbl-inline {
+	position: relative;
+	display: inline-block;
+	margin-bottom: .5em;
+	width: auto;
+
+	label {
+		display: inline-block;
+		width: auto;
+		min-width:.2em;
+
+		margin: 0;
+		padding-right: 0.83333rem;
+		font-weight: 600;
+		line-height: 1.2;
+		text-decoration: none;
+
+		&.right {
+			text-align: right;
+		}
+
+	}
+
+	input {
+		display: inline-block;
+		float: none;
+		clear: none;
+		margin:0;
+	}
+
+	textarea {
+		width: 100%;
+		min-height: 50px;
+	}
+
+	.col & {
+
+		label {
+			display: inline-block;
+			width:auto;
+			min-width:.2em;
+		}
+
+	}
+
+}
+
+// Forms: Hidden Labels
+// used for multiple inputs inline like date fields
+fieldset .hide-label {
+	position: absolute;
+	left: -9999em;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+// line up label input with nolabel
+fieldset .withlabel {
+	margin: 1.7em 0 0 0;
+}
+
+// line up label input with nolabel
+fieldset .column.withlabel {
+	margin: 2.3em 0 0 0;
+}
+
+// section header with h-tools
+header .h-tools {
+
+	fieldset {
+
+		label {
+			margin: .6em 0.8em .6em 0;
+			min-width: 50px;
+			padding: 0.3em;
+			width: 100%;
+			display: block;
+			font-weight: 600;
+			text-decoration: none;
+		}
+
+		.lbl-inline label {
+			margin: 0 0.8em 0 0;
+			min-width: 50px;
+			padding: 0.3em;
+			text-align: left;
+			width: auto;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		.lbl-inline select {
+			margin: 0;
+		}
+
+	}
+
+	.inline label {
+		display: inline-block;
+		width: auto;
+		margin: 0;
+		top:50%;
+	}
+
+	&.right .wrap {
+		margin: 0 0 0 1.7em;
+	}
+
+}
+
+// login forgot password
+fieldset .pw {
+	clear: left;
+}
+
+// =Layout -add-remove to a list form ex:telephone
+
+// for checkboxes in makelisting
+fieldset .wrap.makeListing,
+tbody td fieldset .wrap.makeListing {
+	position: relative;
+	display: block;
+	left:0;
+	clear:both;
+	margin: 0 0 .5em;
+	min-width: 175px;
+	width:100%;
+	min-height: 19px;
+}
+
+
+.makeListing:before,
+.makeListing:after { content: " "; display: table; }
+.makeListing:after { clear: both; }
+.makeListing { *zoom: 1; }
+
+.makeListing textarea {
+	min-height: 66px;
+}
+
+//
+fieldset span.except {
+	position: relative;
+	float: left;
+	clear:none;
+	margin: 0 0 1.5em;
+}
+fieldset span.phone .wrap {
+	width:55px;
+}
+fieldset span.phone .wrap:nth-child(2) {
+	width:134px;
+}
+fieldset span.phone .wrap:nth-child(3) {
+	width:133px;
+}
+fieldset span.phone .wrap:nth-child(4) {
+	width:40px;
+}
+/* (!ie) */
+*+html fieldset .makeListing {
+	width: 100%;
+}
+fieldset .makeListing span,
+fieldset .makeListing div {
+	position: relative;
+	float: left;
+}
+fieldset .makeListing .makeList {
+	position: absolute;
+	left: 135px;
+	top: 0;
+}
+fieldset .makeList {
+	width:40px;
+	height: 18px;
+	margin: .5em 0 0 0;
+	padding-left: .5em;
+	bottom: 0;
+}
+fieldset .makeListwLabel {
+	margin: 2.3em 0 0 0;
+	padding-left: .5em;
+	bottom: 0;
+}
+fieldset .makeListnoLabel {
+	margin: .4em 0 0 0;
+	padding-left: .5em;
+	bottom: 0;
+}
+
+fieldset .native {
+	margin-left: 72px;
+}
+
+// icons using entities
+ul.listaction {
+	margin:0;
+	padding: 0;
+	min-height: 22px;
+	list-style-type: none;
+	overflow: hidden;
+
+	.itemeditor fieldset & {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+ul.listaction li {
+	float: left;
+	display: inline-block;
+	position: relative;
+	margin: 0 .6em 0 0;
+	padding: 0;
+	clear: none;
+	height: 1.4em;
+	width: 1.4em;
+	// font-size: 1.2em;
+	line-height: 1.2em;
+	border-radius: 1.4em;
+	min-width: 12px;
+
+	.itemeditor & {
+		margin: 0 .6em 0 0;
+		padding: 0;
+	}
+
+}
+//
+ul.listaction li a {
+	position: relative;
+	display: block;
+	float: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	width: 1px;
+	height: 100%;
+	min-height: 100%;
+	left: 0;
+	line-height: 1px;
+	color: rgb(255, 255, 255);
+	text-indent:0;
+	text-decoration: none;
+
+	span {
+		visibility: hidden;
+	}
+}
+
+//
+ul.listaction li a:before {
+	position: relative;
+	display: block;
+	float: left;
+	text-align: center;
+	margin: 0;
+	padding: 0 .2em;
+	width: 1.35em;
+	height: 1.4em;
+	left: 0;
+	line-height: 1.4em;
+	font-size: 1.2em;
+	font-family: Arial, sans-serif;
+	color: rgb(255, 255, 255);
+	border-radius: 1.4em;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+//hack for FF line height
+@-moz-document url-prefix() {
+	fieldset ul.listaction li a:before {
+		line-height: 1.3em;
+	}
+}
+
+// red colored buttons
+ul.listaction .remove a:before {
+	background-color: rgb(157, 38, 29);
+}
+
+// remove, delete
+ul.listaction .remove a:before {
+	content: "\2718";
+}
+
+ul.listaction .add a:before {
+	background-color: rgb(54, 113, 16);
+}
+
+ul.listaction .add a:before {
+	content: "\271A";
+}
+
+fieldset .ck {
+
+	@media only screen and (min-width: 32.067em) {
+		// min-width: 480
+		min-width:16px;
+		margin: 0 1em 0 0;
+	}
+
+}
+
+// h-tools toolset in section headet
+.h-tools fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+// iOS6 switch checkboxes
+// ----------------------------------------------------------
+// by Lea Verou http://lea.verou.me */
+
+:root input[type="checkbox"].ios-switch { // :root here acting as a filter for older browsers
+	position: absolute;
+	opacity: 0;
+}
+
+:root input[type="checkbox"].ios-switch + div {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 3em;	height: 1em;
+	border: 1px solid rgba(0,0,0,.3);
+	border-radius: 999px;
+	margin: .2em .5em 0 0;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.1), transparent),
+	                  linear-gradient(90deg, hsl(86, 41.2%, 60%) 50%, transparent 50%);
+	background-size: 200% 100%;
+	background-position: 100% 0;
+	background-origin: border-box;
+	background-clip: border-box;
+	overflow: hidden;
+	transition-duration: .4s;
+	transition-property: padding, width, background-position, text-indent;
+	box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+	            0 .45em 0 .1em rgba(0,0,0,.05) inset;
+	font-size: 150%; /* change this and see how they adjust! */
+}
+
+:root input[type="checkbox"].ios-switch:checked + div {
+	padding-left: 2em;
+	width: 3em;
+	background-position: 0 0;
+}
+
+:root input[type="checkbox"].ios-switch + div:before {
+	content: 'On';
+	float: left;
+	width: 1.65em;
+	height: 1.65em;
+	margin: -.1em;
+	border: 1px solid rgba(0,0,0,.35);
+	border-radius: inherit;
+	background: white;
+	background-image: linear-gradient(rgba(0,0,0,.2), transparent);
+	box-shadow: 0 .1em .1em .1em hsla(0,0%,100%,.8) inset,
+	            0 0 .5em rgba(0,0,0,.3);
+	color: white;
+	text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+	text-indent: -2.5em;
+}
+:root input[type="checkbox"].yn + div:before {
+	content: 'Yes';
+}
+:root input[type="checkbox"].ios-switch:active + div:before {
+	background-color: #eee;
+}
+
+:root input[type="checkbox"].ios-switch:focus + div {
+	box-shadow: 0 .1em .1em rgba(0,0,0,.2) inset,
+	            0 .45em 0 .1em rgba(0,0,0,.05) inset,
+	            0 0 .4em 1px rgba(255,0,0,.5);
+}
+
+:root input[type="checkbox"].ios-switch + div:before,
+:root input[type="checkbox"].ios-switch + div:after {
+	font: bold 60%/1.8 sans-serif;
+	text-transform: uppercase;
+}
+
+:root input[type="checkbox"].ios-switch + div:after {
+	content: 'Og';
+	float: left;
+	text-indent: .5em;
+	color: rgba(0,0,0,.45);
+	text-shadow: none;
+}
+
+:root input[type="checkbox"].yn + div:after {
+	content: 'No';
+}
+
+// Switch code ends here, from now on it’s just bling
+
+fieldset .col label.sw-label {
+	position: relative;
+	display: block;
+	padding: 0 .8em .8em 0;
+	min-width: 100px;
+	width: auto;
+	max-width: 200px;
+	font: bold 110% sans-serif;
+	text-shadow: 0 1px 1px rgb(255, 255, 255);
+}
+
+fieldset .col label.sw-label:first-of-type {
+	border-top-width: 1px;
+	border-radius: .6em .6em 0 0;
+}
+
+fieldset .col label.sw-label:last-of-type {
+	border-radius: 0 0 .6em .6em;
+	box-shadow: 0 1px hsla(0,0%,100%,.8);
+}
+
+
+// Forms: taming selects
+// http://icant.co.uk/forreview/tamingselect/
+// ----------------------------------------------------------
+.trigger {
+	border-style: solid;
+	border-color: #8B8B07 #bbb #bbb #8B8B07;
+	border-width: 1px;
+	color:#555;
+	background: rgb(255, 255, 255) url('../img/edit-panel.png') 135px -57px no-repeat;
+}
+.activetrigger {
+	border:1px solid #ccc;
+	color:#555;
+	text-decoration:none;
+	background:#ccc url('../img/edit-panel.png') 135px -57px no-repeat;
+}
+a.trigger:hover,
+a.activetrigger:hover {
+	text-decoration:none;
+}
+a.trigger:hover {
+	background: rgb(255, 255, 255) url('../img/edit-panel.png') 135px -57px no-repeat;
+}
+
+// Forms: advanced search
+.a-search fieldset {
+	margin-bottom: 4em;
+}
+.a-search fieldset.no-margin {
+	margin-bottom: 0;
+}
+.a-search fieldset fieldset {
+	margin-bottom: .8em;
+}
+//
+
+// end forms.scss

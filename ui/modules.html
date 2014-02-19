@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
+
+<head id="www-studiosystem-com">
+	<meta charset="utf-8">
+	<!-- For Microsoft -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>StudioSystem UI Components</title>
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright StudioSystem 2011. All Rights Reserved.">
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<!-- <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
+	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- ui specific -->
+	<link href="_assets/css/ui.css" rel="stylesheet" media="all">
+
+	<style type="text/css">
+	#staticTable tbody td:first-child {width: 30%;}
+	#staticTable tbody td:nth-child(2) {width: 20%;}
+	#staticTable tbody td:nth-child(3) {width: 25%;}
+	#staticTable tbody td:last-child {width: 25%;}
+	</style>
+	<!-- end CSS-->
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPhone 4 -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_assets/img/h/apple-touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_assets/img/m/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+
+	<!-- For iPhone 3G, iPod Touch and Android -->
+	<link rel="apple-touch-icon-precomposed" href="../_assets/img/l/apple-touch-icon-precomposed.png">
+	<!-- For Nokia -->
+	<link rel="shortcut icon" href="../_assets/img/l/apple-touch-icon.png">
+
+	<!-- For everything else -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK -->
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="../_assets/js/lib/respond.min.js"></script>
+	<script src="../_assets/js/lib/rwd-images.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
+
+	<!-- http://t.co/y1jPVnT -->
+	<!-- <link rel="canonical" href="/"> -->
+</head>
+
+<body class="tss ui" role="application">
+
+<div id="container" class="">
+
+	<!-- header -->
+	<header role="banner" class="masthead gradient">
+		<!-- ajax siteMainheader() -->
+	</header><!-- /header -->
+
+		<header id="header-b" class="record">
+
+			<div class="row">
+				<div class="h-content">
+
+					<h1 class="name"><a href="participant.html">Style Guide</a></h1>
+
+						<!-- tool menu -->
+						<nav id="record-menu">
+
+							<ul id="recordtools" class="toolbar h-tools">
+								<li id="toolGears" class="drop">
+									<span class="tool tool-gears"></span>
+									<a href=" " title="Tool List">Actions</a>
+									<span class="secondary">More</span>
+									<ul class="menu">
+										<li>
+											<span class="tool tool-list"></span>
+											<a class="toggler" title="Add to My Lists" href="#addlist">Add to My Lists</a>
+										</li>
+										<li>
+											<span class="tool tool-note"></span>
+											<a class="toggler" title="Add/Edit My Notes" href="#addnote">Add/Edit My Notes (3)</a>
+										</li>
+										<li>
+											<span class="tool tool-watch"></span>
+											<a href=" " title="Add to Watch List">Remove System Watch</a>
+										</li>
+									</ul>
+								</li>
+								<li id="toolUpdate">
+									<span class="tool tool-update"></span>
+									<a class="toggler" title="Update this Record" href="#updater">Update</a>
+								</li>
+								<li id="toolPrint" class="drop">
+									<span class="tool tool-print"></span>
+									<a href=" " title="Print">Print</a>
+									<span class="secondary">More</span>
+									<ul class="menu">
+										<li><a class="text" title="Print" onClick="window.print()">Print Current Page</a></li>
+
+										<li><a href="participant-printrecord.html">Print - Page Options</a></li>
+										<li><a href="#" data-type="fullrecord" class="opener">Print - Modal Options</a></li>
+										<li><a href="#" data-type="sectionlist" class="lister">Print - Modal List</a></li>
+										<li><a href="#" data-type="radiosection" class="radiolist">Print - Modal RadioBtn List</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav><!-- / tool menu -->
+
+						<!-- add edit my lists form -->
+						<div id="addlist" class="itemeditor comment atl dropshadow">
+							<fieldset>
+								<legend><span>Add to My Lists</span></legend>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>My Lists</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<select id="ddlExistingList" class="auto">
+											<option value="0" selected="selected">Please Select</option>
+												<optgroup label="Existing">
+												<option value="39987">my people lists</option>
+												<option value="39991">New actors list</option>
+												<option value="39992">film directors</option>
+											</optgroup>
+											<optgroup label="Create">
+												<option value="new">New List</option>
+											</optgroup>
+										</select>
+									</span>
+								</p>
+								<p id="pNewListName" style="display: none;">
+									<span class=" column small-12 large-2">
+										<label class="req" for="mylist-new-name">Title</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input id="mylist-new-name" title="New List Name" type="text">
+									</span>
+								</p>
+
+								<p id="pNewListDescription" style="display: none;">
+									<span class=" column small-12 large-2">
+										<label class="req" for="mylist-new-desc">Description</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="mylist-new-desc" title="Add Description"></textarea>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label for="mylist-new-comment">Comment</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="mylist-new-comment" title="Add Comment"></textarea>
+									</span>
+								</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+
+							<ul class="toolbar h-tools">
+								<li class="toolClose">
+									<a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a>
+								</li>
+						   </ul>
+						</div>
+						<!-- /atl -->
+
+						<!-- add note form -->
+						<div id="addnote" class="itemeditor an">
+							<fieldset>
+								<legend><span>Add a Note</span></legend>
+								<!-- sample success message -->
+								<div class="help-block success">Project was created as In-Development by such and such user on such and such date</div>
+								<!-- sample error message -->
+								<div class="help-block error">There are errors with the form, please see the fields marked below.
+									<ul>
+										<li>Invalid Pitch Title. Please try again.</li>
+										<li>Invalid Status. Please try again.</li>
+									</ul>
+								</div>
+
+								<p>
+									<span class=" column small-12 large-2">
+										<label class="req">Project Name</label>
+									</span>
+									<span class=" column small-12 large-10">
+										Speed
+									</span>
+								</p>
+								<p id="pNewNoteName">
+									<span class=" column small-12 large-2">
+									<label for="note-new-name">Note Title</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input id="note-new-name" title="New List Name" type="text">
+									</span>
+								</p>
+								<p id="pNewNoteText">
+									<span class=" column small-12 large-2">
+									<label for="note-new-text">Note Text</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="note-new-text" title="Add Note Text"></textarea>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+									<label>Options</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<span class="checks">
+											<input type="checkbox" checked="" value="1" name="printable">
+											<label>Display this note in printed reports.</label>
+										</span>
+										<span class="checks">
+											<input type="checkbox" checked="" value="1" name="import">
+											<label>Display this note in saved lists.</label>
+										</span>
+									</span>
+								</p>
+								<p class="error">
+									<span class=" column small-12 large-2">
+									<label for="note-new-name">Sample Error</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<input class="error" id="note-new-name" title="New List Name" type="text">
+										<span class="help-inline error">List Title is Required Lorem ipsum Sint ut in est.</span>
+									</span>
+								</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+								<fieldset>
+										<legend><span>Current Notes</span></legend>
+										<section class="s">
+											<article class="note-text">
+												<div class="t-note"><span class="n-title">Note Title</span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+											</article>
+											<article class="note-view">
+											<span class="checks">
+												<input type="checkbox" checked="" value="1" name="printable">
+												<label>Printed reports.</label>
+												<input type="checkbox" checked="" value="1" name="import">
+												<label>Saved lists.</label>
+											</span>
+											</article>
+											<article class="note-options">
+												<div class="makeListnoLabel">
+													<ul class="listaction">
+														<li class="remove"><a href=" " title="Remove"><span>Remove</span></a></li>
+													</ul>
+												</div>
+											</article>
+										</section>
+										<section class="s">
+											<article class="note-text">
+												<div class="t-note"><span class="n-title">Note Title</span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+											</article>
+											<article class="note-view">
+											<span class="checks">
+												<input type="checkbox" checked="" value="1" name="printable">
+												<label>Printed reports.</label>
+												<input type="checkbox" checked="" value="1" name="import">
+												<label>Saved lists.</label>
+											</span>
+											</article>
+											<article class="note-options">
+												<div class="makeListnoLabel">
+													<ul class="listaction">
+														<li class="remove"><a href=" " title="Remove"><span>Remove</span></a></li>
+													</ul>
+												</div>
+											</article>
+										</section>
+								</fieldset>
+								<ul class="toolbar h-tools">
+									<li class="toolClose"><a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a></li>
+								</ul>
+						</div>
+						<!-- /addnote -->
+
+						<!-- update this record form -->
+						<div id="updater" class="itemeditor updater">
+							<fieldset>
+								<legend><span>Update this Record</span></legend>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>Project Name</label>
+									</span>
+									<span class=" column small-12 large-10">
+										Speed
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label>Section to Edit</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<span class="checks">
+										<input id="i-maincontent" type="radio" value="Main">
+										<label for="i-maincontent">Main</label>
+										<input id="i-credits" type="radio" value="Credits">
+										<label for="i-credits">Credits</label>
+										<!-- <input id="i-clients" type="radio" value="clients" />
+										<label for="i-clients">Clients</label>
+										<input id="i-biography" type="radio" value="Biography" />
+										<label for="i-biography">Biography</label>
+										<input id="i-bo" type="radio" value="Box Office" />
+										<label for="i-bo">Box Office</label>
+										<input id="i-salary" type="radio" value="Star Salary" />
+										<label for="i-salary">Star Salary</label> -->
+										</span>
+									</span>
+								</p>
+								<p>
+									<span class=" column small-12 large-2">
+										<label for="i-list-description" class="req"><span class="req">* </span>Description</label>
+									</span>
+									<span class=" column small-12 large-10">
+										<textarea id="i-list-description" rows="1" title="define this list"></textarea>
+									</span>
+								</p>
+								<p><label>Note</label> Upon submitting, your description will be sent to our editors for verification.</p>
+								<div class="submitBtn toolClose">
+									<input class="btn btn-primary results" value="Submit" type="button">
+									<a href="#" class="btn results">Cancel</a>
+								</div>
+							</fieldset>
+							<ul class="toolbar h-tools">
+								<li class="toolClose"><a class="results" href="javascript:void(0)"><span class="tool tool-close"></span></a></li>
+							</ul>
+						</div>
+						<!-- /update this record -->
+				</div>
+			</div>
+			<!-- menu -->
+			<!-- category content navigation -->
+			<div id="cat-nav" class="row cat-bar">
+
+				<div class="h-content">
+					<!-- details navigation -->
+					<div class="nav-b nav-primary">
+						<nav role="navigation" class="cat-sections">
+							<h1 class="toggleMenu">Menu</h1>
+
+							<ul class="nav-cat">
+								<li class="structure" data-section="structure">
+									<a href="../index.html">General</a>
+								</li>
+								<li class="structure" data-section="structure">
+									<a href="../coding/coding.html">Coding Practices</a>
+								</li>
+								<li class="ui" data-section="ui">
+									<a href="ui.html">UI</a>
+								</li>
+								 <li class="base" data-section="base">
+									<a href="base.html">Base</a>
+								</li>
+								<li class="modules active" data-section="modules">
+									<a href="modules.html">Modules</a>
+								</li>
+								<li class="svg-color" data-section="svg-color">
+									<a href="svg-color.html">SVG Color Chart</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!-- /details navigation -->
+				</div>
+
+			</div>
+
+		</header>
+
+	<!-- content -->
+	<div class="content">
+
+		<!-- complementary content -->
+		<aside role="complementary" class="">
+
+				<nav>
+					<ul class="side-nav">
+						<li class="heading">Modules</li>
+						<li><a href="#s-forms">Dropdowns</a></li>
+						<li><a href="#s-tables">Navs</a></li>
+						<li><a href="#s-canvas">Navbar</a></li>
+						<li><a href="#s-canvas">Sidebar Navs</a></li>
+						<li><a href="#s-canvas">Tabs</a></li>
+						<li><a href="#s-canvas">Breadcrumbs</a></li>
+						<li><a href="#s-canvas">Pagination</a></li>
+						<li><a href="#s-canvas">Toolbars</a></li>
+						<li><a href="#s-canvas">Buttongroups</a></li>
+						<li><a href="#s-canvas">Button Dropdowns</a></li>
+						<li><a href="#s-canvas">Labels and Badges</a></li>
+						<li><a href="#s-canvas">Thumbnails</a></li>
+						<li><a href="#s-canvas">Alerts</a></li>
+						<li><a href="#s-canvas">Progress Bar</a></li>
+						<li><a href="#s-canvas">Loading icon</a></li>
+						<li><a href="#s-canvas">Gallery Media</a></li>
+						<li><a href="#s-canvas">Misc.</a></li>
+						<li class="divider"></li>
+						<!-- <li class="heading">Structure</li> -->
+					</ul>
+				</nav>
+
+		</aside><!-- /complementary content -->
+
+		<!-- main content -->
+		<div role="main" id="main" class="">
+
+			<section id="s-forms" class="mod box">
+				<h2>Forms</h2>
+			  <div class="row">
+				  <h3>Default styles</h3>
+				  <p>All forms are given default styles to present them in a readable and scalable way. Styles are provided for text inputs, select lists, textareas, radio buttons and checkboxes, and buttons.</p>
+				  <form>
+
+					<fieldset>
+					  <legend class="legend">Example form legend</legend>
+					  <div class="clearfix">
+						<label for="xlInput">X-Large input</label>
+						<div class="input">
+						  <input class="xlarge" id="xlInput" name="xlInput" size="30" type="text" />
+						</div>
+					  </div><!-- /clearfix -->
+
+					  <div class="clearfix">
+						<label for="normalSelect">Select</label>
+						<div class="input">
+						  <select name="normalSelect" id="normalSelect">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+
+							<option>4</option>
+							<option>5</option>
+						  </select>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="mediumSelect">Select</label>
+
+						<div class="input">
+						  <select class="medium" name="mediumSelect" id="mediumSelect">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+
+						  </select>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="multiSelect">Multiple select</label>
+						<div class="input">
+						  <select class="medium" size="5" multiple="multiple" name="multiSelect" id="multiSelect">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						  </select>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="multiSelect">Option Group</label>
+						<div class="input">
+						  <select class="medium"  name="multiSelect" id="normalSelect">
+							<option>1</option>
+							<optgroup label="Kinds of Potatoes">
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							</option>
+							<option>5</option>
+						  </select>
+						</div>
+					  </div><!-- /clearfix -->
+
+					  <div class="clearfix">
+						<label>Uneditable input</label>
+						<div class="input">
+						  <span class="uneditable-input">Some value here</span>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="disabledInput">Disabled input</label>
+
+						<div class="input">
+						  <input class="xlarge disabled" id="disabledInput" name="disabledInput" size="30" type="text" placeholder="Disabled input here… carry on." disabled />
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="disabledInput">Disabled textarea</label>
+						<div class="input">
+						  <textarea class="xxlarge" name="textarea" id="textarea" rows="3" disabled></textarea>
+
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix error">
+						<label for="errorInput">Input with error</label>
+						<div class="input">
+						  <input class="xlarge error" id="errorInput" name="errorInput" size="30" type="text" />
+						  <span class="help-inline">Small snippet of help text</span>
+						</div>
+
+					  </div><!-- /clearfix -->
+					  <div class="clearfix success">
+						<label for="successInput">Input with success</label>
+						<div class="input">
+						  <input class="xlarge error" id="successInput" name="successInput" size="30" type="text" />
+						  <span class="help-inline">Success!</span>
+						</div>
+					  </div><!-- /clearfix -->
+
+					  <div class="clearfix warning">
+						<label for="warningInput">Input with warning</label>
+						<div class="input">
+						  <input class="xlarge error" id="warningInput" name="warningInput" size="30" type="text" />
+						  <span class="help-inline">Ruh roh!</span>
+						</div>
+					  </div><!-- /clearfix -->
+						<div class="help-block error">
+						<p>Invalid email and/or password. Please try again. Please contact <a href="mailto:contact@blssi.com">customer service</a> for further details.</p>
+							<ul>
+								<li>Invalid Pitch Title. Please try again.</li>
+								<li>Invalid Status. Please try again.</li>
+							</ul>
+
+					  </div><!-- /clearfix -->
+						<div class="help-block success">
+						<p>Your account has been updated successfully.</p>
+					  </div><!-- /clearfix -->
+
+					</fieldset>
+
+					<fieldset>
+					  <legend>Example form legend</legend>
+					  <!-- <div class="clearfix">
+						<label for="prependedInput">Prepended text</label>
+						<div class="input">
+						  <div class="input-prepend">
+							<span class="add-on">@</span>
+
+							<input class="medium" id="prependedInput" name="prependedInput" size="16" type="text" />
+						  </div>
+						  <span class="form-comments">Here's some help text</span>
+						</div>
+					  </div> --><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="prependedInput2">Prepended checkbox</label>
+						<div class="input">
+
+						  <div class="input-prepend">
+							<label class="add-on"><input type="checkbox" name="" id="" value="" /></label>
+							<input class="mini" id="prependedInput2" name="prependedInput2" size="16" type="text" />
+							<span class="form-comments">Here's some help text</span>
+						  </div>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label>Label above input (.labin) with checkbox</label>
+						<div class="column span-12 labin">
+							<span class="checklabel">
+								<input type="checkbox">
+								<label for="org-credit-project-note">Promotional Consideration Furnished By</label>
+							</span>
+							<textarea name="note" rows="3" cols="20" title=""></textarea>
+						</div>
+					</div><!-- /clearfix -->
+					<div class="row">
+<pre><code data-language="html">
+	<span class="column span-12 labin">
+		<span class="checklabel">
+			<input type="checkbox">
+			<label for="org-credit-project-note">Promotional Consideration Furnished By</label>
+		</span>
+		<textarea name="note" rows="3" cols="20" title=""></textarea>
+	</span>
+</code></pre>
+					</div><!-- /clearfix -->
+					<div class="clearfix">
+						<label for="appendedInput">Appended checkbox</label>
+
+						<div class="input">
+						  <div class="input-append">
+							<input class="mini" id="appendedInput" name="appendedInput" size="16" type="text" />
+							<label class="add-on active"><input type="checkbox" name="" id="" value="" checked="checked" /></label>
+						  </div>
+						</div>
+					</div><!-- /clearfix -->
+					<div class="clearfix">
+						<label for="fileInput">File input</label>
+							<fieldset>
+								<ol>
+									<li>
+										<div class="column small-12 large-6">
+											<!-- <label class="inline">Upload Image</label> -->
+											<span style="display:inline;">
+												<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+											</span>
+
+											<div class="file-upload btn btn-primary">
+												<span>Upload</span>
+												<input id="uploadBtn" type="file" class="upload" />
+											</div>
+
+										</div>
+										<div class="column small-12 large-6">
+											<span class="text-remaining-images right">
+												<strong>Images Remaining:</strong> <span>12</span>
+											</span>
+										</div>
+									</li>
+								</ol>
+							</fieldset>
+					</div><!-- /clearfix -->
+					<div class="row">
+<pre><code data-language="html">
+<fieldset>
+	<ol>
+		<li>
+			<div class="column small-12 large-6">
+				<!-- <label class="inline">Upload Image</label> -->
+				<span style="display:inline;">
+					<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+				</span>
+
+				<div class="file-upload btn btn-primary">
+					<span>Upload</span>
+					<input id="uploadBtn" type="file" class="upload" />
+				</div>
+
+			</div>
+			<div class="column small-12 large-6">
+				<span class="text-remaining-images right">
+					<strong>Images Remaining:</strong> <span>12</span>
+				</span>
+			</div>
+		</li>
+	</ol>
+</fieldset>
+</code></pre>
+					  </div><!-- /clearfix -->
+					<fieldset>
+					  <legend>Example form legend</legend>
+					  <div class="clearfix">
+
+						<label id="optionsCheckboxes">List of options</label>
+						<div class="input">
+						  <ul class="inputs-list">
+							<li>
+							  <label>
+								<input type="checkbox" name="optionsCheckboxes" value="option1" />
+								<span>Option one is this and that&mdash;be sure to include why it’s great</span>
+
+							  </label>
+							</li>
+							<li>
+							  <label>
+								<input type="checkbox" name="optionsCheckboxes" value="option2" />
+								<span>Option two can also be checked and included in form results</span>
+							  </label>
+							</li>
+
+							<li>
+							  <label>
+								<input type="checkbox" name="optionsCheckboxes" value="option2" />
+								<span>Option three can&mdash;yes, you guessed it&mdash;also be checked and included in form results. Let's make it super long so that everyone can see how it wraps, too.</span>
+							  </label>
+							</li>
+							<li>
+
+							  <label class="disabled">
+								<input type="checkbox" name="optionsCheckboxes" value="option2" disabled />
+								<span>Option four cannot be checked as it is disabled.</span>
+							  </label>
+							</li>
+						  </ul>
+						  <span class="form-comments">
+							<strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.
+						  </span>
+
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label>Date range</label>
+						<div class="input">
+						  <div class="inline-inputs">
+							<input class="short" type="text" value="May 1, 2011" />
+							<input class="mini" type="text" value="12:00am" />
+							to
+							<input class="short" type="text" value="May 8, 2011" />
+							<input class="mini" type="text" value="11:59pm" />
+							<span class="form-comments">All times are shown as Pacific Standard Time (GMT -08:00).</span>
+						  </div>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="textarea">Textarea</label>
+
+						<div class="input">
+						  <textarea class="xxlarge" id="textarea2" name="textarea2" rows="3"></textarea>
+						  <span class="form-comments">
+							Block of help text to describe the field above if need be.
+						  </span>
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label id="optionsRadio">List of options</label>
+
+						<div class="input">
+						  <ul class="inputs-list">
+							<li>
+							  <label>
+								<input type="radio" checked name="optionsRadios" value="option1" />
+								<span>Option one is this and that&mdash;be sure to include why it’s great</span>
+							  </label>
+							</li>
+
+							<li>
+							  <label>
+								<input type="radio" name="optionsRadios" value="option2" />
+								<span>Option two can is something else and selecting it will deselect options 1</span>
+							  </label>
+							</li>
+						  </ul>
+						</div>
+
+					  </div><!-- /clearfix -->
+					  <div class="actions">
+						<input type="submit" class="btn btn-primary" value="Save changes">&nbsp;<button type="reset" class="btn">Cancel</button>
+					  </div>
+					</fieldset>
+				  </form>
+			  </div><!-- /row -->
+
+
+
+			  <div class="row">
+				  <h3>Stacked forms</h3>
+				  <p>Add <code>.form-stacked</code> to your form’s HTML and you’ll have labels on top of their fields instead of to their left. This works great if your forms are short or you have two columns of inputs for heavier forms.</p>
+
+				  <form action="" class="form-stacked">
+					<fieldset>
+					  <legend>Example form legend</legend>
+					  <div class="clearfix">
+						<label for="xlInput3">X-Large input</label>
+						<div class="input">
+
+						  <input class="xlarge" id="xlInput3" name="xlInput3" size="30" type="text" />
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label for="stackedSelect">Select</label>
+						<div class="input">
+						  <select name="stackedSelect" id="stackedSelect">
+							<option>1</option>
+
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						  </select>
+						</div>
+					  </div><!-- /clearfix -->
+
+					</fieldset>
+					<fieldset>
+					  <legend>Example form legend</legend>
+					  <div class="clearfix error">
+						<label for="xlInput4">X-Large input</label>
+						<div class="input">
+						  <input class="xlarge error" id="xlInput4" name="xlInput4" size="30" type="text" />
+						  <span class="help-inline">Small snippet of help text</span>
+
+						</div>
+					  </div><!-- /clearfix -->
+					  <div class="clearfix">
+						<label id="optionsCheckboxes">List of options</label>
+						<div class="input">
+						  <ul class="inputs-list">
+							<li>
+							  <label>
+								<input type="checkbox" name="optionsCheckboxes" value="option1" />
+								<span>Option one is this and that&mdash;be sure to include why it’s great</span>
+							  </label>
+							</li>
+							<li>
+							  <label>
+								<input type="checkbox" name="optionsCheckboxes" value="option2" />
+								<span>Option two can also be checked and included in form results</span>
+
+							  </label>
+							</li>
+						  </ul>
+						  <span class="form-comments">
+							<strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.
+						  </span>
+						</div>
+					  </div><!-- /clearfix -->
+					</fieldset>
+					<fieldset>
+					<ol>
+						<li>
+							<span class="wrap labin">
+							<label for="use1">Label</label>
+							<input id="use1" type="text" placeholder="text" />
+							</span>
+							<span class="wrap labin">
+							<label for="use1">Label</label>
+							<input id="use1" type="text" placeholder="text" />
+							</span>
+							<span class="wrap labin">
+							<label for="use1">Label</label>
+							<input id="use1" type="text" placeholder="text" />
+							</span>
+							<span class="wrap labin">
+							<label for="use1">Label</label>
+							<input id="use1" type="text" placeholder="text" />
+							</span>
+						</li>
+					</ol>
+					</fieldset>
+
+					<div class="actions">
+					  <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;<button type="reset" class="btn">Cancel</button>
+					</div>
+				  </form>
+			  </div><!-- /row -->
+
+<!-- 			  <div class="row">
+				<div class="span4">
+				  <h2>Form field sizes</h2>
+				  <p>Customize any form <code>input</code>, <code>select</code>, or <code>textarea</code> width by adding just a few classes to your markup.</p>
+
+				  <p>Grid-based sizing classes for form elements.</p>
+				</div>
+				<div class="span12">
+				  <form action="">
+					<div class="clearfix"><input class="span1" id="" name="" placeholder=".span1" type="text"></div>
+					<div class="clearfix"><input class="span2" id="" name="" placeholder=".span2" type="text"></div>
+					<div class="clearfix"><input class="span3" id="" name="" placeholder=".span3" type="text"></div>
+					<div class="clearfix"><input class="span4" id="" name="" placeholder=".span4" type="text"></div>
+					<div class="clearfix"><input class="span5" id="" name="" placeholder=".span5" type="text"></div>
+					<div class="clearfix"><input class="span6" id="" name="" placeholder=".span6" type="text"></div>
+					<div class="clearfix"><input class="span7" id="" name="" placeholder=".span7" type="text"></div>
+					<div class="clearfix"><input class="span8" id="" name="" placeholder=".span8" type="text"></div>
+					<div class="clearfix"><input class="span9" id="" name="" placeholder=".span9" type="text"></div>
+					<div class="clearfix"><input class="span10" id="" name="" placeholder=".span10" type="text"></div>
+					<div class="clearfix"><input class="span11" id="" name="" placeholder=".span11" type="text"></div>
+					<div class="clearfix"><input class="span12" id="" name="" placeholder=".span12" type="text"></div>
+
+				  </form>
+				</div>
+			  </div> -->
+
+			  <div class="row">
+				  <h3>Buttons</h3>
+				  <p>As a convention, buttons are used for actions while links are used for objects. For instance, "Download" could be a button and "recent activity" could be a link.</p>
+
+				  <p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a blue <code>.btn-primary</code> class, a light-blue <code>.info</code> class, a green <code>.success</code> class, and a red <code>.danger</code> class.</p>
+
+				  <h4>Example buttons</h4>
+				  <p>Button styles can be applied to anything with the <code>.btn</code> applied. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
+
+				  <div class="actions">
+					<button class="btn">Action</button>&nbsp;
+					<button class="btn btn-primary">Primary Action</button>&nbsp;
+					<button class="btn btn-warning">Warning</button>&nbsp;
+					<button class="btn btn-danger">Fail/Danger</button>&nbsp;
+					<button class="btn btn-success">Success</button>&nbsp;
+					<button class="btn btn-info">Info</button>&nbsp;
+					<button class="btn btn-inverse">Inverse</button>&nbsp;
+				  </div>
+				  <h3>Alternate sizes</h3>
+				  <p>Fancy larger or smaller buttons? Have at it!</p>
+
+				  <div class="actions">
+					<a href="#" class="btn btn-large primary">Primary action</a>
+					<a href="#" class="btn btn-large">Action</a>
+				  </div>
+				  <div class="actions">
+					<a href="#" class="btn small primary">Primary action</a>
+					<a href="#" class="btn small">Action</a>
+
+				  </div>
+				  <h3>Disabled state</h3>
+				  <p>For buttons that are not active or are disabled by the app for one reason or another, use the disabled state. That’s <code>.disabled</code> for links and <code>:disabled</code> for <code>&lt;button&gt;</code> elements.</p>
+
+				  <h4>Links</h4>
+				  <div class="actions">
+					<a href="#" class="btn btn-large primary">Primary action</a>
+					<a href="#" class="btn btn-large">Action</a>
+					<a href="#" class="btn btn-large primary disabled">Primary disabled</a>
+					<a href="#" class="btn btn-large disabled">Action Disabled</a>
+				  </div>
+				  <h4>Buttons</h4>
+				  <div class="actions">
+					<button class="btn btn-large primary">Primary action</button>&nbsp;<button class="btn btn-large">Action</button>&nbsp;<button class="btn btn-large primary disabled" disabled="disabled">Primary action</button>&nbsp;<button class="btn btn-large" disabled>Action</button>
+				  </div>
+
+			  </div><!-- /row -->
+
+
+			  <div class="row">
+			  		<h3>Breadcrumb Navigation</h3>
+					<ul class="breadcrumb">
+						<li><a href="#">International Box Office Totals</a></li>
+						<li><a href="#">Specific Territory</a></li>
+						<li><a href="#">And So Forth</a></li>
+						<li><a href="#">And So One</a></li>
+						<li><a href="#">The Ultimate Crumble</a></li>
+					</ul>
+
+			  	</div><!-- /row -->
+			</section>
+
+
+			<section id="s-tables" class="mod box">
+				<header>
+					<h2>
+						<span>DataTables sorting</span>
+					</h2>
+						<p>Using http://datatables.net/ (most of this application tables use - to sort)</p>
+				</header>
+				<table class="film-upcoming display">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Distributor</th>
+							<th>Involvement <em>Credited As</em></th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Agent Zigzag: A True Story of Nazi Espionage, Love and Betrayal</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures</a></td>
+							<td><p>Producer</p></td>
+							<td>In Development</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Agent Zigzag: A True Story of Nazi Espionage, Love and Betrayal</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures</a></td>
+							<td><p>Producer</p></td>
+							<td>In Development</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<header>
+					<h2>
+						<span>Static Table</span>
+					</h2>
+				</header>
+				<table id="staticTable">
+					<thead>
+						<tr>
+							<th><div>Title</div>e</th>
+							<th><div>Distributor</div></th>
+							<th><div>Involvement <em>Credited As</em></div></th>
+							<th><div>Status</div></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Agent Zigzag: A True Story of Nazi Espionage, Love and Betrayal</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures</a></td>
+							<td><p>Producer</p></td>
+							<td>In Development</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Agent Zigzag: A True Story of Nazi Espionage, Love and Betrayal</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures</a></td>
+							<td><p>Producer</p></td>
+							<td>In Development</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Cloud Atlas (2012)</a></td>
+							<td><a href="org-emp.html">Warner Bros. Pictures Distribution</a></td>
+							<td><p>Dr. Henry Goose</p></td>
+							<td>Preproduction</td>
+						</tr>
+						<tr>
+							<td><a href="project-film.html">Extremely Loud and Incredibly Close (2011)</a></td>
+							<td><a href="org-emp.html">Paramount Pictures</a></td>
+							<td><p>Cast</p></td>
+							<td>Awaiting Release</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section id="canvas" class="mod box">
+				<header>
+					<h2>
+						<span>Canvas Examples</span>
+					</h2>
+						<p>Working with html5 canvas</p>
+				</header>
+				<div>
+					<canvas id="x1" width="578" height="200"></canvas>
+				</div>
+				<div>
+					<canvas id="x2" width="578" height="200"></canvas>
+				</div>
+				<div>
+					<canvas id="x3" width="578" height="200"></canvas>
+				</div>
+			</section>
+
+		</div><!-- /main content -->
+
+	</div><!-- /content -->
+
+	<!-- sticky footer -->
+	<div id="container-footer"></div>
+
+</div> <!-- /end of #container -->
+
+	<!-- footer -->
+	<footer role="contentinfo" class="clearfix">
+		<div class="f-content">
+		<ul>
+			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+			<li><a href="" title="Documentations">Documentation</a></li>
+			<li><a href="" title="API Terms">API Terms</a></li>
+		</ul>
+		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+		</div>
+	</footer>
+
+
+<!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
+
+	<!-- scripts concatenated and minified via ant build script-->
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- DataTables -->
+	<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+	<script src="../_assets/js/lib/html5shiv.js"></script>
+	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="../_assets/js/plugins.js"></script>
+	<script src="../_assets/js/select2.min.js"></script>
+	<script src="../_assets/js/loader.js"></script>
+	<script src="../_assets/js/lib/easyListSplitter.js"></script>
+	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
+	<script src="../_assets/js/imgSizer.js"></script>
+	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
+
+	<script src="../_assets/js/script.js"></script>
+
+	<script src="../_assets/js/tss-nav-cat.js"></script>
+	<script src="../_assets/js/site-search.js"></script>
+	<script src="../_assets/js/tss-masthead.js"></script>
+	<script src="../_assets/js/tss-recordtools.js"></script>
+	<script src="../_assets/js/tss-toolbars.js"></script>
+
+	<script src="../_assets/js/tss-hint.js"></script>
+	<script src="../_assets/js/tss-dialogprint.js"></script>
+
+	<!-- layout specific -->
+	<script src="../_assets/js/lib/foundation.min.js"></script>
+	<script src="../_assets/js/lib/app.js"></script>
+	<script src="../_assets/js/tss-vertmenu.js"></script>
+	<!-- code formatting -->
+	<script src="../_assets/js/rainbow.min.js"></script>
+	<script src="../_assets/js/language/generic.js"></script>
+	<script src="../_assets/js/language/css.js"></script>
+	<script src="../_assets/js/language/html.js"></script>
+	<script src="../_assets/js/language/javascript.js"></script>
+	<script src="../_assets/js/rainbow.linecount.js"></script>
+
+	<!-- html5 details fallback PLACE LAST -->
+	<script src="../_assets/js/lib/jquery.details.js"></script>
+
+	<!-- WIREFRAME ONLY -->
+	<script src="../_assets/js/wireframe.js"></script>
+
+	<script>
+		$(function() {
+			//financials salary
+			$('.film-upcoming').dataTable({
+				"bAutoWidth": false,
+				"bJQueryUI": true,
+				"bFilter": false,
+				"bLengthChange": false,
+				"bInfo": false,
+				"bPaginate": false,
+				"bRetrieve": true,
+				//"sPaginationType": "full_numbers",
+				"aaSorting": [[0, "asc"]],
+
+				"aoColumns": [
+						{ "sWidth": "30%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "20%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "25%", "bSortable": true, "bVisible": true },
+						{ "sWidth": "25%", "bSortable": true, "bVisible": true }
+				]
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$("a[href^='#']").click(function(evt){
+			var j = $(evt.currentTarget);
+			var anchorTarget = j.attr("href");
+			$("body")
+				.scrollTo(anchorTarget, 500, {
+					onAfter:function() {
+						window.location.hash = anchorTarget.substr(1);
+						$(anchorTarget).attr("tabindex",-1).focus();
+					}
+				});
+
+			evt.preventDefault();
+		});
+	</script>
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
+	  window.onload = function() {
+		var canvas = document.getElementById("x1");
+		var context = canvas.getContext("2d");
+
+		context.beginPath();
+		context.moveTo(100, 150);
+		context.lineTo(450, 50);
+		context.lineWidth = 2;
+        context.strokeStyle = "#ff0000";
+		context.stroke();
+
+		 // butt line cap (top line)
+        context.beginPath();
+        context.moveTo(100, canvas.height / 4 - 50);
+        context.lineTo(canvas.width - 200, canvas.height / 4 - 50);
+        context.lineWidth = 2;
+        context.strokeStyle = "#0000ff";
+        context.lineCap = "butt";
+        context.stroke();
+
+        //2nd canvas sample
+        var canvas = document.getElementById("x2");
+		var context = canvas.getContext("2d");
+		var x = canvas.width / 4;
+        var y = canvas.height / 4;
+        var radius = 40;
+        var startAngle = 1.1 * Math.PI;
+        var endAngle = 1.9 * Math.PI;
+        var counterClockwise = false;
+
+        context.beginPath();
+        context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.lineWidth = 15;
+        context.strokeStyle = "black";
+        context.stroke();
+
+        var canvas = document.getElementById("x3");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(188, 150);
+        context.quadraticCurveTo(228, 0, 388, 150);
+        context.lineWidth = 10;
+        context.strokeStyle = "#0000ff";
+        context.stroke();
+      };
+	</script>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="../_assets/js/lib/DOMAssistantCompressed-2.8.1.js"></script>
+<script src="../_assets/js/lib/html5shiv.js"></script>
+<script src="../_assets/js/lib/selectivizr-min.js"></script>
+<script src="../_assets/js/lib/lt9-ie.js"></script>
+<![endif]-->
+
+
+</body>
+</html>

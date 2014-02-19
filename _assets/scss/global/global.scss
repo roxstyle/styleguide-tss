@@ -1,0 +1,38 @@
+// File: global/global
+// Outputs: global.css
+//
+// Description:
+// 	Base global imports
+//
+// Requires:
+// 	- Sass
+// 	- Compass
+
+
+// First, import easings from core
+@import "../core/easings";
+
+// Default project mixins
+@import "../mixins/mixins";
+
+// Default Resets
+@import "../core/reset",
+		"../site-settings";
+
+// Default project partials
+@import "foundation",
+		"bootstrap",
+		"../font-awesome/scss/font-awesome",
+		"../icomoon/style",
+		"tss-style",
+		"tss-forms",
+		"tss-buttons",
+		"tss-tables",
+		"jquery.uix.multiselect",
+		"tss-masthead",
+		"tss-record",
+		"tss-contentinfo",
+		"tss-breadcrumbs",
+		"tss-foldedcorner",
+		"tss-main",
+		"tss-aside";
