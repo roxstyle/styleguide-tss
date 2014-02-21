@@ -31,10 +31,10 @@ $rem-base: 15px;
 
 // Grid
 
-// $include-html-grid-classes: $include-html-classes;
+//$include-html-grid-classes: $include-html-classes;
 
-$row-width: rem-calc(1356);
-// $column-gutter: rem-calc(30);
+$row-width: 100%;
+$column-gutter: rem-calc(25);
 // $total-columns: 12;
 
 // We use these to control various global styles
@@ -314,35 +314,35 @@ $row-width: rem-calc(1356);
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
+$button-tny: rem-calc(8);
+$button-sml: rem-calc(10);
+$button-med: rem-calc(12);
+$button-lrg: rem-calc(14);
 
 // We use this to control the display property.
 // $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+$button-margin-bottom: rem-calc(10);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
+$button-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
+$button-font-tny: rem-calc(10);
+$button-font-sml: rem-calc(12);
+$button-font-med: rem-calc(14);
+$button-font-lrg: rem-calc(16);
 // $button-font-weight: normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: 5%;
+$button-function-factor: -15% !default;
 
 // We use these to control button border styles.
-// $button-border-width: 1px;
+$button-border-width: 1px;
 // $button-border-style: solid;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
+$button-radius: rem-calc(6) !default;
 // $button-round: $global-rounded;
 
 // We use this to set default opacity for disabled buttons.
@@ -474,14 +474,14 @@ $row-width: rem-calc(1356);
 // $include-html-form-classes: $include-html-classes;
 
 // We use this to set the base for lots of form spacing and positioning styles
-// $form-spacing: rem-calc(16);
+$form-spacing: rem-calc(13);
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
 // $form-label-font-size: rem-calc(14);
-// $form-label-font-weight: normal;
+$form-label-font-weight: 600;
 // $form-label-font-color: scale-color(#000, $lightness: 30%);
-// $form-label-bottom-margin: rem-calc(8);
+$form-label-bottom-margin: rem-calc(7);
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
@@ -491,6 +491,7 @@ $row-width: rem-calc(1356);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
+$input-border-radius: 3;
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 // $input-include-glowing-effect: true;
@@ -503,8 +504,11 @@ $row-width: rem-calc(1356);
 // $fieldset-margin: rem-calc(18 0);
 
 // We use these to style the legends when you use them
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
+$legend-bg: none;
+$legend-font-weight: 500;
+$legend-font-size: rem-calc(21);
+$legend-font-family: 'Oswald', Helvetica, sans-serif;
+$legend-font-color: scale-color(#222, $lightness: 35%);
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
@@ -1122,7 +1126,7 @@ $row-width: rem-calc(1356);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: rgb(40, 64, 96);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

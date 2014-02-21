@@ -1,3 +1,7 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
 @import "global";
 @import "buttons";
 
@@ -7,15 +11,16 @@
 $include-html-form-classes: $include-html-classes !default;
 
 // We use this to set the base for lots of form spacing and positioning styles
-$form-spacing: rem-calc(13) !default;
+$form-spacing: rem-calc(16) !default;
 
 // We use these to style the labels in different ways
 $form-label-pointer: pointer !default;
 $form-label-font-size: rem-calc(14) !default;
-$form-label-font-weight: 600 !default;
+$form-label-font-weight: normal !default;
 $form-chklabel-font-weight: normal !default;
+$form-label-line-height: 1.5 !default;
 $form-label-font-color: scale-color(#000, $lightness: 30%) !default;
-$form-label-bottom-margin: rem-calc(7) !default;
+$form-label-bottom-margin: 0 !default;
 $input-font-family: inherit !default;
 $input-font-color: rgba(0,0,0,0.75) !default;
 $input-font-size: rem-calc(14) !default;
@@ -25,7 +30,7 @@ $input-border-color: scale-color(#fff, $lightness: -20%) !default;
 $input-focus-border-color: scale-color(#fff, $lightness: -40%) !default;
 $input-border-style: solid !default;
 $input-border-width: 1px !default;
-$input-border-radius: 3 !default;
+$input-border-radius: $global-radius !default;
 $input-vertical-align: middle !default;
 $input-disabled-bg: #ddd !default;
 $input-disabled-hover-bg: #eee !default;
@@ -42,11 +47,8 @@ $fieldset-padding: rem-calc(20) !default;
 $fieldset-margin: rem-calc(18 0) !default;
 
 // We use these to style the legends when you use them
-$legend-bg: none !default;
-$legend-font-weight: 500 !default;
-$legend-font-size: rem-calc(21) !default;
-$legend-font-family: 'Oswald', Helvetica, sans-serif !default;
-$legend-font-color: scale-color(#222, $lightness: 35%) !default;
+$legend-bg: #fff !default;
+$legend-font-weight: bold !default;
 $legend-padding: rem-calc(0 3) !default;
 
 // We use these to style the prefix and postfix input elements
@@ -73,7 +75,7 @@ $glowing-effect-color: $input-focus-border-color !default;
 
 // Select variables
 $select-bg-color: #fafafa !default;
-
+$select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
 
 //
 // @MIXINS
@@ -137,15 +139,13 @@ $select-bg-color: #fafafa !default;
   }
 
   // Disabled background input background color
-  &[disabled] {
-    background-color: $input-disabled-bg;
-  }
-  &[disabled]:hover {
+  &[disabled], fieldset[disabled] & { background-color: $input-disabled-bg; }
+
+  &[disabled]:hover, fieldset[disabled]:hover &  {
     color: $input-disabled-hover-color;
     background-color: $input-disabled-hover-bg;
     border-width: $input-disabled-hover-border-width;
   }
-
 
 }
 
@@ -164,6 +164,7 @@ $select-bg-color: #fafafa !default;
     cursor: $form-label-pointer;
     display: block;
     font-weight: $form-label-font-weight;
+    line-height: $form-label-line-height;
     margin-bottom: $form-label-bottom-margin;
   }
 
@@ -201,7 +202,7 @@ $select-bg-color: #fafafa !default;
 // $bg - Default:$input-prefix-bg || scale-color(#fff, $lightness: -5%) !default;
 // $is-button - Toggle position settings if prefix is a button. Default:false
 //
-@mixin prefix($bg:$input-prefix-bg,$is-button:false) {
+@mixin prefix($bg:$input-prefix-bg, $border:$input-prefix-border-color, $is-button:false) {
 
   @if $bg {
     $bg-lightness: lightness($bg);
@@ -212,6 +213,10 @@ $select-bg-color: #fafafa !default;
     // Control the font color based on background brightness
     @if $bg-lightness > 70% or $bg == yellow { color: $input-prefix-font-color; }
     @else { color: $input-prefix-font-color-alt; }
+  }
+
+  @if $border {
+    border-color: $border;
   }
 
   @if $is-button {
@@ -231,7 +236,7 @@ $select-bg-color: #fafafa !default;
 // We use this mixin to create postfix label styles
 // $bg - Default:$input-prefix-bg || scale-color(#fff, $lightness: -5%) !default;
 // $is-button - Toggle position settings if prefix is a button. Default: false
-@mixin postfix($bg:$input-prefix-bg, $is-button:false) {
+@mixin postfix($bg:$input-prefix-bg, $border:$input-prefix-border-color, $is-button:false) {
 
   @if $bg {
     $bg-lightness: lightness($bg);
@@ -242,6 +247,10 @@ $select-bg-color: #fafafa !default;
     // Control the font color based on background brightness
     @if $bg-lightness > 70%  or $bg == yellow { color: $input-prefix-font-color; }
     @else { color: $input-prefix-font-color-alt; }
+  }
+
+  @if $border {
+    border-color: $border;
   }
 
   @if $is-button {
@@ -337,11 +346,10 @@ $select-bg-color: #fafafa !default;
 
     select {
       -webkit-appearance: none !important;
-      background:
-        $select-bg-color
-        url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
-      background-position-x: 97%;
-      background-position-y: center;
+      background-color: $select-bg-color;
+      background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+      background-repeat: no-repeat;
+      background-position: center $opposite-direction 3%;
       border: $input-border-width $input-border-style $input-border-color;
       // padding: $form-spacing / 2;
       padding-top: 0.33333rem;
@@ -352,11 +360,7 @@ $select-bg-color: #fafafa !default;
       @include radius(0);
       &.radius { @include radius($global-radius); }
       &:hover {
-        background:
-          scale-color($select-bg-color, $lightness: -3%)
-          url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
-        background-position-x: 97%;
-        background-position-y: center;
+        background-color: $select-hover-bg-color;
         border-color: $input-focus-border-color;
       }
     }
@@ -433,6 +437,9 @@ $select-bg-color: #fafafa !default;
       @if not $input-include-glowing-effect {
           @include single-transition(all, 0.2s, linear);
       }
+      &.radius {
+        @include radius($input-border-radius);
+      }
     }
 
     /* Add height value for select elements to match text input height */
@@ -458,7 +465,7 @@ $select-bg-color: #fafafa !default;
     }
 
     /* Normalize file input width */
-    [type="file"] {
+    input[type="file"] {
       width:100%;
     }
 
@@ -468,7 +475,7 @@ $select-bg-color: #fafafa !default;
     }
 
     /* Error Handling */
-
+   // #{data('abide')} {
     [data-abide] {
       .error small.error, span.error, small.error {
         @include form-error-message;
@@ -483,6 +490,11 @@ $select-bg-color: #fafafa !default;
       textarea,
       select {
         margin-bottom: 0;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-bottom: $form-spacing
       }
 
       label,

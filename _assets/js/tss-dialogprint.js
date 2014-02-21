@@ -1,4 +1,5 @@
-						function thisDialog() {
+		// print dialog
+			function thisDialog() {
 
 				$('a[rel~=dialog]').click(function() {
 					$('#printDialog').empty();

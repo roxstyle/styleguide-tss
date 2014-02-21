@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<!--[if gt IE 8]> <style type="text/css">.gradient {filter: none;}</style> <![endif]-->
-
+<!--[if IE 9]> <html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en">
 <head id="www-studiosystem-com">
 	<meta charset="utf-8">
 	<!-- For Microsoft -->
@@ -26,6 +24,7 @@
 	<!-- CSS concatenated and minified via ant build script-->
 	<link href="../_assets/css/global.css" rel="stylesheet" media="all">
 	<link href="../_assets/css/style.css" rel="stylesheet" media="all">
+	<!-- <link href="../_assets/css/docs.css" rel="stylesheet" media="all"> -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700|Oswald:300,400,700' rel='stylesheet' type='text/css'>
 
 	<!-- ui specific -->
@@ -63,8 +62,7 @@
 	<!-- JavaScript at bottom except for Modernizr -->
 	<script src="../_assets/js/lib/rwd-images.js"></script>
 	<script src="../_assets/js/lib/respond.min.js"></script>
-	<!-- <script src="../_assets/js/lib/modernizr.min.js"></script> -->
-	<script src="../_assets/js/vendor/modernizr.js"></script>
+	<script src="../_assets/js/lib/modernizr.min.js"></script>
 
 	<!-- http://t.co/y1jPVnT -->
 	<!-- <link rel="canonical" href="/"> -->
@@ -89,7 +87,6 @@
 		<!-- menu -->
 		<!-- category content navigation -->
 		<div id="cat-nav" class="row cat-bar">
-
 			<div class="h-content">
 				<!-- details navigation -->
 				<div class="nav-b nav-primary">
@@ -120,9 +117,8 @@
 				</div>
 				<!-- /details navigation -->
 			</div>
-
 		</div>
-
+		<!-- /end category content navigation -->
 	</header>
 
 	<!-- content -->
@@ -173,11 +169,12 @@
 					</header>
 
 					<div class="row">
-					<p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a <code>.primary</code> class, a <code>.info</code> class, a <code>.success</code> class, and a <code>.inverse</code> class.</p>
+						<p>All buttons default to a light gray style, but a number of functional classes can be applied for different color styles. These classes include a <code>.primary</code> class, a <code>.info</code> class, a <code>.success</code> class, and a <code>.inverse</code> class.</p>
 
-					<h4>Example buttons</h4>
-					<p>Button styles can be applied to anything with the <code>.button</code> applied. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
-					<div>
+						<h4>Example buttons</h4>
+						<p>Button styles can be applied to anything with the <code>.button</code> applied. Typically you’ll want to apply these to only <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and select <code>&lt;input&gt;</code> elements. Here’s how it looks:</p>
+					</div>
+					<div class="row">
 						<table class="table table-bordered table-striped">
 							<thead>
 							<tr>
@@ -478,7 +475,6 @@
 							</code></pre>
 						</div>
 					</div><!-- /row -->
-
 				</section><!-- /end button groups -->
 
 				<section id="s-button-split">
@@ -489,32 +485,32 @@
 
 					<div class="row">
 						<div class="column large-12">
-							<p><a href="#1" class="button default split">Split Button <span data-dropdown="drop"></span></a><br></p>
-							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							<a href="#1" class="button default split">Split Button <span data-dropdown="drop"></span></a><br>
+							<ul id="drop" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
 							</ul>
-							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop"></span></a><br></p>
-							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop1"></span></a><br></p>
+							<ul id="drop1" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
 							</ul>
 							<p><a href="#1" class="small secondary radius button split">Split Button <span data-dropdown="drop2"></span></a><br></p>
-							<ul id="drop2" class="f-dropdown" data-dropdown-content="">
+							<ul id="drop2" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
 							</ul>
 							<p><a href="#1" class="small info radius button split">Split Button <span data-dropdown="drop3"></span></a><br></p>
-							<ul id="drop3" class="f-dropdown" data-dropdown-content="">
+							<ul id="drop3" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
 							</ul>
 							<p><a href="#1" class="small inverse radius button split">Split Button <span data-dropdown="drop4"></span></a><br></p>
-							<ul id="drop4" class="f-dropdown" data-dropdown-content="">
+							<ul id="drop4" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
@@ -522,8 +518,8 @@
 						</div>
 						<div class="column large-12">
 							<pre><code data-language="html">
-							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop"></span></a><br></p>
-							<ul id="drop" class="f-dropdown" data-dropdown-content="">
+							<p><a href="#1" class="button primary split">Split Button <span data-dropdown="drop5"></span></a><br></p>
+							<ul id="drop5" class="f-dropdown" data-dropdown-content>
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
@@ -535,20 +531,21 @@
 				</section><!-- /end split buttons -->
 
 				<section id="s-button-dropdown">
-					<h3 class="subheader">Dropdown Buttons</h3>
+					<header>
+						<h3 class="subheader">Dropdown Buttons</h3>
 						<p>Buttons with dropdowns, using a universal dropdown element. The same dropdown is used for menu dropdowns.</p>
 					</header>
 
 					<div class="row">
 						<div class="column large-12">
-							<p><a href="#1" data-dropdown="drop" class="small button dropdown">Dropdown Button</a><br></p>
-							<ul id="drop" data-dropdown-content="" class="f-dropdown">
+							<p><a href="#1" data-dropdown="drop6" class="small button dropdown">Dropdown Button</a><br></p>
+							<ul id="drop6" data-dropdown-content class="f-dropdown">
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
 							</ul>
-							<p><a href="#1" data-dropdown="drop2" class="small secondary radius button dropdown">Dropdown Button</a><br></p>
-							<ul id="drop2" data-dropdown-content="" class="f-dropdown">
+							<p><a href="#1" data-dropdown="drop7" class="small secondary radius button dropdown">Dropdown Button</a><br></p>
+							<ul id="drop7" data-dropdown-content class="f-dropdown">
 							  <li><a href="#1">This is a link</a></li>
 							  <li><a href="#1">This is another</a></li>
 							  <li><a href="#1">Yet another</a></li>
@@ -558,8 +555,30 @@
 
 				</section><!-- /end button dropdowns -->
 
+				<section id="s-button-drop">
+					<header>
+						<h3 class="subheader">Dropdown</h3>
+						<p>universal dropdown element.</p>
+					</header>
 
+					<div class="row">
+						<div class="column large-12">
 
+							<p><a href="#1" data-dropdown="drop8">Has Dropdown</a></p>
+							<ul id="drop8" class="f-dropdown" data-dropdown-content>
+							  <li><a href="#1">This is a link</a></li>
+							  <li><a href="#1">This is another</a></li>
+							  <li><a href="#1">Yet another</a></li>
+							</ul>
+							<p><a href="#1" data-dropdown="drop9">Has Content Dropdown</a></p>
+							<div id="drop9" data-dropdown-content class="f-dropdown content">
+							  <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
+							</div>
+
+						</div>
+					</div><!-- /row -->
+
+				</section><!-- /end button dropdowns -->
 
 		</div><!-- /main content -->
 
@@ -570,36 +589,34 @@
 
 </div> <!-- /end of #container -->
 
+
 	<!-- footer -->
 	<footer role="contentinfo" class="clearfix">
 		<div class="f-content">
-		<ul>
-			<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
-			<li><a href="" title="Documentations">Documentation</a></li>
-			<li><a href="" title="API Terms">API Terms</a></li>
-		</ul>
-		<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
+			<ul>
+				<li><a href="index.html" title="Home" accesskey="1">Home</a></li>
+				<!-- <li><a href="" title="Documentations">Documentation</a></li> -->
+				<!-- <li><a href="" title="API Terms">API Terms</a></li> -->
+			</ul>
+			<small>Copyright &copy; 2012 Baseline, All rights reserved</small>
 		</div>
 	</footer>
 
 <!-- <div id="loadingDiv" class="ui-loading"><span>loading...</span></div> -->
 
-	<!-- scripts concatenated and minified via ant build script-->
-	<!-- jQuery -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<!-- DataTables -->
+	<!-- scripts concatenated and minified via ant build script -->
+	<!-- jQuery CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<!-- DataTables CDN -->
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-	<script src="../_assets/js/lib/jquery-ajax-include.js"></script>
-	<!-- jQuery UI -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- jQuery UI CDN -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<!-- foundation CDN -->
+	<script src="../_assets/js/foundation.min.js"></script>
+	<script src="../_assets/js/vendor/fastclick.js"></script>
+
 	<script src="../_assets/js/plugins.js"></script>
 	<script src="../_assets/js/select2.min.js"></script>
-	<!-- <script src="../_assets/js/loader.js"></script> -->
-
-	<script src="../_assets/js/lib/easyListSplitter.js"></script>
-	<script src="../_assets/js/lib/jquery.prettyPhoto.min.js"></script>
-	<script src="../_assets/js/imgSizer.js"></script>
-	<script src="../_assets/js/jquery.dwImageProtector.js"></script>
 
 	<script src="../_assets/js/script.js"></script>
 
@@ -609,14 +626,7 @@
 	<script src="../_assets/js/tss-recordtools.js"></script>
 	<script src="../_assets/js/tss-toolbars.js"></script>
 	<script src="../_assets/js/jquery.stickyFooter.js"></script>
-
-	<script src="../_assets/js/tss-hint.js"></script>
-	<script src="../_assets/js/tss-dialogprint.js"></script>
 	<script src="../_assets/js/tss-vertmenu.js"></script>
-
-	<!-- foundation -->
-	<script src="../_assets/js/foundation.min.js"></script>
-	<script src="../_assets/js/vendor/fastclick.js"></script>
 
 	<!-- code formatting for styleguide -->
 	<script src="../_assets/js/rainbow.min.js"></script>
@@ -633,7 +643,12 @@
 	<script src="../_assets/js/wireframe.js"></script>
 
 	<script>
-		$(document).foundation();
+		$(document).foundation({
+			dropdown : {
+				active_class : 'open',
+				//is_hover : true
+			}
+		});
 	</script>
 
 <!--[if (lt IE 9) & (!IEMobile)]>

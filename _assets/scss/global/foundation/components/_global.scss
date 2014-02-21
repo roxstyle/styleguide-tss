@@ -1,8 +1,15 @@
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
 @import "../functions";
 //
 // Foundation Variables
 //
 
+// Data attribute namespace
+// styles get applied to [data-mysite-plugin], etc
+$namespace: false !default;
 
 $experimental: true !default;
 
@@ -188,8 +195,6 @@ $font-smoothing: antialiased !default;
 
 // We use these to control text direction settings
 $text-direction: ltr !default;
-
-// NOTE: No need to change this conditional statement, $text-direction variable controls it all.
 $default-float: left !default;
 $opposite-direction: right !default;
 @if $text-direction == ltr {
@@ -272,6 +277,9 @@ $cursor-text-value: text !default;
 
 
 @include exports("global") {
+  meta.foundation-version {
+    font-family: "/5.1.0/";
+  }
   // Used to provide media query values for javascript components.
   // Forward slash placed around everything to convince PhantomJS to read the value.
   meta.foundation-mq-small {
@@ -299,6 +307,13 @@ $cursor-text-value: text !default;
     width: lower-bound($xxlarge-range);
   }
 
+  meta.foundation-data-attribute-namespace {
+    font-family: #{$namespace};
+  }
+
+  // Must be 100% for off canvas to work
+  html, body { height: 100%; }
+
   @if $include-html-global-classes {
 
     // Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/
@@ -307,10 +322,7 @@ $cursor-text-value: text !default;
       padding: 0;
       border: 0;
       outline: 0;
-      // font: inherit;
       vertical-align: baseline;
-      // list-style-type: none;
-      // http://paulirish.com/2012/box-sizing-border-box-ftw/
       @include box-sizing(border-box);
     }
 
@@ -320,14 +332,13 @@ $cursor-text-value: text !default;
     *:after {
       @include box-sizing(border-box);
     }
+
     html {
       background: $html-bg;
     }
 
     html,
     body {
-      padding: 0;
-      margin: 0;
       height: 100%;
       font-size: $base-font-size;
     }
@@ -347,7 +358,7 @@ $cursor-text-value: text !default;
       cursor: $cursor-default-value;
     }
 
-  a:hover { cursor: $cursor-pointer-value; }
+    a:hover { cursor: $cursor-pointer-value; }
 
     // Grid Defaults to get images and embeds to work properly
     img,

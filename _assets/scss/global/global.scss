@@ -21,7 +21,6 @@
 
 // Default project partials
 @import "foundation",
-		"bootstrap",
 		"../font-awesome/scss/font-awesome",
 		"../icomoon/style",
 		"tss-style",
@@ -36,3 +35,6 @@
 		"tss-foldedcorner",
 		"tss-main",
 		"tss-aside";
+
+// Not Currently Using
+// "bootstrap",
